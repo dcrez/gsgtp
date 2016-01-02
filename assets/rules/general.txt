@@ -1,3 +1,9 @@
+<<<<<<< HEAD
 This is a test to make sure that the general text file actually loads.
 
 AND that it respects crazy things like carriage returns.
+=======
+This is where the general rules would display.
+
+This is an example of using carriage returns within a text file to render.
+>>>>>>> origin/master
