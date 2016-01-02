@@ -78,42 +78,4 @@
     <script>$('header').load('components/header.html');</script>
     <script>$('footer').load('components/footer.html');</script>
 
-</body><!--TestCompleteHiddenNodes{{-->
-<script>
-$(document).ready(function () {
-  location.hash && $(location.hash + '.collapse').collapse('show');
-});
-</script>
-<script isTestCompleteHiddenNode="1">var g_TestCompleteChromeBrowserAgentScriptHelper10_0 = {};
-g_TestCompleteChromeBrowserAgentScriptHelper10_0.addScriptToAgent = function(agent)
-{
-    agent.createCallback0 =
-        function(cookie0, cookie1)
-        {
-            var callback = function()
-            {
-	            agent.callback0(cookie0, cookie1);
-            }
-            return callback;
-        }
-}
-g_TestCompleteChromeBrowserAgentScriptHelper10_0.removeScriptFromAgent = function(agent)
-{
-    agent.createCallback0 = null;
-}
-g_TestCompleteChromeBrowserAgentScriptHelper10_0.addCustomScript = function(text)
-{
-    var script = document.createElement('SCRIPT');
-    script.text = text;
-    var attr = document.createAttribute('isTestCompleteHiddenNode');
-    attr.value = '1';
-    script.attributes.setNamedItem(attr);
-    var agent = document.getElementById('NATIVE_g_TestCompleteChromeBrowserAgentScriptHelper10_0');
-    if (agent)
-    {
-        agent.parentNode.insertBefore(script, agent);
-        return true;
-    }
-    return false;
-}
-</script><object type="application/x-testcomplete10-0-chrome-browser-agent" id="NATIVE_g_TestCompleteChromeBrowserAgentScriptHelper10_0" style="position: absolute; visibility: hidden; left: 0px; top: 0px; width: 1px; height: 1px;" isTestCompleteHiddenNode="1" tabId="1087"><param id="TC_HIDDEN_PARAM_0" name="wmode" value="opaque" isTestCompleteHiddenNode="1"></object><!--}}TestCompleteHiddenNodes--></html>
+</body>
