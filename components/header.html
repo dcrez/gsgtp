@@ -1,27 +1,27 @@
-<!-- Fixed navbar -->
-<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="brand" href="index.html"><img src="assets/gsgtp-01.png" height="50px"></a>
-    </div>
+    <div class="sidebar-nav">
+      <div class="navbar navbar-default" role="navigation">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <span class="visible-xs navbar-brand">Gopher State Garden Tractor Pullers
+</span>
+        </div>
+        <div class="navbar-collapse collapse sidebar-navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active" style="text-align:center;"><a href="index.html"><img src="assets/gstplogoc.png" height="100px" alt="GSGTP Logo"></a></li>
+	        <li><a href="index.html#schd">Schedule</a></li>
+    	    <li><a href="index.html#stnd">Standings</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
 
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li><a data-trigger="focus" href="index.html#schd">Schedule</a></li>
-        <li><a data-trigger="focus" href="index.html#stnd">Standings</a></li>
-        <li class="dropdown">
-          <a href="rules.html" class="dropdown-toggle" data-toggle="dropdown">Rules <span class="caret"></span></a>
-          <ul class="dropdown-menu" role="menu">
-            <li><a href="rules.html#eligibility">Eligibility</a></li>
-            <li><a href="rules.html#general">General Rules</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Rules <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+				<li><a href="rules.html#eligibility">Eligibility</a></li>
+				<li><a href="rules.html#general">General Rules</a></li>
             <li><a href="rules.html#classes">Classes</a></li>
             <li class="divider"></li>
             <li><a href="rules.html#procedures">Event Procedures</a></li>
@@ -30,20 +30,16 @@
             <li><a href="rules.html#disqualification">Causes for Disqualification (DQ)</a></li>
             <li><a href="rules.html#penalties">Penalties</a></li>
             <li><a href="#rules.html#protests">Protests</a></li>
+              </ul>
+            </li>
+           	<li><a href="about.html">About Us</a></li>
+       		<li><a data-toggle="modal" data-target="#contactModal">Contact Us</a></li>
           </ul>
-        </li>
-        <li><a href="about.html">About Us</a></li>
-        <li><a data-toggle="modal" data-target="#contactModal">Contact Us</a></li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-      <li><a href="https://twitter.com/share" data-url="Gopher State Garden Tractor Pullers"><i class="fa fa-twitter fa-2x"></i></a></li>
-      <li><a href="#"><i class="fa fa-facebook fa-2x"></i></a></li>
-      </ul>
-
-   </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
-
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+  
+  
 <!-- Contact Us Modal -->
 <div class="modal fade" id="contactModal" tabindex="-1" role="dialog" aria-labelledby="contactModalLabel" aria-hidden="true">
   <div class="modal-dialog">
