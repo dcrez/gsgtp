@@ -33,7 +33,7 @@
           </ul>
         </li>
         <li><a href="about.html">About Us</a></li>
-        <li><a data-toggle="modal" data-target="#contactus">Contact Us</a></li>
+        <li><a data-toggle="modal" data-target="#contactModal">Contact Us</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
       <li><a href="https://twitter.com/share" data-url="Gopher State Garden Tractor Pullers"><i class="fa fa-twitter fa-2x"></i></a></li>
@@ -43,3 +43,27 @@
    </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
+
+<!-- Contact Us Modal -->
+<div class="modal fade" id="contactModal" tabindex="-1" role="dialog" aria-labelledby="contactModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title">Contact Us</h4>
+      </div>
+      <div class="modal-body">
+      <p>If you've got a question that you'd like to ask a person directly, please call Jess.  If she's not able to answer your question, she'll be able to put you in touch with someone who can.</p>
+      <form role="form" action="mailto:danielle.creswick@gmail.com" method="post">
+		<div class="form-group"><input type="text" class="form-control" placeholder="Your Name" id="name"></div>
+        <div class="form-group"><input type="email" class="form-control" placeholder="Your Email Address" id="email"></div>
+        <div class="form-group"><input type="tel" class="form-control" placeholder="Your Telephone Number" id="telephone"></div>
+        <div><textarea class="form-control" placeholder="Your Question" id="question"></textarea></div>
+        <br>
+		<button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+        
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
