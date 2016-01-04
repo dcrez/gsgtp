@@ -1,7 +1,7 @@
-// A document to store which tractors show up to club, and associate them with their owners.
+M// A document to store which tractors show up to club, and associate them with their owners.
 
 {
-	"tractor": 
+	"tractor":
 	[
 		{
 			"id":"01",
@@ -23,7 +23,7 @@
 			"tech-current":"1",
 			"active":"1"
 		}
-			
+
 		{
 			"id":"02",
 			"owner": "Matt Creswick",
