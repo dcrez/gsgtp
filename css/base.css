@@ -41,4 +41,17 @@
 
 .glyphing {color:#0077db; font-size:2.5em; display: block; margin-left: auto; margin-right:auto; text-align: center;}
 
-
+th .rotate {
+	white-space: nowrap;
+    -webkit-transform-origin: 65px 60px;
+    -moz-transform-origin: 65px 60px;
+    -o-transform-origin: 65px 60px;
+    -ms-transform-origin: 65px 60px;
+    transform-origin: 65px 60px;
+	-webkit-transform: rotate(270deg);
+	-moz-transform: rotate(270deg);
+	-ms-transform: rotate(270deg);
+	-o-transform: rotate(270deg);
+	transform: rotate(270deg);
+} 
+}
