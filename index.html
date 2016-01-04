@@ -113,59 +113,65 @@
 </div>
 </div>
 
-<div id="stnd" class="container" style="margin-top:30px; margin-bottom:10px;">
+<div id="stnd" class="container">
 <h2>Standings</h2>
-<ul class="nav nav-tabs" role="tablist">
-<li><a href="#class" role="tab" data-toggle="tab">Summary by Class</a></li>
-<li><a href="#town" role="tab" data-toggle="tab">Summary by Town</a></li>
-</ul>
-<div class="tab-content">
-<div class="tab-pane active" id="class">
-<div class="btn-group">
-<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Choose a Class <span class="caret"></span></button>
-<ul class="dropdown-menu" role="menu">
-<li><a href="#">Mini Rod #1900</a></li>
-<li><a href="#">Off the Lawn</a></li>
-<li><a href="#">Stock</a></li>
-<li><a href="#">Stock Altered</a></li>
-<li><a href="#">Sport Stock</a></li>
-<li><a href="#">Pro Stock</a></li>
-<li><a href="#">Open</a></li>
-<li><a href="#">Super Modified</a></li>
-</ul>
+<h3>By Class</h3>
+<form>
+<div class="form-group">
+	<label for="selectClass" class="col-sm-2 control-label">Select a class.</label>
+    <select class="form-control filter-Class" id="filter">
+    	<option value="Off the Lawn">Off the Lawn</option>
+        <option value="Stock">Stock</option>
+        <option value="Stock Altered">Stock Altered</option>
+        <option value="Sport Stock">Sport Stock</option>
+        <option value="Pro Stock">Pro Stock</option>
+        <option value="Sportsman Modified">Sportsman Modified</option>
+        <option value="Super Modified">Super Modified</option>
+        <option value="1400 Open Unlimited">1400 Open Unlimited</option>
+        <option value="1900 Minirod">1900 Minirod</option>
+        <option value="1800 Economgy V8 Mini">1800 Economy V8 Mini</option>
+    </select>
 </div>
-<h3 id="#mr1900">Mini-rod 1900</h3>
-<table class="table table-striped table-hover" style="font-size:0.98em;">
-<tr>
-<th>VehicleID</th>
-<th>Vehicle</th>
-<th>Puller</th>
-<th>Points</th>
-</tr>
-<tr>
-<td>27</td>
-<td>Rat Patrol</td>
-<td>Richard Thron</td>
-<td>126</td>
-</tr>
-<tr>
-<td>27</td>
-<td>Rat Patrol</td>
-<td>Richard Thron</td>
-<td>126</td>
-</tr>
-<tr>
-<td>27</td>
-<td>Rat Patrol</td>
-<td>Richard Thron</td>
-<td>126</td>
-</tr>
+</form>
+<table class="table footable table-hover" data-filter="#filter" data-filter-text-only="true">
+	<thead>
+    	<tr>
+        	<th data-hide="phone,tablet">Class</th>
+            <th data-toggle="true">Vehicle</th>
+            <th data-hide="phone,tablet">Puller</th>
+            <th data-type="numeric" data-sort-initial="descending">Points</th>
+            <th data-hide="phone,tablet">Distance</th>
+        </tr>
+    </thead>
+    		<tr>
+            	<td title="Sport Stock">Sport Stock</td>
+                <td>Kamikaze</td>
+                <td>Matthew Creswick</td>
+                <td>160</td>
+                <td>2399.70</td>
+            </tr>
+            <tr>
+            	<td title="Sport Stock">Sport Stock</td>
+                <td>TBD</td>
+                <td>Tony Katula</td>
+                <td>72</td>
+                <td>980.90</td>
+            </tr>
+            <tr>
+            	<td>1900 Minirod</td>
+                <td>Angy Inch</td>
+                <td>Jeff Thron</td>
+                <td>205</td>
+                <td>2929.62</td>
+            </tr>
+            <tr>
+            	<td>1900 Minirod</td>
+                <td>Rat Patrol</td>
+                <td>Richard Thron</td>
+                <td>200</td>
+                <td>2864.91</td>
+            </tr>
 </table>
-</div>
-<div class="tab-pane active" id="town">Town</div>
-</div>
-</div>
-
 
 
 </div>
@@ -236,6 +242,8 @@
     <script>$('header').load('components/header.html');</script>
     <script>$('footer').load('components/footer.html');</script>
     <script src="js/footable.js" type="text/javascript"></script>
+    <script src="js/footable.filter.js" type="text/javascript"></script>
+    <script src="js/footable.sort.js" type="text/javascript"></script>
     <script type="text/javascript">    
     jQuery(function() {    
      jQuery('table').footable();    
