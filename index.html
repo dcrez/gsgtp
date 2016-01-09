@@ -16,9 +16,7 @@
 <link href="css/footable.core.css" rel="stylesheet" type="text/css">
   <link rel="shortcut icon" href="assets/favicon.ico">
   </head>
-<body class="hasGoogleVoiceExt bigPicture" data-spy="scroll" data-target="navbar" data-offset="100">
-<div class="bigPictureSoften"></div>
-<div class="row">
+<body class="hasGoogleVoiceExt" data-spy="scroll" data-target="navbar" data-offset="100">
 <div class="col-sm-2">
 <header></header>
 </div>
@@ -134,7 +132,7 @@
     </select>
 </div>
 </form>
-<table class="table footable table-hover" data-filter="#filter" data-filter-text-only="true">
+<table class="table footable table-hover" data-filter="#filter" data-filter-text-only="true" id="trClass">
 	<thead>
     	<tr>
         	<th data-hide="phone,tablet">Class</th>
@@ -253,14 +251,20 @@
     </script>  
     
     <script type="text/javascript">
-	 $(function () {
-    $('table').footable().bind('footable_filtering', function (e) {
-      var selected = $('.filter-Class').find(':selected').text();
-      if (selected && selected.length > 0) {
-        e.filter += (e.filter && e.filter.length > 0) ? ' ' + selected : selected;
-        e.clear = !e.filter;
-      }
+	$(function () {
+    $('.filter-status').change(function (e) {
+        e.preventDefault();
+        $('table.trClass').trigger('footable_filter', {filter: $('.filter-Class').val()});
     });
+
+   $('.clear-filter').click(function (e) {
+        e.preventDefault();
+        $('.filter-Class').val('');
+        $('table.trClass').trigger('footable_clear_filter');
+    });
+
+    $('table.trClass').footable();  
+ });
 	</script>
 </body>
 </html>
