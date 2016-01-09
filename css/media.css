@@ -1,6 +1,11 @@
 /* make sidebar nav vertical */ 
 @media (min-width: 768px) {
   
+  .sidebar-nav {
+		position:fixed;
+		top:0;
+	  }
+  
   .sidebar-nav .navbar .navbar-collapse {
     padding: 0;
     max-height: none;
