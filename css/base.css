@@ -20,6 +20,14 @@
 	
 	*/
 
+.navbar-brand {
+	position: absolute;
+    width: 100%;
+	margin:auto;
+    top: 0;
+	left:50%;
+    padding:0;}
+
 .logo {
 	max-height:200px;
 	min-height:100px;
