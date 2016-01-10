@@ -1,5 +1,4 @@
-    <div class="sidebar-nav col-sm-2">
-      <div class="navbar navbar-default" role="navigation">
+      <nav class="navbar navbar-default" role="navigation">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-navbar-collapse">
             <span class="sr-only">Toggle navigation</span>
@@ -7,15 +6,19 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <span class="visible-xs"><img src="assets/gsgtp-01.png" height="50px;"></span>
         </div>
-        <div class="navbar-collapse collapse sidebar-navbar-collapse">
-          <ul class="nav navbar-nav">
-            <li class="logo btn" onClick="location.href='http://dcrez.github.io';"><a href="index.html"></a></li>
+        
+        <a class="navbar-brand hidden-sm hidden-xs"><img src="assets/gsgtp-logo.png" height="100px;"></a>
+        
+        
+        <div class="navbar-collapse collapse ">
+          <ul class="nav navbar-nav navbar-left">
+            <!--<li class="logo btn" onClick="location.href='http://dcrez.github.io';"><a href="index.html"></a></li>-->
 	        <li><a href="index.html#schd">Schedule</a></li>
     	    <li><a href="index.html#stnd">Standings</a></li>
             <li><a href="gallery.html">Gallery</a></li>
-
+		</ul>
+        <ul class="nav navbar-nav navbar-right">
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Rules <b class="caret"></b></a>
               <ul class="dropdown-menu">
@@ -35,9 +38,9 @@
        		<li><a data-toggle="modal" data-target="#contactModal">Contact Us</a></li>
           </ul>
         </div><!--/.nav-collapse -->
-      </div>
-    </div>
-  
+      </nav>
+    
+	  
   
 <!-- Contact Us Modal -->
 <div class="modal fade" id="contactModal" tabindex="-1" role="dialog" aria-labelledby="contactModalLabel" aria-hidden="true">
