@@ -38,3 +38,13 @@ flex-container > * img {
 	width: 100%;
 	height: auto;
 }
+
+
+.gallery .holder {
+    width: 100%;
+    overflow: hidden;
+}
+
+.gallery .item {
+    float: left;
+}

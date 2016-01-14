@@ -19,7 +19,29 @@
 <body class=" hasGoogleVoiceExt" data-spy="scroll" data-target="navbar" data-offset="100">
 <header></header>
 <div class="container-fluid">
-<!-- Desktop View -->
+<div class="gallery">
+	<div class="holder">
+    	<div class="list">
+    	<div class="item"><div id="eligibility"></div></div>
+        <div class="item"><div id="general"></div></div>
+        <div class="item"><div id="classes"></div></div>
+        <div class="item"><div id="procedures"></div></div>
+        <div class="item"><div id="operations"></div></div>
+        <div class="item"><div id="disqualification"></div></div>
+        <div class="item"><div id="penalties"></div></div>
+        <div class="item"><div id="protests"></div></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        </div>
+    </div>
+
+</div>
+
+
+<!--
 <div class="panel panel-default"><div class="panel-heading">Eligibility</div><div id="eligibility" class="panel-body"></div></div>
 <div class="panel panel-default"><div class="panel-heading">General Rules</div><div id="general" class="panel-body"></div></div>
 <div class="panel panel-default"><div class="panel-heading">Classes</div><div id="classes" class="panel-body"></div></div>
@@ -28,11 +50,23 @@
 <div class="panel panel-default"><div class="panel-heading">Disqualification</div><div id="disqualification" class="panel-body"></div></div>
 <div class="panel panel-default"><div class="panel-heading">Penalties</div><div id="penalties" class="panel-body"></div></div>
 <div class="panel panel-default"><div class="panel-heading">Protests</div><div id="protests" class="panel-body"></div></div>
-</div>
+<div class="panel panel-default"><div class="panel-heading">1400#</div><div id="1400" class="panel-body"></div></div>
+<div class="panel panel-default"><div class="panel-heading">1800#</div><div id="1800" class="panel-body"></div></div>
+<div class="panel panel-default"><div class="panel-heading">1900#</div><div id="1900" class="panel-body"></div></div>
+<div class="panel panel-default"><div class="panel-heading">Off the Lawn</div><div id="off-the-lawn" class="panel-body"></div></div>
+<div class="panel panel-default"><div class="panel-heading">Pro Stock</div><div id="pro-stock" class="panel-body"></div></div>
+<div class="panel panel-default"><div class="panel-heading">Sportsman Modified</div><div id="sportsman-modified" class="panel-body"></div></div>
+<div class="panel panel-default"><div class="panel-heading">Stock</div><div id="stock" class="panel-body"></div></div>
+<div class="panel panel-default"><div class="panel-heading">Stock Altered</div><div id="stock-altered" class="panel-body"></div></div>
+<div class="panel panel-default"><div class="panel-heading">Super Modified</div><div id="super-modified" class="panel-body"></div></div>
+-->
+
+</div> 
 
 <footer></footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="js/jquery.touchSlider.min.js"></script>
     <script>$('header').load('components/header.html');</script>
 
     <!-- Start rules external references here. -->
@@ -44,8 +78,21 @@
     <script>$('#disqualification').load('assets/rules/disqualification.html');</script>
     <script>$('#penalties').load('assets/rules/penalties.html');</script>
     <script>$('#protests').load('assets/rules/protests.html');</script>
+	<script>$('#1400').load('assets/rules/1400.html');</script>
+    <script>$('#1800').load('assets/rules/1800.html');</script>
+    <script>$('#1900').load('assets/rules/1900.html');</script>
+    <script>$('#off-the-lawn').load('assets/rules/off-the-lawn.html');</script>
+	<script>$('#pro-stock').load('assets/rules/pro-stock.html');</script>
+	<script>$('#sportsman-modified').load('assets/rules/sportsman-modified.html');</script>
+    <script>$('#stock').load('assets/rules/stock.html');</script>
+    <script>$('#stock-altered').load('assets/rules/stock-altered.html');</script>
+    <script>$('#super-modified').load('assets/rules/super-modified.html');</script>
 
     <!-- End rules external references. -->
     <script>$('footer').load('components/footer.html');</script>
+	<script>$(document).ready(initGallery);
+function initGallery() {
+    $('.gallery').touchSlider();
+}</script>
     </body>
 </html>
