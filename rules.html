@@ -19,33 +19,24 @@
 <body class=" hasGoogleVoiceExt" data-spy="scroll" data-target="navbar" data-offset="100">
 <header></header>
 <div class="container-fluid">
-
-<ul class="nav nav-tabs nav-justified" id="tabs" data-tabs="tabs">
-<li role="presentation"><a href="#eligible" data-toggle="tab">Eligibility</a></li>
-<li role="presentation"><a href="#rules" data-toggle="tab">General Rules</a></li>
-<li role="presentation"><a >Classes</a></li>
-<li role="presentation"><a href="#proc" data-toggle="tab">Procedures</a></li>
-<li role="presentation"><a href="#ops" data-toggle="tab">Operations</a></li>
-<li role="presentation"><a href="#dq" data-toggle="tab">Disqualification</a></li>
-<li role="presentation"><a href="#pen" data-toggle="tab">Penalties</a></li>
-<li role="presentation"><a href="#pro" data-toggle="tab">Protests</a></li>
-</ul>
-
-<div class="tab-content">
-	<div class="tab-pane active" id="eligible"><div id="eligibility"></div></div>
-    <div class="tab-pane" id="rules"><div id="general"></div></div>
-    <div class="tab-pane" id="class"><div id="classes"></div></div>
-    <div class="tab-pane" id="proc"><div id="procedures"></div></div>
-    <div class="tab-pane" id="ops"><div id="operations"></div></div>
-    <div class="tab-pane" id="dq"><div id="disqualification"></div></div>
-    <div class="tab-pane" id="pen"><div id="penalties"></div></div>
-    <div class="tab-pane" id="pro"><div id="protests"></div></div>
-    <div class="tab-pane" id=""><div id=""></div></div>
-    <div class="tab-pane" id=""><div id=""></div></div>
-    <div class="tab-pane" id=""><div id=""></div></div>
-    <div class="tab-pane" id=""><div id=""></div></div>
-    <div class="tab-pane" id=""><div id=""></div></div>
-    <div class="tab-pane" id=""><div id=""></div></div>
+<div class="gallery">
+	<div class="holder">
+    	<div class="list">
+    	<div class="item"><div id="eligibility"></div></div>
+        <div class="item"><div id="general"></div></div>
+        <div class="item"><div id="classes"></div></div>
+        <div class="item"><div id="procedures"></div></div>
+        <div class="item"><div id="operations"></div></div>
+        <div class="item"><div id="disqualification"></div></div>
+        <div class="item"><div id="penalties"></div></div>
+        <div class="item"><div id="protests"></div></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        </div>
+    </div>
 
 </div>
 
@@ -75,6 +66,7 @@
 <footer></footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="js/jquery.touchSlider.min.js"></script>
     <script>$('header').load('components/header.html');</script>
 
     <!-- Start rules external references here. -->
@@ -98,5 +90,9 @@
 
     <!-- End rules external references. -->
     <script>$('footer').load('components/footer.html');</script>
+	<script>$(document).ready(initGallery);
+function initGallery() {
+    $('.gallery').touchSlider();
+}</script>
     </body>
 </html>
