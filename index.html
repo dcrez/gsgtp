@@ -49,115 +49,9 @@
     </div>
     </div>
 </div>
-<div id="schd" class="container">
-<h2>Schedule</h2>
-
-<div>
-<table class="table toggle-arrow-small table-hover" data-empty="There are no scheduled pulls that match your selection." data-paging="true" data-paging-size="5" data-paging-position="right">
-<thead>
-<tr>
-<th>Date</th>
-<th data-type="html">Address</th>
-<th data-breakpoints="xs sm">Environment</th>
-<th data-breakpoints="xs sm">Description</th>
-<th data-breakpoints="xs sm">Evaluation</th>
-</tr>
-</thead>
-<tr>
-<td>2014.10.01 05:00 PM</td>
-<td><a href="https://www.google.com/maps/place/5050+Lincoln+Dr+Edina+MN/">5050 Lincoln Dr., Edina, MN</a></td>
-<td>Asphalt</td>
-<td>Hennepin County Fall - Cancer Society</td>
-<td>Benefit</td>
-</tr>
-<tr>
-<td>2014.09.28 10:00 AM</td>
-<td><a href="https://www.google.com/maps/place/River+Falls+WI/">River Falls, WI</a></td>
-<td>Dirt</td>
-<td>Derby Days</td>
-<td>Points</td>
-</tr>
-<tr>
-<td>2014.09.15 10:00 AM</td>
-<td><a href="https://www.google.com/maps/place/Belle+Plaine+MN/">Belle Plaine, MN</a></td>
-<td>Asphalt</td>
-<td>Disco</td>
-<td>Points</td>
-</tr>
-<tr>
-<td>2014.09.10 10:00 AM</td>
-<td><a href="https://www.google.com/maps/place/Stillwater+MN/">Stillwater, MN</a></td>
-<td>Asphalt</td>
-<td>Town Festival</td>
-<td>Points</td>
-</tr>
-<tr>
-<td>2014.09.01 10:00 AM</td>
-<td><a href="https://www.google.com/maps/place/Le+Seur+MN/">Le Seur, MN</a></td>
-<td>Asphalt</td>
-<td>Town Festival</td>
-<td>Points</td>
-</tr>
-<tr>
-<td>2014.08.10 10:00 AM</td>
-<td><a href="https://www.google.com/maps/place/Norwood+Young+America+MN/">Norwood Young America, MN</a></td>
-<td>Asphalt</td>
-<td>Town Festival</td>
-<td>Points</td>
-</tr>
-
-</table>
-</div>
-</div>
-
-<div id="stnd" class="container">
-<h2>Standings</h2>
-<h3>By Class</h3>
-
-<table class="table table-hover" data-filtering="true" data-sorting="true" data-paging="true" id="trClass" data-empty="There are no standings that match your filter criteria. Please try again.">
-	<thead>
-    	<tr>
-        	<th data-breakpoints="xs sm">Class</th>
-            <th>Vehicle</th>
-            <th data-breakpoints="xs sm">Puller</th>
-            <th data-sorted="true" data-direction="DESC" data-type="number">Points</th>
-            <th data-breakpoints="xs sm" data-type="number">Distance</th>
-        </tr>
-    </thead>
-    <tbody>
-    		<tr>
-            	<td title="Sport Stock">Sport Stock</td>
-                <td>Kamikaze</td>
-                <td>Matthew Creswick</td>
-                <td>160</td>
-                <td>2399.70</td>
-            </tr>
-            <tr>
-            	<td title="Sport Stock">Sport Stock</td>
-                <td>TBD</td>
-                <td>Tony Katula</td>
-                <td>72</td>
-                <td>980.90</td>
-            </tr>
-            <tr>
-            	<td>1900 Minirod</td>
-                <td>Angy Inch</td>
-                <td>Jeff Thron</td>
-                <td>205</td>
-                <td>2929.62</td>
-            </tr>
-            <tr>
-            	<td>1900 Minirod</td>
-                <td>Rat Patrol</td>
-                <td>Richard Thron</td>
-                <td>200</td>
-                <td>2864.91</td>
-            </tr>
-	</tbody>
-</table>
-
-
-</div>
+<div id="announcements" class="container"></div>
+<div id="schd" class="container"></div>
+<div id="stnd" class="container"></div>
 
 
 <!-- Schedule a Pull Modal -->
@@ -226,6 +120,10 @@
     <script>$('footer').load('components/footer.html');</script>
     <script src="js/footable.min.js"></script>
  	
+	<!-- Load page sections -->
+        <script>$('#schd').load('assets/data/schedule.html');</script>
+        <script>$('#stnd').load('assets/data/standings.html');</script>
+        <script>$('#announcements').load('assets/data/announcements.html');</script>
 	
 
     <!-- Initialize FooTable -->
