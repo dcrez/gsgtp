@@ -13,36 +13,40 @@
 <link href="css/google-fonts.css" rel="stylesheet" type="text/css">
 <link href="css/base.css" rel="stylesheet" type="text/css">
 <link href="css/media.css" rel="stylesheet" type="text/css">
-  <link rel="shortcut icon" href="assets/favicon.ico">
+<link rel="shortcut icon" href="assets/favicon.ico">
+<!-- Connection to Firebase -->
+  <script src="https://cdn.firebase.com/js/client/2.2.1/firebase.js"></script>
+
   </head>
 <body class="hasGoogleVoiceExt" data-spy="scroll" data-target="navbar" data-offset="100">
-<div class="row">
-<div class="col-sm-2">
 <header></header>
+<div class="row">
+
 </div>
-<div class="col-sm-10">
+<div class="col-md-12">
 <div class="container-fluid">
-<div class="col-sm-4">
+<div class="col-md-6">
 <h2>Add Tractors</h2>
 <form id="add-tractors">
 	<div class="form-group"><input type="text" class="form-control" id="tractorName" placeholder="Enter tractor name."></div>
     <div class="form-group"><input type="text" class="form-control" id="tractorOwner" placeholder="Enter tractor owner."></div>
 		<p class="help-block">Select the classes in which this tractor competes.</p>
-		<div class="checkbox">
-        	<label><input type="checkbox" value="">Mini Rod 1900</label>
-            <label><input type="checkbox" value="">Mini Rod 1900-2</label>
-            <label><input type="checkbox" value="">Open Unlimited 1400</label>
-            <label><input type="checkbox" value="">Pro Stock</label>
-            <label><input type="checkbox" value="">Sport Stock 1000</label>
-            <label><input type="checkbox" value="">Sport Stock 1050</label>
-            <label><input type="checkbox" value="">Sportsman Modified 1100</label>
-            <label><input type="checkbox" value="">Stock 1050</label>
-            <label><input type="checkbox" value="">Stock 950</label>
-            <label><input type="checkbox" value="">Stock Altered 1050</label>
-            <label><input type="checkbox" value="">Super Modified 1150</label>
-            <label><input type="checkbox" value="">Super Modified 1250</label>
-            <label><input type="checkbox" value="">Super Stock 1050</label>
-        </div>
+		<select name="tractorClass" multiple class="form-control" id="tractorClass">
+        	<option value="1900">Mini Rod 1900</option>
+            <option value="1900-2">Mini Rod 1900-2</option>
+            <option value="1400">Open Unlimited 1400</option>
+            <option value="pro">Pro Stock</option>
+            <option value="sport1000">Sport Stock 1000</option>
+            <option value="sport1050">Sport Stock 1050</option>
+            <option value="sportModified1100">Sportsman Modified 1100</option>
+            <option value="stock1050">Stock 1050</option>
+            <option value="stock950">Stock 950</option>
+            <option value="altered1050">Stock Altered 1050</option>
+            <option value="super1150">Super Modified 1150</option>
+            <option value="super1250">Super Modified 1250</option>
+            <option value="super1050">Super Stock 1050</option>
+        
+        </select>
         <p class="help-block">Has the tractor passed tech for this season?</p>
         <div class="radio"><label><input type="radio" name="tech" value="Yes">Yes</label></div>
         <div class="radio"><label><input type="radio" name="tech" value="No">No</label></div>
@@ -53,58 +57,40 @@
        <button type="submit" class="btn btn-primary">Add Tractor</button>
 </form>
 </div>
-<div class="col-sm-8">
-<h2>Current Tractors</h2>
-<div class="table-responsive">
-<table class="table">
-<caption>A list of tractors added to the club registry.</caption>
-	<thead>
-		<tr>
-        	<th>Tractor Name</th>
-            <th>Owner</th>
-            <th>Active?</th>
-            <th class="rotate"></th>
-            <th class="rotate">Mini Rod 1900</th>
-            <th class="rotate">Mini Rod 1900-2</th>
-            <th class="rotate">Open Unlimited 1400</th>
-            <th class="rotate">Pro Stock</th>
-            <th class="rotate">Sport Stock 1000</th>
-            <th class="rotate">Sport Stock 1050</th>
-            <th class="rotate">Sportsman Modified 1100</th>
-            <th class="rotate">Stock 1050</th>
-            <th class="rotate">Stock 950</th>
-            <th class="rotate">Stock Altered 1050</th>
-            <th class="rotate">Super Modified 1150</th>
-            <th class="rotate">Super Modified 1250</th>
-            <th class="rotate">Super Stock 1050</th>
-        </tr>
-        <tr>
-        	<td>Tractor Tractor</td>
-            <td>Chester Tester</td>
-            <td>TRUE</td>
-            <td>TRUE</td>
-            <td>TRUE</td>
-            <td>FALSE</td>
-            <td>FALSE</td>
-            <td>FALSE</td>
-            <td>FALSE</td>
-            <td>FALSE</td>
-            <td>FALSE</td>
-            <td>FALSE</td>
-            <td>FALSE</td>
-            <td>FALSE</td>
-            <td>FALSE</td>
-            <td>FALSE</td>
-            <td>FALSE</td>
-        </tr>
-	</thead>
-</table>
+<div class="visible-sm visible-xs"><hr></div>
+<div class="col-md-6">
+<h2>Add Pull</h2>
+<form id="add-pulls">
+	<p class="help-block">Select the day on which the pull occurred.</p>
+    <div class="form-group"><input type="date" class="form-control" name="eventDate"></div>
+    	<p class="help-block">Select the class in which this tractor competes.</p>
+		<select name="tractorClass" class="form-control">
+        	<option value="1900">Mini Rod 1900</option>
+            <option value="1900-2">Mini Rod 1900-2</option>
+            <option value="1400">Open Unlimited 1400</option>
+            <option value="pro">Pro Stock</option>
+            <option value="sport1000">Sport Stock 1000</option>
+            <option value="sport1050">Sport Stock 1050</option>
+            <option value="sportModified1100">Sportsman Modified 1100</option>
+            <option value="stock1050">Stock 1050</option>
+            <option value="stock950">Stock 950</option>
+            <option value="altered1050">Stock Altered 1050</option>
+            <option value="super1150">Super Modified 1150</option>
+            <option value="super1250">Super Modified 1250</option>
+            <option value="super1050">Super Stock 1050</option>
+        </select>
+    <p class="help-block">Enter the distance the tractor pulled.</p>
+    <div class="form-group"><input type="number" class="form-control" name="tractorDistance" placeholder=""></div>
+    <div class="form-group"><input type="text" class="form-control" name="tractorName" placeholder="Enter tractor name."></div>
+    <div class="form-group"><input type="text" class="form-control" name="tractorOwner" placeholder="Enter tractor owner."></div>
+    <div class="form-group"><input type="text" class="form-control" name="tractorPuller" placeholder="Enter tractor puller."></div>
+    <button type="submit" class="btn btn-primary">Add Pull</button>
+</form>
 </div>
 </div>
 </div>
-</div>
-</div>
-<footer></footer>
+
+<footer class="footer"></footer>
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
@@ -114,5 +100,29 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/ie10-viewport-bug-workaround.js"></script>
     <script>$('header').load('components/header.html');</script>
     <script>$('footer').load('components/footer.html');</script>
+    
+    <!-- Firebase script references 
+    ================================ -->
+     <script>
+		var myDataRef = new Firebase('https://amber-inferno-3506.firebaseio.com/asset/');
+    	$('#tractorName').keypress(function (e) {
+        if (e.keyCode == 13) {
+          var tractor = $('#tractorName').val();
+          var owner = $('#tractorOwner').val();
+		myDataRef.push({name: name, text: text});
+          $('#messageInput').val('');
+        }
+      });
+      myDataRef.on('child_added', function(snapshot) {
+        var message = snapshot.val();
+        displayChatMessage(message.name, message.text);
+      });
+      function displayChatMessage(name, text) {
+        $('<div/>').text(text).prepend($('<em/>').text(name+': ')).appendTo($('#messagesDiv'));
+        $('#messagesDiv')[0].scrollTop = $('#messagesDiv')[0].scrollHeight;
+      };
+    
+    </script>
+    
 </body>
 </html>
