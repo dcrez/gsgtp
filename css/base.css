@@ -78,3 +78,10 @@ body {
   margin-top:-60px;
   clear:both; 
 }
+
+#rulesTOC .nav-pills :hover, #classes .nav-pills :hover
+{
+	background-color: #0077db;
+	color:#fff;
+	border-radius: 5px;	
+	}
