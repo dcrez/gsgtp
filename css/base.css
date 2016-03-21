@@ -86,3 +86,6 @@ body {
 	border-radius: 5px;	
 	}
 	
+    .show-read-more .more-text{
+        display: none;
+    }

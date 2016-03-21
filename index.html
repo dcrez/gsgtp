@@ -38,9 +38,9 @@
     
 
     <div class="col-md-4">
-      <p class="glyphicon glyphicon-picture glyphing" aria-hidden="true" data-toggle="modal" data-target="#eventsModal"></p>
-    <h3 align="center">Recent Events</h3>
-    <p>You don't have to be a member to pull!  Our club is open to walk-ons meeting eligibility requirements. See what we've been up to recently by clicking on the icon above, or check out our <a href="#">gallery</a>.</p>
+      <a href="https://www.facebook.com/gsgtp/photos_stream?tab=photos_albums"><p class="glyphicon glyphicon-picture glyphing"></p></a>
+    <h3 align="center">Gallery</h3>
+    <p>You don't have to be a member to pull!  Our club is open to walk-ons meeting eligibility requirements. See what we've been up to recently in our gallery, or check out our <a href="rules.html#eligibility">eligibility requirements</a>.</p>
     </div>
         <div class="col-md-4">
           <p class="glyphicon glyphicon-pencil glyphing" aria-hidden="true" data-toggle="modal" data-target="#contactModal"></p>
@@ -51,7 +51,7 @@
 </div>
 <div id="announcements" class="container"></div>
 <div id="schd" class="container schedule"></div>
-<div id="stnd" class="container standings"></div>
+<!-- <div id="stnd" class="container standings"></div> -->
 
 
 <!-- Schedule a Pull Modal -->
@@ -74,36 +74,6 @@
         </ol>
         <p>Download a fillable PDF form <a href="#">here</a> to capture your information. When you are done, email the completed form to [?]. </p>
       </div>
-    </div>
-  </div>
-</div>
-
-<!-- Schedule a pull modal end. -->
-
-<!-- Recent Events -->
-    <div class="modal fade" id="eventsModal" tabindex="-1" role="dialog" aria-labelledby="eventsModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-        <h2 class="modal-title" id="eventsModalLabel">Recent Events</h2>
-      </div>
-      <!--start Events modal body -->
-      <div class="modal-body">
-        <div class="media">
-  			<div class="media-left"><a href="#"><img class="media-object" src="..." alt="..."></a></div><div class="media-body">
-      			<h4 class="media-heading">Club Meeting - Year End Celebration</h4>
-    			<p>GSGTP had a great 2015! The club showed up in force to celebrate the year, and vote in our new board members.</p>
-  			</div>
-        </div>
-        <div class="media">
-  			<div class="media-left"><a href="#"><img class="media-object" src="..." alt="..."></a></div><div class="media-body">
-      			<h4 class="media-heading">Pull @ [Place Name]</h4>
-    			<p>It was hot, sweaty, and oh so much fun! We're grateful to [town] for hosting our last benefit pull of the year.</p>
-  			</div>
-		</div>
-      </div>
-      <!--end Events modal body -->
     </div>
   </div>
 </div>
@@ -135,7 +105,28 @@
      jQuery('table').footable();    
     });    
     </script> 
-   
+  
+  <!-- Generate Read More cut-off -->
+<script type="text/javascript">
+$(document).ready(function(){
+	var maxLength = 300;
+	$(".show-read-more").each(function(){
+		var myStr = $(this).text();
+		if($.trim(myStr).length > maxLength){
+			var newStr = myStr.substring(0, maxLength);
+			var removedStr = myStr.substring(maxLength, $.trim(myStr).length);
+			$(this).empty().html(newStr);
+			$(this).append(' <a href="javascript:void(0);" class="read-more">read more...</a>');
+			$(this).append('<span class="more-text">' + removedStr + '</span>');
+		}
+	});
+	$(".read-more").click(function(){
+		$(this).siblings(".more-text").contents().unwrap();
+		$(this).remove();
+	});
+});
+</script>
+ 
   
 </body>
 </html>
