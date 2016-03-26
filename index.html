@@ -51,8 +51,6 @@
 </div>
 <div id="announcements" class="container"></div>
 <div id="schd" class="container schedule"></div>
-<!-- <div id="stnd" class="container standings"></div> -->
-
 
 <!-- Schedule a Pull Modal -->
   <div class="modal fade" id="scheduleModal" tabindex="-1" role="dialog" aria-labelledby="scheduleModalLabel" aria-hidden="true">
@@ -68,8 +66,7 @@
         <ol>
         <li><b>When:</b> What day and time is your event?</li>
         <li><b>Who:</b> Is there a group or groups that are sponsoring this event?</li>
-        <li><b>Fees:</b> We charge to show up; though our team is not-for-profit, working on a fee schedule allows us to purchase/maintain club equipmentOur fee schedule works on a sliding scale, based on time, proximity to pullers, etc. </li>
-        <li><b>Contracts:</b> [Insert contract form template here]</li>
+        <li><b>Fees:</b> We charge to show up; though our team is not-for-profit, working on a fee schedule allows us to purchase/maintain club equipment. </li>
         <li><b>Timelines:</b> Save when you book early!</li>
         </ol>
         <p>Download a fillable PDF form <a href="assets/GSGTP-contract-2016.pdf">here</a> to capture your information. When you are done, mail the completed form to GSGTP C/O Jessica Thron, 14846 18th St N Stillwater, MN 55082, or send via email to <a href="mailto:wikid29@yahoo.com">wikid29@yahoo.com</a>. </p>
@@ -106,27 +103,7 @@
     });    
     </script> 
   
-  <!-- Generate Read More cut-off -->
-<script type="text/javascript">
-$(document).ready(function(){
-	var maxLength = 300;
-	$(".show-read-more").each(function(){
-		var myStr = $(this).text();
-		if($.trim(myStr).length > maxLength){
-			var newStr = myStr.substring(0, maxLength);
-			var removedStr = myStr.substring(maxLength, $.trim(myStr).length);
-			$(this).empty().html(newStr);
-			$(this).append(' <a href="javascript:void(0);" class="read-more">read more...</a>');
-			$(this).append('<span class="more-text">' + removedStr + '</span>');
-		}
-	});
-	$(".read-more").click(function(){
-		$(this).siblings(".more-text").contents().unwrap();
-		$(this).remove();
-	});
-});
-</script>
- 
+  
   
 </body>
 </html>

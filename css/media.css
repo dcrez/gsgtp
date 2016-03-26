@@ -49,3 +49,40 @@ flex-container > * img {
     float: left;
 }
 
+
+/* Back to Top on Rules Display */
+.back-to-top {
+ 
+background: none;
+ 
+margin: 0;
+ 
+position: fixed;
+ 
+bottom: 0;
+ 
+right: 0;
+ 
+width: 2.1em;
+ 
+height: 2.1em;
+ 
+z-index: 100;
+ 
+display: none;
+ 
+text-decoration: none;
+ 
+color: #ffffff;
+ 
+background-color:#747678;
+ 
+}
+ 
+  
+ 
+.back-to-top i {
+ 
+  font-size: 2em;
+ 
+}

@@ -15,7 +15,7 @@
         <div class="navbar-collapse collapse" id="navbar-collapse-1">
           <ul class="nav navbar-nav navbar-left">
 	        <li class="schedule"><a href="index.html#schd">Schedule</a></li>
-    	    <li class="standings"><a href="index.html#stnd">Standings</a></li>
+    	    <li class="standings"><a href="index.html#stnd" data-toggle="tooltip" data-content="Check back once the season is under way to see town and class standings." data-placement="right">Standings</a></li>
             <li class="gallery"><a href="https://www.facebook.com/gsgtp/photos_stream?tab=photos_albums">Gallery</a></li>
 		</ul>
         <ul class="nav navbar-nav navbar-right">
@@ -121,3 +121,9 @@
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
+
+<script>
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
+</script>
