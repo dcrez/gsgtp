@@ -6,7 +6,7 @@
     "@gray": "lighten(#2F3133, 33.5%)",
     "@gray-light": "lighten(#2F3133, 46.7%)",
     "@gray-lighter": "lighten(#2F3133, 93.5%)",
-    "@brand-primary": "#0077DB",
+    "@brand-primary": "#ff3300",
     "@brand-success": "#33D1C2",
     "@brand-info": "#F1C65E",
     "@brand-warning": "#FF9922",
@@ -24,7 +24,7 @@
     "@font-size-large": "ceil((@font-size-base * 1.25))",
     "@font-size-small": "ceil((@font-size-base * 0.85))",
     "@font-size-h1": "floor((@font-size-base * 2.6))",
-    "@font-size-h3": "floor((@font-size-base * 2.15))",
+    "@font-size-h2": "floor((@font-size-base * 2.15))",
     "@font-size-h3": "ceil((@font-size-base * 1.7))",
     "@font-size-h4": "ceil((@font-size-base * 1.25))",
     "@font-size-h5": "@font-size-base",
@@ -431,5 +431,5 @@
     "scrollspy.js",
     "transition.js"
   ],
-  "customizerUrl": "http://getbootstrap.com/customize/?id=9c17ca72a15bc1fe6fe8"
+  "customizerUrl": "http://getbootstrap.com/customize/?id=5085b311507e6544770f"
 }
