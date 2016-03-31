@@ -45,15 +45,15 @@
             <option value="super1150">Super Modified 1150</option>
             <option value="super1250">Super Modified 1250</option>
             <option value="super1050">Super Stock 1050</option>
-        
+
         </select>
         <p class="help-block">Has the tractor passed tech for this season?</p>
         <div class="radio"><label><input type="radio" name="tech" value="Yes">Yes</label></div>
         <div class="radio"><label><input type="radio" name="tech" value="No">No</label></div>
-        
+
         <p class="help-block">Is the tractor still actively pulling this season?</p>
         <div class="radio"><label><input type="radio" name="active" value="Yes">Yes</label></div>
-        <div class="radio"><label><input type="radio" name="active" value="No">No</label></div>  
+        <div class="radio"><label><input type="radio" name="active" value="No">No</label></div>
        <button type="submit" class="btn btn-primary">Add Tractor</button>
 </form>
 </div>
@@ -100,8 +100,8 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/ie10-viewport-bug-workaround.js"></script>
     <script>$('header').load('components/header.html');</script>
     <script>$('footer').load('components/footer.html');</script>
-    
-    <!-- Firebase script references 
+
+    <!-- Firebase script references
     ================================ -->
      <script>
 		var myDataRef = new Firebase('https://amber-inferno-3506.firebaseio.com/asset/');
@@ -121,8 +121,8 @@
         $('<div/>').text(text).prepend($('<em/>').text(name+': ')).appendTo($('#messagesDiv'));
         $('#messagesDiv')[0].scrollTop = $('#messagesDiv')[0].scrollHeight;
       };
-    
+
     </script>
-    
+
 </body>
 </html>
