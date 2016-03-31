@@ -1,0 +1,5 @@
+AuthUserFile /web/forms/.htpasswd
+AuthName "Enter password"
+AuthType Basic
+
+require user admin
