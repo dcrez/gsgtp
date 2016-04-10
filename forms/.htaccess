@@ -1,5 +1,10 @@
-AuthUserFile /web/forms/.htpasswd
-AuthName "Enter password"
-AuthType Basic
+ErrorDocument 404     /404.html
+ErrorDocument 500     /500.html
 
-require user admin
+
+AuthType Basic
+AuthName "Password Required"
+AuthUserFile "/web/gsgtp.com/forms/.htpasswd"
+Require "admin"
+Order deny, allow
+Deny from all
