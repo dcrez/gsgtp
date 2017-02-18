@@ -1,0 +1,88 @@
+@import "compass/css3";
+
+.flex-container {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  
+  -webkit-flex-flow: row wrap;
+  justify-content: space-around;
+}
+
+.flex-item {
+  background: tomato;
+  padding: 5px;
+  min-width: 200px;
+  min-height: 150px;
+  margin-top: 10px;
+  
+  line-height: 150px;
+  color: white;
+  font-weight: bold;
+  font-size: 3em;
+  text-align: center;
+}
+
+flex-container > * {
+	flex: auto;
+	width: 200px;
+}
+
+flex-container > * img {
+	width: 100%;
+	height: auto;
+}
+
+
+.gallery .holder {
+    width: 100%;
+    overflow: hidden;
+}
+
+.gallery .item {
+    float: left;
+}
+
+
+/* Back to Top on Rules Display */
+.back-to-top {
+ 
+background: none;
+ 
+margin: 0;
+ 
+position: fixed;
+ 
+bottom: 0;
+ 
+right: 0;
+ 
+width: 2.1em;
+ 
+height: 2.1em;
+ 
+z-index: 100;
+ 
+display: none;
+ 
+text-decoration: none;
+ 
+color: #ffffff;
+ 
+background-color:#747678;
+ 
+}
+ 
+  
+ 
+.back-to-top i {
+ 
+  font-size: 2em;
+ 
+}

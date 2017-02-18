@@ -1,0 +1,28 @@
+<h3>Standings</h3>
+<ul class="nav nav-tabs">
+<li class="active"><a data-toggle="tab" href="#byclass">Class</a></li>
+<li><a data-toggle="tab" href="#bytown">Town</a></li>
+</ul>
+
+
+<!-- Div to capture class-based standings -->
+
+<div class="tab-content">
+<div id="byclass" class="tab-pane fade in active">
+<div id="points"></div>
+</div>
+<div id="bytown" class="tab-pane fade">
+<div id="pulls"></div>
+</div>
+
+</div>
+
+ <!-- Initialize FooTable -->
+	<script type="text/javascript">    
+    jQuery(function() {    
+     jQuery('table').footable();    
+    });    
+    </script>
+     
+    <script>$('#pulls').load('assets/data/pulls.html');</script>
+        <script>$('#points').load('assets/data/points.html');</script>

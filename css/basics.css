@@ -1,0 +1,108 @@
+@charset "utf-8";
+/* CSS Document */
+
+.navbar-fixed-top {background-color:transparent; border-bottom: none;}
+
+/* Typography */
+/* Libre family
+body 
+{font-family: 'Libre Baskerville', serif;}
+
+h1,h2,h3,h4,h5 {font-family: 'Libre Franklin', sans-serif;}
+*/
+
+/* Mash up */
+body 
+{font-family: 'Slabo 27px', serif;
+font-size: 1.6em;}
+
+h1,h2,h3,h4,h5 {font-family: 'Libre Franklin', sans-serif;
+}
+
+
+/* Mobile and Default Styles*/
+html {height: 100%; overflow: hidden;}
+
+body { 
+  margin:0;
+  padding:0;
+  height: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.parent-centered-div {
+	position: relative;
+}
+
+.child-centered-div {
+	position: absolute;
+ 	top: 50%;
+  	left: 50%;
+	width:100%;
+  	transform: translate(-50%, -50%);
+}
+
+#landing {
+	height: 100%;
+	width: 100%;
+	min-height: 100%;
+	min-width: 100%;
+	background-image:url(../assets/small-women-collaborating.jpg);
+	background-size:cover;
+	background-attachment: fixed;
+}
+
+#marketing {
+	width: 100%;
+	background-color: white;
+	position:relative;
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
+
+#marketing .callout-details {
+	-webkit-transform: translateX(100%);
+  transform: translateX(100%);
+
+}
+
+#marketing img {
+	height: 10em;
+}
+
+#subscribe-mini {
+	width:100%;
+	height: 250px;
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffd65e+0,febf04+100;Yellow+3D+%232 */
+background: rgb(255,214,94); /* Old browsers */
+background: -moz-linear-gradient(top,  rgba(255,214,94,1) 0%, rgba(254,191,4,1) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  rgba(255,214,94,1) 0%,rgba(254,191,4,1) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  rgba(255,214,94,1) 0%,rgba(254,191,4,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffd65e', endColorstr='#febf04',GradientType=0 ); /* IE6-9 */
+	position: relative;
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
+
+#who {
+	
+	position: relative;
+	background-color: skyblue;
+	width:100%;
+}
+
+#who img {
+	height: 8em;
+	width: auto;
+}
+
+/* Tablet Specific Styles */
+@media only screen and (min-width: 600px) {
+	
+}
+
+/* Desktop Specific Styles*/
+@media only screen and (min-width: 768px) {
+	
+}
