@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>STAR Collaborative</title>
+<link href="css/bootstrap.css" rel="stylesheet">
+<link href="css/basics.css" rel="stylesheet">
+<script src="js/jquery-1.11.3.min.js"></script>
+<script src="js/handlebars-v3.0.3.js"></script>
+</head>
+<body>
+	<button class="btn js-marketing-parent">Button</button><br>
+	<div id="marketing" role="main"></div>
+	
+	<script id="marketing_template" type="text/x-handlebars-template">
+	<div class="container-fluid">
+	<h2 class="text-center">Why choose STAR?</h2><br>
+	<div class="row text-center">
+	<div class="col-md-2"></div>
+	{{#each marketing_content}}
+	<a href="#" data-id="{{@index}}" class="js-marketing-detail">
+	<div class="col-md-2" >
+	<img src="{{small-image}}" class="marketing-img">
+	<h2>{{message}}</h2>
+	<p >{{tagline-details}}</p>
+	</div></a>
+	<div class="col-md-1"></div>
+	{{/each}}
+	
+	</div>
+	</div>
+	</script>
+
+
+	<script id="marketing_detail_template" type="text/x-handlebars-template">
+		<div class="container">
+		<div><A HREF="javascript:history.go(0)"><img src="assets/thin-0159_arrow_back_left.png"></A></div>
+		<h1 class="text-center">{{detail-heading}}</h1>
+		<div class="row">
+		{{#each details}}
+		<p>{{p}}</p>
+		{{/each}}
+		</div>
+		</div>
+	</script>	
+
+	<script src="data/marketing.js" type="text/javascript"></script>
+	<script src="js/render.js" type="text/javascript"></script>
+	
+</body>
+</html>

@@ -1,111 +1,137 @@
-<!doctype html>
-<html lang="en"><head>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Get involved with tractor pulling in Minnesota and Wisconsin.">
-    <meta name="author" content="GSGTP">
-    <meta property="og:title" content="GSGTP Home Page"/>
-<meta property="og:image" content="http://www.gsgtp.com/assets/gsgtp-logo.png"/>
-<meta property="og:site_name" content="Gopher State Garden Tractor Pullers"/>
-<meta property="og:description" content="Get involved with tractor pulling in Minnesota and Wisconsin."/>
-    <title>Gopher State Garden Tractor Pullers</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="css/bootstrap.min.css">
-<link rel="stylesheet" href="css/bootstrap-theme.min.css">
-<link rel="stylesheet" href="css/footable.bootstrap.css" type="text/css">
-<link href="https://fonts.googleapis.com/css?family=Oswald|Open+Sans" rel="stylesheet" type="text/css">
-<link href="css/google-fonts.css" rel="stylesheet" type="text/css">
-<link href="css/media.css" rel="stylesheet" type="text/css">
-<link href="css/base.css" rel="stylesheet" type="text/css">
-<link rel="shortcut icon" href="assets/favicon.ico">
-  </head>
-<body>
+	  <title>STAR Collaborative</title>
+	  <link href="css/bootstrap.min.css" rel="stylesheet">
+	  <link href="css/basics.css" rel="stylesheet">
+	  <link href="css/overlay.css" rel="stylesheet">
+	  <link href="css/iframe.css" rel="stylesheet">
+	  <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville|Libre+Franklin|Slabo+27px" rel="stylesheet">
 
-<header></header>
-
-<div class="container">
-
-
-  <div class="welcome">
-  <p>Welcome to the official home of the Gopher State Garden Tractor Pullers! We are currently accepting event applications for our 2016 Summer/Fall Season.  Check back here for more information as the schedule is confirmed. </p>
+	  <script src="js/jquery-1.11.3.min.js"></script>
+	  <script src="js/bootstrap.min.js"></script>
+	  <script src="js/overlay.js"></script>
+	</head>
+	<body>
+			<nav>
+				<div class="container-fluid">
+					STAR Collaborative
+					<a href="#" class="pull-right" onClick="openNav()">Menu</a>
+					<!--<div class="navbar-header">
+						<a class="navbar-brand" href="#landing">STAR Collaborative</a>
+					</div><!-- End navbar header -->
+				</div><!-- End fluid container -->
+			</nav><!-- End default navbar -->
+		
+	<!-- The overlay -->
+<div id="myNav" class="overlay">
+  <!-- Button to close the overlay navigation -->
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <!-- Overlay content -->
+  <div class="overlay-content">
+    <a href="#landing"><img src="assets/logo-notext.png"><br>
+    Home</a>
+	  <a href="#marketing">Why choose STAR</a>
+    <a href="#who">Who we are</a>
+    <a href="#what">What we do</a>
+    <a href="#opportunities">Opportunities</a>
+	<a href="#subscribe">Subscribe</a>
+	</div>
 </div>
-	<div class="row">
-    <div class="col-md-4">
-      <p class="glyphicon glyphicon-calendar glyphing" aria-hidden="true" data-toggle="modal" data-target="#scheduleModal"></p>
-    <h2 align="center">Schedule a Pull</h2>
-    <p>Want to schedule a pull?  Click the icon above to fill out our scheduling form or contact Jessica Thron for more information about how to bring the Gopher State Garden Tractor Pullers to your community.</p>
-    </div>
-
-    
-
-    <div class="col-md-4">
-      <a href="https://www.facebook.com/gsgtp/photos_stream?tab=photos_albums"><p class="glyphicon glyphicon-picture glyphing"></p></a>
-    <h2 align="center">Gallery</h2>
-    <p>You don't have to be a member to pull!  Our club is open to walk-ons meeting eligibility requirements. See what we've been up to recently in our gallery, or check out our <a href="rules.html#eligibility">eligibility requirements</a>.</p>
-    </div>
-        <div class="col-md-4">
-          <p class="glyphicon glyphicon-pencil glyphing" aria-hidden="true" data-toggle="modal" data-target="#contactModal"></p>
-    <h2 align="center">Learn More</h2>
-    <p>Feel free to contact us to learn more by clicking on the icon above.  Learn more about tractor pulling in the National leagues from the National Tractor Pullers Association (NTPA) <a href="http://www.ntpapull.com/about/the-ntpa-wpi-story">here</a>.  </p>
-    </div>
-    </div>
-</div>
-<div id="announcements" class="container"></div>
-<div id="schd" class="container schedule"></div>
-
-<!-- Schedule a Pull Modal -->
-  <div class="modal fade" id="scheduleModal" tabindex="-1" role="dialog" aria-labelledby="scheduleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-        <h3 class="modal-title" id="scheduleModalLabel">Schedule a Pull</h3>
-      </div>
-      <div class="modal-body">
-      
-        <p>We try to make scheduling pulls with our club as easy as possible. If you or your town are looking for the kind of entertainment that GSGTP can provide, here are the basic pieces of information that we'll need to review with you:</p>
-        <ol>
-        <li><b>When:</b> What day and time is your event?</li>
-        <li><b>Who:</b> Is there a group or groups that are sponsoring this event?</li>
-        <li><b>Fees:</b> We charge to show up; though our team is not-for-profit, working on a fee schedule allows us to purchase/maintain club equipment. </li>
-        <li><b>Timelines:</b> Save when you book early!</li>
-        </ol>
-        <p>Download a fillable PDF form <a href="assets/GSGTP-contract-2016.pdf">here</a> to capture your information. When you are done, mail the completed form to GSGTP C/O Jessica Thron, 14846 18th St N Stillwater, MN 55082, or send via email to <a href="mailto:wikid29@yahoo.com">wikid29@yahoo.com</a>. </p>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Schedule a pull modal end. -->
-
-
-<footer class="footer"></footer>
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/ie10-viewport-bug-workaround.js"></script>
-    <script>$('header').load('components/header.html');</script>
-    <script>$('footer').load('components/footer.html');</script>
-    <script src="js/footable.min.js"></script>
- 	
-	<!-- Load page sections -->
-        <script>$('#schd').load('assets/data/schedule.html');</script>
-        <script>$('#stnd').load('assets/data/standings.html');</script>
-        <script>$('#announcements').load('assets/data/announcements.html');</script>
-	
-
-    <!-- Initialize FooTable -->
-	<script type="text/javascript">    
-    jQuery(function() {    
-     jQuery('table').footable();    
-    });    
-    </script> 
-  
-  
-  
-</body>
+				<div id="landing" class="parent-centered-div">
+			<div>
+			<div class="child-centered-div">
+			<div class="text-center">
+			<img src="assets/logo-notext.png"><br>
+			We are<br>
+			STAR Collaborative
+				</div></div></div>
+		</div>
+		<div id="marketing" >
+			<div class="container">
+				
+			<div>
+			<h2 class="text-center">Why choose STAR?</h2>
+				<div class="row">
+			<div class="col-md-2 hidden-sm hidden-xs"></div>
+			<div class="col-md-2 col-sm-6 text-center">
+				<img class="marketing-img" src="assets/donuts.png">
+				<h3>We won't bring you donuts</h3>
+				<p>We run lean. No gimmicks. No fuss. Using tech, we minimze our overhead to maximize your payout. Donuts or dollars?</p>
+			</div>
+				<div class="col-md-1 hidden-sm hidden-xs"></div>
+			<div class="col-md-2 col-sm-6 text-center">
+				<img class="marketing-img" src="assets/rabbit.png">
+				<h3>We let the rabbit out of the hat</h3>
+				<p>No secrets. No surprises. We let you know the req and bill rate, and get your permission before submitting for a role. </p>
+			</div>
+			<div class="col-md-1 hidden-sm hidden-xs"></div>
+			<div class="col-md-2 col-sm-6 text-center">
+				<img class="marketing-img" src="assets/shoes.png">
+				<h3>We've been in your shoes</h3>
+				<p>We know who and what make a great project or team. We work to make sure you'll have both. </p>
+			</div>
+			<div class="col-md-2 hidden-sm hidden-xs"></div>
+				</div>
+				
+				</div>
+				
+			</div><!-- End fluid container -->
+			
+ 
+		  </div><!-- End marketing -->
+			<div id="subscribe-mini">
+			<div class="container">
+				<div class="child-centered-div text-center"><h2>Want to work with us?</h2>
+					<p>Subscribe to get email alerts on opportunities as they become available.
+					</p>
+					<button class="btn btn-lg">Subscribe</button></div>
+				
+			</div>
+		</div>		<!-- End mini-subscribe -->
+		<div id="who">
+			<div><h2>Our Team</h2></div>
+				<div class="row">
+					<div class="col-md-1 hidden-xs hidden-sm"></div>
+    	<div class="col-md-2">
+        	        <img src="assets/staff/ed-lefkow.png">                
+                    <h5 class="member-name"><a href="#">Ed Lefkow</a></h5>
+                    <span>President, Chief Operating Officer <br> &nbsp;</span>
+                </div>
+        <div class="col-md-2">
+                    <img src="assets/staff/Casandra-Noyes.png">
+                    <h5 class="member-name"><a href="#">Casandra Noyes</a></h5>
+                    <span>VP Business Development and Candidate Relationship Delivery Officer</span>
+                </div>
+        <div class="col-md-2">
+        	<img src="assets/staff/Sara-Kittridge.png">
+                <span>Candidate Relationship Project Manager <br> &nbsp;</span>
+					</div>
+        <div class="col-md-2">
+        	<img src="assets/staff/Dani-Shumilovsky.png">
+                <span>Candidate Relationship Operations Manager <br> &nbsp;</span>
+        </div>
+        <div class="col-md-2">
+        	<img src="assets/staff/Prachee-Deshpande.png">
+                    <span>Candidate Relationship Project Coordinator <br> &nbsp;</span>		
+			</div>
+				<div class="col-md-1 hidden-xs hidden-sm"></div>
+					</div>
+					<h2>Our Values</h2>
+				</div>
+		<div id="opportunities" class="parent-centered-div container-fluid">
+			<div class="container"><h2 class="text-center">Opportunities</h2>
+				<p>Lorem ipsum...</p></div>
+				<div class="container-fluid">
+				<div class="intrinsic-container intrinsic-container-4x3">
+				<iframe src="https://starcollaborativeportal.secure.force.com/apex/opportunitiesportal" height="740" allowfullscreen> </iframe>
+					</div>
+			</div>
+		</div>
+		<div id="subscribe" class="parent-centered-div">Text</div>
+		
+	</body>
 </html>

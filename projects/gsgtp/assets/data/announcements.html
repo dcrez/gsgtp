@@ -1,0 +1,31 @@
+<h3>Announcements</h3>
+<div class="list-group">
+<div class="list-group-item">
+
+    <h4 class="list-group-item-heading">Benefit Pull Information</h4>
+    <p class="list-group-item-text">This year’s benefit proceeds will go to help build a ramp for Suzanne Katula. Suzanne, her husband Tony and son Jeremy have been involved in tractor pulling with Gopher State Garden Tractor Pullers for many years.  Suzanne used to pull her own tractor, and after she hung up her helmet, she took her place on the sidelines taking pictures and video for our pullers and fans to enjoy. Suzanne has recently been diagnosed with Multiple Sclerosis and has difficulty with walking and many other functions that we sometimes take for granted. GSGTP would like to build a ramp for easier access entering and exiting her house.  We hope that you can join us rain or shine to hook your tractor for a good cause or just enjoy the show for fun!</p>
+
+</div>
+</div>
+
+
+<!-- Generate Read More cut-off -->
+<script type="text/javascript">
+$(document).ready(function(){
+	var maxLength = 300;
+	$(".show-read-more").each(function(){
+		var myStr = $(this).text();
+		if($.trim(myStr).length > maxLength){
+			var newStr = myStr.substring(0, maxLength);
+			var removedStr = myStr.substring(maxLength, $.trim(myStr).length);
+			$(this).empty().html(newStr);
+			$(this).append(' <a href="javascript:void(0);" class="read-more">read more...</a>');
+			$(this).append('<span class="more-text">' + removedStr + '</span>');
+		}
+	});
+	$(".read-more").click(function(){
+		$(this).siblings(".more-text").contents().unwrap();
+		$(this).remove();
+	});
+});
+</script>

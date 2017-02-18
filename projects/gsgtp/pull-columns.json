@@ -1,0 +1,8 @@
+[
+  {"name":"town","title":"Town","filterable":true},
+  {"name":"class","title":"Class","filterable":true},
+  {"name":"place","title":"Place"},
+  {"name":"puller","title":"Puller", "filterable":true},
+  {"name":"tractor","title":"Tractor"},
+  {"name":"distance","title":"Distance"}
+]
