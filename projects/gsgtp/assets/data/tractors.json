@@ -1,0 +1,48 @@
+M// A document to store which tractors show up to club, and associate them with their owners.
+
+{
+	"tractor":
+	[
+		{
+			"id":"01",
+			"owner": "Jeff Thron",
+			"name": "ANGRY INCH",
+			"class-minirod-1900": "1",
+			"class-minirod-1900-2": "1",
+			"class-open-unlimited-1400":"0",
+			"class-pro-stock":"0",
+			"class-sport-stock-1000":"0",
+			"class-sport-stock-1050":"0",
+			"class-sportsman-modified-1100":"0",
+			"class-stock-1050":"0",
+			"class-stock-950":"0",
+			"class-stock-altered-1050":"0",
+			"class-super-modified-1150":"0",
+			"class-super-modified-1250":"0",
+			"class-super-stock-1050":"0",
+			"tech-current":"1",
+			"active":"1"
+		}
+
+		{
+			"id":"02",
+			"owner": "Matt Creswick",
+			"name": "Kamikaze",
+			"class-minirod-1900": "0",
+			"class-minirod-1900-2": "0",
+			"class-open-unlimited-1400":"0",
+			"class-pro-stock":"0",
+			"class-sport-stock-1000":"1",
+			"class-sport-stock-1050":"1",
+			"class-sportsman-modified-1100":"0",
+			"class-stock-1050":"0",
+			"class-stock-950":"0",
+			"class-stock-altered-1050":"0",
+			"class-super-modified-1150":"0",
+			"class-super-modified-1250":"0",
+			"class-super-stock-1050":"0",
+			"tech-current":"1",
+			"active":"1"
+		}
+	]
+	}

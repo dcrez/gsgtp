@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Get involved with tractor pulling in Minnesota and Wisconsin.">
+    <meta name="author" content="GSGTP">
+    <title>Gopher State Garden Tractor Pullers</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../css/bootstrap.min.css">
+<link rel="stylesheet" href="../css/bootstrap-theme.min.css">
+<link href="https://fonts.googleapis.com/css?family=Oswald|Open+Sans" rel="stylesheet" type="text/css">
+<link href="../css/google-fonts.css" rel="stylesheet" type="text/css">
+<link href="../css/base.css" rel="stylesheet" type="text/css">
+<link href="../css/media.css" rel="stylesheet" type="text/css">
+<link rel="shortcut icon" href="../assets/favicon.ico">
+  </head>
+<body class="hasGoogleVoiceExt" data-spy="scroll" data-target="navbar" data-offset="100">
+<header></header>
+<div class="container">
+<h2>Classes</h2>
+
+</div>
+<div class="container">
+<div class="col-md-6">
+<div class="panel">
+<div class="panel-heading">
+<h3>Add Pull</h3>
+Use this form to add a pull record to an event. </div>
+<div class="panel-body">
+<form class="form-horizontal">
+<div class="form-group">
+<label for="event" class="control-label col-sm-2">Event</label>
+<div class="col-sm-10">
+	<select class="form-control" id="event">
+    </select>
+</div>
+</div>
+<div class="form-group">
+	<label for="class" class="col-sm-2 control-label">Tractor Class</label>
+    <div class="col-sm-10">
+    	<select class="form-control" id="class">
+        </select>
+    </div>
+</div>
+<div class="form-group">
+	<label for="puller" class="col-sm-2 control-label">Puller</label>
+    <div class="col-sm-10">
+    <input type="text" class="form-control" id="puller" placeholder="Enter the puller's name.">
+    </div>
+</div>
+<div class="form-group">
+	<label for="tractor" class="col-sm-2 control-label">Tractor</label>
+    <div class="col-sm-10">
+    <input type="text" id="tractor" class="form-control" placeholder="Enter the tractor's name.">
+</div>
+</div>
+<div class="form-group">
+	<label for="distance" class="control-label col-sm-2">Distance</label>
+    <div class="col-sm-10">
+    	<input type="number" class="form-control">
+    </div>
+</div>
+<div class="form-group">
+	<div class="col-sm-offset-2 col-sm-10">
+    	<button type="submit" class="btn btn-default">Submit</button>
+    </div>
+</div>
+</form>
+</div>
+</div>
+</div>
+<div class="col-md-6">
+<div class="panel">
+<div class="panel-heading">
+<h3>Assign Points</h3>
+Use this form to assign points to pulls.
+</div>
+<div class="panel-body">
+<form class="form-horizontal">
+	<div class="form-group">
+    	<label for="selectPull" class="control-label col-sm-2">Pull</label>
+        <div class="col-sm-10">
+        	<select class="form-control" id="selectPull">
+            </select>
+        </div>
+    </div>
+    <div class="form-group">
+    	<label for="place" class="col-sm-2 control-label">Place</label>
+        <div class="col-sm-10">
+        	<select class="form-control" id="place">
+            	<option>1st</option>
+                <option>2nd</option>
+                <option>3rd</option>
+            </select>
+        </div>
+        </div>
+    <div class="form-group">
+    	<label for="value" class="col-sm-2 control-label">Value</label>
+        <div class="col-sm-10">
+        	<input type="number" id="value" class="form-control">
+        </div>
+    </div>
+    <div class="form-group">
+	<div class="col-sm-offset-2 col-sm-10">
+    	<button type="submit" class="btn btn-default">Submit</button>
+    </div>
+	</div>
+    </form>
+    </div>
+</div>
+</div>
+</div>
+
+
+
+
+<footer class="footer"></footer>
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> -->
+<script src="../js/jquery-1.11.3.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/ie10-viewport-bug-workaround.js"></script> <script>$('header').load('/components/header.html');</script>
+    <script>$('footer').load('/components/footer.html');</script>
+
+<script src="../assets/data/class.json"></script>
+<script>
+var $select = $('#class');
+ 
+$(document).ready(function(data)
+{
+    $.getJSON("../assets/data/class.json",function(obj)
+   {
+         $.each(json.class,function(key,value)
+         {
+             var option = $('<option />').val(value.value).text(value.value);
+        $("#class").append(option);
+         });
+
+    });</script>
+
+
+
+
+
+
+    <!-- Firebase script references
+    ================================ -->
+     <script>
+		var myDataRef = new Firebase('https://amber-inferno-3506.firebaseio.com/asset/');
+    	$('#tractorName').keypress(function (e) {
+        if (e.keyCode == 13) {
+          var tractor = $('#tractorName').val();
+          var owner = $('#tractorOwner').val();
+		myDataRef.push({name: name, text: text});
+          $('#messageInput').val('');
+        }
+      });
+      myDataRef.on('child_added', function(snapshot) {
+        var message = snapshot.val();
+        displayChatMessage(message.name, message.text);
+      });
+      function displayChatMessage(name, text) {
+        $('<div/>').text(text).prepend($('<em/>').text(name+': ')).appendTo($('#messagesDiv'));
+        $('#messagesDiv')[0].scrollTop = $('#messagesDiv')[0].scrollHeight;
+      };
+
+    </script>
+
+</body>
+</html>
