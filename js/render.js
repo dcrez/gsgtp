@@ -25,13 +25,21 @@
 		$(".js-marketing-parent").click(function(){
 			showTemplate(marketing_template, marketing);
 			var current_marketing = marketing.marketing_content[0];
+<<<<<<< HEAD
 			
+=======
+>>>>>>> master
 	// Display sub content	
 		$(".js-marketing-detail").click(function(){
 			var index = $(this).data("id");
 			current_marketing = marketing.marketing_content[index];
 			showTemplate(marketing_detail_template, current_marketing);
 			console.log(current_marketing);
+<<<<<<< HEAD
+=======
+			
+	
+>>>>>>> master
 		});
 		
 		});
@@ -39,5 +47,9 @@
 		$(".js-marketing-parent").click();
 		var current_marketing = marketing.marketing_content[0];
 		console.log("Marketing parent is clicked!");
+<<<<<<< HEAD
+=======
+					   
+>>>>>>> master
 	});
 		
