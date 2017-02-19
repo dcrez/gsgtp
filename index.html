@@ -66,11 +66,51 @@
     </div>
     <!-- End mini-subscribe -->
     <div id="who">
-        <div>
-            <h2 class="text-center">Our Team</h2></div>
+        <div class="container">
+           <div class="row">
+			  <h2 class="text-center">Our Team</h2></div>
+			<div class="row text-center">
+				<div class="col-md-1"></div>
+				<div class="team-member col-md-2 col-sm-4 col-xs-4">
+				<img src="assets/staff/ed-lefkow.png"><br>
+				<div class="role-description">
+					<h4 class="text-primary">Ed Lefkow </h4>
+					<p>President, Chief Operating Officer <span class="label label-info"><i class="fa fa-linkedin"></i></span></p>
+				</div>
+				</div>
+				<div class="col-md-2 col-sm-4 col-xs-4 team-member">
+				<img src="assets/staff/Casandra-Noyes.png"><br>
+				<div class="role-description">
+					<h4 class="text-primary">Casandra Noyes </h4>
+					<p>VP Business Development<br>and Candidate Relationship Delivery Officer <span class="label label-info"><i class="fa fa-linkedin"></i></span></p>
+				</div>
+				</div>
+				<div class="col-md-2 col-sm-4 col-xs-4 team-member">
+				<img src="assets/staff/Sara-Kittridge.png"><br>
+				<div class="role-description">
+					<h4 class="text-primary">Sara Kittridge</h4>
+					<p>Candidate Relationship Project Manager <span class="label label-info"><i class="fa fa-linkedin"></i></span></p>
+				</div>
+				</div>
+				<div class="col-md-2 col-sm-4 col-xs-4 team-member">
+				<img src="assets/staff/Dani-Shumilovsky.png"><br>
+				<div class="role-description">
+				  <h4 class="text-primary">Dani Shumilovsky</h4>
+				  <p>Candidate Relations Operations Manager <span class="label label-info"><i class="fa fa-linkedin"></i></span></p>
+				</div>
+				</div>
+				<div class="col-md-2 col-sm-4 col-xs-4 team-member">
+				<img src="assets/staff/Prachee-Deshpande.png"><br>
+				<div class="role-description">
+					<h4 class="text-primary">Prachee Deshpande</h4>
+					<p>Candidate Relationship Project Coordinator <span class="label label-info"><i class="fa fa-linkedin"></i></span></p>
+				</div>
+				</div>
+			</div>			   
+						   
 
         <h2 class="text-center">Our Values</h2>
-    </div>
+    </div></div>
     <div id="opportunities" class="parent-centered-div container-fluid">
         <div class="container">
             <h2 class="text-center">Opportunities</h2>
@@ -93,7 +133,7 @@
                 <div class="col-md-2 col-sm-4">
                     <img src="{{small-image}}" class="marketing-img">
                     <h3>{{tagline}}</h3>
-                    <p>{{tagline-details}} <a href="#" data-id="{{@index}}" class="js-marketing-detail">Learn more.</a></p>
+                    <p>{{tagline-details}} <a href='javascript:void(0)' data-id="{{@index}}" class="js-marketing-detail">Learn more.</a></p>
                 </div>
                 <div class="col-md-1"></div>
                 {{/each}}

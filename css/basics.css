@@ -80,12 +80,26 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffd65e', end
 
 #who {
 	width:100%;
-	background-color: transparent;
+	background-color: #fff;
+	opacity: .9;
+}
+
+#who .team-member {
+	padding-top: 10px;
 }
 
 #who img {
 	height: 8em;
 	width: auto;
+}
+
+#who .role-description {
+	
+}
+
+#who h4 {
+	text-transform: uppercase;
+	margin-bottom: 0;
 }
 
 #opportunities {
