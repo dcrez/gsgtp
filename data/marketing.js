@@ -6,11 +6,7 @@ var marketing = {
     "tagline": "We won't bring you donuts",
     "tagline-details": "We run lean. No gimmicks. No fuss. Using tech, we minimze our overhead to maximize your payout.",
     "small-image": "assets/donuts.png",
-<<<<<<< HEAD
     "background-image": "assets/635963414523822062-214035934_anthologymag-blog-reciperoundup-donuts-8.jpg",
-=======
-    "background-image": "",
->>>>>>> master
     "detail-heading": "What do you want? Donuts or dollars?",
     "details": [
       {"p":"Just so we're clear upfront, if we successfully place you in a project at one of our clients, we’re not going to randomly drop in and bring you donuts."},

@@ -5,14 +5,11 @@
 <title>STAR Collaborative</title>
 <link href="css/bootstrap.css" rel="stylesheet">
 <link href="css/basics.css" rel="stylesheet">
-<<<<<<< HEAD
 <link href="https://fonts.googleapis.com/css?family=Cabin:700|EB+Garamond" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Fjalla+One|Oswald" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC|Dosis" rel="stylesheet">
 
 
-=======
->>>>>>> master
 <script src="js/jquery-1.11.3.min.js"></script>
 <script src="js/handlebars-v3.0.3.js"></script>
 </head>
@@ -22,7 +19,6 @@
 	
 	<script id="marketing_template" type="text/x-handlebars-template">
 	<div class="container-fluid">
-<<<<<<< HEAD
 	<h1 class="text-center">Why choose STAR?</h1><br>
 	<div class="row text-center">
 	<div class="col-md-2"></div>
@@ -32,18 +28,6 @@
 	<h3>{{tagline}}</h3>
 	<p>{{tagline-details}}  <a href="#" data-id="{{@index}}" class="js-marketing-detail">Learn more.</a></p>
 	</div>
-=======
-	<h2 class="text-center">Why choose STAR?</h2><br>
-	<div class="row text-center">
-	<div class="col-md-2"></div>
-	{{#each marketing_content}}
-	<a href="#" data-id="{{@index}}" class="js-marketing-detail">
-	<div class="col-md-2" >
-	<img src="{{small-image}}" class="marketing-img">
-	<h2>{{message}}</h2>
-	<p >{{tagline-details}}</p>
-	</div></a>
->>>>>>> master
 	<div class="col-md-1"></div>
 	{{/each}}
 	
@@ -54,12 +38,8 @@
 
 	<script id="marketing_detail_template" type="text/x-handlebars-template">
 		<div class="container">
-<<<<<<< HEAD
 		<div class="col-md-1 hidden-sm hidden-xs"><A HREF="javascript:history.go(0)"><img src="assets/thin-0159_arrow_back_left.png" class="marketing-arrow"> Go back</A></div>
 		<div class="col-md-10 col-sm-12"><!-- Start marketing content -->
-=======
-		<div><A HREF="javascript:history.go(0)"><img src="assets/thin-0159_arrow_back_left.png"></A></div>
->>>>>>> master
 		<h1 class="text-center">{{detail-heading}}</h1>
 		<div class="row">
 		{{#each details}}
@@ -67,12 +47,9 @@
 		{{/each}}
 		</div>
 		</div>
-<<<<<<< HEAD
 				<div class="col-md-2 hidden-sm hidden-xs"></div>
 
 		</div>
-=======
->>>>>>> master
 	</script>	
 
 	<script src="data/marketing.js" type="text/javascript"></script>
