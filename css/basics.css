@@ -5,6 +5,7 @@ html {
 	background-image:url(../assets/small-women-collaborating.jpg);
 	background-size:cover;
 	background-attachment: fixed;
+	overflow-x: hidden;
 }
 
 /* Typography */
@@ -82,10 +83,13 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffd65e', end
 	width:100%;
 	background-color: #fff;
 	opacity: .9;
+	padding-top: 20px;
+	padding-bottom: 20px;
 }
 
 #who .team-member {
 	padding-top: 10px;
+	min-height: 250px;
 }
 
 #who img {
@@ -103,7 +107,19 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffd65e', end
 }
 
 #opportunities {
-	background-color: #c2f2f2;
+	background-color:hsla(0,0%,27%,0.81);
+	padding-top: 20px;
+	padding-bottom:20px;
+	color: white;
+}
+
+#subscribe {
+	padding-top:20px;
+	padding-bottom:20px;
+	background-color: teal;
+	opacity: 0.9;
+	color:white;
+	width:100%;
 }
 
 /* Tablet Specific Styles */
