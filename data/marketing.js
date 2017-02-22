@@ -5,6 +5,7 @@ var marketing = {
     "message": "Donuts",
     "tagline": "We won't bring you donuts",
     "tagline-details": "We run lean. No gimmicks. No fuss. Using tech, we minimze our overhead to maximize your payout.",
+	  "tagline-calltoaction": "So what do you want, donuts or dollars?",
     "small-image": "assets/donuts.png",
     "background-image": "assets/635963414523822062-214035934_anthologymag-blog-reciperoundup-donuts-8.jpg",
     "detail-heading": "What do you want? Donuts or dollars?",

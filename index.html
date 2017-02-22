@@ -9,6 +9,7 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/basics.css" rel="stylesheet">
     <link href="css/iframe.css" rel="stylesheet">
+    <link href="css/animations.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Oswald|Dosis" rel="stylesheet">
     <script src="https://use.fontawesome.com/b676143643.js"></script>
     <script src="js/jquery-3.1.0.min.js"></script>
@@ -45,10 +46,9 @@
 
     <div id="landing">
         <div>
-            <div>
-                <div class="jumbotron">
-					<h1><span>We are</span> <span class="text-info">STAR Collaborative</span></h1>
-               
+            <div class="parent-centered-div">
+                <div class="child-centered-div">
+					<h1><span class="small">We are</span><br>STAR Collaborative</h1>
                 </div>
             </div>
         </div>
@@ -152,7 +152,9 @@
                 <div class="col-md-2 col-sm-4">
                     <img src="{{small-image}}" class="marketing-img">
                     <h3>{{tagline}}</h3>
-                    <p>{{tagline-details}} <a href='javascript:void(0)' data-id="{{@index}}" class="js-marketing-detail">Learn more.</a></p>
+                    <p>{{tagline-details}}</p>
+					<p><span class="text-info oswald">{{tagline-calltoaction}}</span></p>
+					<p><a href='javascript:void(0)' data-id="{{@index}}" class="js-marketing-detail">Learn more.</a></p>
                 </div>
                 <div class="col-md-1"></div>
                 {{/each}}

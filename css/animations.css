@@ -1,0 +1,14 @@
+@charset "utf-8";
+/* CSS Document */
+
+#landing {animation-duration: 30s; animation-name: changebackground; 
+	animation-iteration-count: infinite;
+	animation-direction: normal;
+}
+
+@keyframes changebackground {
+	0% {background-image: url(../assets/hpjw-small.jpg); opacity:1; background-size: cover; background-position: top center}
+	25% {background-image: url(../assets/small-women-collaborating.jpg); opacity: 1; background-size: cover;}
+	50% {background-image: url(../assets/0Q7A2339-small.jpg); opacity: 1; background-size: cover;}
+	100% {background-image: url(../assets/hpjw-small.jpg); opacity:1; background-size: cover; }
+}

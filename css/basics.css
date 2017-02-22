@@ -2,9 +2,6 @@
 /* CSS Document */
 
 html {
-	background-image:url(../assets/small-women-collaborating.jpg);
-	background-size:cover;
-	background-attachment: fixed;
 	overflow-x: hidden;
 }
 
@@ -15,7 +12,7 @@ body
 
 h1,h2,h3,h4,h5 {font-family: 'Cabin', sans-serif;}
 */
-nav {background-color:#fff; padding-top: 5px; padding-bottom: 5px;}
+nav {background-color:#fff; padding-top: 5px; padding-bottom: 5px; position: fixed; width: 100%; z-index: 99;}
 nav button {background: transparent; border: none;}
 nav .navbar-header img {height: 2.5em; }
 .jumbotron {background-color:transparent;}
@@ -37,14 +34,23 @@ h1, h2 {text-transform: uppercase; font-size: 2.5em;}
 
 .parent-centered-div {
 	position: relative;
+	height:80vh;
+	width:100vw;
+	color: #fff;
 }
 
 .child-centered-div {
 	position: absolute;
  	top: 50%;
   	left: 50%;
-	width:100%;
+	width:80%;
+	max-width: 800px;
   	transform: translate(-50%, -50%);
+	background-color:orange;
+	opacity: .8;
+	padding-left:10px;
+	padding-top:10px;
+	padding-bottom:10px;
 }
 
 #landing {
@@ -52,7 +58,7 @@ h1, h2 {text-transform: uppercase; font-size: 2.5em;}
 	width: 100%;
 	height:100vh;
 	min-width: 100%;
-	background-image:url(../assets/small-women-collaborating.jpg);
+	/*background-image:url(../assets/hpjw-small.jpg);*/
 	background-size:cover;
 	background-attachment: fixed;
 }
