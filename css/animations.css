@@ -14,14 +14,14 @@
 }
 
 .text-wrapper {
-	text-shadow: 0px 0px 20px #848484;
+	text-shadow: 0px 0px 10px #fff;
 	font-size: 2em;
-	color: #848484;
 	display: flex;
 }
 
 .animated-words {
 	display: inline-block;
+	text-shadow: 0px 0px 10px #f2f2f2;
 }
 
 .animated-words span:nth-child(2) { 
@@ -34,13 +34,13 @@
     -webkit-animation-delay: 6s; 
     -ms-animation-delay: 6s; 
     animation-delay: 6s; 
-    color: #E1DB40; 
+    color: #fff; 
 }
 .animated-words span:nth-child(4) { 
     -webkit-animation-delay: 9s; 
     -ms-animation-delay: 9s; 
     animation-delay: 9s; 
-    color: #E89217;
+    color: #ED7C18;
 }
 
 
@@ -49,7 +49,7 @@
     opacity: 0;
 	float:left;
     overflow: hidden;
-    color: #F5F3D8;
+    color: #fff;
     -webkit-animation: animateWord 18s linear infinite 0s;
     -ms-animation: animateWord 18s linear infinite 0s;
     animation: animateWord 18s linear infinite 0s;
