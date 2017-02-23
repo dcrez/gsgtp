@@ -19,6 +19,7 @@ var marketing = {
       "message": "Rabbits",
       "tagline": "We let the rabbit out of the hat",
       "tagline-details": "No secrets. No surprises. We let you know the req and bill rate, and get your permission before submitting for a role.",
+			  "tagline-calltoaction": "We know you can’t work with just one staffing and consulting firm. We just want to be your favorite.",
       "small-image": "assets/rabbit.png",
       "background-image": "",
       "detail-heading": "We know you can’t work with just one staffing and consulting firm. We just want to be your favorite.",
@@ -33,7 +34,9 @@ var marketing = {
       {
         "message": "Shoes",
         "tagline": "We've been in your shoes",
-        "tagline-details": "We know who and what make a great project or team. We work to make sure you'll have both.",
+        "tagline-details": "We’ve been there and done that and know who and what make for a successful engagement.",
+		  	  "tagline-calltoaction": "How many staffing firms can literally say they’ve been in your shoes?",
+
         "small-image": "assets/shoes.png",
         "background-image": "",
         "detail-heading": "How many staffing firms can literally say they’ve been in your shoes?",

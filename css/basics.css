@@ -7,7 +7,7 @@ html {
 
 /* Typography */
 /*
-body 
+body
 {font-family: 'EB Garamond', serif;}
 
 h1,h2,h3,h4,h5 {font-family: 'Cabin', sans-serif;}
@@ -16,8 +16,9 @@ nav {background-color:#fff; padding-top: 5px; padding-bottom: 5px; position: fix
 nav button {background: transparent; border: none;}
 nav .navbar-header img {height: 2.5em; }
 .jumbotron {background-color:transparent;}
+nav .navbar-header .heading-item {font-size:1.5em; font-family: "Oswald"; text-transform: uppercase; color:dimgray;}
 
-body 
+body
 {font-family: 'Dosis', sans-serif;
 font-size: 16px;
 background-color: transparent;}
@@ -27,40 +28,44 @@ h1, h2 {text-transform: uppercase; font-size: 2.5em;}
 .oswald {font-family: Oswald, sans-serif;}
 .dosis {font-family: Dosis, sans-serif;}
 .focus-large {font-size:4em; text-transform: uppercase;}
-.focus {font-size:2em;}
+.focus {font-size:1.65em;}
 
 /* Mobile and Default Styles*/
 
 
+.small-centered {
+	margin: 0 auto; 
+	min-height: 200px;
+}
+
 .parent-centered-div {
 	position: relative;
-	height:80vh;
+	padding: 30px;
 	width:100vw;
+	height: 100%;
 	color: #fff;
+	align-items: center;
 }
 
 .child-centered-div {
 	position: absolute;
  	top: 50%;
   	left: 50%;
-	width:80%;
-	max-width: 800px;
   	transform: translate(-50%, -50%);
-	background-color:orange;
-	opacity: .8;
-	padding-left:10px;
-	padding-top:10px;
-	padding-bottom:10px;
 }
 
 #landing {
 	padding: 50px;
 	width: 100%;
-	height:100vh;
+	height:55vh;
 	min-width: 100%;
 	/*background-image:url(../assets/hpjw-small.jpg);*/
 	background-size:cover;
 	background-attachment: fixed;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
 
 #marketing {
@@ -89,6 +94,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffd65e', end
 	padding-bottom: 30px;
 }
 
+.height-check {height: 100%; position: relative;}
+
 #who {
 	width:100%;
 	background-color: #fff;
@@ -105,10 +112,13 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffd65e', end
 #who img {
 	height: 8em;
 	width: auto;
+	border-radius:100%;
+	border-color: black;
+	border-width: 10px;
 }
 
 #who .role-description {
-	
+
 }
 
 #who h4 {
@@ -134,10 +144,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffd65e', end
 
 /* Tablet Specific Styles */
 @media only screen and (min-width: 600px) {
-	
+
 }
 
 /* Desktop Specific Styles*/
 @media only screen and (min-width: 768px) {
-	
+
 }
