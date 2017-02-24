@@ -80,7 +80,7 @@ h1, h2 {text-transform: uppercase; font-size: 2.5em;}
 
 #subscribe-mini {
 	width:100%;
-	height: 250px;
+	min-height: 250px;
 	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffd65e+0,febf04+100;Yellow+3D+%232 */
 background: rgb(255,214,94); /* Old browsers */
 background: -moz-linear-gradient(top,  rgba(255,214,94,1) 0%, rgba(254,191,4,1) 100%); /* FF3.6-15 */
