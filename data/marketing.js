@@ -41,7 +41,9 @@ var marketing = {
         "background-image": "",
         "detail-heading": "How many staffing firms can literally say they’ve been in your shoes?",
         "details": [
-          {"p":""}
+          {"p":"If that’s the case, we’ve walked more than a few marathons in understanding the challenges you face in your role! STAR’s owners, operations team, and recruiters have actually worked on your side of the table. We’ve led massive, cross-functional program and project teams and had to assemble the right portfolio of talent to get the job done. We’ve led PMOs and internal vendor management and resource programs. Basically, we’ve been the candidate, client, hiring manager, vendor and resource manager (we are younger than it seems)!"},
+		 {"p":"Not only that, we know the operations, logistics, and procurement steps necessary to get talent sourced, screened, onboarded and running in an efficient and effective way. We know the internal demands to finding the right talent, and we do our best to make your job easier."},
+			 {"p":"STAR has eight years under its belt of serving more than 70 clients and placing hundreds of contract, contract-to-hire, and direct hire candidates at all size companies: small startup to Fortune 50 VMS programs. We can handle any size or volume talent needs."}
         ]
         }
 ]

@@ -17,6 +17,8 @@ nav button {background: transparent; border: none;}
 nav .navbar-header img {height: 2.5em; }
 .jumbotron {background-color:transparent;}
 nav .navbar-header .heading-item {font-size:1.5em; font-family: "Oswald"; text-transform: uppercase; color:dimgray;}
+nav {font-size:1.2em; font-family: "Oswald"; text-transform: uppercase; }
+nav .social img {height: 1.75em;}
 
 body
 {font-family: 'Dosis', sans-serif;
@@ -123,11 +125,15 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffd65e', end
 }
 
 #opportunities {
-	background-color:hsla(0,0%,27%,0.81);
+	/*background-color:hsla(0,0%,27%,0.81);*/
+	background-image: url(../assets/9-gray.jpg);
+	background-attachment: fixed;
 	padding-top: 20px;
 	padding-bottom:20px;
 	color: white;
+	
 }
+
 
 #subscribe {
 	padding-top:20px;
