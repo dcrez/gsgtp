@@ -1,63 +1,65 @@
-@charset "utf-8";
+}@charset "utf-8";
 /* CSS Document */
 
-html {
-	overflow-x: hidden;
+html, body {overflow-x: hidden;}
+
+.navbar {font-size:1.2em; font-family: "Oswald"; text-transform: uppercase; color: white;}
+.navbar-default {background-image: none; background-repeat: no-repeat; border:none; background:
+linear-gradient(
+	 rgba(215, 218, 217, 0.25),
+	 rgba(215, 218, 217, 0.25)
+ );}
+.navbar-header img {height: 3em;}
+.navbar-header .heading-item {font-size:1.5em; font-family: "Oswald"; text-transform: uppercase;}
+.social {line-height: 2.5em;}
+.social img {height: 1.75em;}
+.nav li {color:white;}
+
+body
+{font-family: 'Dosis', sans-serif; font-size: 16px;
+background-image:url(../assets/shutterstock_416205871.jpg);
+background-size: cover;
+background-attachment: fixed;
 }
-
-/* Typography */
-/*
-body
-{font-family: 'EB Garamond', serif;}
-
-h1,h2,h3,h4,h5 {font-family: 'Cabin', sans-serif;}
-*/
-nav {background-color:#fff; padding-top: 5px; padding-bottom: 5px; position: fixed; width: 100%; z-index: 99;}
-nav button {background: transparent; border: none;}
-nav .navbar-header img {height: 2.5em; }
-.jumbotron {background-color:transparent;}
-nav .navbar-header .heading-item {font-size:1.5em; font-family: "Oswald"; text-transform: uppercase; color:dimgray;}
-nav {font-size:1.2em; font-family: "Oswald"; text-transform: uppercase; }
-nav .social img {height: 1.75em;}
-
-body
-{font-family: 'Dosis', sans-serif;
-font-size: 16px;
-background-color: transparent;}
 
 h1,h2,h3,h4,h5 {font-family: 'Oswald', sans-serif;}
 h1, h2 {text-transform: uppercase; font-size: 2.5em;}
+button {text-transform: uppercase; font-size: 2em; font-family: 'Oswald', sans-serif;}
+.btn-primary {text-transform: uppercase; font-size: 1.5em; font-family: 'Oswald', sans-serif; border:none;}
+
+
 .oswald {font-family: Oswald, sans-serif;}
 .dosis {font-family: Dosis, sans-serif;}
-.focus-large {font-size:3.2em; text-transform: uppercase;}
+.focus-large {font-size:2.75em; text-transform: uppercase;}
 .focus {font-size:1.65em;}
+.transparent-font {color:transparent;}
+
+.text-wrapper {
+	font-size: 2em;
+	display: flex;
+	text-shadow: 0px 0px 5px gray;
+	color:ghostwhite;
+}
 
 /* Mobile and Default Styles*/
 
-
-
-
-.parent-centered-div {
-	position: relative;
-	padding: 30px;
-	width:100vw;
-	height: 100%;
-	color: #fff;
-	align-items: center;
-}
-
-.child-centered-div {
-	position: absolute;
- 	top: 50%;
-  	left: 50%;
-  	transform: translate(-50%, -50%);
-}
+.brand-image {
+	margin: 5px 0 -20px 10px; /* play with these to position the image */
+	position:absolute;
+	z-index:100;}
+section {z-index: 2; position: relative;}
 
 #landing {
 	padding: 50px;
 	width: 100%;
 	height:100vh;
-	/*background-image:url(../assets/hpjw-small.jpg);*/
+	background:
+	linear-gradient(
+		 rgba(215, 218, 217,0.75),
+		 rgba(248, 130, 11, 0.55)
+	 ),
+	 /* bottom, image */
+	 url(../assets/shutterstock_416205871.jpg);
 	background-size:cover;
 	background-attachment: fixed;
 	display: flex;
@@ -98,8 +100,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffd65e', end
 	width:100%;
 	background-color: #fff;
 	opacity: .9;
-	padding-top: 20px;
-	padding-bottom: 20px;
+	padding-top: 50px;
+	padding-bottom: 50px;
 }
 
 #who .team-member {
@@ -125,21 +127,17 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffd65e', end
 }
 
 #opportunities {
-	/*background-color:hsla(0,0%,27%,0.81);*/
-	background-image: url(../assets/9-gray.jpg);
-	background-attachment: fixed;
-	padding-top: 20px;
-	padding-bottom:20px;
+	background-color:hsla(0,0%,27%,0.91);
+	padding-top: 50px;
+	padding-bottom: 50px;
 	color: white;
-	
 }
 
 
 #subscribe {
 	padding-top:20px;
-	padding-bottom:20px;
-	background-color: teal;
-	opacity: 0.9;
+	padding-bottom: 50px;
+	background-color:hsla(250,14%,27%,0.91);
 	color:white;
 	width:100%;
 }
@@ -147,11 +145,13 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffd65e', end
 /* Tablet Specific Styles */
 @media only screen and (min-width: 600px) {
 .focus-large {font-size:3.4em; text-transform: uppercase;}
-	
+.text-wrapper {font-size: 2.1em;}
+
 }
 
 /* Desktop Specific Styles*/
 @media only screen and (min-width: 768px) {
 
-.focus-large {font-size:5em; text-transform: uppercase;}
+.focus-large {font-size:7em; text-transform: uppercase;}
+.text-wrapper {font-size: 4em;}
 }

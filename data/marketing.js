@@ -35,7 +35,7 @@ var marketing = {
         "message": "Shoes",
         "tagline": "We've been in your shoes",
         "tagline-details": "We’ve been there and done that and know who and what make for a successful engagement.",
-		  	  "tagline-calltoaction": "How many staffing firms can literally say they’ve been in your shoes?",
+		  	  "tagline-calltoaction": "How many firms can literally say they’ve been in your shoes?",
 
         "small-image": "assets/shoes.png",
         "background-image": "",

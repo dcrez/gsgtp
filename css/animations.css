@@ -1,55 +1,27 @@
 @charset "utf-8";
 /* CSS Document */
 
-#landing {animation-duration: 30s; animation-name: changebackground;
-	animation-iteration-count: infinite;
-	animation-direction: alternate;
-	-webkit-backface-visibility: hidden;
-    -webkit-transform: translateZ(0) scale(1.0, 1.0);
-}
-
-@keyframes changebackground {
-	0% {background-size: cover; opacity: 1; background-image:url(../assets/1.jpg); background-position:center center;}
-	25% {background-size: cover; opacity: 1; background-image:url(../assets/2.jpg); background-position:center center;}
-	50% {background-size: cover; opacity: 1; background-image:url(../assets/7.jpg); background-position:center center;}
-	75% {background-size: cover; opacity: 1; background-image:url(../assets/9.jpg); background-position:center center;}
-	100% {background-size: cover; opacity: 1; background-image:url(../assets/1.jpg); background-position:center center;}
-	
-	/*{background-image: url(../assets/hpjw-small.jpg); opacity:1; background-size: cover; background-position: top center}
-	25% {background-image:url(../assets/av_orex_l1799201621907AM63_600h.jpg); opacity:1; background-size:cover;background-position: center center;}
-	50%{background-image: url(../assets/0Q7A2339-small.jpg); opacity: 1; background-size: cover;}
-	75% {background-image: url(../assets/SNI_2480.jpg); background-size: cover; background-position: center right;}
-	100% {background-image:url(../assets/MWArgentina_DAlessandro_4269.jpg); opacity:1; background-size: cover; background-position: top center;}*/
-}
-
-.text-wrapper {
-	font-size: 2.4em;
-	display: flex;
-	text-shadow: 0px 0px 5px gray;
-	color:ghostwhite;
-}
-
 .animated-words {
 	display: inline-block;
 	text-shadow: 0px 0px 5px gray;
 }
 
-.animated-words span:nth-child(2) { 
-    -webkit-animation-delay: 3s; 
-    -ms-animation-delay: 3s; 
-    animation-delay: 3s; 
+.animated-words span:nth-child(2) {
+    -webkit-animation-delay: 3s;
+    -ms-animation-delay: 3s;
+    animation-delay: 3s;
     color: #fff;
 }
-.animated-words span:nth-child(3) { 
-    -webkit-animation-delay: 6s; 
-    -ms-animation-delay: 6s; 
-    animation-delay: 6s; 
-    color: #fff; 
+.animated-words span:nth-child(3) {
+    -webkit-animation-delay: 6s;
+    -ms-animation-delay: 6s;
+    animation-delay: 6s;
+    color: #fff;
 }
-.animated-words span:nth-child(4) { 
-    -webkit-animation-delay: 9s; 
-    -ms-animation-delay: 9s; 
-    animation-delay: 9s; 
+.animated-words span:nth-child(4) {
+    -webkit-animation-delay: 9s;
+    -ms-animation-delay: 9s;
+    animation-delay: 9s;
     color: #ED7C18;
 }
 
