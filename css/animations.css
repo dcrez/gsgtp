@@ -22,7 +22,8 @@
     -webkit-animation-delay: 9s;
     -ms-animation-delay: 9s;
     animation-delay: 9s;
-    color: #ED7C18;
+    color: teal;
+	text-shadow: 0px 0px 10px rgba(221, 217, 217, 0.7);
 }
 
 
@@ -45,4 +46,17 @@
     20% { opacity: 0; -webkit-transform: translateY(30px); }
     80% { opacity: 0; }
     100% { opacity: 0; }
+}
+
+.navbar {
+    -webkit-transition: all 0.6s ease-out;
+    -moz-transition: all 0.6s ease-out;
+    -o-transition: all 0.6s ease-out;
+    -ms-transition: all 0.6s ease-out;
+    transition: all 0.6s ease-out;
+}
+
+.navbar.scrolled {
+    background: rgb(68, 68, 68); 
+    background: rgba(215, 218, 217, 0.90); 
 }
