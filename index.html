@@ -6,40 +6,55 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>STAR Collaborative</title>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
-      <link rel="stylesheet" href="css/bootstrap-theme.min.css">
-       <link href="css/basics.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <link href="css/basics.css" rel="stylesheet">
     <link href="css/iframe.css" rel="stylesheet">
     <link href="css/animations.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Oswald|Dosis" rel="stylesheet">
     <script src="https://use.fontawesome.com/b676143643.js"></script>
+    <link href="owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="owlcarousel/assets/owl.theme.default.min.css" rel="stylesheet">
     <script src="js/jquery-3.1.0.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script src="data/marketing.js"></script>
-    <script src="js/handlebars-v3.0.3.js"></script>
-    <script src="js/render.js"></script>
+    <!--<script src="data/marketing.js"></script>-->
+    <!--<script src="js/handlebars-v3.0.3.js"></script>
+    <script src="js/render.js"></script>-->
+	<script src="owlcarousel/owl.carousel.min.js"></script>
 
 
 </head>
 
 <body data-spy="scroll" data-target=".navbar" data-offset="50">
-    <nav class="navbar navbar-default navbar-fixed-top">
+		<nav class="navbar navbar-default navbar-fixed-top">
         <div class="container-fluid">
             <div class="navbar-header">
-              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#STAR-nav" aria-expanded="false">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#STAR-nav" aria-expanded="false">
                 <span class="sr-only">Toggle navigation</span>
                 <!--<span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>-->
                 <i class="fa fa-bars"></i>
               </button>
-				<a class="navbar-left brand-image" href="#"><img src="assets/logo-notext.png"></a> <span class="navbar-item transparent-font">Collaborative</span>
+                <a class="navbar-left brand-image" href="#"><img src="assets/logo-notext.png"></a> <span class="navbar-item transparent-font">Collaborative</span>
             </div>
             <div class="collapse navbar-collapse" id="STAR-nav">
                 <ul class="nav navbar-nav">
-                    <li><a href="#marketing">Why choose STAR?</a></li>
-                    <li><a href="#who">Who we are</a></li>
-                    <li><a href="#opportunities">Opportunities</a></li>
+                    <li><a href="#marketing">Why STAR?</a></li>
+                    <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">About us<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+						<li><a href="#who">Our values</a></li>
+						<li><a href="#team">Our team</a></li>
+						<li><a href="#history">Our history</a></li>
+						</ul>
+                    </li>
+                    <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Opportunities<span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="#opportunities">Looking for your next gig?</a></li>
+							<li><a href="#referrals">Want a bigger payday?</a></li>
+							<li><a href="candidatefaq.html">Candidate FAQ</a></li>
+						</ul>
+						</li>
                     <li><a href="#subscribe">Subscribe</a></li>
                     <!--<li><a href="#">Login  <label class="label label-warning">Coming soon!</label></a></li>-->
 				</ul>
@@ -55,19 +70,89 @@
         <!-- End fluid container that makes nav take up entire width -->
     </nav>
     <!-- End Bootstrap navigation -->
-
+    
+  
     <div id="landing">
-      <div class="oswald text-wrapper text-uppercase text-muted">
-		  We are &nbsp;</div>
-					<div class="animated-words oswald focus-large">
-						<span>Connected.</span>
-						<span>Disruptive.</span>
-						<span>Abundant.</span>
-						<span class="text-primary">STAR Collaborative</span>
-						</div>
+       <div class="landing-flex">
+        <div class="oswald text-wrapper text-uppercase text-muted">
+            We are &nbsp;</div>
+        <div class="animated-words oswald focus-large">
+            <span>Connected.</span>
+            <span>Disruptive.</span>
+            <span>Abundant.</span>
+            <span class="text-primary">STAR Collaborative</span>
+        </div>
+		</div>
     </div>
 
-    <div id="marketing" role="main"></div>
+   <!-- Marketing with tabs 
+    <div id="marketing" class="container-fluid">
+	
+		<div class="col-md-12">
+			<h1 class="text-center">Why choose STAR?</h1>
+			<p class="text-center">We’ve been quietly disrupting the Twin Cities market inspiring interest, creating energy, and fostering respect and loyalty through our work.</p>
+		</div>
+	
+		<div class="col-md-4 col-sm-6 js-marketing marketing-teaser text-center">
+		<img src="assets/donuts.png" class="marketing-img">
+		<h3>We won't bring you donuts</h3>
+			<p>We run lean. No gimmicks. No fuss. Using tech, we minimze our overhead to maximize your payout.</p>
+			
+			<a href="#donuts" data-toggle="tab" role="tab" class="nav-tabs"><i class="fa fa-plus-square"></i></a></div>
+		<div class="col-md-12 tab-pane fade collapse marketing-detail" id="donuts">
+			<p class="focus">What do you want: donuts or dollars?</p>
+			<p>Just so we’re clear up front, if we successfully place you in a project at one of our clients, we’re not going to randomly drop in and bring you donuts. We are not going to give you STAR-themed swag like pens, notebooks or t-shirts. Finally, we do not have a box suite for the Twins, Wild, or Vikings, so don’t look for a game invite from us. </p>
+			<p>It’s not that we don’t care or want to hang with you, it’s just that we thought you’d rather get more 
+money in your pocket from the bill rate on the project, and isn’t that a lot more exciting than a bunch of junk food or chachkies that will collect dust on your shelf?</p>
+			
+		</div>
+		<div class="col-md-4 col-sm-6 js-marketing text-center marketing-teaser">
+		<img src="assets/rabbit.png" class="marketing-img">
+		<h3>We let the rabbit out of the hat!</h3>
+			<p>No secrets. No surprises. We let you know the opportunity details, bill rate, and get your permission before submitting for you for any opportunity.</p>
+			<a href="#rabbit" data-toggle="tab" role="tab" class="nav-tabs"><i class="fa fa-plus-square"></i></a></div>
+		<div class="col-md-12 tab-pane fade collapse border-color" id="rabbit">
+			<p class="focus">
+				We know you can’t work with just one staffing and consulting firm. We just want to be your favorite.
+			</p>
+		<p>Like a magician who tells you how the trick is performed, STAR Collaborative’s transparent business model has exposed the staffing and consulting industry’s secrets.</p>
+			<p>When you work with STAR, you’ll know where you stand throughout the whole process. You’ll know what we know as soon as we know it. Even though we think these things are common sense, they’re not always common practice in the industry. Our goal is to create a positive candidate experience for you based on no secrets or surprises.</p>     
+     </div>
+
+     <div class="col-md-4 col-sm-6 js-marketing text-center marketing-teaser"><a href="#shoes" data-toggle="tab" role="tab" class="nav-tabs">
+     <img src="assets/shoes.png" class="marketing-img">
+     <h3>Shoes</h3></a></div>
+    <div class="col-md-12 tab-pane fade collapse" id="shoes">Shoes Detail</div>
+		</div>
+<!-- End marketing with tabs -->
+    
+	<section id="marketing">
+		<div class="container">
+			<h1 class="text-center">Why choose STAR?</h1>
+			<p class="focus text-center">We’ve been quietly disrupting the Twin Cities market inspiring interest, creating energy, and fostering respect and loyalty through our work.</p>
+		</div>
+     	<div class="owl-carousel">
+			<div class="item">Content 1</div>
+			<div class="item">Content 2 </div>
+			<div class="item">Content 3</div>
+		</div>
+      
+      
+      <!--
+      <div class="col-md-4 text-center"><img src="./assets/donuts.png" class="marketing-img">
+		  <h3>We won't bring you donuts.</h3>
+		<p class="marketing-teaser">We run lean. No gimmicks. No fuss. Using tech, we minimze our overhead to maximize your payout.<a href="#"><span class="fa fa-plus"></span></a></p>
+      </div>
+   
+    <div class="item">
+		<div class="col-md-4 text-center"><img src="./assets/rabbit.png" class="marketing-img"><h3>We let the rabbit out of the hat</h3><p class="marketing-teaser">No secrets. No surprises. We let you know the opportunity details, bill rate, and get your permission before submitting for you for any role. <a href="#"><span class="fa fa-plus"></span></a></p></div>
+    </div>
+    <div class="item">
+      <div class="col-md-4"><a href="#"><img src="http://placehold.it/500/eeeeee/fff&amp;text=3" class="img-responsive"></a></div>
+    </div>
+ -->
+	</section>
+    
 
     <div id="subscribe-mini">
         <div class="container height-check">
@@ -80,112 +165,147 @@
     </div>
     <!-- End mini-subscribe -->
     <div id="who">
-        <div class="container">
-           <div class="row">
-			  <h2 class="text-center">Our Team</h2>
-			  <!--<p class="text-center focus">We're creating a company that is made up of human relationships, not transactions.</p>-->
-      </div>
-    <!--
-			<h3 class="text-center container">Our Values</h3>
-			<div class="text-center">
-				<div class="col-md-4 col-sm-4 col-xs-6">
-					<p>Act transparently</p>
-					<p>Be ruthlessly ethical</p>
-
-				</div>
-				<div class="col-md-4 col-sm-4 col-xs-6">
-					<p>Focus on the long-term journey</p>
-					<p>Share the wealth</p>
-				</div>
-				<div class="col-md-4 col-sm-4 col-xs-12">
-					<p>Embrace disruption</p>
-					<p>Enjoy the ride</p>
-				</div>
+        <div class="row">
+            <div class="container">
+                <h2 class="text-center">About Us</h2>
+				<div class="col-md-6"><h3 class="text-center">Who we are</h3>
+					<p class="focus">We've created a company that is made up of human relationships, not transactions.</p>
+					<ul>
+						<li>We want to help people find their next project or permanent opportunity within a company..Perhaps our network will lead to that. We just want to see people work, it’s that simple.</li>
+<li>We want to be the company that people refer their friends and family to when they see one of our opportunities that matches their interests or needs. We want to be known as the trusted company that is ‘doing it right.’</li>
+<li>While we know that you can’t work with just one staffing firm, we want to be one of the first companies you call when you are looking for your next opportunity, your next contract resource or your next employee. We want to be the company you prefer to work with and do new business with.</li>
+<li>We have an attitude of gratitude. Many people helped us get to this point in our journey, so we’re excited to pay them back by paying it forward.
+</li>
+					</ul>
+          		</div>
+           		<div class="col-md-6" id="values">
+			<h3 class="text-center">Our Values</h3>
+					<p class="focus">[placeholder for content]</p>
+					<ul>
+						<li><span class="oswald text-uppercase text-danger">Connected: </span> We are in the relationship business.</li>
+						<li><span class="oswald text-uppercase text-danger">Disruptive: </span>We like to challenge ourselves and the industry</li>
+						<li><span class="oswald text-uppercase text-danger">Abundant: </span>Everyone can win.</li>
+						<li><span class="oswald text-uppercase text-danger">Transparent: </span>We value honesty and help our clients and candidates to understand the “why”.</li>
+						<li><span class="oswald text-uppercase text-danger">Fair: </span>We value integrity.</li>
+						<li><span class="oswald text-uppercase text-danger">Lean: </span> We accomplish a lot with little.</li>
+						<li><span class="oswald text-uppercase text-danger">Respected and Respectful: </span>We treat others the way we want to be treated.</li>
+					</ul>
 			</div>
-			-->
-			<div class="container">
-
-     <div class="row text-center">
-				<div class="team-member col-md-6 col-sm-4 col-xs-6">
-				<img src="assets/staff/ed-lefkow.png"><br>
-				<div class="role-description">
-					<a href="https://www.linkedin.com/in/edlefkow/" target="_blank"><h4 class="text-primary">Ed Lefkow <i class="fa fa-linkedin-square text-info"></i></h4></a>
-					<p>President, <br>Chief Operating Officer</p>
-				</div>
-				</div>
-				<div class="col-md-6 col-sm-4 col-xs-6 team-member">
-				<img src="assets/staff/Casandra-Noyes.png"><br>
-				<div class="role-description">
-					<a href="https://www.linkedin.com/in/casandranoyes/" target="_blank"><h4 class="text-primary">Casandra Noyes <i class="fa fa-linkedin-square text-info"></i></h4></a>
-					<p>VP Business Development<br>Candidate Relationship<br>Delivery Officer</p>
-				</div>
-				</div>
-				<div class="col-md-4 col-sm-4 col-xs-6 team-member">
-				<img src="assets/staff/Sara-Kittridge.png" target="_blank"><br>
-				<div class="role-description">
-					<a href="https://www.linkedin.com/in/sara-kittridge-0487932/" target="_blank"><h4 class="text-primary">Sara Kittridge <i class="fa fa-linkedin-square text-info"></i></h4></a>
-					<p>Candidate Relationship Project Manager</p>
-				</div>
-				</div>
-				<div class="col-md-4 col-sm-4 col-xs-6 team-member">
-				<img src="assets/staff/Dani-Shumilovsky.png"><br>
-				<div class="role-description">
-					<a href="https://www.linkedin.com/in/danielle-shumilovsky-5450ab2/" target="_blank"><h4 class="text-primary">Dani Shumilovsky <i class="fa fa-linkedin-square text-info"></i></h4></a>
-				  <p>Candidate Relations Operations Manager</p>
-				</div>
-				</div>
-				<div class="col-md-4 col-sm-4 col-xs-12 team-member">
-				<img src="assets/staff/Prachee-Deshpande.png" target="_blank"><br>
-				<div class="role-description">
-					<a href="https://www.linkedin.com/in/pracheedeshpande/"><h4 class="text-primary">Prachee Deshpande <i class="fa fa-linkedin-square text-info"></i></h4></a>
-					<p>Candidate Relationship Project Coordinator</p>
-				</div>
-				</div>
 			</div>
-				<div class="col-md-12 text-center">
-					<p>PLACEHOLDER: Call to action for about us, our story, and other content goes here</p>
-      <button class="btn btn-primary text-center">Learn more</button></div>
-       </div>
-     
+                <div class="container text-center" id="team">
+                   			<h2>Our Team</h2>
+<div class="row">
+                    <div class="team-member col-md-4 col-sm-4 col-xs-6">
+                        <img src="assets/staff/ed-lefkow.png"><br>
+                        <div class="role-description">
+                            <a href="https://www.linkedin.com/in/edlefkow/" target="_blank"><h4 class="text-primary">Ed Lefkow <i class="fa fa-linkedin-square text-info"></i></h4></a>
+                            <p>President, <br>Chief Operating Officer</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4 col-xs-6 team-member">
+                        <img src="assets/staff/Casandra-Noyes.png"><br>
+                        <div class="role-description">
+                            <a href="https://www.linkedin.com/in/casandranoyes/" target="_blank"><h4 class="text-primary">Casandra Noyes <i class="fa fa-linkedin-square text-info"></i></h4></a>
+                            <p>VP Business Development<br>
+                              and Delivery, Officer</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4 col-xs-6 team-member">
+                        <img src="assets/staff/Sara-Kittridge.png" target="_blank"><br>
+                        <div class="role-description">
+                            <a href="https://www.linkedin.com/in/sara-kittridge-0487932/" target="_blank"><h4 class="text-primary">Sara Kittridge <i class="fa fa-linkedin-square text-info"></i></h4></a>
+                            <p>Candidate Relations Project Manager</p>
+                        </div>
+                    </div>
+					
+                    <div class="col-md-4 col-sm-4 col-xs-6 team-member">
+                        <img src="assets/staff/Dani-Shumilovsky.png"><br>
+                        <div class="role-description">
+                            <a href="https://www.linkedin.com/in/danielle-shumilovsky-5450ab2/" target="_blank"><h4 class="text-primary">Dani Shumilovsky <i class="fa fa-linkedin-square text-info"></i></h4></a>
+                            <p>Candidate Relations Operations Manager</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4 col-xs-12 team-member">
+                        <img src="assets/staff/Prachee-Deshpande.png" target="_blank"><br>
+                        <div class="role-description">
+                            <a href="https://www.linkedin.com/in/pracheedeshpande/"><h4 class="text-primary">Prachee Deshpande <i class="fa fa-linkedin-square text-info"></i></h4></a>
+                            <p>Candidate Relations Project Coordinator</p>
+                        </div>
+                    </div>
+					</div>
+                </div>
+                <div class="container text-center" id="history">
+					<h2 class="text-center">Our story</h2>
+					<p class="focus text-center"></p>
+                    <p>PLACEHOLDER: Call to action for about us, our story, and other content goes here</p>
+                    <button class="btn btn-primary text-center">Learn more</button></div>
+            </div>
 
-     </div>
 
-    </div>
-    <div id="opportunities" class="parent-centered-div container-fluid">
-       <div class="overlay">
-        <div class="container">
-            <h2 class="text-center">Opportunities</h2>
-			<p class="text-center focus">Looking for your next gig?</p>
-			<p>If you are interested in applying for a role with STAR Collaborative, please review our applicant <a href="#">FAQ</a> before submitting your application (we only submit fully vetted and qualified candidates to our clients, so consider this the first step to helping us get to know you).</p>
         </div>
-        <div class="container">
-            <div class="intrinsic-container intrinsic-container-4x3">
-                <iframe src="https://starcollaborativeportal.secure.force.com/apex/opportunitiesportal" allowfullscreen> </iframe>
+
+   
+    <div id="opportunities" class="parent-centered-div container-fluid">
+        <div class="overlay">
+            <div class="container">
+				<h1 class="text-center">Opportunities <small>Looking for your next gig?</small></h1>
+                <p class="text-center focus"></p>
+				<p>If you are interested in applying for a opportunity with STAR Collaborative, please review our applicant <a href="applicant-faq.html">FAQ</a> before submitting your application (we only submit fully vetted and qualified candidates to our clients, so consider this the first step to helping us get to know you). To apply for a opportunity, click on the STAR opportunity number link below.</p>
+            </div>
+            <div class="container">
+                <div class="intrinsic-container intrinsic-container-4x3">
+                    <iframe src="https://starcollaborativeportal.secure.force.com/apex/opportunitiesportal" allowfullscreen> </iframe>
+                </div>
+            </div>
+            <div class="container" id="referrals">
+                <h2 class="text-center">Referrals</h2>
+                <p class="focus text-center">Want a bigger payday?</p>
+                <p>As you review our new opportunity postings, think of everyone you know that might be interested, if you aren’t. Pass the opportunity on and encourage them to learn more about the opportunity and STAR Collaborative!</p>
+                <p>If we successfully place the person you refer to us, we will give you:</p>
+                <ul>
+                    <li>Contract: $1/hour for every hour they bill on that project as long as they are billing on that project</li>
+                    <li>Direct Hire: $1,000 after 90 successful days on the opportunity.</li>
+                </ul>
+                <p>Tell your friend or colleague to select ‘Payday Challenge’ from the online application and add your name as the referrer. We’ll take it from there!</p>
+                <p class="text-muted"><span class="text-uppercase">The Fine Print:</span> This program is subject to modification or discontinuation at our discretion. State or Federal taxes may apply. Payments will be made every Quarter days for the duration of the project
+                    based on hours invoiced/approved.
+
+                </p>
             </div>
         </div>
-        <div class="container">
-			<h2 class="text-center">Referrals</h2>
-			<p class="focus text-center">Want a bigger payday?</p>
-			<p>As you review our new opportunity postings think of all your friends and colleagues that might be interested in the roles now or in the future. Pass the opportunity on and encourage them to learn more about the role and to get connected with STAR Collaborative!</p>
-			<p>If we successfully place the person you refer to us, we will give you:</p>
-			<ul>
-				<li>Contract: $1/hour for every hour they bill on that project as long as they are billing on that project</li>
-				<li>Direct Hire: $1,000 after 90 successful days on the job</li>
-			</ul>
-			<p>Tell your friend or colleague to select ‘Payday Challenge’ from the online application and add your name as the referrer. We’ll take it from there!</p>
-			<p class="text-muted"><span class="text-uppercase">The Fine Print:</span> This program is subject to modification or discontinuation at our discretion. State or Federal taxes may apply. Payments will be made every Quarter days for the duration of the project based on hours invoiced/approved.
-
-			</p></div>
-		</div>
     </div>
     <div id="subscribe" class="container text-center">
-		<h2>Be in the know</h2>
-		<p class="col-md-3 col-sm-2 hidden-xs"></p>
-		<p class="col-md-6 col-sm-8 col-xs-12">Interested in learning more about STAR and our opportunities, but don't see anything that immediately strikes your fancy? Get customized email updates in your inbox as new opportunities become available by subscribing to our mailing list!</p>
-   		<p class="col-md-3 col-sm-2 hidden-xs"></p>
-		<p class="col-md-12"><a href="#" class="btn btn-lg btn-primary">Subscribe</a></p>
+        <h2>Be in the know</h2>
+        <p class="col-md-3 col-sm-2 hidden-xs"></p>
+        <p class="col-md-6 col-sm-8 col-xs-12">Interested in learning more about STAR and our opportunities, but don't see anything that immediately strikes your fancy? Get customized email updates in your inbox as new opportunities become available by subscribing to our mailing list!</p>
+        <p class="col-md-3 col-sm-2 hidden-xs"></p>
+        <p class="col-md-12"><a href="#" class="btn btn-lg btn-primary">Subscribe</a></p>
     </div>
-<!--
+
+    <footer>
+        <div class="container">
+            <div class="col-md-4">
+                <img src="assets/logo-notext.png">
+                <h2>STAR Collaborative</h2>
+                <p>Copyright <i class="fa fa-copyright"></i>2017 STAR Collaborative. All rights reserved. </p>
+            </div>
+            <div class="col-md-4">
+                <h3 class="text-uppercase">About us</h3>
+                <ul>
+                    <li><a href="#">In the News</a></li>
+                    <li><a href="#">Clients</a></li>
+                    <li><a href="#">Our Team</a></li>
+                    <li><a href="#">Placeholder</a></li>
+                    <li><a href="#">Placeholder</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+
+            </div>
+        </div>
+    </footer>
+
+    <!--
     <script id="marketing_template" type="text/x-handlebars-template">
         <div class="container">
             <h1 class="text-center">Why choose STAR?</h1>
@@ -224,29 +344,54 @@
     </script>
 -->
 
-<script>$('#marketing').load('starmarketing.html');</script>
 
-	<script type="text/javascript">
-	/**
- * Listen to scroll to change header opacity class
- */
-function checkScroll(){
-    var startY = $('.navbar').height() * 2; //The point where the navbar changes in px
+<script>
+        /**
+         * Listen to scroll to change header opacity class
+         */ 
+        function checkScroll() {
+            var startY = $('.navbar').height() * 2; //The point where the navbar changes in px
 
-    if($(window).scrollTop() > startY){
-        $('.navbar').addClass("scrolled");
-    }else{
-        $('.navbar').removeClass("scrolled");
+            if ($(window).scrollTop() > startY) {
+                $('.navbar').addClass("scrolled");
+            } else {
+                $('.navbar').removeClass("scrolled");
+            }
+        }
+
+        if ($('.navbar').length > 0) {
+            $(window).on("scroll load resize", function() {
+                checkScroll();
+            });
+        }
+    </script>
+   
+   <!-- start multi-item carousel -->
+   
+	<script>
+		$(document).ready(function(){
+ $('.owl-carousel').owlCarousel({
+    loop:true,
+    margin:10,
+    nav:true,
+    responsive:{
+        0:{
+            items:1,
+			dots:true
+        },
+        600:{
+            items:3,
+			dots:true
+        },
+        1000:{
+            items:3,
+			dots:true
+        }
     }
-}
-
-if($('.navbar').length > 0){
-    $(window).on("scroll load resize", function(){
-        checkScroll();
-    });
-}
+});
 	</script>
-
+	
+	
 </body>
 
 </html>
