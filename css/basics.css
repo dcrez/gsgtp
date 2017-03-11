@@ -27,7 +27,11 @@ background-attachment: fixed;
 }
 
 h1,h2,h3,h4,h5 {font-family: 'Oswald', sans-serif;}
-h1, h2 {text-transform: uppercase; font-size: 2.5em;}
+h1, h2, h3 {text-transform: uppercase;}
+h1 {font-size:2.5em;}
+h2 {font-size:2em; color:hsla(0,7%,5%,1.00);}
+h3 {font-size:1.75em; color:dimgray;}
+
 
 button {text-transform: uppercase; font-size: 2em; font-family: 'Oswald', sans-serif;}
 
@@ -50,8 +54,8 @@ button {text-transform: uppercase; font-size: 2em; font-family: 'Oswald', sans-s
 
 .oswald {font-family: Oswald, sans-serif;}
 .dosis {font-family: Dosis, sans-serif;}
-.focus-large {font-size:2.75em; text-transform: uppercase;}
-.focus {font-size:1.35em;}
+.focus-large {font-size:2.5em; text-transform: uppercase;}
+.focus {font-size:1.25em;}
 .transparent-font {color:transparent;}
 
 .text-wrapper {
@@ -120,34 +124,19 @@ section {z-index: 2; position: relative;}
 
 #marketing {
 	background: white;
-	min-height: 350px;
 	width: 100%;
 	padding: 30px 0 30px 0; }
 
-	/*
-	flex-direction: row;
-	-webkit-flex-direction: row;
-	-moz-flex-direction:row;
-	-ms-flex-direction:row;
-	justify-content: space-around;
-	flex-wrap:row wrap;
-	-webkit-flex-flow: row wrap;
-	-moz-flex-flow: row wrap;
-	-ms-flex-flow: row wrap;
-}
 
 /*#marketing .container-fluid {margin: 0; padding: 0;}*/
 #marketing a {color:black; text-align: center; cursor: pointer; text-decoration: none;}
-#marketing a:hover {color:teal; text-align: center;}
-#marketing i {position: absolute; bottom:12px; right:10px;color:teal; font-size: 1.25em;}
-#marketing .marketing-img {height: 8.5em;}
-#marketing .tab-pane {
-	padding: 20px 20px 20px 20px;
-	width: 100%;
-} 
-#marketing .marketing-teaser p {max-width: 300px;}
-#marketing .marketing-teaser .active {z-index: 1; border-bottom: solid 5px white;}
+#marketing a:hover {color:teal;}
+/*#marketing a .marketing-teaser i {position: absolute; bottom:12px; right:10px; font-size: 1.25em;} */
+#marketing .marketing-img {height: 4.15em;}
 
+#marketing .marketing-teaser {display: block; position: relative}
+#marketing .marketing-teaser .active {z-index: 1; border-bottom: solid 5px white;}
+#marketing .marketing-teaser i {position:absolute; bottom:0; left:0;}
 
 #subscribe-mini {
 	width:100%;
@@ -239,6 +228,8 @@ footer ul {list-style: none;}
 @media only screen and (min-width: 660px) {
 .focus-large {font-size:3.4em; text-transform: uppercase;}
 .text-wrapper {font-size: 2.1em;}
+#marketing .marketing-img {height: 6em;}
+
 
 }
 
@@ -247,6 +238,8 @@ footer ul {list-style: none;}
 
 .focus-large {font-size:6em; text-transform: uppercase;}
 .text-wrapper {font-size: 3em;}
+#marketing .marketing-img {height: 6.5em;}
+
 }
 
 
@@ -254,4 +247,6 @@ footer ul {list-style: none;}
 
 .focus-large {font-size:7em; text-transform: uppercase;}
 .text-wrapper {font-size: 4em;}
+	#marketing .marketing-img {height: 6.5em;}
+
 }

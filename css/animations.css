@@ -61,3 +61,8 @@
     background: rgba(255, 255, 255, 0.8); 
 }
 
+
+#donuts {
+    transition: width 2s;
+}
+

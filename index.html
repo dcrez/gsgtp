@@ -13,15 +13,9 @@
     <link href="css/animations.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Oswald|Dosis" rel="stylesheet">
     <script src="https://use.fontawesome.com/b676143643.js"></script>
-    <link href="owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="owlcarousel/assets/owl.theme.default.min.css" rel="stylesheet">
     <script src="js/jquery-3.1.0.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <!--<script src="data/marketing.js"></script>-->
-    <!--<script src="js/handlebars-v3.0.3.js"></script>
-    <script src="js/render.js"></script>-->
-	<script src="owlcarousel/owl.carousel.min.js"></script>
-
+  
 
 </head>
 
@@ -52,7 +46,7 @@
 						<ul class="dropdown-menu">
 							<li><a href="#opportunities">Looking for your next gig?</a></li>
 							<li><a href="#referrals">Want a bigger payday?</a></li>
-							<li><a href="candidatefaq.html">Candidate FAQ</a></li>
+							<li><a href="./assets/Applicant-FAQ.pdf" target="_blank">Candidate FAQ</a></li>
 						</ul>
 						</li>
                     <li><a href="#subscribe">Subscribe</a></li>
@@ -125,19 +119,49 @@ money in your pocket from the bill rate on the project, and isn’t that a lot m
     <div class="col-md-12 tab-pane fade collapse" id="shoes">Shoes Detail</div>
 		</div>
 <!-- End marketing with tabs -->
-    
+    <!--
 	<section id="marketing">
 		<div class="container">
 			<h1 class="text-center">Why choose STAR?</h1>
 			<p class="focus text-center">We’ve been quietly disrupting the Twin Cities market inspiring interest, creating energy, and fostering respect and loyalty through our work.</p>
 		</div>
-     	<div class="owl-carousel">
-			<div class="item">Content 1</div>
-			<div class="item">Content 2 </div>
-			<div class="item">Content 3</div>
-		</div>
-      
-      
+	<a href="#donuts-detail" id="donuts" data-toggle="collapse" class="js-marketing">	
+    <div class="col-md-4">
+     <img class="marketing-img" src="./assets/donuts.jpg">
+		<h3 class="text-uppercase">We won't bring you donuts</h3>
+		<p class="marketing-teaser">We run lean. No gimmicks. No fuss. Using tech, we minimze our overhead to maximize your payout.</p>
+			<i class="fa fa-plus-circle"></i>
+   
+     </div>
+      <div class="col-md-8 collapse" id="donuts-detail">
+		  <p class="focus">What do you want: donuts or dollars?</p>
+			<p>Just so we’re clear up front, if we successfully place you in a project at one of our clients, we’re not going to randomly drop in and bring you donuts. We are not going to give you STAR-themed swag like pens, notebooks or t-shirts. Finally, we do not have a box suite for the Twins, Wild, or Vikings, so don’t look for a game invite from us. </p>
+			<p>It’s not that we don’t care or want to hang with you, it’s just that we thought you’d rather get more 
+money in your pocket from the bill rate on the project, and isn’t that a lot more exciting than a bunch of junk food or chachkies that will collect dust on your shelf?</p>
+		  				</div>
+		</a>
+      <a href="#rabbit-detail" id="rabbit" data-toggle="collapse" class="js-marketing">
+      <div class="col-md-4"> 
+      <img class="marketing-img" src="assets/rabbit.jpg">
+		  <h3 class="text-uppercase">We let the rabbit out of the hat</h3>
+		  <p class="marketing-teaser">More text</p>
+     	  <i class="fa fa-plus-circle"></i>
+      </div>
+		  <div class="col-md-12 collapse" id="rabbit-detail">
+			  <h2>I've got the magic...</h2>
+		  </div>
+		</a>  
+      <a href="#shoes-detail" id="shoes" data-toggle="collapse" class="js-marketing">
+	      <div class="col-md-4">
+			  <img src="./assets/redshoes.jpg" class="marketing-img">
+			  <h3 class="text-uppercase">We've been in your shoes</h3>
+			  <p>Text</p>
+	      	      <i class="fa fa-plus-circle"></i>
+</div>
+	      <div class="col-md-12 collapse" id="shoes-detail">
+			  <h2>We just want to be your favorite.</h2>
+		  </div>
+		</a>
       <!--
       <div class="col-md-4 text-center"><img src="./assets/donuts.png" class="marketing-img">
 		  <h3>We won't bring you donuts.</h3>
@@ -145,13 +169,84 @@ money in your pocket from the bill rate on the project, and isn’t that a lot m
       </div>
    
     <div class="item">
-		<div class="col-md-4 text-center"><img src="./assets/rabbit.png" class="marketing-img"><h3>We let the rabbit out of the hat</h3><p class="marketing-teaser">No secrets. No surprises. We let you know the opportunity details, bill rate, and get your permission before submitting for you for any role. <a href="#"><span class="fa fa-plus"></span></a></p></div>
+		<div class="col-md-4 text-center"><img src="./assets/rabbit.png" class="marketing-img"><h3>We let the rabbit out of the hat</h3><p class="marketing-teaser"><a href="#"><span class="fa fa-plus"></span></a></p></div>
     </div>
-    <div class="item">
-      <div class="col-md-4"><a href="#"><img src="http://placehold.it/500/eeeeee/fff&amp;text=3" class="img-responsive"></a></div>
+   -->
+ 
+<section id="marketing">
+	
+	<div class="container">
+	<div class="text-center">
+	<h1 class="text-center">Why choose STAR?</h1>
+	<p class="focus text-center" style="margin-bottom: 15px; max-width: 450px; display: inline-block;">We’ve been quietly disrupting the Twin Cities market inspiring interest,creating energy, and fostering respect and loyalty through our work, and: </p>
+		</div>
+ 	<div class="media js-marketing">
+  <div class="media-left">
+    <a href="#donuts-detail" class="marketing-teaser" data-toggle="collapse">
+      <img class="media-object marketing-img" src="./assets/donuts.png" alt="...">
+      <i class="fa fa-plus-circle"></i>
+	  </a>
+	  <br>	
+   </div>
+  <div class="media-body">
+	  <h3 class="media-heading text-uppercase text-info">We won't bring you donuts </h3>
+	  <p style="font-size:1.1em;">We run lean. No gimmicks. No fuss. Using tech, we minimze our overhead to maximize your payout.</p>
+	  <div id="donuts-detail" class="collapse">
+			<h4>Donuts or dollars?</h4>
+			<p>Just so we’re clear up front, if we successfully place you in a project at one of our clients, we’re not going to randomly drop in and bring you donuts. We are not going to give you STAR-themed swag like pens, notebooks or t-shirts. Finally, we do not have a box suite for the Twins, Wild, or Vikings, so don’t look for a game invite from us. </p>
+			<p>It’s not that we don’t care or want to hang with you, it’s just that we thought you’d rather get more 
+money in your pocket from the bill rate on the project, and isn’t that a lot more exciting than a bunch of junk food or chachkies that will collect dust on your shelf?</p>
+		</div>
+		</div></div>
+		
+		
+		<div class="media pull-right js-marketing">
+ 
+  <div class="media-body">
+	  <h2 class="media-heading text-uppercase text-right text-info">We let the rabbit out of the hat </h2>
+    <p class="text-right" style="font-size:1.1em;">No secrets. No surprises. We let you know the opportunity details, bill rate, and get your permission before submitting for you for any role. </p>
+    <div id="rabbit-detail" class="collapse">
+			<h4>We know you can’t work with just one firm. We just want to be your favorite.</h4>
+		<p>Like a magician who tells you how the trick is performed, STAR Collaborative’s transparent business model has exposed the staffing and consulting industry’s secrets. Here are a few examples of our transparency:</p>
+		<ul>
+			<li>When we work with you on a potential contracting role, we tell you the client bill rate, and your pay rate, so you know exactly your share of the bill rate.</li>
+			<li>If we think you’re a good match, we’ll get your permission to present your resume. We never submit a resume without your knowledge and approval.</li>
+			<li>You get access to <strong> ALL</strong> of the opportunities we receive, which are instantly viewable on our website or delivered to you via email subscription.</li>
+			<li>We’ll let you know if you’re a good fit for the role you are interested in, and if we think presenting you to the client is a good idea.</li>
+			<li>We’ll give you honest and direct feedback, and we’ll help you maximize your resume to ensure marketability.</li>
+			<li>As we work with our clients as they review and vet candidates, we’ll provide you with any feedback provided so we can adapt and improve.</li>
+		</ul>
+
+			<p>Even though we think these things are common sense, they’re not always common practice in the industry. Our goal is to create a positive candidate experience for you based on no secrets or surprises.” to make the last line it’s own line.</p>
+		</div>
     </div>
- -->
-	</section>
+		 <div class="media-right">
+    <a href="#rabbit-detail" class="marketing-teaser" data-toggle="collapse">
+      <img class="media-object marketing-img" src="./assets/rabbit.png" alt="...">
+      <i class="fa fa-plus-circle"></i>
+	  </a>	
+   </div>
+		</div>
+		<div class="media pull-left js-marketing">
+  <div class="media-left">
+    <a href="#shoes-detail" class="marketing-teaser" data-toggle="collapse">
+      <img class="media-object marketing-img" src="./assets/redshoes.jpg" alt="...">
+      <i class="fa fa-plus-circle"></i>
+	  </a>	
+   </div>
+  <div class="media-body">
+	  <h2 class="media-heading text-uppercase text-info">We've been in your shoes</h2>
+	  <p style="font-size:1.1em;">We know who and what make the best project and contract experiences. We work hard to ensure you have both. </p>
+	  <div id="shoes-detail" class="collapse">
+			<h4>How many staffing firms can literally say they’ve been in your shoes?</h4>
+			<p>It’s often said that you can’t understand a person unless you’ve walked a mile in their shoes. If that’s the case, we’ve walked more than a few marathons in understanding the challenges you face in your role!</p>
+			<p>STAR’s owners, operations team, and recruiters have actually worked on your side of the table. We were the internal corporate team members responsible for sourcing, managing, and maintaining the quality of third party contractors and consultants. We’ve led massive, cross-functional program and project teams and had to assemble the right portfolio of talent to get the job done. We’ve led PMOs and internal vendor management and resource programs. Basically, we’ve been the candidate, client, hiring manager, vendor and resource manager (we are younger than it seems)!</p>
+		  <p>Not only that, we know the operations, logistics, and procurement steps necessary to get talent sourced, screened, onboarded and running in an efficient and effective way. We know the internal demands to finding the right talent, and we do our best to make your job easier.</p>
+		  <p>No longer a start up, STAR has eight years under its belt of serving more than 70 clients and placing hundreds of contract, contract-to-hire, and direct hire candidates at all size companies: small startup to Fortune 50 VMS programs. We can handle any size or volume talent needs, thanks to our unique knowledge of the business of doing business.</p>
+		</div>
+		</div></div>
+	</div>
+</section>
     
 
     <div id="subscribe-mini">
@@ -164,7 +259,7 @@ money in your pocket from the bill rate on the project, and isn’t that a lot m
         </div>
     </div>
     <!-- End mini-subscribe -->
-    <div id="who">
+    <section id="who">
         <div class="row">
             <div class="container">
                 <h2 class="text-center">About Us</h2>
@@ -180,7 +275,6 @@ money in your pocket from the bill rate on the project, and isn’t that a lot m
           		</div>
            		<div class="col-md-6" id="values">
 			<h3 class="text-center">Our Values</h3>
-					<p class="focus">[placeholder for content]</p>
 					<ul>
 						<li><span class="oswald text-uppercase text-danger">Connected: </span> We are in the relationship business.</li>
 						<li><span class="oswald text-uppercase text-danger">Disruptive: </span>We like to challenge ourselves and the industry</li>
@@ -188,9 +282,14 @@ money in your pocket from the bill rate on the project, and isn’t that a lot m
 						<li><span class="oswald text-uppercase text-danger">Transparent: </span>We value honesty and help our clients and candidates to understand the “why”.</li>
 						<li><span class="oswald text-uppercase text-danger">Fair: </span>We value integrity.</li>
 						<li><span class="oswald text-uppercase text-danger">Lean: </span> We accomplish a lot with little.</li>
-						<li><span class="oswald text-uppercase text-danger">Respected and Respectful: </span>We treat others the way we want to be treated.</li>
+						<li><span class="oswald text-uppercase text-danger">Respect: </span>We treat others the way we want to be treated.</li>
 					</ul>
 			</div>
+				<div class="col-md-6 text-center">
+					<p>We've accomplished much since our founding 2009. Click the button below to learn more our story and accomplishments along the way.</p>
+                <a href="ourstory.html" class="btn btn-primary text-center">Our Story</a>
+            </div>
+				</div>
 			</div>
                 <div class="container text-center" id="team">
                    			<h2>Our Team</h2>
@@ -234,15 +333,8 @@ money in your pocket from the bill rate on the project, and isn’t that a lot m
                     </div>
 					</div>
                 </div>
-                <div class="container text-center" id="history">
-					<h2 class="text-center">Our story</h2>
-					<p class="focus text-center"></p>
-                    <p>PLACEHOLDER: Call to action for about us, our story, and other content goes here</p>
-                    <button class="btn btn-primary text-center">Learn more</button></div>
-            </div>
-
-
-        </div>
+               
+        </section>
 
    
     <div id="opportunities" class="parent-centered-div container-fluid">
@@ -250,7 +342,7 @@ money in your pocket from the bill rate on the project, and isn’t that a lot m
             <div class="container">
 				<h1 class="text-center">Opportunities <small>Looking for your next gig?</small></h1>
                 <p class="text-center focus"></p>
-				<p>If you are interested in applying for a opportunity with STAR Collaborative, please review our applicant <a href="applicant-faq.html">FAQ</a> before submitting your application (we only submit fully vetted and qualified candidates to our clients, so consider this the first step to helping us get to know you). To apply for a opportunity, click on the STAR opportunity number link below.</p>
+				<p>If you are interested in applying for a opportunity with STAR Collaborative, please review our applicant <a href="assets/Applicant-FAQ.pdf" target="_blank">FAQ</a> before submitting your application (we only submit fully vetted and qualified candidates to our clients, so consider this the first step to helping us get to know you). To apply for a opportunity, click on the STAR opportunity number link below.</p>
             </div>
             <div class="container">
                 <div class="intrinsic-container intrinsic-container-4x3">
@@ -275,13 +367,13 @@ money in your pocket from the bill rate on the project, and isn’t that a lot m
         </div>
     </div>
     <div id="subscribe" class="container text-center">
-        <h2>Be in the know</h2>
+        <h2 style="color:white;">Be in the know</h2>
         <p class="col-md-3 col-sm-2 hidden-xs"></p>
         <p class="col-md-6 col-sm-8 col-xs-12">Interested in learning more about STAR and our opportunities, but don't see anything that immediately strikes your fancy? Get customized email updates in your inbox as new opportunities become available by subscribing to our mailing list!</p>
         <p class="col-md-3 col-sm-2 hidden-xs"></p>
-        <p class="col-md-12"><a href="#" class="btn btn-lg btn-primary">Subscribe</a></p>
+        <p class="col-md-12"><a href="http://www.starcollaborative.com/subscribe" class="btn btn-lg btn-primary" target="_blank">Subscribe</a></p>
     </div>
-
+<!--
     <footer>
         <div class="container">
             <div class="col-md-4">
@@ -304,6 +396,7 @@ money in your pocket from the bill rate on the project, and isn’t that a lot m
             </div>
         </div>
     </footer>
+   -->
 
     <!--
     <script id="marketing_template" type="text/x-handlebars-template">
@@ -365,32 +458,45 @@ money in your pocket from the bill rate on the project, and isn’t that a lot m
             });
         }
     </script>
-   
-   <!-- start multi-item carousel -->
-   
+    
 	<script>
-		$(document).ready(function(){
- $('.owl-carousel').owlCarousel({
-    loop:true,
-    margin:10,
-    nav:true,
-    responsive:{
-        0:{
-            items:1,
-			dots:true
-        },
-        600:{
-            items:3,
-			dots:true
-        },
-        1000:{
-            items:3,
-			dots:true
-        }
-    }
-});
-	</script>
+	$('.js-marketing').on('click', function() {
+			$('.marketing-teaser').removeClass('active');
+				$(this).find('i').toggleClass('fa-plus-circle fa-minus-circle');
+				$(this).find('a').toggleClass('active');
+	});
 	
+	</script>
+   <!--
+	<script>
+	$('#donuts').on('click', function() {
+	$('.js-marketing').removeClass('active');
+    $(this).toggleClass('active');
+		if ($(window).width() < 900 {
+			$('.js-marketing').removeClass('row');
+			}
+	
+	$( "#shoes" ).before( $( "#rabbit" ) );
+    $(this).toggleClass('row active');
+	$(this).find('i').toggleClass('fa-plus-circle fa-minus-circle')
+
+});
+		$('#rabbit').on('click', function() {
+		$('.js-marketing').removeClass('row active');
+	$( "#shoes" ).after( $( "#rabbit" ) );
+    $(this).toggleClass('row active');
+	$(this).find('i').toggleClass('fa-plus-circle fa-minus-circle')
+
+});
+		$('#shoes').on('click', function() {
+				$('.js-marketing').removeClass('row active');
+			$( "#shoes" ).after( $( "#rabbit" ) );
+    $(this).toggleClass('row active');
+	$(this).find('i').toggleClass('fa-plus-circle fa-minus-circle')
+
+});
+	
+	</script> -->
 	
 </body>
 
