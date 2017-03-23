@@ -16,6 +16,7 @@ linear-gradient(
 .navbar .nav li a {color:teal; 	text-shadow: 0px 0px -1px white;}
 .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active >
  a:hover, .navbar-default .navbar-nav > .active > a:focus {color:hsla(20,81%,46%,1.00); text-shadow: 0px 0px -1px white; background-color: transparent; background-image: none; border-bottom: 10px }
+.navbar-right li {display: inline-block;}
 
 a {color:hsla(20,81%,46%,1);}
 
@@ -72,7 +73,7 @@ button {text-transform: uppercase; font-size: 2em; font-family: 'Oswald', sans-s
 	position:absolute;
 	z-index:100;}
 
-section {z-index: 2; position: relative;}
+section {z-index: 2; position: relative; box-shadow: 0px 0px 10px 10px hsla(0,0%,0%,.21);;}
 
 #landing {
 	padding: 50px;
@@ -92,22 +93,7 @@ section {z-index: 2; position: relative;}
 	display: -moz-flex;
 	display: -ms-flex;
 	display: -o-flex;
-	flex:1 auto;
-	/*flex-direction: column;
-	-webkit-flex-direction: column;
-	-moz-flex-direction:column;
-	-ms-flex-direction:column;
-	justify-content: center;
--webkit-box-align: center; -moz-box-align: center; 
-   -ms-flex-align: center; /* You know the drill now… 
-   -webkit-align-items: center;
-   align-items: center;	
-	
-	-webkit-box-pack: center; -moz-box-pack: center;
-   -ms-flex-pack: center;
-   -webkit-justify-content: center;*/
-}
-
+	flex:1 auto;}
 
 #landing .landing-flex {
 	flex: 1;
@@ -119,7 +105,6 @@ section {z-index: 2; position: relative;}
 	-mos-flex-grow: 1;
 	-ms-flex-grow: 1;
 	align-self: center;
-	/*justify-content: flex-start;*/
 }
 
 #marketing {
@@ -128,12 +113,9 @@ section {z-index: 2; position: relative;}
 	padding: 30px 0 30px 0; }
 
 
-/*#marketing .container-fluid {margin: 0; padding: 0;}*/
 #marketing a {color:black; text-align: center; cursor: pointer; text-decoration: none;}
 #marketing a:hover {color:teal;}
-/*#marketing a .marketing-teaser i {position: absolute; bottom:12px; right:10px; font-size: 1.25em;} */
 #marketing .marketing-img {height: 4.15em;}
-
 #marketing .marketing-teaser {display: block; position: relative}
 #marketing .marketing-teaser .active {z-index: 1; border-bottom: solid 5px white;}
 #marketing .marketing-teaser i {position:absolute; bottom:0; left:0;}
@@ -141,29 +123,32 @@ section {z-index: 2; position: relative;}
 #subscribe-mini {
 	width:100%;
 	min-height: 250px;
-	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffd65e+0,febf04+100;Yellow+3D+%232 */
-background: rgb(255,214,94); /* Old browsers */
-background: -moz-linear-gradient(top,  rgba(255,214,94,1) 0%, rgba(254,191,4,1) 100%); /* FF3.6-15 */
-background: -webkit-linear-gradient(top,  rgba(255,214,94,1) 0%,rgba(254,191,4,1) 100%); /* Chrome10-25,Safari5.1-6 */
-background: linear-gradient(to bottom,  rgba(255,214,94,1) 0%,rgba(254,191,4,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffd65e', endColorstr='#febf04',GradientType=0 ); /* IE6-9 */
 	position: relative;
 	padding-top: 50px;
 	padding-bottom: 50px;
+	background:
+	linear-gradient(
+		 rgba(215, 218, 217,0.75),
+		 rgba(248, 130, 11, 0.55)
+	 ),
+	 url(../assets/3-donuts.jpg);
+	background-size:cover;
+	background-attachment: fixed;
+	background-position: center center;
 }
 
-.height-check {height: 100%; position: relative;}
 
 #who {
 	width:100%;
-	background-color: #fff;
-	padding-top: 30px;
-	padding-bottom: 30px;
+	background-color: #F1F1F1;
 }
+
+#who #wearestar {height: 100%; width:100%; background-color:#fff; padding-bottom: 20px;}
+#who #wearestar {z-index: 2; position: relative; box-shadow: 0px 0px 10px 10px hsla(0,0%,0%,.11);;}
+
 
 #who ul li {padding: 7px 0;}
 #who ul li .oswald {font-size:1.1em;}
-
 #who .team-member {
 	padding-top: 10px;
 	min-height: 300px;
@@ -194,19 +179,34 @@ display: inline-block;
 background-color: rgba(0,153,153,.75);}
 
 #opportunities {
-	background-color:hsla(0,4%,82%,0.85);
-	padding-top: 50px;
-	padding-bottom: 50px;
+	background-color:#fff;
+}
+
+#referrals {
+	background: #f1f1f1;
+	padding-bottom: 30px;
 }
 
 
 #subscribe {
 	padding-top:20px;
 	padding-bottom: 50px;
-	background-color:hsla(20,81%,46%,1);
-	color:white;
+	background:
+	linear-gradient(
+		 rgba(215, 218, 217,0.55),
+		 rgba(248, 130, 11, 0.85)
+	 ),
+	 url(../assets/9.jpg);
+	background-size:cover;
+	background-attachment: fixed;
+	background-position: center center;
 	width:100%;
+	color:black;
+	font-weight: 600;
+	font-size: 1.15em;
 }
+
+
 
 footer {
 	padding-top: 20px;
