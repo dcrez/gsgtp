@@ -64,11 +64,11 @@
 
 .navbar.scrolled {
     background: rgb(68, 68, 68); 
-    background: rgba(255, 255, 255, 0.8); 
+    background: rgba(255, 255, 255, 1); 
 }
 
 
-#donuts {
+#donuts, #shoes, #rabbit {
     transition: width 2s;
 }
 
