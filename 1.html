@@ -14,12 +14,11 @@
 <body>
 <section id="why">
 	<div class="owl-carousel text-center">
-		<div class="item js-marketing"><a href="#donuts-detail" class="marketing-teaser item text-center" data-toggle="collapse" data-target="#donuts-detail" style="z-index: 99">
+		<a href="#donuts-detail" class="marketing-teaser item text-center" data-toggle="collapse"><div class="item js-marketing">
       <img src="./assets/donuts.png" alt="A small donut with pink frosting, and multi-colored sprinkles" class="marketing-img" style="display: inline-block;">
       <i class="fa fa-plus-circle"></i>
-	  </a>
 	   <h3 class="media-heading text-uppercase ">We won't bring you donuts</h3>
-			<p style="font-size:1.1em;">We run lean. No gimmicks. No fuss. Using tech, we minimize our overhead to maximize your payout.</p></div>
+			<p style="font-size:1.1em;">We run lean. No gimmicks. No fuss. Using tech, we minimize our overhead to maximize your payout.</p></div></a>
 		<div class="item js-marketing" role="tab">
 			    <a href="#rabbit-detail" class="marketing-teaser" data-toggle="collapse">
       <img class="marketing-img" src="./assets/rabbit.png" alt="A large brown rabbit with alert ears">
@@ -40,8 +39,8 @@
 		</div>
 		
 	</div>
-	<div class="tab-content">
-		<div id="donuts-detail" class="collapse">Donuts</div>
+	<div>
+		<div id="donuts-detail" class="collapse"><h1>Donuts</h1></div>
 		<div id="rabbit-detail" class="collapse">Rabbit</div>
 		<div id="shoes-detail" class="collapse">Shoes</div>
 	</div>
@@ -55,6 +54,7 @@
 	loop:true,
     margin:30,
 	dots:true,
+    URLhashListener:true,
     responsiveClass:true,
     responsive:{
         0:{
