@@ -73,7 +73,9 @@ button {text-transform: uppercase; font-size: 2em; font-family: 'Oswald', sans-s
 	position:absolute;
 	z-index:100;}
 
-section {z-index: 2; position: relative; box-shadow: 0px 0px 10px 10px hsla(0,0%,0%,.21);;}
+section {z-index: 2; position: relative;}
+#why, #wearestar, #team, #opportunities, #referrals {padding-top:35px; padding-bottom:50px;}
+
 
 #landing {
 	padding: 50px;
@@ -107,18 +109,18 @@ section {z-index: 2; position: relative; box-shadow: 0px 0px 10px 10px hsla(0,0%
 	align-self: center;
 }
 
-#marketing {
+#why {
 	background: white;
 	width: 100%;
-	padding: 30px 0 30px 0; }
+}
 
 
-#marketing a {color:black; text-align: center; cursor: pointer; text-decoration: none;}
-#marketing a:hover {color:teal;}
-#marketing .marketing-img {height: 4.15em;}
-#marketing .marketing-teaser {display: block; position: relative}
-#marketing .marketing-teaser .active {z-index: 1; border-bottom: solid 5px white;}
-#marketing .marketing-teaser i {position:absolute; bottom:0; left:0;}
+#why a {color:black; text-align: center; cursor: pointer; text-decoration: none;}
+#why a:hover {color:teal;}
+#why .marketing-img {height: 4.15em; width: auto !important; display: inline-block;}
+#why .marketing-teaser {display: block; position: relative;}
+#why .marketing-teaser .active {z-index: 1; border-bottom: solid 5px white;}
+#why .marketing-teaser i {position:absolute; bottom:0;}
 
 #subscribe-mini {
 	width:100%;
@@ -145,8 +147,8 @@ section {z-index: 2; position: relative; box-shadow: 0px 0px 10px 10px hsla(0,0%
 	background-color: #F1F1F1;
 }
 
-#who #wearestar {height: 100%; width:100%; background-color:#fff; padding-bottom: 20px;}
-#who #wearestar {z-index: 2; position: relative; box-shadow: 0px 0px 10px 10px hsla(0,0%,0%,.11);;}
+#who #wearestar {height: 100%; width:100%; background-color:#fff; padding-bottom: 35px;}
+#who #wearestar {z-index: 2; position: relative;}
 
 
 #who ul li {padding: 7px 0;}
@@ -186,7 +188,6 @@ background-color: rgba(0,153,153,.75);}
 
 #referrals {
 	background: #f1f1f1;
-	padding-bottom: 30px;
 }
 
 
@@ -208,7 +209,7 @@ background-color: rgba(0,153,153,.75);}
 	font-size: 1.25em;
 }
 
-
+/*
 
 footer {
 	padding-top: 20px;
@@ -222,7 +223,7 @@ footer {
 }
 
 footer ul {list-style: none;}
-
+*/
 /* Tablet Specific Styles */
 
 
