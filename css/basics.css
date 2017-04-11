@@ -209,34 +209,28 @@ background-color: rgba(0,153,153,.75);}
 	font-size: 1.25em;
 }
 
-/*
-
 footer {
 	padding-top: 20px;
 	padding-bottom: 20px;
 	min-height: 200px;
 	bottom: 0;
-	background-color:black;
-	color: white;
 	z-index: -1;
 	width:100%;
+	background: #f1f1f1;
 }
 
+
 footer ul {list-style: none;}
-*/
-/* Tablet Specific Styles */
 
 
 @media only screen and (max-width: 768px) {
 	.navbar {border-color: transparent !important;}
 }
 
-@media only screen and (min-width: 660px) {
+@media only screen and (min-width: 576px) {
 .focus-large {font-size:3.4em; text-transform: uppercase;}
 .text-wrapper {font-size: 2.1em;}
 #marketing .marketing-img {height: 6em;}
-
-
 }
 
 /* Desktop Specific Styles*/
@@ -249,7 +243,7 @@ footer ul {list-style: none;}
 }
 
 
-@media only screen and (min-width: 900px) {
+@media only screen and (min-width: 992px) {
 
 .focus-large {font-size:7em; text-transform: uppercase;}
 .text-wrapper {font-size: 4em;}
