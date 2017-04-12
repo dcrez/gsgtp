@@ -19,16 +19,14 @@
     
 <link href="css/basics.css" rel="stylesheet">
 	</head>
-<body>
+<body data-spy="scroll" data-target=".navbar" data-offset="50">
 	<header></header>
 	<section id="landing"></section>
 	<section id="why"></section>
 	<section id="subscribe-mini"></section>
-	<section id="who">
-		<article id="wearestar"></article>
-		<article id="inthenews"></article>
-		<article id="team"></article>
-	</section>
+	<section id="inthenews"></section>
+	<section id="wearestar"></section>
+	<section id="team"></section>
 	<section id="opportunities"></section>
 	<section id="referrals"></section>
 	<section id="subscribe"></section>
@@ -44,5 +42,35 @@
 	<script>$('#what').load('./assets/what.html');</script>	<script>$('#opportunities').load('./assets/opportunities.html');</script>
 	<script>$('#referrals').load('./assets/referrals.html');</script>
 	<script>$('#subscribe').load('./assets/subscribe.html');</script>
+	<script async type="text/javascript">
+        /**
+         * Listen to scroll to change header opacity class
+         */ 
+        function checkScroll() {
+            var startY = $('.navbar').height() * 2; //The point where the navbar changes in px
+
+            if ($(window).scrollTop() > startY) {
+                $('.navbar').addClass("scrolled");
+            } else {
+                $('.navbar').removeClass("scrolled");
+            }
+        }
+
+        if ($('.navbar').length > 0) {
+            $(window).on("scroll load resize", function() {
+                checkScroll();
+            });
+        }
+    </script>
+    
+	<script>
+	$('.js-marketing').on('click', function() {
+			$('.marketing-teaser').removeClass('active');
+				$(this).find('i').toggleClass('fa-plus-circle fa-minus-circle');
+				$(this).find('a').toggleClass('active');
+	});
+	
+	</script>
+
 </body>
 </html>
