@@ -3,22 +3,24 @@
 <head>
 <meta charset="utf-8">
 <meta http-equiv="Cache-control" content="public,max-age=30000,s-maxage=90000">
-
 <title>STAR Collaborative</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>STAR Collaborative</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css"/>
     <link href="css/basics.css" rel="stylesheet">
     <link href="css/iframe.css" rel="stylesheet">
     <link href="css/animations.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Oswald|Dosis" rel="stylesheet">
-    <script src="https://use.fontawesome.com/b676143643.js" async></script>
+   <!-- <link href="https://fonts.googleapis.com/css?family=Oswald|Palanquin" rel="stylesheet">-->
+    <link href="https://fonts.googleapis.com/css?family=Oswald:400|Palanquin" rel="stylesheet">
+
+    <script src="https://use.fontawesome.com/b676143643.js" ></script>
     <script src="js/jquery-3.1.0.min.js" type="text/javascript"></script>
     <script src="js/bootstrap.min.js" type="text/javascript"></script>
-    
-<link href="css/basics.css" rel="stylesheet">
+    <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
 	</head>
+
 <body data-spy="scroll" data-target=".navbar" data-offset="50">
 	<header></header>
 	<section id="landing"></section>
@@ -34,14 +36,15 @@
 	<script>$('header').load('./assets/header.html');</script>
 	<script>$('footer').load('./assets/footer.html');</script>	<script>$('#landing').load('./assets/landing.html');</script>
 	<script>$('#why').load('./assets/why.html');</script>
-	<script>$('#subscribe-mini').load('./assets/subscribe-mini.html');</script>
-	<script>$('#who').load('./assets/who.html');</script>
-	<script>$('#wearestar').load('./assets/wearestar.html');</script>
-	<script>$('#inthenews').load('./assets/inthenews.html');</script>
-	<script>$('#team').load('./assets/team.html');</script>
-	<script>$('#what').load('./assets/what.html');</script>	<script>$('#opportunities').load('./assets/opportunities.html');</script>
-	<script>$('#referrals').load('./assets/referrals.html');</script>
-	<script>$('#subscribe').load('./assets/subscribe.html');</script>
+	<script async>$('#subscribe-mini').load('./assets/subscribe-mini.html');</script>
+	<script async>$('#who').load('./assets/who.html');</script>
+	<script async>$('#wearestar').load('./assets/wearestar.html');</script>
+	<script async>$('#inthenews').load('./assets/inthenews.html');</script>
+	<script async>$('#team').load('./assets/team.html');</script>
+	<script async>$('#what').load('./assets/what.html');</script>	
+	<script async>$('#opportunities').load('./assets/opportunities.html');</script>
+	<script async>$('#referrals').load('./assets/referrals.html');</script>
+	<script async>$('#subscribe').load('./assets/subscribe.html');</script>
 	<script async type="text/javascript">
         /**
          * Listen to scroll to change header opacity class
@@ -63,14 +66,7 @@
         }
     </script>
     
-	<script>
-	$('.js-marketing').on('click', function() {
-			$('.marketing-teaser').removeClass('active');
-				$(this).find('i').toggleClass('fa-plus-circle fa-minus-circle');
-				$(this).find('a').toggleClass('active');
-	});
-	
-	</script>
+
 
 </body>
 </html>

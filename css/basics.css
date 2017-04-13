@@ -21,7 +21,7 @@ linear-gradient(
 a {color:hsla(20,81%,46%,1);}
 
 body
-{font-family: 'Dosis', sans-serif; font-size: 16px;
+{font-family: 'Palanquin', sans-serif; font-size: 16px;
 background-image:url(../assets/shutterstock_416205871.jpg);
 background-size: cover;
 background-attachment: fixed;
@@ -54,9 +54,9 @@ button {text-transform: uppercase; font-size: 2em; font-family: 'Oswald', sans-s
 }
 
 .oswald {font-family: Oswald, sans-serif;}
-.dosis {font-family: Dosis, sans-serif;}
-.focus-large {font-size:2.5em; text-transform: uppercase;}
-.focus {font-size:1.25em;}
+.dosis {font-family: "Palanquin", sans-serif;}
+.focus-large {font-size:1.75em; text-transform: uppercase;}
+.focus {font-size:1.2em; font-weight: 100; padding-top:5px; padding-bottom: 10px; color:orangered; font-family: "", sans-serif;}
 .transparent-font {color:transparent;}
 
 .text-wrapper {
@@ -141,13 +141,16 @@ section {z-index: 2; position: relative;}
 	font-size: 1.2em;
 }
 
+section {padding-top: 30px; padding-bottom: 50px;}
 /*
 #who {
 	width:100%;
 	background-color: #F1F1F1;
 }
 */
-#wearestar {background-color:#fff;}
+#inthenews {background-color:#f1f1f1;}
+#inthenews .btn {margin:15px;}
+#wearestar {background-color:#fff; min-height: 300px;}
 #who {background: linear-gradient(
 		 rgba(215, 218, 217,0.75),
 		 rgba(248, 130, 11, 0.55)
@@ -198,37 +201,33 @@ background-color: rgba(0,153,153,.75);}*/
 #subscribe {
 	padding-top:20px;
 	padding-bottom: 20px;
-	background:
-	linear-gradient(
-		 rgba(215, 218, 217,0.90),
-		 rgba(215, 218, 217, 0.70)
-	 ),
-	 url(../assets/9.jpg);
+	background:hsla(179,89%,25%,1);
 	background-size:cover;
 	background-attachment: fixed;
 	width:100%;
-	color:black;
+	color:white;
 	background-position:top top;
-	font-weight: 600;
+	font-weight: 300;
 	font-size: 1.25em;
+	min-height: 300px;
 }
 
+#subscribe h2 {color:white;}
+#subscribe .btn-primary {border-color: white; color:white;}
+
 footer {
-	padding-top: 20px;
-	padding-bottom: 20px;
-	min-height: 200px;
+	padding-top: 10px;
+	padding-bottom: 10px;
 	bottom: 0;
 	z-index: -1;
 	width:100%;
-	background: teal;
+	background:hsla(190,100%,10%,1.00);
 	color: #f1f1f1;
 }
 
-footer h1, footer h2, footer h3 {color:yellowgreen;}
-
+footer h1, footer h2 {color:teal; display:inline-block;}
 footer ul {list-style: none;}
 footer img {text-shadow: 0px 0px 10px #f1f1f1; height: 2em; width: auto !important; display: inline-block;}
-footer h2 {line-height: 2em;}
 /*
 #wearestar {
 	display: flex;
