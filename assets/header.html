@@ -8,7 +8,7 @@
                 <span class="icon-bar"></span>-->
                 <i class="fa fa-bars"></i>
               </button>
-                <a class="navbar-left brand-image" href="#"><img src="assets/logo-allblack.png"></a> <span class="navbar-item transparent-font">Collaborative</span>
+                <a class="navbar-left brand-image" href="#"><img src="./assets/logo-notext.png"></a> <span class="navbar-item transparent-font">Collaborative</span>
             </div>
             <div class="collapse navbar-collapse" id="STAR-nav">
                 <ul class="nav navbar-nav">
@@ -41,4 +41,24 @@
         <!-- End fluid container that makes nav take up entire width -->
     </nav>
     <!-- End Bootstrap navigation -->
+    <script async type="text/javascript">
+        /**
+         * Listen to scroll to change header opacity class
+         */ 
+        function checkScroll() {
+            var startY = $('.navbar').height() * 2; //The point where the navbar changes in px
+
+            if ($(window).scrollTop() > startY) {
+                $('.navbar').addClass("scrolled");
+            } else {
+                $('.navbar').removeClass("scrolled");
+            }
+        }
+
+        if ($('.navbar').length > 0) {
+            $(window).on("scroll load resize", function() {
+                checkScroll();
+            });
+        }
+    </script>
     
