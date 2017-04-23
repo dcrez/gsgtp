@@ -150,10 +150,12 @@ section {
 	display: inline-block;
 }
 
+.team-content a:hover {text-decoration: none;}
+
 .team-content img:hover 
 	{-webkit-filter: grayscale(0);
   	filter: grayscale(0); 
-	background-color:dodgerblue;
-	border-color:dodgerblue;
+	background-color:teal;
+	border-color:orangered;
 	}
 

@@ -173,7 +173,7 @@ section {padding-top: 50px; padding-bottom: 50px;}
 }
 
 
-#team {background-color: hsla(0,3%,89%,0.85);}
+#team {background-color: /*hsla(0,3%,89%,0.85)*/ #f1f1f1;}
 
 #opportunities {
 	background-color:#fff;
