@@ -8,15 +8,6 @@
 <meta name="description" content="STAR Collaborative is a professional services staffing and search firm that provides high quality talent for a wide range of professions and industries.">
 <meta name="keywords" content="STAR Collaborative, staffing, recruiting, management consulting, project management consulting, business analysis consulting, quality assurance consulting, software development consulting, RUBY on rails developers, jobs in the Twin Cities, jobs in Minneapolis, jobs in St Paul, jobs in Minnesota, staffing firms in Minneapolis, recruiting agencies mn">
     <title>STAR Collaborative</title>
-	<script>
-	var urlSplit = document.URL.split("#");
-if (urlSplit[1]) {
-    location.href = "http://www.starcollaborative.com" + "/" + urlSplit[1];
-}
-else {
-    location.href = "http://www.starcollaborative.com";
-}
-	</script>
     <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -35,36 +26,37 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <body data-spy="scroll" data-target=".navbar" data-offset="50">
 <div id="wrapper">
 	<header></header>
-	<section id="landing"></section>
-	<section id="why"></section>
-	<section id="subscribe-mini"></section>
-	<!--<section id="inthenews"></section> -->
-	<section id="wearestar"></section>
-	<section id="team"></section>
-	<section id="opportunities"></section>
-	<section id="referrals"></section>
-	<section id="subscribe"></section>
-	<footer></footer>
+  <section>
+    <h1>Collaborative Network of Staffing Partners</h1>
+    <p>We put ‘collaborate’ in our name on purpose! Our business philosophy is deeply rooted in building communities and establishing productive relationships. To complement our portfolio of talent and expansive network, we have partnered with a dozen like-minded staffing firms who provide us access to their talent pools and expand the breadth and depth of our talent offerings.</p>
+    <p>All of our collaborative staffing partners are aligned with our value system and business model, so you will find them a great extension of the STAR Collaborative brand. These are trusted partners who work well with our staff and systems, so their ability to provide you the talent you are looking for is simple and seamless. We handle all the interactions with our partners through the whole life cycle of the talent sourcing process so you don’t have to worry about the complexities and volume of work associated in dealing with multiple vendors.</p>
+    <p>You get a single point of contact at STAR who, behind the scenes, is working diligently with our staffing partners to deliver a unified and simple goal: find you the best talent for your staffing needs. Imagine the network available to you in the combination of STAR Collaborative and our legion of trusted partners!</p>
+    <p>If you would like to hear more about our amazing Collaborative Network of Staffing partners, please send an email to <a href="mailto:info@starcollaborative.com" class="under">info@starcollaborative.com</a>, and one of our specialists will follow up immediately.</p>
+    <h3>Talent Focus Areas </h3>
+    <p>Here are the specialty talent areas our staffing partners can provide:</p>
+      <ul>
+        <li>Marketing and Creative</li>
+        <li>Call Center Staffing</li>
+        <li>Technical Developers</li>
+        <li>Executive level IT Management</li>
+        <li>Executive Recruiting</li>
+        <li>Data Warehousing & Business Intelligence</li>
+      </ul>
+    </div>
+  </div>
+  </section>
+  <footer></footer>
 	</div>
 	 <script src="https://use.fontawesome.com/b676143643.js" ></script>
     <script src="js/jquery-3.1.0.min.js" type="text/javascript"></script>
     <script src="js/bootstrap.min.js" type="text/javascript"></script>
 	<script>$('header').load('./assets/header.html');</script>
 	<script>$('footer').load('./assets/footer.html');</script>	<script>$('#landing').load('./assets/landing.html');</script>
-	<script>$('#why').load('./assets/why-v1.html');</script>
-	<script async>$('#subscribe-mini').load('./assets/subscribe-mini.html');</script>
-	<script async>$('#who').load('./assets/who.html');</script>
-	<script async>$('#wearestar').load('./assets/wearestar-v1.html');</script>
-	<script async>$('#inthenews').load('./assets/inthenews.html');</script>
-	<script async>$('#team').load('./assets/team.html');</script>
-	<script async>$('#what').load('./assets/what.html');</script>	
-	<script async>$('#opportunities').load('./assets/opportunities.html');</script>
-	<script async>$('#referrals').load('./assets/referrals.html');</script>
-	<script async>$('#subscribe').load('./assets/subscribe.html'); console.log("Success!");</script>
+
 	<script async type="text/javascript">
         /**
          * Listen to scroll to change header opacity class
-         */ 
+         */
         function checkScroll() {
             var startY = $('.navbar').height() * 2; //The point where the navbar changes in px
 

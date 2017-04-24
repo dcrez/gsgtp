@@ -18,7 +18,7 @@
     <meta name="description" content="STAR Collaborative is a professional services staffing and search firm that provides high quality talent for a wide range of professions and industries.">
 <meta name="keywords" content="STAR Collaborative, staffing, recruiting, management consulting, project management consulting, business analysis consulting, quality assurance consulting, software development consulting, RUBY on rails developers, jobs in the Twin Cities, jobs in Minneapolis, jobs in St Paul, jobs in Minnesota, staffing firms in Minneapolis, recruiting agencies mn">
 	<style>
-		#sitemap {background-color:#fff; height: 90vh;}
+		#sitemap {background-color:#fff; min-height: 90vh;}
 	</style>
 </head>
 
@@ -28,39 +28,39 @@
 		<div class="container">
 		<h1 class="text-center">STAR Collaborative Sitemap</h1>
 			<p></p>
-			<div class="col-md-4">
+			<div class="col-md-4 col-sm-6">
 			<h2>Talent</h2>
 			<ul class="nav">
-				<li><a href="starcollaborative.com/index.html#why">Why STAR?</a></li>
-				<li><a href="starcollaborative.com/subscribe/">Subscribe</a></li>
-				<li><a href="starcollaborative.com/index.html#opportunities">Opportunities</a></li>
-				<li><a href="starcollaborative.com/index.html#referrals">Referrals</a></li>
-				<li><a href="#">Applicant Submission FAQ</a></li>
+				<li><a href="/index.html#why">Why STAR?</a></li>
+				<li><a href="/subscribe/">Subscribe</a></li>
+				<li><a href="/index.html#opportunities">Opportunities</a></li>
+				<li><a href="/index.html#referrals">Referrals</a></li>
+				<li><a href="http://www.starcollaborative.com/documents/Applicant-FAQ.pdf">Applicant Submission FAQ</a></li>
 				<li class="disabled"><a href="#">Login <label class="label label-warning ">Coming Soon</label></a></li>
 				<li class="disabled"><a href="#">Invoice Portal <label class="label label-warning">Coming Soon</label></a></li>
 			</ul>
 			</div>
-			<div class="col-md-4">
+			<div class="col-md-4 col-sm-6">
 			<h2>Clients</h2>
 			<ul class="nav">
-				<li><a href="">Our Services</a></li>
+				<li class="disabled"><a href="/services.html">Our Services <label class="label label-warning">Coming soon</label></a></li>
 				<li class="disabled"><a href="#">Manage Your Requests <label class="label label-warning">Coming soon</label></a></li>
 			</ul>
 				<h2>Community Partners</h2>
 				<ul class="nav">
-					<li><a href="#">Partner Program</a></li>
-					<li><a href="#">Partner Portal</a></li>
+					<li><a href="/partner-program.html">Partner Program</a></li>
+					<li><a href="/cpopportunities/">Partner Portal</a></li>
 				</ul>
 			</div>
-			<div class="col-md-4">
+			<div class="col-md-4 col-sm-6">
 			<h2>About Us</h2>
 			<ul class="nav">
-				
-						<li><a href="">Our Values</a></li>
-						<li><a href="">Our Team</a></li>
-						<li><a href="">Our Story</a></li>
-						<li><a href="">Our Community</a></li>
-				
+
+						<li><a href="/index.html#values">Our Values</a></li>
+						<li><a href="/index.html#team">Our Team</a></li>
+						<li class="disabled"><a href="/story.html">Our Story <label class="label label-warning">Coming soon</label></a></li>
+						<li class="disabled"><a href="/community.html">Our Community <label class="label label-warning">Coming soon</label></a></li>
+
 			</ul>
 			</div>
 		</div>
@@ -69,7 +69,26 @@
 
 <script>$('header').load('./assets/header.html');</script>
 	<script>$('footer').load('./assets/footer.html');</script>	<script>$('#landing').load('./assets/landing.html');</script>
-	<script></script>  	
+	<script async type="text/javascript">
+        /**
+         * Listen to scroll to change header opacity class
+         */
+        function checkScroll() {
+            var startY = $('.navbar').height() * 1; //The point where the navbar changes in px
+
+            if ($(window).scrollTop() > startY) {
+                $('.navbar').addClass("scrolled");
+            } else {
+                $('.navbar').removeClass("scrolled");
+            }
+        }
+
+        if ($('.navbar').length > 0) {
+            $(window).on("scroll load resize", function() {
+                checkScroll();
+            });
+        }
+    </script>
 </body>
 
 </html>
