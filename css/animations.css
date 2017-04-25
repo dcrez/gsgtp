@@ -159,3 +159,33 @@ section {
 	border-color:orangered;
 	}
 
+.modal-open {
+    overflow: visible !important;
+}
+
+body.model-open, .model-open .navbar-fixed-top, .model-open .navbar-fixed-bottom {margin-right:-15px;}
+
+.modal-dialog {margin-right:0 !important;}
+
+.modal {
+overflow: visible !important;
+overflow-y:auto;
+}
+
+.vertical-alignment-helper {
+    display:table;
+    height: 100%;
+    width: 100%;
+}
+.vertical-align-center {
+    /* To center vertically */
+    display: table-cell;
+    vertical-align: middle;
+}
+.modal-content {
+    /* Bootstrap sets the size of the modal in the modal-dialog class, we need to inherit it */
+    width:inherit;
+    height:inherit;
+    /* To center horizontally */
+    margin: 0 auto;
+}
