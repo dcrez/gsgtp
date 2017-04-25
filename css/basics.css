@@ -46,8 +46,8 @@ button {text-transform: uppercase; font-size: 2em; font-family: 'Oswald', sans-s
 .btn {border-radius: 0; border-width: 2px; background-image:none; border: 3px solid transparent; cursor: pointer;}
 
 .btn-primary,
-.btn-primary:hover,
 .btn-primary:focus,
+.btn-primary:hover,
 .btn-primary:active,
 .btn-primary.active {
   color: black;
@@ -56,8 +56,8 @@ button {text-transform: uppercase; font-size: 2em; font-family: 'Oswald', sans-s
 	font-family: "Oswald", sans serif;
 	background-color: hsla(0,3%,89%,0.25);
 	font-size: 1.35em;
+	cursor: pointer;
 }
-
 .oswald {font-family: Oswald, sans-serif;}
 .dosis {font-family: "PT Serif", serif;}
 .focus-large {font-size:1.75em; text-transform: uppercase;}
@@ -175,6 +175,21 @@ section {padding-top: 50px; padding-bottom: 50px;}
 
 #team {background-color: /*hsla(0,3%,89%,0.85)*/ #f1f1f1;}
 
+#team .btn-primary,
+#team .btn-primary:hover,
+#team .btn-primary:focus,
+#team .btn-primary:active,
+#team .btn-primary.active {
+  color: orangered;
+  border-color: transparent;
+	text-transform: uppercase;
+	font-family: "Oswald", sans serif;
+	background-color: hsla(0,3%,89%,0.25);
+	font-size: 0.9em;
+}
+
+#team .btn-primary:hover{color:teal;}
+
 #opportunities {
 	background-color:#fff;
 }
@@ -185,23 +200,27 @@ section {padding-top: 50px; padding-bottom: 50px;}
 
 #subscribe {
 	
-	background: teal; /* For browsers that do not support gradients */
-  background: -webkit-linear-gradient(teal, green); /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(teal, green); /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(teal, green); /* For Firefox 3.6 to 15 */
-  background: linear-gradient(40deg,#000,teal,#000); /* Standard syntax */
+	/*background: teal;
+  background: -webkit-linear-gradient(teal, green);
+  background: -o-linear-gradient(teal, green); 
+  background: -moz-linear-gradient(teal, green); 
+  background: linear-gradient(40deg,#000,teal,#000);*/
+	background: linear-gradient(
+		 rgba(215, 218, 217,0.75),
+		 rgba(248, 130, 11, 0.55)
+	 ),
+	 url(../assets/9.jpg);
 	background-size:cover;
 	background-attachment: fixed;
 	width:100%;
-	color:white;
+	color:black;
+	text-shadow: 0 0 10px white;
 	background-position:top top;
-	font-weight: 300;
-	font-size: 1.25em;
+	font-weight: bolder;
+	font-size: 1.35em;
 	min-height: 300px;
 }
 
-#subscribe h2 {color:white;}
-#subscribe .btn-primary {border-color: white; color:white;}
 
 footer {
 	padding-top: 20px;
