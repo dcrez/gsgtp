@@ -27,7 +27,9 @@
 <link href="https://fonts.googleapis.com/css?family=Oswald:400|PT+Serif" rel="stylesheet">
 	<style>
 		#staffing-form {background-color: #fff; min-height: 100vh; min-height: 100%;}
-		body {background-image: none; min-height: 100vh;}
+		body {background-image: none;}
+    html, body { height: 100%; }
+    footer {position: absolute; bottom: 0; width: 100%; width: 100vw;}
 		h1 {
 			color:teal;
 			}
@@ -35,14 +37,14 @@
 </head>
 <body>
 <div class="wrapper">
-<article id="staffing-form" class="container">
+<article id="staffing-form" style="margin-top:30px; min-height:70vh;" class="container">
 		  <h1 class="text-center"><img src="assets/logo-notext.png" style="display: inline-block; height: 1.3em;">STAR Staffing, LLC.</h1>
 		  <h3>Contact Us</h3>
 		<p>Please use this form to contact us. </p>
 	<form action="https://www.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST" class="col-md-12">
-		
+
 		<input type="hidden" name="oid" value="00DA0000000In3Z" />
-			<input type="hidden" name="retURL" value="http://www.star-staffing.net/ok.html" />	
+			<input type="hidden" name="retURL" value="http://www.star-staffing.net/ok.html" />
 		<div class="form-group">
 			<label for="first_name">First name <span class="text-muted">(required)</span></label>
     <input type="text" class="form-control" id="first_name" placeholder="First name">
@@ -66,29 +68,17 @@
 		<div class="g-recaptcha" data-sitekey="6LeJqB4UAAAAAGatZS4Dz7uG_msueSgWtcMxXLvC"></div>
 		<input type="submit" name="submit" value="Submit" class="btn btn-primary" />
 	</form>
-			
-			  
-			<!--   
-			
-			
-				
-			
-			
-			</tr>
-			<tr>
-			<td><strong class="text-warning">*</strong> Last Name:</td>
-			<td><input type="text" id="last_name" name="last_name" class="width-200 input-text" /></td>
-			</tr>
-			
-			
-			
-	
-		<div>&copy; Copyright 2017, STAR Staffing, LLC. All rights reserved.
-		</div>
--->
 	</article>
+  <footer style="bottom:0;">
+    <div class="container-fluid">
+    <div class="text-left">
+    <h2>Star Staffing, LLC.</h2><br>
+    <small class="text-muted Oswald">&copy; Copyright 2017, STAR Staffing, LLC. All rights reserved.</small>
+    </div>
+  </div>
+  </footer>
 	</div>
-	
+
 <script type="text/javascript" src="https://lct.salesforce.com/sfga.js"></script>
 <script type="text/javascript">__sfga();</script>
 <script type="text/javascript">
