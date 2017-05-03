@@ -1,53 +1,115 @@
 <!doctype html>
 <html>
+
 <head>
 
-<meta charset="utf-8">
-<meta http-equiv="Cache-control" content="public,max-age=30000,s-maxage=90000">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="STAR Collaborative is a professional services staffing and search firm that provides high quality talent for a wide range of professions and industries.">
-<meta name="keywords" content="STAR Collaborative, staffing, recruiting, management consulting, project management consulting, business analysis consulting, quality assurance consulting, software development consulting, RUBY on rails developers, jobs in the Twin Cities, jobs in Minneapolis, jobs in St Paul, jobs in Minnesota, staffing firms in Minneapolis, recruiting agencies mn">
+    <meta charset="utf-8">
+    <meta http-equiv="Cache-control" content="public,max-age=30000,s-maxage=90000">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="STAR Collaborative is a professional services staffing and search firm that provides high quality talent for a wide range of professions and industries.">
+    <meta name="keywords" content="STAR Collaborative, staffing, recruiting, management consulting, project management consulting, business analysis consulting, quality assurance consulting, software development consulting, RUBY on rails developers, jobs in the Twin Cities, jobs in Minneapolis, jobs in St Paul, jobs in Minnesota, staffing firms in Minneapolis, recruiting agencies mn">
     <title>STAR Collaborative</title>
     <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-TVH9K25');</script>
-<!-- End Google Tag Manager -->
+    <script>
+        (function(w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start': new Date().getTime(),
+                event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-TVH9K25');
+    </script>
+    <!-- End Google Tag Manager -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
-    <link href="css/basics.css" rel="stylesheet">
-    <link href="css/iframe.css" rel="stylesheet">
-    <link href="css/animations.css" rel="stylesheet">
-   <!-- <link href="https://fonts.googleapis.com/css?family=Oswald|Palanquin" rel="stylesheet">-->
-    <link href="https://fonts.googleapis.com/css?family=Oswald:400|PT+Serif" rel="stylesheet"></head>
+    <link rel="stylesheet" href="../css/bootstrap-theme.min.css">
+    <link href="../css/basics.css" rel="stylesheet">
+    <link href="../css/iframe.css" rel="stylesheet">
+    <link href="../css/animations.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Oswald:400|PT+Serif" rel="stylesheet">
+</head>
 
 <body data-spy="scroll" data-target=".navbar" data-offset="50">
-<div id="wrapper">
-	<header></header>
-  <section id="opportunities" class="parent-centered-div container-fluid" style="padding-top:50px; height: 100vh;">
-      <div class="overlay">
-          <div class="container-fluid">
-      <h1 class="text-center" id="cp-portal">Collaborative Provider Portal</h1>
-    </div>
-          <div class="container" >
-              <div class="intrinsic-container intrinsic-container-4x3">
-                  <iframe src="http://starcollaborativeportal.force.com/PortalLoginPage?jp=true" allowfullscreen>
-                   </iframe>
-              </div>
-          </div>
-  </div>
-</section>
-  <footer></footer>
-	</div>
-	 <script src="https://use.fontawesome.com/b676143643.js" ></script>
-    <script src="js/jquery-3.1.0.min.js" type="text/javascript"></script>
-    <script src="js/bootstrap.min.js" type="text/javascript"></script>
-	<script>$('header').load('./assets/header.html');</script>
-	<script>$('footer').load('./assets/footer.html');</script>	<script>$('#landing').load('./assets/landing.html');</script>
+    <div id="wrapper">
+        <header>
+            <nav class="navbar navbar-default navbar-fixed-top">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#STAR-nav" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                      <i class="fa fa-bars"></i>
+                  </button>
+                        <a class="navbar-left brand-image" href="http://www.starcollaborative.com/index.html"><img src="../assets/logo-notext.png"></a> <span class="navbar-item transparent-font">Collaborative</span>
+                    </div>
+                    <div class="collapse navbar-collapse" id="STAR-nav">
+                        <ul class="nav navbar-nav">
+                            <li><a href="../index.html#why">Why STAR?</a></li>
+                            <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">About us<span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="../index.html#wearestar">Our values</a></li>
+                                    <li><a href="../index.html#team">Our team</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Talent<span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="../index.html#opportunities">Opportunities</a></li>
+                                    <li><a href="../index.html#referrals">Referrals</a></li>
+                                    <li><a href="./documents/Applicant-FAQ.pdf" target="_blank">Candidate FAQ</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="../index.html#subscribe">Subscribe</a></li>
+                            <!--<li><a href="#">Login  <label class="label label-warning">Coming soon!</label></a></li>-->
+                        </ul>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="social"><a href="https://www.facebook.com/STARcollaborative" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                            <li class="social"><a href="https://www.linkedin.com/company/star-collaborative" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+                            <li class="social"><a href="https://twitter.com/JOBSatSTAR" target="_blank"><i class="fa fa-twitter"></i></a></li>
 
-	<script async type="text/javascript">
+                        </ul>
+                    </div>
+                    <!-- End collapsed details -->
+                </div>
+                <!-- End fluid container that makes nav take up entire width -->
+            </nav>
+        </header>
+        <section id="opportunities" class="parent-centered-div container-fluid" style="padding-top:50px; min-height: 100vh;">
+            <div class="overlay">
+                <div class="container-fluid">
+                    <h1 class="text-center" id="cp-portal">Collaborative Provider Portal</h1>
+                </div>
+                <div class="container">
+                    <div class="intrinsic-container intrinsic-container-4x3">
+                        <iframe src="http://starcollaborativeportal.force.com/PortalLoginPage?jp=true" allowfullscreen>
+                   </iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer>
+            <div class="container-fluid">
+                <div class="col-md-8 col-sm-8 col-xs-12 text-left">
+                    <h2 class="text-left">STAR Collaborative</h2>
+                    <h4 class="text-left"><a href="mailto:info@starcollaborative.com">info@starcollaborative.com</a></h4>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-12 text-right">
+                    <h4 class="text-right"><a href="../privacy-policy.html">Privacy Policy</a> | <a href="../sitemap.html">Sitemap</a></h4>
+                    <h4 text-right><small>&copy; 2017 STAR Collaborative. All rights reserved.</small></h4>
+                </div>
+
+            </div>
+        </footer>
+    </div>
+    <script src="https://use.fontawesome.com/b676143643.js"></script>
+    <script src="./js/jquery-3.1.0.min.js" type="text/javascript"></script>
+    <script src="./js/bootstrap.min.js" type="text/javascript"></script>
+
+    <script async type="text/javascript">
         /**
          * Listen to scroll to change header opacity class
          */
@@ -68,24 +130,25 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         }
     </script>
     <script type="application/ld+json">
-{
-"@context": "http://schema.org/",
-"@type": "Organization",
-"name": "STAR Collaborative",
-"sameAs" : "http://www.starcollaborative.com",
-"address": {
-"@type": "PostalAddress",
-"addressLocality": "Minneapolis",
-"addressRegion": "MN",
-"postalCode": "55446",
-"streetAddress": "18120 46th Ave N",
-"email": "info@starcollaborative.com"},
-"founder": "Ed Lefkow",
-"numberOfEmployees": "7"
-}
-
-</script>
+        {
+            "@context": "http://schema.org/",
+            "@type": "Organization",
+            "name": "STAR Collaborative",
+            "sameAs": "http://www.starcollaborative.com",
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Minneapolis",
+                "addressRegion": "MN",
+                "postalCode": "55446",
+                "streetAddress": "18120 46th Ave N",
+                "email": "info@starcollaborative.com"
+            },
+            "founder": "Ed Lefkow",
+            "numberOfEmployees": "7"
+        }
+    </script>
 
 
 </body>
+
 </html>
