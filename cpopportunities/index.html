@@ -106,15 +106,15 @@
         </footer>
     </div>
     <script src="https://use.fontawesome.com/b676143643.js"></script>
-    <script src="./js/jquery-3.1.0.min.js" type="text/javascript"></script>
-    <script src="./js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="../js/jquery-3.1.0.min.js" type="text/javascript"></script>
+    <script src="../js/bootstrap.min.js" type="text/javascript"></script>
 
     <script async type="text/javascript">
         /**
          * Listen to scroll to change header opacity class
          */
         function checkScroll() {
-            var startY = $('.navbar').height() * 2; //The point where the navbar changes in px
+            var startY = $('.navbar').height() * 1; //The point where the navbar changes in px
 
             if ($(window).scrollTop() > startY) {
                 $('.navbar').addClass("scrolled");
@@ -123,7 +123,7 @@
             }
         }
 
-        if ($('.navbar').length > 0) {
+        if ($('.navbar').length > 1) {
             $(window).on("scroll load resize", function() {
                 checkScroll();
             });
