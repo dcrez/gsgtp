@@ -14,7 +14,7 @@ html, body {overflow-x: hidden;}
 .navbar-header .heading-item {font-size:1.5em; font-family: "Oswald"; text-transform: uppercase;}
 .social {line-height: 2.5em;}
 .social img {height: 1.75em;}
-.navbar .nav li a {color:#828C92; 	text-shadow: 0px 0px -1px white;}
+.navbar .nav li a {color:black; 	text-shadow: 0px 0px -1px white;}
 .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active >
  a:hover, .navbar-default .navbar-nav > .active > a:focus {color:#790025; text-shadow: 0px 0px -1px white; background-color: transparent; background-image: none; border-bottom: 10px }
 .navbar-right li {display: inline-block;}
@@ -22,7 +22,7 @@ html, body {overflow-x: hidden;}
 a {color:#790025;}
 
 body
-{font-family: 'PT Serif', serif; font-size: 1.35em;
+{font-family: 'Dosis', sans-serif; font-size: 1.35em;
 background-image:url(../assets/shutterstock_416205871.jpg);
 background-size: cover;
 background-attachment: fixed;
@@ -55,9 +55,9 @@ button {text-transform: uppercase; font-size: 2em; font-family: 'Oswald', sans-s
 	cursor: pointer;
 }
 .oswald {font-family: Oswald, sans-serif;}
-.dosis {font-family: "PT Serif", serif;}
+.dosis {font-family: "Dosis", serif;}
 .focus-large {font-size:1.75em; text-transform: uppercase;}
-.focus {font-size:1.2em; font-weight: 100; padding-top:5px; padding-bottom: 10px; color:#790025; font-family: "PT Serif", serif; }
+.focus {font-size:1.2em; font-weight: 100; padding-top:5px; padding-bottom: 10px; color:#790025; font-family: "Dosis", serif; }
 .transparent-font {color:transparent;}
 
 .text-wrapper {
@@ -201,10 +201,10 @@ section {padding-top: 50px; padding-bottom: 50px;}
   background: -o-linear-gradient(teal, green); 
   background: -moz-linear-gradient(teal, green); 
   background: linear-gradient(40deg,#000,teal,#000);*/
-	background: /*linear-gradient(
-		 rgba(215, 218, 217,0.75),
-		 rgba(248, 130, 11, 0.55)
-	 ),*/
+	background: linear-gradient(
+		 rgba(250, 250, 250,0.95),
+		 rgba(250, 250, 250, 0.65)
+	 ),
 	 url(../assets/9.jpg);
 	background-size:cover;
 	background-attachment: fixed;
@@ -221,7 +221,7 @@ section {padding-top: 50px; padding-bottom: 50px;}
 footer {
 	padding-top: 20px;
 	padding-bottom: 20px;
-	background:black;
+	background:white;
 	color: #f1f1f1;
 }
 
