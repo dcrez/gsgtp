@@ -155,8 +155,9 @@ section {
 .team-content img:hover 
 	{-webkit-filter: grayscale(0);
   	filter: grayscale(0); 
-	background-color:teal;
-	border-color:orangered;
+	background-color:#790025;
+	/*background-color:#828C92;*/
+	border-color:#828C92;
 	}
 
 .modal-open {
