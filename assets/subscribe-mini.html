@@ -7,11 +7,14 @@
         </div>
 
 
-        <script>
-        function showMailingPopUp() {
-            require(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us15.list-manage.com","uuid":"abbf5667bf06d8d6b00acf9ab","lid":"80aa4450da"}) })
-            document.cookie = "MCEvilPopupClosed=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
-        };
+     
 
-        document.getElementByID("mini-subscribe-popup").onclick = function() {showMailingPopUp()};
-        </script>
+<script>
+function showMailingPopUp() {
+    require(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us2.list-manage.com","uuid":"e241d3caa65e31aa9384682e0","lid":"4f87f93c75"}) })
+    document.cookie = "MCEvilPopupClosed=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+};
+
+document.getElementByID("subscribe-popup").onclick = function() {showMailingPopUp()};
+document.getElementByID("mini-subscribe-popup").onclick = function() {showMailingPopUp()};
+</script>
