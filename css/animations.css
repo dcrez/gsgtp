@@ -156,7 +156,7 @@ section {
 .team-content img:hover 
 	{-webkit-filter: grayscale(0);
   	filter: grayscale(0); 
-	background-color:#790025;
+	background-color:#f1f1f1;
 	/*background-color:#828C92;*/
 	border-color:#828C92;
 	}
