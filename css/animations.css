@@ -140,8 +140,8 @@ section {
 
 
 .team-content img{
-  -webkit-filter: grayscale(1);
-  filter: grayscale(1);
+ /* -webkit-filter: grayscale(1);
+  filter: grayscale(1); */
 	border-radius: 100%;
 	border: solid thick hsla(0,1%,59%,0.55);
 	background-color: hsla(0,3%,89%,0.95);
@@ -149,6 +149,7 @@ section {
 	width: auto !important;
 	display: inline-block;
 }
+
 
 .team-content a:hover {text-decoration: none;}
 
