@@ -1,5 +1,6 @@
 {
   "projects": {
-    "staging": "gsgtp-b4448"
+    "staging": "gsgtp-b4448",
+    "default": "gsgtp-b4448"
   }
 }

@@ -1,0 +1,13 @@
+{
+	"scheduledEvents": 
+	{
+	"scheduledEvent": guid,
+	"town": "Example town name",
+	"eventDate": "5/20",
+	"eventTime": "12:00pm",
+	"trackType": "Dirt",
+	"eventDescription": "Start of year club meeting and test/tech",
+	"evaluationType": "Test/Tech",
+	"eventAddress": "1234 Sample Address"
+	}
+}
