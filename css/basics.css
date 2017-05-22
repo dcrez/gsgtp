@@ -8,10 +8,10 @@ html, body {overflow-x: hidden; }
 	position:relative;
 }
 
-.navbar {font-family: "Oswald"; text-transform: uppercase; line-height: 3em;}
+.navbar {font-family: "Oswald"; text-transform: uppercase; }
 .navbar-default {background-image: none; background-repeat: no-repeat; border:none; background: hsla(0,0%,100%,00);}
 .navbar-header img {height: 3em;}
-.navbar-header .heading-item {font-size:1.5em; font-family: "Oswald"; text-transform: uppercase;}
+.navbar-header .heading-item {font-size:1.5em; font-family: "Oswald"; text-transform: uppercase; font-weight: 400;}
 .social {line-height: 2.5em;}
 .social img {height: 1.75em;}
 .navbar .nav li a {color:black; 	text-shadow: 0px 0px -1px white;}
@@ -22,8 +22,10 @@ html, body {overflow-x: hidden; }
 a {color:#790025;}
 
 body
-{font-family: 'Dosis', sans-serif;
-background-image:url(../assets/shutterstock_416205871.jpg);
+{font-family: 'Oswald', sans-serif;
+	font-weight:300;
+	font-size: 1.5em;
+background-image:url(../assets/1.jpg);
 background-size: cover;
 background-attachment: fixed;
 }
@@ -31,13 +33,13 @@ background-attachment: fixed;
 h1,h2,h3,h4,h5 {font-family: 'Oswald', sans-serif;}
 h1, h2, h3 {text-transform: uppercase;}
 h1 {font-size:2.5em;}
-h2 {font-size:2em; color:#828C92;}
-h3 {font-size:1.75em; color:dimgray;}
+h2 {font-size:2em; color:black;}
+h3 {font-size:1.75em; color:#828C92;}
 p {font-size: 1.175em;}
 
 button {text-transform: uppercase; font-size: 2em; font-family: 'Oswald', sans-serif;}
 
-.navbar button {font-size: .85em; border: none; color:teal;}
+.navbar button {font-size: .85em; border: none; color:black;}
 
 .btn {border-radius: 0; border-width: 2px; background-image:none; border: 3px solid transparent; cursor: pointer;}
 
@@ -55,9 +57,8 @@ button {text-transform: uppercase; font-size: 2em; font-family: 'Oswald', sans-s
 	cursor: pointer;
 }
 .oswald {font-family: Oswald, sans-serif;}
-.dosis {font-family: "Dosis", serif;}
 .focus-large {font-size:1.75em; text-transform: uppercase;}
-.focus {font-size:1.3em; font-weight: 100; padding-top:5px; padding-bottom: 10px; color:#790025; font-family: "Dosis", sans-serif; }
+.focus {font-size:1.3em; font-weight: 100; padding-top:5px; padding-bottom: 10px; color:#790025; }
 .transparent-font {color:transparent;}
 
 .text-wrapper {
@@ -81,34 +82,19 @@ section {z-index: 2; position: relative;}
 #landing {
 	padding: 50px;
 	width: 100%;
-	min-height:100vh;
+	min-height:40vh;
 	background:
 	/*linear-gradient(
 		 rgba(215, 218, 217,0.75),
 		 rgba(248, 130, 11, 0.55)
 	 ),*/
 	 /* bottom, image */
-	 url(../assets/shutterstock_416205871.jpg);
+	 url(../assets/1.jpg);
 	background-size:cover;
 	background-attachment: fixed;
-	display: flex;
-	display: -webkit-flex;
-	display: -moz-flex;
-	display: -ms-flex;
-	display: -o-flex;
-	flex:1 auto;}
+	background-position: top center;
+	}
 
-#landing .landing-flex {
-	flex: 1;
-	-webkit-flex: 1;
-	-moz-flex: 1;
-	-ms-flex: 1;
-	flex-grow: 1;
-	-webkit-flex-grow: 1;
-	-mos-flex-grow: 1;
-	-ms-flex-grow: 1;
-	align-self: center;
-}
 
 #why {
 	background: white;
@@ -130,11 +116,11 @@ section {z-index: 2; position: relative;}
 	padding-top: 50px;
 	padding-bottom: 50px;
 	background:
-	/*linear-gradient(
-		 rgba(215, 218, 217,0.75),
-		 rgba(248, 130, 11, 0.55)
-	 ),*/
-	 url(../assets/3-donuts.jpg);
+	linear-gradient(
+		 rgba(250, 250, 250,0.95),
+		 rgba(250, 250, 250, 0.65)
+	 ),
+	 url(../assets/small-women-collaborating.jpg);
 	background-size:cover;
 	background-attachment: fixed;
 	background-position: center center;
@@ -159,9 +145,11 @@ section {padding-top: 50px; padding-bottom: 50px;}
 	 url(../assets/7.jpg);
  background-position: center center; background-size: cover; background-attachment: fixed;}
 
-#wearestar {min-height: 300px; background:#f1f1f1;}
+#wearestar {min-height: 300px; background:#f1f1f1;
+background:white;}
 
-ul li {padding: 7px 0 0; font-size: 1.175em;}
+ul li {padding: 7px 0 0;}
+ul li:not(header) {font-size: 1.15em;}
 #wearestar ul li .oswald {font-size:1.2em;}
 #wearestar .team-member {
 	padding-top: 10px;
@@ -169,7 +157,8 @@ ul li {padding: 7px 0 0; font-size: 1.175em;}
 }
 
 
-#team {background-color: /*hsla(0,3%,89%,0.85)*/ #f1f1f1;}
+#team {background-color: /*hsla(0,3%,89%,0.85)*/ #f1f1f1;
+background:white;}
 
 #team .btn-primary,
 #team .btn-primary:hover,
@@ -191,16 +180,10 @@ ul li {padding: 7px 0 0; font-size: 1.175em;}
 }
 
 #referrals {
-	background: #f1f1f1;
+	background:white;
 }
 
 #subscribe {
-	
-	/*background: teal;
-  background: -webkit-linear-gradient(teal, green);
-  background: -o-linear-gradient(teal, green); 
-  background: -moz-linear-gradient(teal, green); 
-  background: linear-gradient(40deg,#000,teal,#000);*/
 	background: linear-gradient(
 		 rgba(250, 250, 250,0.95),
 		 rgba(250, 250, 250, 0.65)
