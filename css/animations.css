@@ -1,6 +1,7 @@
 @charset "utf-8";
 /* CSS Document */
 
+/*
 .animated-words {
 	display: block;
 	text-shadow: 0px 0px 5px gray;
@@ -50,7 +51,7 @@
     80% { opacity: 0; }
     100% { opacity: 0; }
 }
-
+*/
 .navbar {
     -webkit-transition: all 0.6s ease-out;
     -moz-transition: all 0.6s ease-out;
@@ -61,15 +62,6 @@
     background: rgba(255, 255, 255, 1);
 }
 
-.navbar.scrolled {
-    background: rgb(68, 68, 68); 
-    background: rgba(255, 255, 255, 1); 
-}
-
-
-#donuts, #shoes, #rabbit {
-    transition: width 2s;
-}
 
 .read-more-state {
   display: none;
@@ -162,31 +154,4 @@ section {
 
 .modal-open {
     overflow: visible !important;
-}
-
-body.model-open, .model-open .navbar-fixed-top, .model-open .navbar-fixed-bottom {margin-right:-15px;}
-
-.modal-dialog {margin-right:0 !important;}
-
-.modal {
-overflow: visible !important;
-overflow-y:auto;
-}
-
-.vertical-alignment-helper {
-    display:table;
-    height: 100%;
-    width: 100%;
-}
-.vertical-align-center {
-    /* To center vertically */
-    display: table-cell;
-    vertical-align: middle;
-}
-.modal-content {
-    /* Bootstrap sets the size of the modal in the modal-dialog class, we need to inherit it */
-    width:inherit;
-    height:inherit;
-    /* To center horizontally */
-    margin: 0 auto;
 }
