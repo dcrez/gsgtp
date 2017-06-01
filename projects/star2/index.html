@@ -10,7 +10,6 @@
     <title>STAR Collaborative</title>
    <link href="https://fonts.googleapis.com/css?family=Oswald:300,400" rel="stylesheet">
     <link rel="stylesheet" href="css/bootstrap.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.css">
     <link rel="stylesheet" href="css/basics.css">
 	</head>
 
@@ -89,60 +88,29 @@
 
 </div>
 		</article>
-	<section id="why" class="container-fluid">
-		<div class="row">
-			<div class="col-md-8 mr-auto ml-auto">
-			<h2 class="text-md-center">Why choose STAR?</h2>
-				<p class="text-md-center focus">STAR Collaborative has been quietly disrupting the Twin Cities market <br class="hidden-sm-down">inspiring interest, creating energy, fostering respect and loyalty through our work, and:</p>
+	<article class="container-fluid">
+		<div class="row d-flex align-items-stretch flex-wrap">
+		<div class="card col-lg-3 col-md-6 rounded-0" id="why">
+			<h2 class="mt-4">Why choose STAR?</h2>
+			<p>We’ve been quietly disrupting the Twin Cities market inspiring interest, creating energy, and fostering respect and loyalty through our work, and:</p>
+			</div>
+		<div class="card col-lg-3 col-md-6 rounded-0" id="donuts">
+			<h3 class="mt-4">We won't<br class="hidden-md-down"> bring you donuts</h3>
+			<p>We run lean. No gimmicks. No fuss. Using tech, we minimize our overhead to maximize your payout.</p>
+			<span class="btn btn-primary rounded-0 mt-auto">Learn more</span>
+			</div>
+		<div class="card col-lg-3 col-md-6 rounded-0" id="rabbit">
+			<h3 class="mt-4">We let the<br class="hidden-md-down"> rabbit out of the hat</h3>
+			<p>No secrets. No surprises. We let you know the opportunity details, bill rate, and get your permission before submitting you for any role.</p>
+			<span class="btn btn-primary rounded-0 mt-auto">Learn more</span>
+</div>
+		<div class="card col-lg-3 col-md-6 rounded-0" id="shoes">
+			<h3 class="mt-4">We've been<br class="hidden-md-down"> in your shoes</h3>
+			<p>We know who and what makes the best project and contract experiences. We work hard to ensure you have both.</p>
+			<span class="btn btn-primary rounded-0 mt-auto">Learn more</span>
 			</div>
 		</div>
-	<div id="accordion" role="tablist" aria-multiselectable="true">
-  <div class="card" id="donuts">
-    <div class="card-header" role="tab" >
-      <h3 class="mb-0">
-        <span class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-		We won't bring you donuts</span>
-      </h3>
-	  <p>We run lean. No gimmicks. No fuss. Using tech, we minimize our overhead to maximize your payout.</p>
-
-    </div>
-
-    <div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="donuts">
-      <div class="card-block" id="donuts-detail">
-      </div>
-    </div>
-  </div>
-  <div class="card" id="rabbit">
-    <div class="card-header" role="tab">
-      <h3 class="mb-0">
-        <span class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-We let the rabbit out of the hat        </span>
-      </h3>
-		<p>No secrets. No surprises. We let you know the opportunity details, bill rate, and get your permission before submitting you for any role.</p>
-    </div>
-    <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="rabbit">
-      <div class="card-block" id="rabbit-detail">
-        
-      </div>
-    </div>
-  </div>
-  <div class="card" id="shoes">
-    <div class="card-header" role="tab" >
-      <h3 class="mb-0">
-        <span class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-We've been in your shoes        </span>
-      </h3>
-		<p>We know who and what makes the best project and contract experiences. We work hard to ensure you have both.</p>
-    </div>
-    <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="shoes">
-      <div class="card-block">
-    
-      </div>
-    </div>
-  </div>
-</div>
-    
-	</section>
+	</article>
 	<section id="subscribe-mini"></section>
 	<section id="wearestar"></section>
 	<section id="team"></section>
@@ -155,7 +123,6 @@ We've been in your shoes        </span>
 	<script src="https://use.fontawesome.com/b676143643.js" ></script>
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-<script src="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.js"></script>  
     
 	<script>$('#subscribe-mini').load('./assets/subscribe-mini.html');</script>
 			<script>$('#wearestar').load('./assets/wearestar-v1.html');</script>
@@ -169,15 +136,9 @@ We've been in your shoes        </span>
 				<script>$('#rabbit-detail').load('./assets/rabbit-detail.html');</script>
 				<script>$('#shoes-detail').load('./assets/shoes-detail.html');</script>
 	<script>
-	$("#collapseOne").collapse("hide");</script>
-	<script>
-		$(function () {
-   $('.why-detail').webuiPopover({
-      trigger:'click',
-	  placement:'bottom-right', 
-	  closeable:true
-   });
- 
+	$('#donuts').click(function() {
+    $('#display_advance').toggle('1000');
+    $("i", this).toggleClass("icon-circle-arrow-up icon-circle-arrow-down");
 });
 	</script>
 </body>
