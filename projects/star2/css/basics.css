@@ -1,14 +1,39 @@
 /* General Styles */
 html, body {height: 100%;}
 body {color:black; font-family: "Oswald", sans-serif; font-size: 1.17em; font-weight: 200;}
-h1, h2, h3, h4 {font-weight: 400; text-transform: uppercase;}
+h1, h2, h3 {font-weight: 400; text-transform: uppercase;}
 h1 {font-size: 3.5em;}
-h3 {font-size: 1.22em;}
+h2 {font-size:2em;}
+h3 {font-size: 1.5em;}
+h4 {font-size: 1.2em; font-weight: 400;}
+p {widows:2; orphans: 2;}
+a {color:#790025;}
+a:hover {color:#828C92;}
+a:active {color:#828C92; border-bottom: medium; border-bottom-color: #828C92;}
+
+.star-red {color:#790025;}
+.star-grey {color:#828C92;}
+.focus {color:#790025;}
+.text-info {color:#790025;}
+
+.btn-primary,
+.btn-primary:focus,
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary.active {
+  color: black;
+	text-transform: uppercase;
+	font-family: "Oswald", sans serif;
+	background-color: hsla(0,3%,89%,0.25);
+	font-size: 1em;
+	cursor: pointer;
+}
+
 
 /* Section Overlaps */
 
-section { background-color: #f1f1f1; padding-top:50px; padding-bottom:50px; min-height: 45vh; width: 100%;}
-section:nth-child(odd) { background-color: white; }
+section { background-color: #f1f1f1; padding-top:55px; padding-bottom:50px; min-height: 45vh; width: 100%; overflow-x:hidden;}
+section:nth-child(even) { background-color: white; }
 
 section .overlap {margin-top:-45px; border-radius: 75%; height:100px; width: 100px; background-color: #fff; display: block; margin-left:auto; margin-right:auto; font-size: 65px;}
 section .alt-overlap {margin-top:-45px; border-radius: 75%; height:100px; width: 100px; background-color: #f1f1f1; display: block; margin-left:auto; margin-right:auto; font-size: 65px;}
@@ -20,21 +45,68 @@ section .alt-overlap {margin-top:-45px; border-radius: 75%; height:100px; width:
 
 /* Section specific modifiers */
 #landing {
-  min-height: 20vh;
-  color:
-	  /*rgba(249,249,249,0.73)*/
-	  black
-	  ;
-  /* text-shadow: 0px 0px 25px rgba(58,57,57,0.73);
-  background-image: url(../img/team/star-team.jpg);*/
-  background-size: cover;
+  min-height: 35vh;
+  color: black;
+  background: 
+	  linear-gradient(rgba(250,250,250,0.9),rgba(250, 250, 250, 0.75)),
+	  url(../img/woman-info.jpg);
+	background-position: center center;
+	background-attachment: fixed;
+	background-size: cover;
   }
 
-#why img .card-img-top {max-height:50px;}
+#focus-values {color:#828C92; background-color:#f1f1f1; padding-top:10px;}
+
+#focus-values .accent-values {color:#790025; text-transform: uppercase;}
+
+#why {padding-top:55px; padding-bottom:50px;}
+#donuts {
+	background: linear-gradient(rgba(250,250,250,0.9),rgba(250, 250, 250, 0.85)),
+	  url(../img/cardcap-donuts.jpg);
+	background-size: cover;
+	background-position: center center;
+	padding-top:50px; padding-bottom: 50px;
+	}
+
+#shoes {
+	background: linear-gradient(rgba(250,250,250,0.9),rgba(250, 250, 250, 0.75)),
+	  url(../img/cardcap-sneakers.jpg);
+	background-size: cover;
+	background-position:center center;
+padding-top:55px; padding-bottom:50px;
+}
+
+#rabbit {
+	background: linear-gradient(rgba(250,250,250,0.9),rgba(250, 250, 250, 0.75)),
+	  url(../img/cardcap-rabbit.jpg);
+	background-size: cover;
+	background-position: center center;
+	padding-top:55px; padding-bottom:50px;}
+
+#subscribe-mini {
+	background: linear-gradient(rgba(250,250,250,0.8),rgba(250, 250, 250, 0.65)),
+	  url(../img/woman-polkadot.jpg);
+	background-size: cover;
+	background-position: top center;
+	min-height: 30vh;
+}
+
 
 
 /* Media Queries */
   @media only screen and (max-width: 575px) {
         h1 {font-size: 2.5em;}
+	  body {color:black; font-family: "Oswald", sans-serif; font-size: 1em; font-weight: 200;}
+	h1 {font-size: 3em;}
+	h2 {font-size:1.6em;}
+	h3 {font-size: 1.3em;}
+	h4 {font-size: 1em;}
+	  #why .details {column-count: 1;}
+}
+
+
+ @media only screen and (min-width: 992px) {
+	#why h3 {font-size: 1.3em; 
 
   }
+}

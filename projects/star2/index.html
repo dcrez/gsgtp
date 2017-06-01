@@ -11,12 +11,12 @@
    <link href="https://fonts.googleapis.com/css?family=Oswald:300,400" rel="stylesheet">
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/basics.css">
-    </head>
+	</head>
 
-<body data-spy="scroll" data-target=".navbar" data-offset="50" style="margin-top:60px;">
+<body data-spy="scroll" data-target="star-nav" data-offset="50" style="margin-top:60px;">
 	<header>
-		<nav class="navbar navbar-light fixed-top navbar-toggleable-sm" style="background-color: white;">
-		<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+		<nav class="navbar navbar-light fixed-top navbar-toggleable-sm" style="background-color: white;" id="star-nav">
+		<button class="navbar-toggler navbar-toggler-right border-0" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <i class="navbar-toggler-icon fa fa-menu"></i>
   </button>
   <a class="navbar-brand" href="http://www.starcollaborative.com">
@@ -25,7 +25,7 @@
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="#">Why STAR? <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="#why">Why STAR? <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">About Us</a>
@@ -47,54 +47,99 @@
 			<p class="text-center">STAR Collaborative is a professional services staffing and search firm that provides high quality talent for a wide range of professions and industries.</p>
 			</div>
 		</div>
+		
 	</section>
-	<section id="why">
-		<div class="container">
-		<div class="col-md-8 mr-auto ml-auto">
-		<h2 class="text-center">Why choose STAR?</h2>
-			<p class="text-center">STAR Collaborative is a professional services staffing and search firm that provides high quality talent for a wide range of professions and industries.</p>
-		</div>
-			<div class="row">
-				<div class="col-md-4">
-				<div class="card text-center">
-					<div class="card-block">
-						<h3 class="card-title">We won't bring you donuts</h3>
-						<p class="card-text">We run lean. No gimmicks. No fuss. Using tech, we minimize our overhead to maximize your payout.</p>
-					</div>
-					</div>
-				</div>
-								<div class="col-md-4">
+	<article id="focus-values" class="container-fluid">
+		   <div id="text-carousel" class="carousel slide" data-ride="carousel">
+    <!-- Wrapper for slides -->
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <div class="carousel-inner" role="listbox">
+                <div class="carousel-item active">
+                    <div class="carousel-content col-md-12">
+                        <div class="d-block col-md-12">
+							<p class="text-center"><span class="accent-values">Connected: </span> We are in the relationship business.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="carousel-content col-md-12">
+                        <div class="d-block col-md-12">
+							<p class="text-center"><span class="accent-values">Disruptive: </span>We challenge industry norms.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="carousel-content col-md-12">
+                        <div class="d-block col-md-12">
+							<p class="text-center"><span class="accent-values">Abundant: </span>We know everyone can win.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Controls --> <a class="left carousel-control" href="#text-carousel" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+  </a>
+ <a class="right carousel-control" href="#text-carousel" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+  </a>
 
-				<div class="card">
-					<div class="card-block">
-						<h3 class="card-title">We won't bring you donuts</h3>
-						<p class="card-text">We run lean. No gimmicks. No fuss. Using tech, we minimize our overhead to maximize your payout.</p>
-					</div>
-				</div>
-				</div>
-			  <div class="col-md-4">
-
-				<div class="card">
-					<div class="card-block">
-						<h3 class="card-title">We won't bring you donuts</h3>
-						<p class="card-text">We run lean. No gimmicks. No fuss. Using tech, we minimize our overhead to maximize your payout.</p>
-					</div>
-				</div>
-				</div>
+</div>
+		</article>
+	<article class="container-fluid">
+		<div class="row d-flex align-items-stretch flex-wrap">
+		<div class="card col-lg-3 col-md-6 rounded-0" id="why">
+			<h2 class="mt-4">Why choose STAR?</h2>
+			<p>We’ve been quietly disrupting the Twin Cities market inspiring interest, creating energy, and fostering respect and loyalty through our work, and:</p>
+			</div>
+		<div class="card col-lg-3 col-md-6 rounded-0" id="donuts">
+			<h3 class="mt-4">We won't<br class="hidden-md-down"> bring you donuts</h3>
+			<p>We run lean. No gimmicks. No fuss. Using tech, we minimize our overhead to maximize your payout.</p>
+			<span class="btn btn-primary rounded-0 mt-auto">Learn more</span>
+			</div>
+		<div class="card col-lg-3 col-md-6 rounded-0" id="rabbit">
+			<h3 class="mt-4">We let the<br class="hidden-md-down"> rabbit out of the hat</h3>
+			<p>No secrets. No surprises. We let you know the opportunity details, bill rate, and get your permission before submitting you for any role.</p>
+			<span class="btn btn-primary rounded-0 mt-auto">Learn more</span>
+</div>
+		<div class="card col-lg-3 col-md-6 rounded-0" id="shoes">
+			<h3 class="mt-4">We've been<br class="hidden-md-down"> in your shoes</h3>
+			<p>We know who and what makes the best project and contract experiences. We work hard to ensure you have both.</p>
+			<span class="btn btn-primary rounded-0 mt-auto">Learn more</span>
 			</div>
 		</div>
-	</section>
+	</article>
 	<section id="subscribe-mini"></section>
-	<!--<section id="inthenews"></section> -->
 	<section id="wearestar"></section>
 	<section id="team"></section>
 	<section id="opportunities"></section>
 	<section id="referrals"></section>
 	<section id="subscribe"></section>
 	<footer></footer>
+	<!-- end of content -->
+	<!-- start scripts -->
 	<script src="https://use.fontawesome.com/b676143643.js" ></script>
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-	
+    
+	<script>$('#subscribe-mini').load('./assets/subscribe-mini.html');</script>
+			<script>$('#wearestar').load('./assets/wearestar-v1.html');</script>
+
+		<script>$('#team').load('./assets/team.html');</script>
+			<script>$('#opportunities').load('./assets/opportunities.html');</script>
+			<script>$('#referrals').load('./assets/referrals.html');</script>
+				<script>$('#subscribe').load('./assets/subscribe.html');</script>
+				
+				<script>$('#donuts-detail').load('./assets/donuts-detail.html');</script>
+				<script>$('#rabbit-detail').load('./assets/rabbit-detail.html');</script>
+				<script>$('#shoes-detail').load('./assets/shoes-detail.html');</script>
+	<script>
+	$('#donuts').click(function() {
+    $('#display_advance').toggle('1000');
+    $("i", this).toggleClass("icon-circle-arrow-up icon-circle-arrow-down");
+});
+	</script>
 </body>
 </html>
