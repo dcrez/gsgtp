@@ -10,13 +10,14 @@
     <title>STAR Collaborative</title>
    <link href="https://fonts.googleapis.com/css?family=Oswald:300,400" rel="stylesheet">
     <link rel="stylesheet" href="css/bootstrap.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.css">
     <link rel="stylesheet" href="css/basics.css">
-    </head>
+	</head>
 
 <body data-spy="scroll" data-target=".navbar" data-offset="50" style="margin-top:60px;">
 	<header>
 		<nav class="navbar navbar-light fixed-top navbar-toggleable-sm" style="background-color: white;">
-		<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+		<button class="navbar-toggler navbar-toggler-right border-0" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <i class="navbar-toggler-icon fa fa-menu"></i>
   </button>
   <a class="navbar-brand" href="http://www.starcollaborative.com">
@@ -47,54 +48,113 @@
 			<p class="text-center">STAR Collaborative is a professional services staffing and search firm that provides high quality talent for a wide range of professions and industries.</p>
 			</div>
 		</div>
+		
 	</section>
-	<section id="why">
-		<div class="container">
-		<div class="col-md-8 mr-auto ml-auto">
-		<h2 class="text-center">Why choose STAR?</h2>
-			<p class="text-center">STAR Collaborative is a professional services staffing and search firm that provides high quality talent for a wide range of professions and industries.</p>
-		</div>
-			<div class="row">
-				<div class="col-md-4">
-				<div class="card text-center">
-					<div class="card-block">
-						<h3 class="card-title">We won't bring you donuts</h3>
-						<p class="card-text">We run lean. No gimmicks. No fuss. Using tech, we minimize our overhead to maximize your payout.</p>
-					</div>
-					</div>
-				</div>
-								<div class="col-md-4">
+	<article id="focus-values" class="container-fluid">
+		   <div id="text-carousel" class="carousel slide" data-ride="carousel">
+    <!-- Wrapper for slides -->
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <div class="carousel-inner" role="listbox">
+                <div class="carousel-item active">
+                    <div class="carousel-content col-md-12">
+                        <div class="d-block col-md-12">
+							<p class="text-center"><span class="accent-values">Connected: </span> We are in the relationship business.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="carousel-content col-md-12">
+                        <div class="d-block col-md-12">
+							<p class="text-center"><span class="accent-values">Disruptive: </span>We challenge industry norms.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="carousel-content col-md-12">
+                        <div class="d-block col-md-12">
+							<p class="text-center"><span class="accent-values">Abundant: </span>We know everyone can win.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Controls --> <a class="left carousel-control" href="#text-carousel" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+  </a>
+ <a class="right carousel-control" href="#text-carousel" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+  </a>
 
-				<div class="card">
-					<div class="card-block">
-						<h3 class="card-title">We won't bring you donuts</h3>
-						<p class="card-text">We run lean. No gimmicks. No fuss. Using tech, we minimize our overhead to maximize your payout.</p>
-					</div>
+</div>
+		</article>
+	<section id="why" class="container">
+		<div class="col"><h2 class="text-md-center">Why choose STAR?</h2>
+			<p class="focus">
+				We’ve quietly disrupted the Twin Cities market: inspiring interest, creating energy, and fostering respect and loyalty through our work.
+			</p></div>
+		<div class="row">
+		<card class="card col-md-4 border-0" id="donuts">
+			<img class="card-img-top img-fluid" src="img/cardcap-donuts-cropped.jpg">
+			<h3 class="card-img-overlay" style="color:white;">We won't bring you donuts</h3>
+				<a href="#" id="donuts-detail" class="why-detail">pop</a>
+			<div class="webui-popover-content">
+				<h4>When STAR Collaborative successfully places you in a project, we will not drop by with treats.</h4>
+				<p>We are not going to give you STAR-themed swag like pens, notebooks or t-shirts.</p>
 				</div>
-				</div>
-			  <div class="col-md-4">
 
-				<div class="card">
-					<div class="card-block">
-						<h3 class="card-title">We won't bring you donuts</h3>
-						<p class="card-text">We run lean. No gimmicks. No fuss. Using tech, we minimize our overhead to maximize your payout.</p>
-					</div>
-				</div>
-				</div>
-			</div>
+		</card>
+		<card class="card col-md-4 border-0" id="rabbit">
+		<img class="card-img-top img-fluid" src="img/cardcap-rabbit-cropped.jpg">
+			<h3>We let the rabbit out of the hat</h3>
+			<a href="#" id="rabbit-detail" class="why-detail">pop</a>
+			<div class="webui-popover-content">
+				<h4>Rabbit text</h4>
+				<p>We are not going to give you STAR-themed swag like pens, notebooks or t-shirts.</p>
+</div>
+		</card>
+		<card class="card col-md-4 border-0" id="shoes">
+		<img class="card-img-top img-fluid" src="img/cardcap-sneakers-cropped.jpg">
+			<h3>We've been in your shoes</h3>
+			<a href="#" id="shoes-detail" class="why-detail">pop</a>
+			<div class="webui-popover-content">
+				<h4>When STAR Collaborative successfully places you in a project, we will not drop by with treats.</h4>
+				<p>We are not going to give you STAR-themed swag like pens, notebooks or t-shirts.</p>
+</div>
+		</card>
 		</div>
 	</section>
 	<section id="subscribe-mini"></section>
-	<!--<section id="inthenews"></section> -->
 	<section id="wearestar"></section>
 	<section id="team"></section>
 	<section id="opportunities"></section>
 	<section id="referrals"></section>
 	<section id="subscribe"></section>
 	<footer></footer>
+	<!-- end of content -->
+	<!-- start scripts -->
 	<script src="https://use.fontawesome.com/b676143643.js" ></script>
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-	
+<script src="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.js"></script>  
+    
+	<script>$('#subscribe-mini').load('./assets/subscribe-mini.html');</script>
+			<script>$('#wearestar').load('./assets/wearestar-v1.html');</script>
+
+		<script>$('#team').load('./assets/team.html');</script>
+			<script>$('#opportunities').load('./assets/opportunities.html');</script>
+			<script>$('#referrals').load('./assets/referrals.html');</script>
+				<script>$('#subscribe').load('./assets/subscribe.html');</script>
+	<script>
+		$(function () {
+   $('.why-detail').webuiPopover({
+      trigger:'click',
+	  placement:'bottom-right', 
+	  closeable:true
+   });
+ 
+});
+	</script>
 </body>
 </html>
