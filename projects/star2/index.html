@@ -14,9 +14,9 @@
     <link rel="stylesheet" href="css/basics.css">
 	</head>
 
-<body data-spy="scroll" data-target=".navbar" data-offset="50" style="margin-top:60px;">
+<body data-spy="scroll" data-target="star-nav" data-offset="50" style="margin-top:60px;">
 	<header>
-		<nav class="navbar navbar-light fixed-top navbar-toggleable-sm" style="background-color: white;">
+		<nav class="navbar navbar-light fixed-top navbar-toggleable-sm" style="background-color: white;" id="star-nav">
 		<button class="navbar-toggler navbar-toggler-right border-0" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <i class="navbar-toggler-icon fa fa-menu"></i>
   </button>
@@ -26,7 +26,7 @@
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="#">Why STAR? <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="#why">Why STAR? <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">About Us</a>
@@ -89,41 +89,59 @@
 
 </div>
 		</article>
-	<section id="why" class="container">
-		<div class="col"><h2 class="text-md-center">Why choose STAR?</h2>
-			<p class="focus">
-				We’ve quietly disrupted the Twin Cities market: inspiring interest, creating energy, and fostering respect and loyalty through our work.
-			</p></div>
+	<section id="why" class="container-fluid">
 		<div class="row">
-		<card class="card col-md-4 border-0" id="donuts">
-			<img class="card-img-top img-fluid" src="img/cardcap-donuts-cropped.jpg">
-			<h3 class="card-img-overlay" style="color:white;">We won't bring you donuts</h3>
-				<a href="#" id="donuts-detail" class="why-detail">pop</a>
-			<div class="webui-popover-content">
-				<h4>When STAR Collaborative successfully places you in a project, we will not drop by with treats.</h4>
-				<p>We are not going to give you STAR-themed swag like pens, notebooks or t-shirts.</p>
-				</div>
-
-		</card>
-		<card class="card col-md-4 border-0" id="rabbit">
-		<img class="card-img-top img-fluid" src="img/cardcap-rabbit-cropped.jpg">
-			<h3>We let the rabbit out of the hat</h3>
-			<a href="#" id="rabbit-detail" class="why-detail">pop</a>
-			<div class="webui-popover-content">
-				<h4>Rabbit text</h4>
-				<p>We are not going to give you STAR-themed swag like pens, notebooks or t-shirts.</p>
-</div>
-		</card>
-		<card class="card col-md-4 border-0" id="shoes">
-		<img class="card-img-top img-fluid" src="img/cardcap-sneakers-cropped.jpg">
-			<h3>We've been in your shoes</h3>
-			<a href="#" id="shoes-detail" class="why-detail">pop</a>
-			<div class="webui-popover-content">
-				<h4>When STAR Collaborative successfully places you in a project, we will not drop by with treats.</h4>
-				<p>We are not going to give you STAR-themed swag like pens, notebooks or t-shirts.</p>
-</div>
-		</card>
+			<div class="col-md-8 mr-auto ml-auto">
+			<h2 class="text-md-center">Why choose STAR?</h2>
+				<p class="text-md-center focus">STAR Collaborative has been quietly disrupting the Twin Cities market <br class="hidden-sm-down">inspiring interest, creating energy, fostering respect and loyalty through our work, and:</p>
+			</div>
 		</div>
+	<div id="accordion" role="tablist" aria-multiselectable="true">
+  <div class="card" id="donuts">
+    <div class="card-header" role="tab" >
+      <h3 class="mb-0">
+        <span class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+		We won't bring you donuts</span>
+      </h3>
+	  <p>We run lean. No gimmicks. No fuss. Using tech, we minimize our overhead to maximize your payout.</p>
+
+    </div>
+
+    <div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="donuts">
+      <div class="card-block" id="donuts-detail">
+      </div>
+    </div>
+  </div>
+  <div class="card" id="rabbit">
+    <div class="card-header" role="tab">
+      <h3 class="mb-0">
+        <span class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+We let the rabbit out of the hat        </span>
+      </h3>
+		<p>No secrets. No surprises. We let you know the opportunity details, bill rate, and get your permission before submitting you for any role.</p>
+    </div>
+    <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="rabbit">
+      <div class="card-block" id="rabbit-detail">
+        
+      </div>
+    </div>
+  </div>
+  <div class="card" id="shoes">
+    <div class="card-header" role="tab" >
+      <h3 class="mb-0">
+        <span class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+We've been in your shoes        </span>
+      </h3>
+		<p>We know who and what makes the best project and contract experiences. We work hard to ensure you have both.</p>
+    </div>
+    <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="shoes">
+      <div class="card-block">
+    
+      </div>
+    </div>
+  </div>
+</div>
+    
 	</section>
 	<section id="subscribe-mini"></section>
 	<section id="wearestar"></section>
@@ -146,6 +164,12 @@
 			<script>$('#opportunities').load('./assets/opportunities.html');</script>
 			<script>$('#referrals').load('./assets/referrals.html');</script>
 				<script>$('#subscribe').load('./assets/subscribe.html');</script>
+				
+				<script>$('#donuts-detail').load('./assets/donuts-detail.html');</script>
+				<script>$('#rabbit-detail').load('./assets/rabbit-detail.html');</script>
+				<script>$('#shoes-detail').load('./assets/shoes-detail.html');</script>
+	<script>
+	$("#collapseOne").collapse("hide");</script>
 	<script>
 		$(function () {
    $('.why-detail').webuiPopover({

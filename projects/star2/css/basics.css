@@ -7,6 +7,9 @@ h2 {font-size:2em;}
 h3 {font-size: 1.5em;}
 h4 {font-size: 1.2em; font-weight: 400;}
 p {widows:2; orphans: 2;}
+a {color:#790025;}
+a:hover {color:#828C92;}
+a:active {color:#828C92; border-bottom: medium; border-bottom-color: #828C92;}
 
 .star-red {color:#790025;}
 .star-grey {color:#828C92;}
@@ -29,7 +32,7 @@ p {widows:2; orphans: 2;}
 
 /* Section Overlaps */
 
-section { background-color: #f1f1f1; padding-top:50px; padding-bottom:50px; min-height: 45vh; width: 100%;}
+section { background-color: #f1f1f1; padding-top:55px; padding-bottom:50px; min-height: 45vh; width: 100%;}
 section:nth-child(even) { background-color: white; }
 
 section .overlap {margin-top:-45px; border-radius: 75%; height:100px; width: 100px; background-color: #fff; display: block; margin-left:auto; margin-right:auto; font-size: 65px;}
@@ -56,7 +59,24 @@ section .alt-overlap {margin-top:-45px; border-radius: 75%; height:100px; width:
 
 #focus-values .accent-values {color:#790025; text-transform: uppercase;}
 
-#why card h3 {text-transform:none; padding-top:10px; }
+#why .accordion {margin:0 0 0 0; padding:0;}
+#why .card .card-header {min-height: 10vh; background-color:transparent;}
+#why #donuts {
+	background: linear-gradient(rgba(250,250,250,0.98),rgba(250, 250, 250, 0.85)),
+	  url(../img/cardcap-donuts.jpg);
+	background-size: cover;
+	background-position: center center;}
+#why #shoes {
+	background: linear-gradient(rgba(250,250,250,0.9),rgba(250, 250, 250, 0.75)),
+	  url(../img/cardcap-sneakers.jpg);
+	background-size: cover;
+	background-position:center center;}
+
+#why #rabbit {
+	background: linear-gradient(rgba(250,250,250,0.9),rgba(250, 250, 250, 0.75)),
+	  url(../img/cardcap-rabbit.jpg);
+	background-size: cover;
+	background-position: center center;}
 
 
 /* Media Queries */
@@ -68,10 +88,11 @@ section .alt-overlap {margin-top:-45px; border-radius: 75%; height:100px; width:
 	h3 {font-size: 1.3em;}
 	h4 {font-size: 1em;}
 	  #why .details {column-count: 1;}
+}
 
-  }
 
  @media only screen and (min-width: 992px) {
-	#why h3 {font-size: 1.3em; color:white; text-shadow: 0 0 10px black;}
+	#why h3 {font-size: 1.3em; 
 
   }
+}
