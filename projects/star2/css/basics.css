@@ -62,23 +62,21 @@ section .alt-overlap {margin-top:-45px; border-radius: 75%; height:100px; width:
 #why {padding-top:55px; padding-bottom:50px;}
 #donuts {
 	background: linear-gradient(rgba(250,250,250,0.9),rgba(250, 250, 250, 0.85)),
-	  url(../img/cardcap-donuts.jpg);
+	  url(../img/small-donuts.jpg);
 	background-size: cover;
 	background-position: center center;
 	padding-top:50px; padding-bottom: 50px;
 	}
-
 #shoes {
 	background: linear-gradient(rgba(250,250,250,0.9),rgba(250, 250, 250, 0.75)),
-	  url(../img/cardcap-sneakers.jpg);
+	  url(../img/small-sneakers.jpg);
 	background-size: cover;
 	background-position:center center;
 padding-top:55px; padding-bottom:50px;
 }
-
 #rabbit {
 	background: linear-gradient(rgba(250,250,250,0.9),rgba(250, 250, 250, 0.75)),
-	  url(../img/cardcap-rabbit.jpg);
+	  url(../img/small-rabbit.jpg);
 	background-size: cover;
 	background-position: center center;
 	padding-top:55px; padding-bottom:50px;}
@@ -91,7 +89,82 @@ padding-top:55px; padding-bottom:50px;
 	min-height: 30vh;
 }
 
+#wearestar {min-height: 10vh; color:black; background-color:#aaaaaa;}
+#wearestar .focus {color:black;}
+#wearestar .first-word::first-letter {
+    font-size: 200%;
+	font-weight: 400;}
 
+
+#team h4 {
+	margin-top:10px;
+	font-size: 85%;
+}
+
+#team .team-content p {font-size:80%;}
+
+.team-content {
+	text-align: center;
+	min-height: 260px;
+}
+
+.team-content img{
+ /* -webkit-filter: grayscale(1);
+  filter: grayscale(1); */
+	border-radius: 100%;
+	/*border: solid medium hsla(0,1%,59%,0.55);*/
+	background-color: hsla(0,3%,89%,0.95);
+	max-height: 7em;
+	width: auto !important;
+	display: inline-block;
+	-webkit-clip-path: circle(50% at 50% 50%);
+	clip-path: circle(50% at 50% 50%);
+}
+
+
+.team-content a:hover {text-decoration: none;}
+
+.team-content img:hover 
+	{-webkit-filter: grayscale(0);
+  	filter: grayscale(0); 
+	background-color:#f1f1f1;
+	/*background-color:#828C92;*/
+	border-color:#828C92;
+	}
+
+#referrals {
+	background: linear-gradient(rgba(250,250,250,0.9),rgba(250, 250, 250, 0.85)),
+	  url(../img/money.jpg);
+	background-size: cover;
+	background-position: center center;
+	padding-top:50px; padding-bottom: 50px;
+}
+
+/* iframe */
+
+.intrinsic-container {
+  position: relative;
+  height: 0;
+  overflow: hidden;
+}
+ 
+/* 16x9 Aspect Ratio */
+.intrinsic-container-16x9 {
+  padding-bottom: 56.25%;
+}
+ 
+/* 4x3 Aspect Ratio */
+.intrinsic-container-4x3 {
+  padding-bottom: 75%;
+}
+ 
+.intrinsic-container iframe {
+  position: absolute;
+  top:0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
 
 /* Media Queries */
   @media only screen and (max-width: 575px) {
@@ -101,7 +174,16 @@ padding-top:55px; padding-bottom:50px;
 	h2 {font-size:1.6em;}
 	h3 {font-size: 1.3em;}
 	h4 {font-size: 1em;}
-	  #why .details {column-count: 1;}
+	.team-content img{
+ 	max-height: 10em;
+	width: auto !important;
+	display: inline-block;
+	-webkit-clip-path: circle(50% at 50% 50%);
+	clip-path: circle(50% at 50% 50%);
+}
+	#team h4, #team p {
+	font-size: 100%;
+	  }
 }
 
 
