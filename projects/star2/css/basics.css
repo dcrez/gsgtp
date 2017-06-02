@@ -86,14 +86,16 @@ padding-top:55px; padding-bottom:50px;
 	  url(../img/woman-polkadot.jpg);
 	background-size: cover;
 	background-position: top center;
+	background-attachment: fixed;
 	min-height: 30vh;
 }
+#values-list .card {background:transparent;}
 
-#wearestar {min-height: 10vh; color:black; background-color:#aaaaaa;}
-#wearestar .focus {color:black;}
-#wearestar .first-word::first-letter {
-    font-size: 200%;
-	font-weight: 400;}
+#wearestar {min-height: 10vh; color:antiquewhite; background-color:#F59231;}
+
+#wearestar h4 {color:#312F2F;}
+#values-list {min-height: 5vh;}
+#values-list p {font-size: 80%;}
 
 
 #team h4 {
@@ -136,9 +138,31 @@ padding-top:55px; padding-bottom:50px;
 	background: linear-gradient(rgba(250,250,250,0.9),rgba(250, 250, 250, 0.85)),
 	  url(../img/money.jpg);
 	background-size: cover;
-	background-position: center center;
+	background-position: top center;
 	padding-top:50px; padding-bottom: 50px;
+	background-attachment: fixed;
 }
+
+#subscribe {
+	background: linear-gradient(rgba(250,250,250,0.8),rgba(250, 250, 250, 0.65)),
+	  url(../img/man-train-small.jpg);
+	background-size: cover;
+	background-position: top center;
+	padding-top:50px; padding-bottom: 50px;
+	background-attachment: fixed;
+	text-shadow: 0 0 1px white;
+}
+
+footer {
+	padding-top: 20px;
+	padding-bottom: 20px;
+	background:white;
+	font-size: 80%;
+	min-height: 10vh !important;
+}
+
+footer h1, footer h2 {color:#828C92; display:inline-block;}
+
 
 /* iframe */
 
