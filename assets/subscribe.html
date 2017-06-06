@@ -1,3 +1,4 @@
+<div class="container">
     <div class="text-center">
        <h2>Be in the know</h2>
        <div class="row">
@@ -7,7 +8,7 @@
 		</div>
         <p class="col-md-12"><button type="button" class="btn btn-lg btn-primary" id="subscribe-popup" onclick="showMailingPopUp(); return false;">Subscribe</button></p>
 </div>
-
+</div>
 
 <script>
 function showMailingPopUp() {
@@ -17,4 +18,5 @@ function showMailingPopUp() {
 
 document.getElementByID("subscribe-popup").onclick = function() {showMailingPopUp()};
 document.getElementByID("mini-subscribe-popup").onclick = function() {showMailingPopUp()};
+document.getElementByID("nav-subscribe-popup").onclick = function() {showMailingPopUp()};
 </script>
