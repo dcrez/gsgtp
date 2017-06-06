@@ -26,7 +26,7 @@
 							<li><a href="http://www.starcollaborative.com/documents/Applicant-FAQ.pdf" target="_blank">Candidate FAQ</a></li>
 						</ul>
 						</li>
-                    <li><a href="./index.html#subscribe">Subscribe</a></li>
+                    <li><a href="./index.html#subscribe" id="nav-subscribe-popup" onclick="showMailingPopUp(); return false;">Subscribe</a></li>
                     <!--<li><a href="#">Login  <label class="label label-warning">Coming soon!</label></a></li>-->
 				</ul>
                 <ul class="nav navbar-nav navbar-right">
@@ -41,23 +41,15 @@
         <!-- End fluid container that makes nav take up entire width -->
     </nav>
     <!-- End Bootstrap navigation -->
-    <script async type="text/javascript">
-        /**
-         * Listen to scroll to change header opacity class
-         */
-        function checkScroll() {
-            var startY = $('.navbar').height() * 2; //The point where the navbar changes in px
 
-            if ($(window).scrollTop() > startY) {
-                $('.navbar').addClass("scrolled");
-            } else {
-                $('.navbar').removeClass("scrolled");
-            }
-        }
+    <script>
+    function showMailingPopUp() {
+        require(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us2.list-manage.com","uuid":"e241d3caa65e31aa9384682e0","lid":"4f87f93c75"}) })
+        document.cookie = "MCEvilPopupClosed=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+    };
 
-        if ($('.navbar').length > 0) {
-            $(window).on("scroll load resize", function() {
-                checkScroll();
-            });
-        }
+    document.getElementByID("subscribe-popup").onclick = function() {showMailingPopUp()};
+    document.getElementByID("mini-subscribe-popup").onclick = function() {showMailingPopUp()};
+    document.getElementByID("nav-subscribe-popup").onclick = function() {showMailingPopUp()};
+
     </script>
