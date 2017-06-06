@@ -129,16 +129,22 @@ section {
 
 .team-content p {font-weight: 200; font-family: "Oswald", sans serif; margin-top:0; margin-bottom: 5px; }
 
+.team-content {
+	text-align: center;
+	min-height: 260px;
+}
 
 .team-content img{
  /* -webkit-filter: grayscale(1);
   filter: grayscale(1); */
 	border-radius: 100%;
-	border: solid thick hsla(0,1%,59%,0.55);
+	/*border: solid medium hsla(0,1%,59%,0.55);*/
 	background-color: hsla(0,3%,89%,0.95);
 	max-height: 10em;
 	width: auto !important;
 	display: inline-block;
+	-webkit-clip-path: circle(50% at 50% 50%);
+	clip-path: circle(50% at 50% 50%);
 }
 
 
@@ -152,6 +158,46 @@ section {
 	border-color:#828C92;
 	}
 
+.team-content img:hover 
+	{-webkit-filter: grayscale(0);
+  	filter: grayscale(0); 
+	background-color:#f1f1f1;
+	/*background-color:#828C92;*/
+	border-color:#828C92;
+	}
+
 .modal-open {
     overflow: visible !important;
+}
+
+.modal-dialog {
+  position:absolute;
+  top:50% !important;
+  transform: translate(0, -50%) !important;
+  -ms-transform: translate(0, -50%) !important;
+  -webkit-transform: translate(0, -50%) !important;
+  margin:auto 5%;
+	min-height: 100px;
+}
+.modal-content {
+  min-height:100%;
+  position:absolute;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0; 
+}
+.modal-body {
+  position:absolute;
+  top:45px; 
+  bottom:45px;  
+  left:0;
+  right:0;
+  overflow-y:auto;
+}
+.modal-footer {
+  position:absolute;
+  bottom:0;
+  left:0;
+  right:0;
 }
