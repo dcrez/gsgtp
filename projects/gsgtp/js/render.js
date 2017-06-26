@@ -25,7 +25,7 @@ $(document).ready(function() {
 
   source = $("#town_places_template").html();
   town_places_template = Handlebars.compile(source);
-	
+
   source = $("#vehicle_search_template").html();
 	vehicle_search_template = Handlebars.compile(source);
 
@@ -66,30 +66,30 @@ $(document).ready(function() {
         //console.log(current_town_class);
       });
     });
-	  
-	
-	
+
+
+
 	});
-	
+
 	$("#search_pill").click(function() {
 		// Show search template
 		showTemplate(vehicle_search_template, towns);
-		
+
 		$(".nav-pills .active").removeClass("active");
 		$("#search_pill").addClass("active");
-		
+
 	//	$("#searchVehicles").keypress(function(e) {
 	//		if (e.which == 13) {
 	//			var search_text = $("#searchVehicles").val();
 	//		console.log("search text:"+ search_text);
 	//		}
-			
-				
-	
+
+
+
   });
 
   $("#points_pill").click();
 });
 
 
-//function searchVehicles(vehicle) 
+//function searchVehicles(vehicle)
