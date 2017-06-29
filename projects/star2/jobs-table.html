@@ -95,10 +95,10 @@
 	<table class="table table-responsive table-hover table-sm">
 	
 	
-	{{#each starjobs}}
-	{{#if starexclusive}}<tr class="table-warning">{{else}}<tr>{{/if}}
-	<td><span class="text-muted">{{jobid}} </span>{{name}}</td>
-	<td><p>{{summary}}</p>
+	{{#each opportunities}}
+	<tr>
+	<td><span class="text-muted">STAR #{{Name}} </span>{{Job_Name__c}}</td>
+	<td><p>{{AVTRRT__Job_Summary__c}}<br></p>
 	<p><a href="#" class="fn-details" data-id="{{@index}}">Details</a></p>
 		</td>
 	<td class="hidden-xs-down"><a href="{{applylink}}" class="fn-apply">Apply</a></td>
