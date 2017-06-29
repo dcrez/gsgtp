@@ -1,6 +1,8 @@
+"use strict";
+
 var jobs_template, jobs_detail_template, jobs_apply_frame;
 
-var current_job = opportunities.starjobs[0];
+var current_job = opportunities[0];
 
 function showTemplate(template, data) {
   var html = template(data);
