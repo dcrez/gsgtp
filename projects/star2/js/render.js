@@ -30,13 +30,13 @@ $(".fn-opportunities").click(function() {
 	$(".fn-details").click(function() {
 	var index = $(this).data("id");
 		
-	current_job = opportunities.starjobs[index];
+	current_job = opportunities[index];
 	$(".breadcrumb").append("<li class=\"breadcrumb-item active fn-details-breadcrumb fn-details\">"+current_job.name+" #"+current_job.jobid+"</li>");
 	showTemplate(jobs_detail_template, current_job);
 	
 	$(".fn-apply").click(function() {
 		var index = $(this).data("id");
-		current_job = opportunities.starjobs[index];
+		current_job = opportunities[index];
 		$(".fn-details-breadcrumb").removeClass("active");
 
 		$(".breadcrumb").append("<li class=\"breadcrumb-item active fn-apply-breadcrumb\">Apply</li>");
