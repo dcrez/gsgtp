@@ -120,7 +120,33 @@
 	<!-- start scripts -->
 	
    <script src="https://use.fontawesome.com/b676143643.js" ></script>
-    <script src="js/opportunities-sample.js" type="text/javascript"></script>
+   <!-- <script src="js/opportunities-sample.js" type="text/javascript"></script>-->
+	<script src="https://fullsand-starcollaborativeportal.cs61.force.com/PortalLoginPage/services/apexrest/JobPortal" type="text/javascript"></script>
+	<script>
+		 function loadJSON(callback) {   
+
+			var xobj = new XMLHttpRequest();
+			xobj.overrideMimeType("application/json");
+			xobj.open('GET', 'https://fullsand-starcollaborativeportal.cs61.force.com/PortalLoginPage/services/apexrest/JobPortal', true); // Replace 'my_data' with the path to your file
+			xobj.onreadystatechange = function () {
+				  if (xobj.readyState == 4 && xobj.status == "200") {
+					// Required use of an anonymous callback as .open will NOT return a value but simply returns undefined in asynchronous mode
+					callback(xobj.responseText);
+				  }
+			};
+			xobj.send(null);  
+		 }
+
+		function init() {
+ 			loadJSON(function(response) {
+  			// Parse JSON string into object
+				var opportunities = JSON.parse(response);
+			 });
+			}
+
+		console.log(opportunities);
+		
+	</script>
 	<script
   src="js/jquery-3.2.1.min.js" type="text/javascript"></script>
 <script src="js/tether.min.js" type="text/javascript"></script>
