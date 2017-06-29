@@ -5,9 +5,8 @@ var opportunities;
 		$.getJSON('https://fullsand-starcollaborativeportal.cs61.force.com/PortalLoginPage/services/apexrest/JobPortal')
 		.done(function (data) {
 		opportunities = data;
-		});
-
-var jobs_template;
+			
+		var jobs_template;
 
 function showTemplate(template, data) {
   var html = template(data);
@@ -28,4 +27,5 @@ $(".fn-opportunities").click();
 
 });
 
-//Search that waits for hitting the e key
+			
+		});
