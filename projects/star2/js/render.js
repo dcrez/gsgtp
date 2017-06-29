@@ -1,5 +1,12 @@
 "use strict";
 
+var opportunities; 
+
+		$.getJSON('https://fullsand-starcollaborativeportal.cs61.force.com/PortalLoginPage/services/apexrest/JobPortal')
+		.done(function (data) {
+		opportunities = data;
+		});
+
 var jobs_template, jobs_detail_template, jobs_apply_frame;
 
 var current_job = opportunities[0];
@@ -31,7 +38,7 @@ $(".fn-opportunities").click(function() {
 	var index = $(this).data("id");
 		
 	current_job = opportunities[index];
-	$(".breadcrumb").append("<li class=\"breadcrumb-item active fn-details-breadcrumb fn-details\">"+current_job.name+" #"+current_job.jobid+"</li>");
+	$(".breadcrumb").append("<li class=\"breadcrumb-item active fn-details-breadcrumb fn-details\">"+current_job.Job_Name__C+" #"+current_job.Name+"</li>");
 	showTemplate(jobs_detail_template, current_job);
 	
 	$(".fn-apply").click(function() {
