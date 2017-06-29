@@ -90,7 +90,7 @@
 	<script id="jobs_template" type="text/x-handlebars-template">
 	
 	<table class="table table-responsive table-hover table-sm">
-	{{#each}}
+	{{#each opportunities}}
 	<tr>
 	<td><span class="text-muted">STAR #{{Name}} </span>{{Job_Name__c}}</td>
 	<td><p>{{AVTRRT__Job_Summary__c}}<br></p>
@@ -102,14 +102,7 @@
 	</table>
 	</script>
 	
-	<script id="jobs_detail_template" type="text/x-handlebars-template">
-	<h3>{{name}}<span class="float-right"><a href="#" class="btn btn-success fn-apply">Apply</a></span></h3>
-	<p>{{details}}</p>
-	</script>
 	
-	<script id="jobs_apply_frame" type="text/x-handlebars-template">
-	<iframe src={{applylink}}></iframe>
-	</script>
   <!-- end templates -->
 
 	<!-- start scripts -->
