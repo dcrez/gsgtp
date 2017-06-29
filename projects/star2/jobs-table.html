@@ -136,16 +136,19 @@
 				  }
 			};
 			xobj.send(null);  
-		 }
-
-		function init() {
+			
+			function init() {
  			loadJSON(function(response) {
   			// Parse JSON string into object
 				opportunities = JSON.parse(response);
+				console.log(opportunities);
+
 			 });
 			}
+		 }
 
-		console.log(opportunities);
+
+
 		
 	</script>
 	<script
