@@ -1,12 +1,18 @@
 "use strict";
 
-var opportunities = new XMLHttpRequest();
-opportunities.open("GET", "https://fullsand-starcollaborativeportal.cs61.force.com/PortalLoginPage/services/apexrest/JobPortal", false);
-opportunities.send();
-console.log(opportunities.status);
-console.log(opportunities.statusText);
+var starjobs;
 
-var starjobs = JSON.parse(opportunities);
+var xhr = new XMLHttpRequest();
+xhr.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+        starjobs = JSON.parse(this.responseText);}
+};
+
+xhr.open("GET", "https://fullsand-starcollaborativeportal.cs61.force.com/PortalLoginPage/services/apexrest/JobPortal", false);
+xhr.send();
+console.log(xhr.status);
+console.log(xhr.statusText);
+
 console.log(starjobs);
 
 
