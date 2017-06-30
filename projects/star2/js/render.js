@@ -15,7 +15,6 @@ console.log(xhr.statusText);
 
 console.log(starjobs);
 
-
 var jobs_template;
 
 function showTemplate(template, data) {
