@@ -8,10 +8,9 @@ xhr.onreadystatechange = function() {
         starjobs = JSON.parse(this.responseText);}
 };
 
+// xhr.open("GET", "js/JobPortal.json", false);
 xhr.open("GET", "https://fullsand-starcollaborativeportal.cs61.force.com/PortalLoginPage/services/apexrest/JobPortal", false);
 xhr.send();
-
-for (var myKey in starjobs){ printMessage(starjobs[myKey].Name, starjobs[myKey].Job_Name__C,starjobs[myKey].Job_Type__c); }
 
 console.log(xhr.status);
 console.log(xhr.statusText);
