@@ -1,7 +1,7 @@
 "use strict";
 
 var opportunities = new XMLHttpRequest();
-opportunities.open("GET", "https://fullsand-starcollaborativeportal.cs61.force.com/PortalLoginPage/services/apexrest/JobPortal",false);
+opportunities.open("GET", "https://fullsand-starcollaborativeportal.cs61.force.com/PortalLoginPage/services/apexrest/JobPortal", false);
 opportunities.send();
 console.log(opportunities.status);
 console.log(opportunities.statusText);
