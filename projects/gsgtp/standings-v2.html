@@ -8,7 +8,7 @@
     <meta name="author" content="GSGTP">
     <title>Gopher State Garden Tractor Pullers</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
 <link rel="stylesheet" href="css/bootstrap-theme.min.css">
 <link rel="stylesheet" href="css/footable.bootstrap.min.css">
 <link href="https://fonts.googleapis.com/css?family=Oswald|Open+Sans" rel="stylesheet" type="text/css">
@@ -16,25 +16,32 @@
 <link rel="stylesheet" href="css/base.css">
 <link rel="stylesheet" href="css/media.css">
 <script src="js/jquery-1.11.3.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
 <script src="js/handlebars-v3.0.3.js"></script>
 
 </head>
-<header></header>
 <body>
-<div class="container">
+<header></header>
+
+   <div class="container mt-3">
     <h2>Standings</h2>
      <p>Check here for detailed standings information throughout the season.  How points are awarded is defined below.</p>
-    <br>
 
-    <nav class="nav nav-pills">
-      <li role="" id="points_pill"><a href="#">Points</a></li>
-      <li role="" id="town_pill"><a href="#">Town</a></li>
-<!--      <li role="" id="search_pill"><a href="#">Search</a></li>-->
-    </nav>
+    <!--<ul class="nav nav-pills">
+      <li class="nav-item" id="points_pill"><a href="#">Points</a></li>
+      <li class="nav-item" id="town_pill"><a href="#">Town</a></li>
+<!--      <li role="" id="search_pill"><a href="#">Search</a></li>
+    </ul>-->
 
-
-    <div id="content" role="main">
+    <ul class="nav nav-pills nav-fill">
+  <li class="nav-item">
+    <a class="nav-link" href="#" id="points_pill">Points</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#" id="town_pill">Towns</a>
+  </li>
+	   </ul>
+    <div id="content" role="main" class="mt-3">
     </div>
 
   </div>
@@ -74,8 +81,8 @@
 
 
   <script id="points_template" type="text/x-handlebars-template">
-    <br>
-    <div class="panel panel-body panel-default">
+  
+    <div class="card">
       <h3>{{name}} <small class="pull-right">Total Points: {{totalpoints}}</small></h3>
 
       <table class="table table-responsive table-hover">
@@ -102,14 +109,19 @@
   </script>
 
   <script id="town_template" type="text/x-handlebars-template">
-    <br>
     <p>Select a town to see detailed rankings by Division/Class.</p>
-
-      <div class="list-group">
-        {{#each town}}
-        <a href="#" class="list-group-item town-item" data-id="{{@index}}"> {{townName}} {{vehicles.length}}</a>
-        {{/each}}
-      </div>
+	<div class="card-columns">
+	{{#each town}}
+	<div class="card">
+  <img class="card-img-top" src="{{img}}" alt="Card image cap" style="width:100%;">
+  <div class="card-block">
+    <h4 class="card-title">{{townName}}</h4>
+  </div>
+  
+</div>
+{{/each}}
+</div>
+      
 
   </script>
 
@@ -194,7 +206,7 @@
 <footer class="footer"></footer>
 <script src="js/points.js"></script>
   <script src="js/town.js"></script>
-<script src="js/render.js"></script>
+<script src="js/render-v2.js"></script>
 <script>$('header').load('components/header.html');</script>
 <script>$('footer').load('components/footer.html');</script>
 </body>

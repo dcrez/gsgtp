@@ -8,8 +8,8 @@ xhr.onreadystatechange = function() {
         starjobs = JSON.parse(this.responseText);}
 };
 
-// xhr.open("GET", "js/JobPortal.json", false);
-xhr.open("GET", "https://fullsand-starcollaborativeportal.cs61.force.com/PortalLoginPage/services/apexrest/JobPortal", false);
+xhr.open("GET", "js/JobPortal.json", false);
+//xhr.open("GET", "https://fullsand-starcollaborativeportal.cs61.force.com/PortalLoginPage/services/apexrest/JobPortal", false);
 xhr.send();
 
 console.log(xhr.status);
