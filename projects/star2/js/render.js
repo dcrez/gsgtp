@@ -2,7 +2,7 @@
 
 var starjobs;
 
-var apiurl = "https:fullsand-starcollaborativeportal.cs61.force.com/PortalLoginPage/services/apexrest/JobPortal";
+var apiurl = "https://fullsand-starcollaborativeportal.cs61.force.com/PortalLoginPage/services/apexrest/JobPortal";
 
 //var apiurl = "js/JobPortal.json";
 
@@ -12,7 +12,7 @@ xhr.onreadystatechange = function() {
         starjobs = JSON.parse(this.responseText);}
 };
 
-/*
+
 var form = document.getElementById("starform");
     $(form).submit(function () {
         var domain = apiurl+"?";
@@ -23,7 +23,7 @@ var form = document.getElementById("starform");
         return false;
     });
 
-*/
+
 
 xhr.open("GET", apiurl, false);
 xhr.send();
