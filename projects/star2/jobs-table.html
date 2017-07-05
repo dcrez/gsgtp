@@ -14,7 +14,7 @@
 	</head>
 
 <body data-spy="scroll" data-target="star-nav" data-offset="50" style="margin-top:20px;">
-	<header>
+	<header class="sticky-top">
 		<nav class="navbar navbar-light fixed-top navbar-toggleable-sm" style="background-color: white;" id="star-nav">
 		<button class="navbar-toggler navbar-toggler-right border-0" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <i class="navbar-toggler-icon fa fa-menu"></i>
@@ -45,31 +45,38 @@
 	<div id="navnav" style="padding-top:50px;" class="container-fluid">
 	<h2>Opportunities</h2>
 	<p>If you are interested in applying for an opportunity with STAR Collaborative, please review our applicant <a href="#">FAQ</a> before submitting your application (we only submit fully vetted and qualified candidates to our clients, so consider this the first step to helping us get to know you). </p>
-<form class="form-inline mb-4 row">
-			 <label class="sr-only" for="searchopportunities">Search</label>
-  <div class="input-group mb-2 mr-sm-2 mb-sm-0 col">
-	  <div class="input-group-addon"><a href="#" class="fn-opportunities"><i class="fa fa-search"></i></a></div>
-    <input type="search" class="form-control" id="searchopportunities" placeholder="Keyword search on title, ID, or words in description">
-  </div>
-			
-			<div class="input-group col">
-			<div class="input-group-addon"><i class="fa fa-map-marker"></i></div>
+	
+<div>
+<form class="form fn-opportunities" id="starform">
+ 	<div class="form-group row">
+ 	<label class="col-md-1">Search</label>
+  	<div class="col-md-11">
+  	<input type="text" class="form-control" placeholder="Keyword search" name="AVTRRT__Job_Summary__c" value="">
+  	</div>
+	</div>
+	<div class="form-group row">
+			<label class="col-md-1">State</label>		
+				<div class="col-md-11">
 				<select class="form-control">
 					<option>Minnesota</option>
 					<option>Wisconsin</option>
 					<option>Other / Travels</option>
 				</select>
 			</div>
-			<div class="input-group col">
-			<div class="input-group-addon"><i class="fa fa-user-o"></i></div>
-				<select class="form-control">
+	</div>
+	<div class="form-group row">
+			<label class="col-md-1">Type</label>	
+			<div class="col-md-11">
+				<select class="form-control" name="Job_Type__c">
 					<option>Contract</option>
 					<option>Contract to Hire</option>
 					<option>FTE</option>
 				</select>
 			</div>
+		</div>
+	<button type="submit" class="btn btn-default mb-3">Submit</button>
 		</form>
-	
+		</div>
 	<div id="content" class="container-fluid">
 	</div>
 	
@@ -96,28 +103,26 @@
 	<!-- end of content -->
   <!--start templates -->
 	<script id="jobs_template" type="text/x-handlebars-template">
-<table class="table table-hover table-sm" role="tablist" id="accordion">
-<tr class="star-red">
-<td><strong>Opportunity</strong></td>
-<td>Summary</td>
-</tr>
+<div class="mb-3" role="tablist" id="accordion">
 		{{#each this}}
-		<tr>
-			<td><strong>{{Job_Name__c}}</strong><br><small class="text-muted">#{{Name}}</small> </td>
-			<td>{{AVTRRT__Job_Summary__c}}<br>
-			<span class="float-right"><a data-toggle="collapse" data-parent="#accordion" href="#{{Id}}" aria-expanded="true" aria-controls="{{Name}}" class="btn btn-default">Details</a><a href="{{Job_Application_URL_New__c}}" class="btn btn-default">Apply</a></span>
-		</td>
-
+			<div class="card">
+			<div class="card-header">
+			<span class="float-right">
+				<a data-toggle="collapse" data-parent="#accordion" href="#{{Id}}" aria-expanded="true" aria-controls="{{Name}}" class="btn btn-default">Details</a>
+				
+				<a href="{{Job_Application_URL_New__c}}" class="btn btn-default">Apply</a>
+			</span>
+			<a data-toggle="collapse" data-parent="#accordion" href="#{{Id}}" aria-expanded="true" aria-controls="{{Name}}"><h5>{{Job_Name__c}}</h5></a>
+			<span style="font-size:0.9em;" class="hidden-sm-down">{{AVTRRT__Job_Summary__c}}</span>
+			</div>
+		
 			
-		</tr>
-		<tr id="{{Id}}" class="collapse" role="tabpanel">
-		<td colspan="5">
+		<div id="{{Id}}" class="card-block collapse" role="tabpanel">
 		<small class="text-muted float-right">{{AVTRRT__Job_City__c}}, {{AVTRRT__State__c}}<br>{{Job_Type__c}}<br></small>
-		<h4>{{Job_Name__c}}</h4>
-		{{{AVTRRT__Job_Description_Rich__c}}}</td>
-		</tr>
+		{{{AVTRRT__Job_Description_Rich__c}}}
+		</div>
+		</div>
 		{{/each}}
-		</table>
 		
 	</script>
 	
