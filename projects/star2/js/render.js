@@ -12,7 +12,7 @@ xhr.onreadystatechange = function() {
         starjobs = JSON.parse(this.responseText);}
 };
 
-
+/*
 var form = document.getElementById("starform");
     $(form).submit(function () {
         var domain = apiurl+"?";
@@ -23,6 +23,7 @@ var form = document.getElementById("starform");
         return false;
     });
 
+*/
 
 xhr.open("GET", apiurl, false);
 xhr.send();
