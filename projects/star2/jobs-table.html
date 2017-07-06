@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="css/basics.css">
 	</head>
 
-<body data-spy="scroll" data-target="star-nav" data-offset="50" style="margin-top:20px;">
+<body data-spy="scroll" data-target="star-nav" data-offset="50" style="margin-top:20px;" class="fn-opportunities">
 	<header class="sticky-top">
 		<nav class="navbar navbar-light fixed-top navbar-toggleable-sm" style="background-color: white;" id="star-nav">
 		<button class="navbar-toggler navbar-toggler-right border-0" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -47,7 +47,7 @@
 	<p>If you are interested in applying for an opportunity with STAR Collaborative, please review our applicant <a href="#">FAQ</a> before submitting your application (we only submit fully vetted and qualified candidates to our clients, so consider this the first step to helping us get to know you). </p>
 	
 <div>
-<form class="form fn-opportunities" id="starform">
+<form class="form" id="starform">
  	<div class="form-group row">
  	<label class="col-md-1">Search</label>
   	<div class="col-md-11">
@@ -55,22 +55,26 @@
   	</div>
 	</div>
 	<div class="form-group row">
+			<label class="col-md-1">Discipline</label>	
+			<div class="col-md-11">
+				<select class="form-control" name="MC_IntersetGroup__c" id="focus_areas">
+					<option value="" selected>Show all</option>
+				</select>
+			</div>
+		</div>
+	<div class="form-group row">
 			<label class="col-md-1">State</label>		
 				<div class="col-md-11">
-				<select class="form-control">
-					<option>Minnesota</option>
-					<option>Wisconsin</option>
-					<option>Other / Travels</option>
+				<select class="form-control" name="Job_State__c" id="locations">
+					<option value="" selected>Show all</option>
 				</select>
 			</div>
 	</div>
 	<div class="form-group row">
 			<label class="col-md-1">Type</label>	
 			<div class="col-md-11">
-				<select class="form-control" name="Job_Type__c">
-					<option>Contract</option>
-					<option>Contract to Hire</option>
-					<option>FTE</option>
+				<select class="form-control" name="Job_Type__c" id="job_types">
+					<option value="" selected>Show all</option>
 				</select>
 			</div>
 		</div>
