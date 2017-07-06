@@ -67,10 +67,8 @@ for(var i = 0; i < arr_focus_areas.length; i++) {
 
 var form = document.getElementById("starform");
     $(form).submit(function () {
-        var domain = apiurl+"?";
         var data = $(this).serialize();
-        
-        var apiurl = domain + data;
+        apiurl = "?" + data;
         console.log(apiurl);
         return false;
     });
