@@ -18,10 +18,6 @@ xhr.send();
 console.log(xhr.status);
 console.log(xhr.statusText);
 
-console.log(starjobs);
-
-
-
 //Create variables for dropdowns
 // Define unique values for job type filter
 const arr_jobtypes = [...new Set(starjobs.map(item => item.Job_Type__c))];
@@ -32,7 +28,6 @@ const arr_locations = [...new Set(starjobs.map(item => item.AVTRRT__State__c))];
 // Define unique values for focus areas
 const arr_focus_areas = [...new Set(starjobs.map(item => item.MC_IntersetGroup__c))];
 //Confirm that all dropdown arrays are working.
-console.log(arr_focus_areas, arr_locations, arr_jobtypes);
 
 //Write dropdowns for jobtypes
 var frm_jobtypes = document.getElementById("job_types");
@@ -64,15 +59,15 @@ for(var i = 0; i < arr_focus_areas.length; i++) {
     frm_focus.appendChild(el);
 }
 
-
-var form = document.getElementById("starform");
-    $(form).submit(function () {
-        var data = $(this).serialize();
-        apiurl = "?" + data;
-        console.log(apiurl);
-        return false;
-    });
-
+$("#starform").submit(function() {
+    var data = $(this).serialize();
+	console.log(data);
+	xhr.open("GET", apiurl + "?" + data, false);
+	xhr.send();
+	console.log(xhr.status);
+	console.log(xhr.statusText);
+	event.preventDefault();
+});
 
 //Initialize templates
 var jobs_template;
