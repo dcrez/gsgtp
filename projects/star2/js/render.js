@@ -67,6 +67,7 @@ $("#starform").submit(function() {
 	console.log(xhr.status);
 	console.log(xhr.statusText);
 	$(".fn-opportunities").click();
+	console.log(starjobs);
 	event.preventDefault();
 });
 
