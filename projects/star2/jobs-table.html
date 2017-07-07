@@ -57,7 +57,7 @@
 	<div class="form-group row">
 			<label class="col-2 col-md-1">Discipline</label>	
 			<div class="col-10 col-md-11">
-				<select class="form-control" name="MC_IntersetGroup__c" id="focus_areas">
+				<select class="form-control" name="MC_IntersetGroup__c" id="focus_areas" type="text">
 					<option value="" selected>Show all</option>
 				</select>
 			</div>
@@ -71,12 +71,17 @@
 			</div>
 			<label class="col-1">Type</label>	
 			<div class="col-5">
-				<select class="form-control" name="Job_Type__c" id="job_types">
+				<select class="form-control" name="jtype" id="job_types">
 					<option value="" selected>Show all</option>
 				</select>
 			</div>
 		</div>
-	<button type="submit" class="btn btn-default mb-3">Submit</button>
+	<div class="row mb-3">
+		<div class="col hidden-sm-down"></div>
+	<div class="col col-md-3">
+	<button type="submit" class="btn btn-primary btn-block">Submit</button>
+		</div>
+	</div>
 		</form>
 		</div>
 	<div id="content" class="container-fluid">
