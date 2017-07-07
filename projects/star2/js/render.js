@@ -62,10 +62,11 @@ for(var i = 0; i < arr_focus_areas.length; i++) {
 $("#starform").submit(function() {
     var data = $(this).serialize();
 	console.log(data);
-	xhr.open("GET", apiurl + "?" + data, false);
+	xhr.open("GET", apiurl + "/?" + data, false);
 	xhr.send();
 	console.log(xhr.status);
 	console.log(xhr.statusText);
+	$(".fn-opportunities").click();
 	event.preventDefault();
 });
 
@@ -88,7 +89,6 @@ $(".fn-opportunities").click(function() {
 });
 
 $(".fn-opportunities").click();
-$(".fn-joblocation").click();
 
 });
 
