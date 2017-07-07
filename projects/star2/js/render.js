@@ -49,6 +49,7 @@ for(var i = 0; i < arr_locations.length; i++) {
     frm_locations.appendChild(el);
 }
 
+/*
 //Write dropdowns for focus areas
 var frm_focus = document.getElementById("focus_areas");
 for(var i = 0; i < arr_focus_areas.length; i++) {
@@ -57,7 +58,7 @@ for(var i = 0; i < arr_focus_areas.length; i++) {
     el.textContent = fa;
     el.value = fa;
     frm_focus.appendChild(el);
-}
+}*/
 
 $("#starform").submit(function() {
     var data = $(this).serialize();
