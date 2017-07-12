@@ -78,7 +78,29 @@ for(var i = 0; i < split_focus.length; i++) {
     frm_focus.appendChild(el);
 }
 
+    var filteredData = [];
 
+// Create function to filter based on discipline, state, and type
+function getFilteredData(form)
+{
+    var disc = form.fltrDiscipline.value;
+    var st = form.fltrState.value;
+    var typ = form.fltrType.value;
+
+    for ( var i = 0; i < starjobs.length; ++i )
+    {
+        var elem = starjobs[i];
+        if (    ( disc == "All"  || disc == elem.MC_IntersetGroup__c )
+             && ( st == "All"  || st == elem.AVTRRT__State__c )
+             && ( typ == "All" || typ == elem.Job_Type__c )
+        ) {
+            filteredData.push( elem );
+        }
+    }
+    return filteredData;
+}
+
+// Call search function on submit
 $("#starform").submit(function() {
     var data = $(this).serialize();
 	console.log(data);
@@ -86,10 +108,14 @@ $("#starform").submit(function() {
 	xhr.send();
 	console.log(xhr.status);
 	console.log(xhr.statusText);
+	getFilteredData(form);
+	starjobs = filteredData;
 	$(".fn-opportunities").click();
 	console.log(starjobs);
 	event.preventDefault();
 });
+
+
 
 //Initialize templates
 var jobs_template;
