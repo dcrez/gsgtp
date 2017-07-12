@@ -27,7 +27,25 @@ const arr_locations = [...new Set(starjobs.map(item => item.AVTRRT__State__c))];
 
 // Define unique values for focus areas
 const arr_focus_areas = [...new Set(starjobs.map(item => item.MC_IntersetGroup__c))];
+
+var split_focus = [];
+for (var i = 0; i < arr_focus_areas.length; i++) {
+    var split = arr_focus_areas[i].split(";");  // just split once
+    split_focus.push(split[0]); // before the dot
+    split_focus.push(split[1]); // after the dot
+}
+
+split_focus = _.unique(split_focus);
+split_focus = _.sortBy(split_focus);
+split_focus = _.compact(split_focus);
+console.log(split_focus);
+
+
+
 //Confirm that all dropdown arrays are working.
+
+
+
 
 //Write dropdowns for jobtypes
 var frm_jobtypes = document.getElementById("job_types");
@@ -52,8 +70,8 @@ for(var i = 0; i < arr_locations.length; i++) {
 
 //Write dropdowns for focus areas
 var frm_focus = document.getElementById("focus_areas");
-for(var i = 0; i < arr_focus_areas.length; i++) {
-	var fa = arr_focus_areas[i];
+for(var i = 0; i < split_focus.length; i++) {
+	var fa = split_focus[i];
     var el = document.createElement("option");
     el.textContent = fa;
     el.value = fa;
