@@ -47,7 +47,9 @@
 	<p>If you are interested in applying for an opportunity with STAR Collaborative, please review our applicant <a href="#">FAQ</a> before submitting your application (we only submit fully vetted and qualified candidates to our clients, so consider this the first step to helping us get to know you). </p>
 	
 <div>
-<div class="form-group row">
+
+<form class="form" id="starform">
+	<div class="form-group row">
  	<label class="col-2 col-md-1">Search</label>
   	<div class="col-10 col-md-11">
   	<input type="search" class="form-control" placeholder="Keyword search" name="srch" value="" id="srch">
@@ -56,23 +58,21 @@
 	<div class="form-group row">
 			<label class="col-2 col-md-1">Discipline</label>	
 			<div class="col-10 col-md-11">
-				<select class="form-control" id="focus_areas" type="text">
+				<select class="form-control" id="focus_areas" type="text" name="fltrDiscipline">
 					<option value="" selected>Show all</option>
 				</select>
 			</div>
 		</div> <!--/ End Discipline -->
-<form class="form" id="starform">
-	
 	<div class="form-group row">
 			<label class="col-1">State</label>		
 				<div class="col-5">
-				<select class="form-control" name="jState" id="locations">
+				<select class="form-control" name="fltrState" id="locations">
 					<option value="" selected>Show all</option>
 				</select>
 			</div>
 			<label class="col-1">Type</label>	
 			<div class="col-5">
-				<select class="form-control" name="jtype" id="job_types">
+				<select class="form-control" name="fltrType" id="job_types">
 					<option value="" selected>Show all</option>
 				</select>
 			</div>
