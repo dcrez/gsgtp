@@ -47,13 +47,12 @@
 	<p>If you are interested in applying for an opportunity with STAR Collaborative, please review our applicant <a href="#">FAQ</a> before submitting your application (we only submit fully vetted and qualified candidates to our clients, so consider this the first step to helping us get to know you). </p>
 	
 <div>
-<form class="form" id="starform">
- 	<div class="form-group row">
+<div class="form-group row">
  	<label class="col-2 col-md-1">Search</label>
   	<div class="col-10 col-md-11">
-  	<input type="search" class="form-control" placeholder="Keyword search" name="srch" value="" id="src">
+  	<input type="search" class="form-control" placeholder="Keyword search" name="srch" value="" id="srch">
   	</div>
-	</div>
+	</div><!--/ End search -->
 	<div class="form-group row">
 			<label class="col-2 col-md-1">Discipline</label>	
 			<div class="col-10 col-md-11">
@@ -61,11 +60,13 @@
 					<option value="" selected>Show all</option>
 				</select>
 			</div>
-		</div>
+		</div> <!--/ End Discipline -->
+<form class="form" id="starform">
+	
 	<div class="form-group row">
 			<label class="col-1">State</label>		
 				<div class="col-5">
-				<select class="form-control" name="jstate" id="locations">
+				<select class="form-control" name="jState" id="locations">
 					<option value="" selected>Show all</option>
 				</select>
 			</div>
@@ -143,6 +144,7 @@
    <!-- <script src="js/opportunities-sample.js" type="text/javascript"></script>-->
 	<script
   src="js/jquery-3.2.1.min.js" type="text/javascript"></script>
+	<script src="js/underscore-min.js"></script>
 <script src="js/tether.min.js" type="text/javascript"></script>
 <script src="js/bootstrap.min.js" type="text/javascript"></script>
 <script src="js/handlebars-v4.0.10.js" type="text/javascript"></script>
