@@ -108,7 +108,7 @@ $("#starform").submit(function() {
 	xhr.send();
 	console.log(xhr.status);
 	console.log(xhr.statusText);
-	getFilteredData(form);
+	getFilteredData("#starform");
 	starjobs = filteredData;
 	$(".fn-opportunities").click();
 	console.log(starjobs);
