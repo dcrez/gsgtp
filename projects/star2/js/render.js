@@ -81,7 +81,7 @@ for(var i = 0; i < split_focus.length; i++) {
     var filteredData = [];
 
 // Create function to filter based on discipline, state, and type
-function getFilteredData(form)
+/*function getFilteredData(form)
 {
     var disc = form.fltrDiscipline.value;
     var st = form.fltrState.value;
@@ -98,7 +98,7 @@ function getFilteredData(form)
         }
     }
     return filteredData;
-}
+}*/
 
 // Call search function on submit
 $("#starform").submit(function() {
@@ -108,8 +108,8 @@ $("#starform").submit(function() {
 	xhr.send();
 	console.log(xhr.status);
 	console.log(xhr.statusText);
-	getFilteredData("#starform");
-	starjobs = filteredData;
+	//getFilteredData("#starform");
+	//starjobs = filteredData;
 	$(".fn-opportunities").click();
 	console.log(starjobs);
 	event.preventDefault();
