@@ -40,13 +40,6 @@ split_focus = _.sortBy(split_focus);
 split_focus = _.compact(split_focus);
 console.log(split_focus);
 
-
-
-//Confirm that all dropdown arrays are working.
-
-
-
-
 //Write dropdowns for jobtypes
 var frm_jobtypes = document.getElementById("job_types");
 for(var i = 0; i < arr_jobtypes.length; i++) {
@@ -78,27 +71,22 @@ for(var i = 0; i < split_focus.length; i++) {
     frm_focus.appendChild(el);
 }
 
-    var filteredData = [];
+var loc = document.getElementById("locations").value;
+var jt = document.getElementById("job_types").value;
+var fcs = document.getElementById("focus_areas").value;
 
-// Create function to filter based on discipline, state, and type
-/*function getFilteredData(form)
-{
-    var disc = form.fltrDiscipline.value;
-    var st = form.fltrState.value;
-    var typ = form.fltrType.value;
+var arr_loc = [];
+var arr_jt = [];
+var arr_fcs = [];
 
-    for ( var i = 0; i < starjobs.length; ++i )
-    {
-        var elem = starjobs[i];
-        if (    ( disc == "All"  || disc == elem.MC_IntersetGroup__c )
-             && ( st == "All"  || st == elem.AVTRRT__State__c )
-             && ( typ == "All" || typ == elem.Job_Type__c )
-        ) {
-            filteredData.push( elem );
-        }
-    }
-    return filteredData;
-}*/
+for (var i = 0; i < starjobs.length ; i++) {
+    if (starjobs[i].AVTRRT__State__c === loc.value) {
+        arr_loc.push(starjobs[i]);}}
+	
+for (var i = 0; i < arr_loc.length ; i++) {
+    if (arr_loc[i].Job_Type__c === jt.value) {
+        arr_jt.push(arr_loc[i]);}}
+
 
 // Call search function on submit
 $("#starform").submit(function() {
@@ -106,11 +94,9 @@ $("#starform").submit(function() {
 	console.log(data);
 	xhr.open("GET", apiurl + "/?" + data, false);
 	xhr.send();
-	console.log(xhr.status);
-	console.log(xhr.statusText);
-	//getFilteredData("#starform");
-	//starjobs = filteredData;
-	$(".fn-opportunities").click();
+	$(".fn-opportunities").click(function(){
+		showTemplate(jobs_template, arr_jt);
+	}) ;
 	console.log(starjobs);
 	event.preventDefault();
 });
