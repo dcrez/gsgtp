@@ -94,9 +94,6 @@ $("#starform").submit(function() {
 	console.log(data);
 	xhr.open("GET", apiurl + "/?" + data, false);
 	xhr.send();
-	$(".fn-opportunities").click(function(){
-		showTemplate(jobs_template, arr_jt);
-	}) ;
 	console.log(starjobs);
 	event.preventDefault();
 });
