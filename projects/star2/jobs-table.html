@@ -49,16 +49,16 @@
 <div>
 
 <form class="form" id="starform">
-	<div class="form-group row">
- 	<label class="col-2 col-md-1">Search</label>
-  	<div class="col-10 col-md-11">
+	<div class="row form-group">
+	
+ 	<label class="col-sm-1 col-2 mt-2">Search</label>
+  	<div class="col-sm-5 col-10 mt-2">
   	<input type="search" class="form-control" placeholder="Keyword search" name="srch" value="" id="srch">
   	</div>
-	</div><!--/ End search -->
-	<div class="form-group row">
-			<label class="col-2 col-md-1">Discipline</label>	
-			<div class="col-10 col-md-11">
-				<select class="form-control" id="focus_areas" type="text" name="fltrDiscipline">
+
+			<label class="col-sm-1 col-2 mt-2">Focus</label>	
+			<div class="col-sm-5 col-10 mt-2">
+				<select class="form-control" id="focus_areas" type="text" name="fltrFocus">
 					<option value="" selected>Show all</option>
 				</select>
 			</div>
@@ -80,13 +80,16 @@
 	<div class="row mb-3">
 		<div class="col hidden-sm-down"></div>
 	<div class="col col-md-3">
-	<button type="submit" class="btn btn-primary btn-block">Submit</button>
+	<button type="submit" class="btn btn-success btn-block">Submit</button>
 		</div>
 	</div>
 		</form>
 		</div>
+		
 	<div id="content" class="container-fluid">
 	</div>
+	
+		
 	
 	</div>
 	<div id="referrals" style="padding-top:0px;"></div>
@@ -102,7 +105,7 @@
 	</div>
 		<div class="col-md-4 col-sm-4 col-12 text-right">
 			<h4 class="text-right"><a href="../privacy-policy.html">Privacy Policy</a> | <a href="../sitemap.html">Sitemap</a></h4>
-			<h4 text-right><small>&copy; 2017 STAR Collaborative. All rights reserved.</small></h4>
+			<h4 text-right><small class="">&copy; 2017 STAR Collaborative. All rights reserved.</small></h4>
 	</div>
 			</div>
 		</div>
@@ -113,25 +116,36 @@
 	<script id="jobs_template" type="text/x-handlebars-template">
 <div class="mb-3" role="tablist" id="accordion">
 		{{#each this}}
-			<div class="card">
-			<div class="card-header">
-			<span class="float-right">
-				<a data-toggle="collapse" data-parent="#accordion" href="#{{Id}}" aria-expanded="true" aria-controls="{{Name}}" class="btn btn-default">Details</a>
+			<div class="card border-0">
+			<div class="row mt-2 mb-2" style="border-left: dotted gray 2px;">
+			<div class="col-11 col-md-3">
+				<h5>{{Job_Name__c}}</h5>
+				<p class="text-muted text-uppercase" style="margin-top:-5px; font-size:0.7em;"><span class="star-red">Location: </span>{{AVTRRT__Job_City__c}}, {{AVTRRT__State__c}} &nbsp;</p>
+				<p class="text-muted text-uppercase" style="margin-top:-15px; font-size:0.7em;">
+				<span class="star-red">Type: </span>{{Job_Type__c}}</p>
 				
-				<a href="{{Job_Application_URL_New__c}}" class="btn btn-default">Apply</a>
-			</span>
-			<a data-toggle="collapse" data-parent="#accordion" href="#{{Id}}" aria-expanded="true" aria-controls="{{Name}}"><h5>{{Job_Name__c}}</h5></a>
-			<span style="font-size:0.9em;" class="hidden-sm-down">{{AVTRRT__Job_Summary__c}}</span>
-			</div>
+			</div>{{!--/End Name and Brief Details--}}
+			<div class="col-md-9" style="font-size:0.9em;">
+				<p class="hidden-sm-down">{{AVTRRT__Job_Summary__c}}</p>
+				<strong><p style="margin-top:-5px; font-size:0.7em;" class="text-uppercase"><a data-toggle="collapse" data-parent="#accordion" href="#{{Id}}" aria-expanded="true" aria-controls="{{Name}}" class="m-0">
+				Details
+				</a> 
+				&nbsp;|&nbsp; 
+				<a href="#{{Id}}" class="m-0">
+				Apply
+				</a>
+				</p></strong>
+				
+				<div id="{{Id}}" class="collapse" role="tabpanel">
 		
-			
-		<div id="{{Id}}" class="card-block collapse" role="tabpanel">
-		<small class="text-muted float-right">{{AVTRRT__Job_City__c}}, {{AVTRRT__State__c}}<br>{{Job_Type__c}}<br></small>
-		{{{AVTRRT__Job_Description_Rich__c}}}<br>
-		<p><a href="{{Job_Application_URL_New__c}}" class="btn btn-primary">Apply</a></p>
-		</div>
-		</div>
+				{{{AVTRRT__Job_Description_Rich__c}}}<br>
+				<p><a href="{{Job_Application_URL_New__c}}" class="btn btn-success btn-block mt-2">Apply</a></p>
+			</div>
+			</div>{{!--/End Summary--}}
+			</div>{{!-- /End Card Block--}}
+			</div>{{!-- /End Card--}}
 		{{/each}}
+		</div>
 		
 	</script>
 	
