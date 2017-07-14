@@ -1,3 +1,5 @@
+"use strict";
+
 var starjobs;
 
 var apiurl = "https://fullsand-starcollaborativeportal.cs61.force.com/PortalLoginPage/services/apexrest/JobPortal";
@@ -68,24 +70,41 @@ for(var i = 0; i < split_focus.length; i++) {
     frm_focus.appendChild(el);
 }
 
-var loc = document.getElementById("locations").value;
-var jt = document.getElementById("job_types").value;
-var fcs = document.getElementById("focus_areas").value;
+var loc; var jt; var fcs; //form values
+var arr_loc = []; var arr_jt = []; var arr_fcs = []; var result = []; //filter variables
 
-var arr_loc = [];
-var arr_jt = [];
-var arr_fcs = [];
+// Check intersection of arrays
+_.intersectionObjects = _.intersect = function(array) {
+    var slice = Array.prototype.slice;
+    var rest = slice.call(arguments, 1);
+    return _.filter(_.uniq(array), function(item) {
+      return _.every(rest, function(other) {
+        //return _.indexOf(other, item) >= 0;
+        return _.any(other, function(element) { return _.isEqual(element, item); });
+      });
+    });
+  };
 
-for (var i = 0; i < starjobs.length ; i++) {
-    if (starjobs[i].AVTRRT__State__c === loc.value) {
+function dosubmit() {
+	//set variables
+	loc = document.getElementById("locations").value;
+	jt = document.getElementById("job_types").value;
+	fcs = document.getElementById("focus_areas").value;
+	
+	// Create filtered array for job types
+	for (var i = 0; i < starjobs.length ; i++) {
+    if (starjobs[i].AVTRRT__State__c === loc) {
         arr_loc.push(starjobs[i]);}}
 	
-for (var i = 0; i < arr_loc.length ; i++) {
-    if (arr_loc[i].Job_Type__c === jt.value) {
-        arr_jt.push(arr_loc[i]);}}
-
-
-
+	// Create filtered array for locations
+	for (var j = 0; j < arr_loc.length ; j++) {
+    if (arr_loc[j].Job_Type__c === jt) {
+        arr_jt.push(arr_loc[j]);}}
+	
+	result = _.intersectionObjects(starjobs,arr_loc,arr_jt);
+	
+	showTemplate(jobs_template, result);
+}
 
 // Call search function on submit
 $("#starform").submit(function() {
@@ -93,7 +112,7 @@ $("#starform").submit(function() {
 	console.log(data);
 	xhr.open("GET", apiurl + "/?" + data, false);
 	xhr.send();
-	console.log(starjobs);
+	dosubmit();
 	event.preventDefault();
 });
 
