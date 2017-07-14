@@ -15,9 +15,6 @@ xhr.onreadystatechange = function() {
 xhr.open("GET", apiurl, false);
 xhr.send();
 
-console.log(xhr.status);
-console.log(xhr.statusText);
-
 //Create variables for dropdowns
 // Define unique values for job type filter
 const arr_jobtypes = [...new Set(starjobs.map(item => item.Job_Type__c))];
@@ -35,7 +32,7 @@ for (var i = 0; i < arr_focus_areas.length; i++) {
     split_focus.push(split[1]); // after the dot
 }
 
-split_focus = _.unique(split_focus);
+split_focus = _.unique(split_focus); 
 split_focus = _.sortBy(split_focus);
 split_focus = _.compact(split_focus);
 console.log(split_focus);
@@ -86,6 +83,8 @@ for (var i = 0; i < starjobs.length ; i++) {
 for (var i = 0; i < arr_loc.length ; i++) {
     if (arr_loc[i].Job_Type__c === jt.value) {
         arr_jt.push(arr_loc[i]);}}
+
+
 
 
 // Call search function on submit
