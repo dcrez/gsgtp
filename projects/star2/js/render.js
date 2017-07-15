@@ -103,7 +103,7 @@ function dosubmit() {
 	
 	arr_fcs = starjobs.filter(function(focus){return focus.MC_IntersetGroup__c.match(fcs);});
 	
-	result = _.intersectionObjects(starjobs,arr_loc,arr_jt);
+	result = _.intersectionObjects(starjobs,arr_loc,arr_jt, arr_fcs);
 	starjobs = result;
 }
 
