@@ -103,22 +103,26 @@ function dosubmit() {
 	
 	arr_fcs = starjobs.filter(function(focus){return focus.MC_IntersetGroup__c.match(fcs);});
 	
-	result = _.intersectionObjects(starjobs,arr_loc,arr_jt, arr_fcs);
-	starjobs = result;
+	if (loc === "") {return false;} else {result = _.intersectionObjects(starjobs,arr_loc); starjobs = result; console.log("loc:", starjobs)}
+	if (jt === "") {return false;} else {result = _.intersectionObjects(starjobs,arr_jt); starjobs = result; console.log("jt:", starjobs)}
+	if (fcs === "") {return false;} else {result = _.intersectionObjects(starjobs,arr_fcs); starjobs = result; console.log("fcs:", starjobs)}
+	
+	if (starjobs === "") {document.getElementById("content").innerHTML = "<em>We can't find anything matching the criteria you provided. Try <a href='#'>searching again</a> or <a href='#'>subscribe</a> to get alerts about new roles as they become available.</em>";
+}
 }
 
 // Call search function on submit
-$("#starform").submit(function() {
-    var data = $(this).serialize();
-	console.log(data);
+$(".fn-submit").click(function() {
+	var data = $(this).serialize();
 	xhr.open("GET", apiurl + "/?" + data, false);
+	console.log("xhr-pre-send:", xhr);
+	console.log("starjobs-pre-send:", starjobs);
 	xhr.send();
+	console.log(starjobs);
 	dosubmit();
 	$(".fn-opportunities").click();
 	event.preventDefault();
 });
-
-
 
 //Initialize templates
 var jobs_template;
