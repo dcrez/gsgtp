@@ -1,5 +1,3 @@
-"use strict";
-
 var starjobs;
 
 var apiurl = "https://fullsand-starcollaborativeportal.cs61.force.com/PortalLoginPage/services/apexrest/JobPortal";
@@ -103,23 +101,30 @@ function dosubmit() {
 	
 	arr_fcs = starjobs.filter(function(focus){return focus.MC_IntersetGroup__c.match(fcs);});
 	
-	if (loc === "") {return false;} else {result = _.intersectionObjects(starjobs,arr_loc); starjobs = result; console.log("loc:", starjobs)}
-	if (jt === "") {return false;} else {result = _.intersectionObjects(starjobs,arr_jt); starjobs = result; console.log("jt:", starjobs)}
-	if (fcs === "") {return false;} else {result = _.intersectionObjects(starjobs,arr_fcs); starjobs = result; console.log("fcs:", starjobs)}
+	if (loc == "") {arr_loc = [];} else {result = _.intersectionObjects(starjobs,arr_loc); starjobs = result; console.log("loc:", starjobs);}
+	if (jt == "") {arr_jt = [];} else {result = _.intersectionObjects(starjobs,arr_jt); starjobs = result; console.log("jt:", starjobs);}
+	if (fcs == "") {arr_fcs = [];} else {result = _.intersectionObjects(starjobs,arr_fcs); starjobs = result; console.log("fcs:", starjobs);}
 	
-	if (starjobs === "") {document.getElementById("content").innerHTML = "<em>We can't find anything matching the criteria you provided. Try <a href='#'>searching again</a> or <a href='#'>subscribe</a> to get alerts about new roles as they become available.</em>";
+	if (starjobs == []) {document.getElementById("content").innerHTML = "<em>We can't find anything matching the criteria you provided. Try <a href='#'>searching again</a> or <a href='#'>subscribe</a> to get alerts about new roles as they become available.</em>";
 }
 }
 
 // Call search function on submit
-$(".fn-submit").click(function() {
+$("#starform").click(function() {
 	var data = $(this).serialize();
 	xhr.open("GET", apiurl + "/?" + data, false);
-	console.log("xhr-pre-send:", xhr);
+	console.log(data);
 	console.log("starjobs-pre-send:", starjobs);
 	xhr.send();
 	console.log(starjobs);
 	dosubmit();
+	$(".fn-opportunities").click();
+	event.preventDefault();
+});
+
+$(".fn-reset").click(function() {
+	xhr.open("GET", apiurl, false);
+	xhr.send();
 	$(".fn-opportunities").click();
 	event.preventDefault();
 });
