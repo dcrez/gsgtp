@@ -101,9 +101,10 @@ function dosubmit() {
     if (arr_loc[j].Job_Type__c === jt) {
         arr_jt.push(arr_loc[j]);}}
 	
-	result = _.intersectionObjects(starjobs,arr_loc,arr_jt);
+	arr_fcs = starjobs.filter(function(focus){return focus.MC_IntersetGroup__c.match(fcs);});
 	
-	showTemplate(jobs_template, result);
+	result = _.intersectionObjects(starjobs,arr_loc,arr_jt);
+	starjobs = result;
 }
 
 // Call search function on submit
@@ -113,6 +114,7 @@ $("#starform").submit(function() {
 	xhr.open("GET", apiurl + "/?" + data, false);
 	xhr.send();
 	dosubmit();
+	$(".fn-opportunities").click();
 	event.preventDefault();
 });
 
