@@ -113,20 +113,14 @@ function dosubmit() {
 $("#starform").click(function() {
 	var data = $(this).serialize();
 	xhr.open("GET", apiurl + "/?" + data, false);
-	console.log(data);
-	console.log("starjobs-pre-send:", starjobs);
 	xhr.send();
-	console.log(starjobs);
 	dosubmit();
 	$(".fn-opportunities").click();
 	event.preventDefault();
 });
 
 $(".fn-reset").click(function() {
-	xhr.open("GET", apiurl, false);
-	xhr.send();
-	$(".fn-opportunities").click();
-	event.preventDefault();
+	location.reload();
 });
 
 //Initialize templates
