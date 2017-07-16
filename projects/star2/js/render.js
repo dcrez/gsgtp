@@ -35,7 +35,6 @@ for (var i = 0; i < arr_focus_areas.length; i++) {
 split_focus = _.unique(split_focus); 
 split_focus = _.sortBy(split_focus);
 split_focus = _.compact(split_focus);
-console.log(split_focus);
 
 //Write dropdowns for jobtypes
 var frm_jobtypes = document.getElementById("job_types");
@@ -95,16 +94,19 @@ function dosubmit() {
         arr_loc.push(starjobs[i]);}}
 	
 	// Create filtered array for locations
-	for (var j = 0; j < arr_loc.length ; j++) {
-    if (arr_loc[j].Job_Type__c === jt) {
-        arr_jt.push(arr_loc[j]);}}
+	for (var j = 0; j < starjobs.length ; j++) {
+    if (starjobs[j].Job_Type__c === jt) {
+        arr_jt.push(starjobs[j]);}}
 	
-	arr_fcs = starjobs.filter(function(focus){return focus.MC_IntersetGroup__c.match(fcs);});
+	//arr_fcs = starjobs.filter(function(focus){return focus.MC_IntersetGroup__c.match(fcs);});
+	
+	for (var m = 0; m < starjobs.length; m++) {
+		if(starjobs[m].MC_IntersetGroup__c.indexOf(fcs) > 0) {arr_fcs.push(starjobs[m]);}
+	}
 	
 	if (loc == "") {arr_loc = [];} else {result = _.intersectionObjects(starjobs,arr_loc); starjobs = result; console.log("loc:", starjobs);}
 	if (jt == "") {arr_jt = [];} else {result = _.intersectionObjects(starjobs,arr_jt); starjobs = result; console.log("jt:", starjobs);}
 	if (fcs == "") {arr_fcs = [];} else {result = _.intersectionObjects(starjobs,arr_fcs); starjobs = result; console.log("fcs:", starjobs);}
-	
 	
 	if (starjobs.length < 1) {document.getElementById("form_error").innerHTML = "We can't find any opportunities that match the criteria you provided. Try searching again or subscribe to get alerts about new roles as they become available.";
 }
