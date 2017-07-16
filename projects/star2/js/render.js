@@ -105,7 +105,8 @@ function dosubmit() {
 	if (jt == "") {arr_jt = [];} else {result = _.intersectionObjects(starjobs,arr_jt); starjobs = result; console.log("jt:", starjobs);}
 	if (fcs == "") {arr_fcs = [];} else {result = _.intersectionObjects(starjobs,arr_fcs); starjobs = result; console.log("fcs:", starjobs);}
 	
-	if (starjobs == []) {document.getElementById("content").innerHTML = "<em>We can't find anything matching the criteria you provided. Try <a href='#'>searching again</a> or <a href='#'>subscribe</a> to get alerts about new roles as they become available.</em>";
+	
+	if (starjobs.length < 1) {document.getElementById("form_error").innerHTML = "We can't find any opportunities that match the criteria you provided. Try searching again or subscribe to get alerts about new roles as they become available.";
 }
 }
 
