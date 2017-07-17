@@ -137,8 +137,6 @@ section {z-index: 2; position: relative;}
 #why .marketing-teaser .active {z-index: 1; border-bottom: solid 5px white;}
 #why .marketing-teaser i {position:absolute; bottom:0; left:0;}
 
-#values {background-color:white; color:black;}
-
 #subscribe-mini {
 	width:100%;
 	min-height: 250px;
@@ -176,11 +174,15 @@ section {padding-top: 50px; padding-bottom: 50px;}
 	 url(../assets/7.jpg);
  background-position: center center; background-size: cover; background-attachment: fixed;}
 
-#wearestar {min-height: 300px; background:#f1f1f1;
-background:white;}
+#wearestar {min-height: 300px;}
+#wearestar ul li {padding: 7px 0 0;}
+#wearestar ul li:not(header) {font-size: 1.15em;}
 
-ul li {padding: 7px 0 0;}
-ul li:not(header) {font-size: 1.15em;}
+#values {padding-top:30px;}
+
+.values-columns {font-size:1.15em;}
+
+
 #wearestar ul li .oswald {font-size:1.2em;}
 #wearestar .team-member {
 	padding-top: 10px;
