@@ -1,0 +1,22 @@
+<body>
+  <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+  <h1>Todo List</h1>
+  {{> loginButtons}}
+  <form class="new-pull form">
+    <input type="text" name="text" placeholder="Type to add new pulls" />
+  </form>
+</nav>
+  <div class="container-fluid">
+
+
+    <ul>
+      {{#each pulls}}
+        {{> pull}}
+      {{/each}}
+    </ul>
+  </div>
+</body>
+
+<template name="pull">
+  <li>{{text}}</li>
+</template>
