@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Cache-control" content="public,max-age=30000,s-maxage=90000">
+    <meta name="description" content="STAR Collaborative is a professional services staffing and search firm that provides high quality talent for a wide range of professions and industries.">
+    <title>STAR Collaborative - Subscribe Call-to-Action</title>
+</head>
+
+<body>
+<div class="container">
+    <div class="text-center">
+       <h2>Be in the know</h2>
+       <div class="row">
+        <p class="col-md-1 col-sm-1 hidden-xs"></p>
+        <p class="col-md-10 col-sm-10 col-xs-12">Interested in learning more about STAR and our opportunities, but don't see anything that immediately strikes your fancy? Get customized email updates in your inbox as new opportunities become available by subscribing to our mailing list!</p>
+        <p class="col-md-1 col-sm-1 hidden-xs"></p>
+		</div>
+        <p class="col-md-12"><button type="button" class="btn btn-lg btn-primary" id="subscribe-popup" onclick="showMailingPopUp(); return false;">Subscribe</button></p>
+</div>
+</div>
+
+<script>
+function showMailingPopUp() {
+    require(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us2.list-manage.com","uuid":"e241d3caa65e31aa9384682e0","lid":"4f87f93c75"}) })
+    document.cookie = "MCEvilPopupClosed=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+};
+
+document.getElementByID("subscribe-popup").onclick = function() {showMailingPopUp()};
+document.getElementByID("mini-subscribe-popup").onclick = function() {showMailingPopUp()};
+document.getElementByID("nav-subscribe-popup").onclick = function() {showMailingPopUp()};
+</script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>STAR Collaborative</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/bootstrap-theme.min.css">
+    <link href="./css/basics.css" rel="stylesheet">
+    <link href="./css/iframe.css" rel="stylesheet">
+    <link href="./css/animations.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Oswald|Dosis" rel="stylesheet">
+    <script src="https://use.fontawesome.com/b676143643.js" async></script>
+    <script src="./js/jquery-3.1.0.min.js" type="text/javascript"></script>
+    <script src="./js/bootstrap.min.js" type="text/javascript"></script>
+    <meta name="description" content="STAR Collaborative is a professional services staffing and search firm that provides high quality talent for a wide range of professions and industries.">
+<meta name="keywords" content="STAR Collaborative, staffing, recruiting, management consulting, project management consulting, business analysis consulting, quality assurance consulting, software development consulting, RUBY on rails developers, jobs in the Twin Cities, jobs in Minneapolis, jobs in St Paul, jobs in Minnesota, staffing firms in Minneapolis, recruiting agencies mn">
+	<style>
+		#sitemap {background-color:#fff; min-height: 90vh;}
+	</style>
+</head>
+
+<body data-spy="scroll" data-target=".navbar" data-offset="50"><!-- Body set with data spy to dynamically change navigation bar while scrolling content -->
+	<header></header>
+	<section id="sitemap">
+		<div class="container">
+		<h1 class="text-center">STAR Collaborative Sitemap</h1>
+			<p></p>
+			<div class="col-md-4 col-sm-6">
+			<h2>Talent</h2>
+			<ul class="nav">
+				<li><a href="/index.html#why">Why STAR?</a></li>
+				<li><a href="http://starcollaborative.us2.list-manage.com/subscribe?u=e241d3caa65e31aa9384682e0&id=4f87f93c75">Subscribe</a></li>
+				<li><a href="/index.html#opportunities">Opportunities</a></li>
+				<li><a href="/index.html#referrals">Referrals</a></li>
+				<li><a href="/documents/Applicant-FAQ.pdf">Applicant Submission FAQ</a></li>
+				<li class="disabled"><a href="#" data-toggle="tooltip" data-placement="left" title="Coming Soon">Login</a></li>
+				<li class="disabled"><a href="#" data-toggle="tooltip" data-placement="left" title="Coming Soon">Invoice Portal </a></li>
+			</ul>
+			</div>
+			<div class="col-md-4 col-sm-6">
+			<h2>Clients</h2>
+			<ul class="nav">
+				<li class="disabled"><a href="#"  data-toggle="tooltip" data-placement="left" title="Coming Soon">Our Services</a></li>
+				<li class="disabled"><a href="#"  data-toggle="tooltip" data-placement="left" title="Coming Soon">Manage Your Requests</a></li>
+			</ul>
+				<h2>Community Partners</h2>
+				<ul class="nav">
+					<li class="disabled"><a href="#" data-toggle="tooltip" data-placement="left" title="Coming Soon">Partner Program</a></li>
+					<li><a href="/cpopportunities/">Partner Portal</a></li>
+				</ul>
+			</div>
+			<div class="col-md-4 col-sm-6">
+			<h2>About Us</h2>
+			<ul class="nav">
+						<li><a href="/index.html#wearestar">Our Values</a></li>
+						<li><a href="/index.html#team">Our Team</a></li>
+						<li class="disabled"><a href="#"  data-toggle="tooltip" data-placement="left" title="Coming Soon">Our Story</a></li>
+						<li class="disabled"><a href="#"  data-toggle="tooltip" data-placement="left" title="Coming Soon">Our Community</a></li>
+
+			</ul>
+			</div>
+		</div>
+	</section>
+	<footer></footer>
+
+<script>$('header').load('./assets/header.html');</script>
+	<script>$('footer').load('./assets/footer.html');</script>	<script>$('#landing').load('./assets/landing.html');</script>
+	<script async type="text/javascript">
+        /**
+         * Listen to scroll to change header opacity class
+         */
+        function checkScroll() {
+            var startY = $('.navbar').height() * 1; //The point where the navbar changes in px
+
+            if ($(window).scrollTop() > startY) {
+                $('.navbar').addClass("scrolled");
+            } else {
+                $('.navbar').removeClass("scrolled");
+            }
+        }
+
+        if ($('.navbar').length > 0) {
+            $(window).on("scroll load resize", function() {
+                checkScroll();
+            });
+        }
+    </script>
+	<script type="text/javascript" async>
+	$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
+	</script>
+</body>
+
+</html>
