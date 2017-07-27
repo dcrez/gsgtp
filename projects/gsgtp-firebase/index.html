@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>GSGTP Site Management</title>
+
+<script src="https://www.gstatic.com/firebasejs/4.1.5/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyCK3lJyrQ5qzYcqQorRlPkcoCGh38wdMW8",
+    authDomain: "gsgtp-b4448.firebaseapp.com",
+    databaseURL: "https://gsgtp-b4448.firebaseio.com",
+    projectId: "gsgtp-b4448",
+    storageBucket: "gsgtp-b4448.appspot.com",
+    messagingSenderId: "553297979168"
+  };
+  firebase.initializeApp(config);
+
+  // Get a reference to the database service
+var database = firebase.database();
+
+var puller = document.getElementById("puller").value;
+var vehicle = document.getElementById("vehicle").value;
+var scheduledEvent = document.getElementById("scheduledEvent").value;
+var vehicleClass = document.getElementById("vehicleClass").value;
+var distance = document.getElementById("distance").value;
+var points = document.getElementById("points").value;
+var dq = document.getElementById("dq").value;
+var dqreason = document.getElementById("dqreason").value;
+
+function writePull(puller, vehicle, vehicleClass, scheduledEvent, distance, points) {
+  firebase.database().ref('pulls/' + scheduledEvent + '/' + vehicleClass + '/' + puller).put({
+    puller: puller,
+    vehicle: vehicle,
+    vehicleClass : vehicleClass,
+    scheduledEvent: scheduledEvent,
+    distance: distance,
+    points: points
+  });
+  console.log(writePull);
+}
+
+</script>
+</head>
+<body>
+
+<form id="pullFor6m">
+  <input type="text" name="puller" placeholder="Name of Puller" id="puller"><br>
+  <input type="text" name="vehicle"  placeholder="Name of Vehicle" id="vehicle"><br>
+  <input type="date" name="scheduledEvent" id="scheduledEvent"><br>
+  <input type="text" name="vehicleClass"  placeholder="Class competiting in" id="vehicleClass"><br>
+  <input type="number" name="distance"  placeholder="Enter distance" id="distance"><br>
+  <input type="number" name="points"  placeholder="Enter points" id="points"><br>
+  <input type="checkbox" name="disqualified"  id="dq"><br>
+  <input type="text" name="disqaulifiedReason"  id="dqreason"><br>
+  <button onclick="writePull" id="submit">Submit</button>
+</form>
+
+
+  <script src="https://www.gstatic.com/firebasejs/4.1.5/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.1.5/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.1.5/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.1.5/firebase-messaging.js"></script>
+
+  <!-- Leave out Storage -->
+  <!-- <script src="https://www.gstatic.com/firebasejs/4.1.5/firebase-storage.js"></script> -->
+<script>
+</script>
+
+</body>
+</html>
