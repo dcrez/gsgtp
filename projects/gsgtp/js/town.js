@@ -369,7 +369,135 @@ var towns = {
             ]
           },
           ]
-	}
+	},
+	      {
+        "townName": "7/15 - Spring Valley, MN",
+		 img: "./assets/images/henderson.jpg",
+        "vehicleClass": [
+          {
+            name: "Mini rod - 1900A",
+            "vehicles": [
+{"place": "1","puller": "Ryan Hodgman","vehicle": "A Whole Lot Mower","distance": "304.65"},
+{"place": "2","puller": "Dan Ebenhoh","vehicle": "Money shot","distance": "282.09"},
+{"place": "3","puller": "Andrew Peterson","vehicle": "Mayhem","distance": "267.77"},
+{"place": "4","puller": "Collin Norman","vehicle": "Norman1","distance": "250.09"},
+{"place": "5","puller": "Brett Kitchner","vehicle": "OUTTA CONTROL","distance": "231.17"},
+           ]
+          },
+          {
+            name: "Mini rod - 1900B",
+            "vehicles": [
+{"place": "1","puller": "Andrew Peterson","vehicle": "Mayhem","distance": "355.27"},
+{"place": "2","puller": "Chops","vehicle": "Dory","distance": "286.1"},
+{"place": "3","puller": "Brett Kitchner","vehicle": "OUTTA CONTROL","distance": "278.56"},
+{"place": "4","puller": "Dan Ebenhoh","vehicle": "Money shot","distance": "274.85"},
+]
+          },
+          {
+            name: "Pro Stock - 1050",
+            "vehicles": [
+{"place": "1","puller": "Brett Kitchner","vehicle": "DISFUNCTIONAL","distance": "308.88"},
+{"place": "2","puller": "Pat Schmitt","vehicle": "JD140","distance": "248.86"},
+{"place": "3","puller": "Pat Schmitt","vehicle": "JD X500","distance": "0.09"},
+]
+          },
+          {
+            name: "Sport Stock - 1000",
+            "vehicles": [
+{"place": "1","puller": "Matt Creswick","vehicle": "Kamikaze","distance": "331.84"},
+{"place": "2","puller": "Chris Morgan","vehicle": "Awsome","distance": "292.2"},
+            ]
+          },
+          {
+            name: "Sport Stock - 1050",
+            "vehicles": [
+{"place": "1","puller": "Matt Creswick","vehicle": "Kamikaze","distance": "351.46"},
+{"place": "2","puller": "Chris Morgan","vehicle": "Awsome","distance": "308.89"},
+            ]
+          },
+          {
+            name: "Stock - 1050",
+            "vehicles": [
+{"place": "1","puller": "Isaiah McMahon","vehicle": "side winder JR","distance": "201.36"},
+{"place": "2","puller": "Warren Fox","vehicle": "Red Dog","distance": "188.46"},
+{"place": "3","puller": "Natalie","vehicle": "Super Star","distance": "183.92"},
+{"place": "4","puller": "Abbie/Tara Larsen","vehicle": "Abracadabra","distance": "182.66"},
+{"place": "5","puller": "Ryan Hodgman","vehicle": "just a tiny mower","distance": "176.63"},
+{"place": "6","puller": "Heidi Morgan","vehicle": "122","distance": "0"},
+            ]
+          },
+          {
+            name: "Stock - 950",
+            "vehicles": [
+{"place": "1","puller": "Heidi Morgan","vehicle": "122","distance": "286.86"},
+{"place": "2","puller": "Brandon Matejcek","vehicle": "Super Star","distance": "275.41"},
+{"place": "3","puller": "Warren Fox","vehicle": "Red Dog","distance": "239.48"},
+{"place": "4","puller": "Abbie Larsen","vehicle": "Abracadabra","distance": "212.52"},
+{"place": "5","puller": "Gracelyn Hodgman","vehicle": "just a tiny mower","distance": "184.14"},
+            ]
+          },
+		 {
+            name: "Stock Altered - 1050",
+            "vehicles": [
+{"place": "1","puller": "Jeremy Katula","vehicle": "Showdown","distance": "235.44"},
+{"place": "2","puller": "Colton Burbank","vehicle": "Rattling Parts","distance": "145.75"},
+            ]
+          },
+          {
+            name: "Stock Altered - 950",
+            "vehicles": [
+{"place": "1","puller": "Tony Katula","vehicle": "Showdown","distance": "223.9"},
+{"place": "2","puller": "Colton Burbank","vehicle": "Rattling Parts","distance": "138.27"},
+            ]
+          },
+          {
+            name: "Super Modified - 1100",
+            "vehicles": [
+{"place": "1","puller": "Matt Larsen","vehicle": "Oliver Twist","distance": "318.89"},
+{"place": "2","puller": "Andrew Peterson","vehicle": "Gambler","distance": "294.49"},
+{"place": "3","puller": "Joel Larsen","vehicle": "Always Somethin","distance": "292.95"},
+            ]
+          },
+          {
+            name: "Super Modified - 1150",
+            "vehicles": [
+{"place": "1","puller": "Andrew Peterson","vehicle": "Maxed out","distance": "332.59"},
+{"place": "2","puller": "Matt Larsen","vehicle": "Oliver Twist","distance": "324.79"},
+{"place": "3","puller": "Joel Larsen","vehicle": "Always Somethin","distance": "318.74"},
+{"place": "4","puller": "Andrew Peterson","vehicle": "Gambler","distance": "308.22"},
+            ]
+          },
+          {
+            name: "Super Modified - 1250",
+            "vehicles": [
+{"place": "1","puller": "Andrew Peterson","vehicle": "Maxed out","distance": "282.23"},
+{"place": "2","puller": "Kasey Matejcek","vehicle": "Fire Fly","distance": "279.81"},
+{"place": "3","puller": "Matt Larsen","vehicle": "Oliver Twist","distance": "274.91"},
+{"place": "4","puller": "Matt Larsen","vehicle": "Always Somethin","distance": "273.62"},
+{"place": "5","puller": "Lina Matejcek","vehicle": "Silver Star","distance": "261.61"},
+{"place": "6","puller": "Andrew Peterson","vehicle": "Gambler","distance": "246.21"},
+{"place": "7","puller": "Ray Matejcek","vehicle": "Slayer","distance": "233.59"},
+            ]
+          },
+          {
+            name: "Super Modified - 1400",
+            "vehicles": [
+{"place": "1","puller": "Andrew Peterson","vehicle": "Maxed out","distance": "287.86"},
+{"place": "2","puller": "Kasey Matejcek","vehicle": "Fire Fly","distance": "278.55"},
+{"place": "3","puller": "Ray Matejcek","vehicle": "Slayer","distance": "261.36"},
+            ]
+          },
+          {
+            name: "Super Stock - 1050",
+            "vehicles": [
+{"place": "1","puller": "Brett Kitchner","vehicle": "DISFUNCTIONAL","distance": "296"},
+{"place": "2","puller": "Pat Schmitt","vehicle": "JD140","distance": "227.56"},
+{"place": "3","puller": "Pat Schmitt","vehicle": "JD X500","distance": "0.09"},
+            ]
+          },
+        ]
+      },
+
 	]
   };
 

@@ -45,17 +45,23 @@ section .alt-overlap {margin-top:-45px; border-radius: 75%; height:100px; width:
 
 /* Section specific modifiers */
 #landing {
-  color: white;
+  color: whitesmoke;
   background: 
-	  linear-gradient(rgba(0,0,0,0.1),rgba(0, 0, 0, 0.3)),url(../img/1-minneapolis.jpg);
+	  linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.2)),url(../img/1-minneapolis.jpg);
 	background-position: center center;
 	background-attachment: fixed;
 	background-size: cover;
+	font-weight: 400;
 	text-shadow: 0 0 5px black;
-  }
+}
 
+/*
+.star-title {
+	background:linear-gradient(rgba(150,150,150,0.8), rgba(150,150,150,0.6));
+	
+}*/
 
-#focus-values {color:white; background-color:transparent; padding-top:10px;}
+#focus-values {background-color:transparent; padding-top:10px; }
 
 #focus-values .accent-values {font-size: 1.8em; text-transform: lowercase;}
 
@@ -164,6 +170,19 @@ section .alt-overlap {margin-top:-45px; border-radius: 75%; height:100px; width:
 	text-shadow: 0 0 3px black;
 	box-shadow: 0 0 5px 0 black;
 }
+
+#opp-land {
+	background:linear-gradient(rgba(0,0,0,0.2),rgba(0, 0, 0, 0.1)),url(../img/woman-polkadot.jpg);
+	background-position: top center;
+	background-attachment: fixed;
+	background-size: cover;
+	text-shadow: 0 0 5px black;
+	color:white;
+	padding-top:80px;
+	padding-bottom: 20px;
+	}
+
+#sitemap {margin-top:20px;}
 
 footer {
 	padding-top: 20px;

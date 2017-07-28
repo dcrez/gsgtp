@@ -19,7 +19,8 @@
 	</header>
 	<section id="landing" class="h-100 d-flex align-items-center">
 		<div class="container-fluid">
-			<div class="col-md-8 mr-auto ml-auto star-title">
+		<div class="row">
+			<div class="star-title col-md-10 mr-auto ml-auto">
 			<h1 class="text-center">STAR Collaborative</h1>
 			<p class="text-center">STAR Collaborative is a professional services staffing and search firm that provides high quality talent for a wide range of professions and industries.</p>
 			
@@ -64,7 +65,7 @@
 		</article>
 			</div>
 
-	
+			</div>
 		</div>
 	</section>
 	<section id="why"></section>
@@ -91,6 +92,17 @@
 	<script type="text/javascript" async>$('#subscribe').load('./assets/subscribe.html');</script>
 	<script type="text/javascript" async>$('.iO').click(function() {$("i", this).toggleClass("fa-plus-circle fa-minus-circle");});</script>
 	
+	
+<script>
+function showMailingPopUp() {
+    require(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us2.list-manage.com","uuid":"e241d3caa65e31aa9384682e0","lid":"4f87f93c75"}) })
+    document.cookie = "MCEvilPopupClosed=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+};
+
+document.getElementByID("subscribe-popup").onclick = function() {showMailingPopUp()};
+document.getElementByID("mini-subscribe-popup").onclick = function() {showMailingPopUp()};
+document.getElementByID("nav-subscribe-popup").onclick = function() {showMailingPopUp()};
+</script>
 	
 </body>
 </html>
