@@ -14,37 +14,12 @@
 	</head>
 
 <body data-spy="scroll" data-target="star-nav" data-offset="50" style="margin-top:20px;" class="fn-opportunities">
-	<header class="sticky-top">
-		<nav class="navbar navbar-light fixed-top navbar-toggleable-sm" style="background-color: white;" id="star-nav">
-		<button class="navbar-toggler navbar-toggler-right border-0" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <i class="navbar-toggler-icon fa fa-menu"></i>
-  </button>
-  <a class="navbar-brand" href="http://www.starcollaborative.com">
-    <img src="img/logos/STARLogo3colorsmallweb.png" height="40" class="d-inline-block align-top" alt="STAR Collaborative logo">
-  </a>
-  <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="#why">Why STAR? <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">About Us</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Talent</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Subscribe</a>
-      </li>
-    </ul>
-  </div>
-		</nav>
-	</header>
+	<header></header>
 	
-	<div id="landing" class="container-fluid d-flex h-10 align-items-center" style="padding-top:50px;">
+	<div id="opp-land" class="container-fluid">
 	<div class="col-12 col-md-10 offset-md-1">
 		<h2 class="text-center">Opportunities</h2>
-		<p class="text-center">If you are interested in applying for an opportunity with STAR Collaborative, please review our applicant <a href="#">FAQ</a> before submitting your application (we only submit fully vetted and qualified candidates to our clients, so consider this the first step to helping us get to know you).</p>
+		<p class="text-center">If you are interested in applying for an opportunity with STAR Collaborative, please review our applicant <a href="#">FAQ</a> before submitting your application (wse only submit fully vetted and qualified candidates to our clients, so consider this the first step to helping us get to know you).</p>
 		</div>
 	</div>
 	<div id="navnav"  class="container-fluid">
@@ -100,18 +75,6 @@
 	
 	
 	<footer>
-		<div class="container-fluid">
-		<div class="row">
-	<div class="col-md-8 col-sm-8 col-12 text-left">
-	<h2 class="text-left">STAR Collaborative</h2>
-	<h4 class="text-left"><a href="mailto:info@starcollaborative.com">info@starcollaborative.com</a></h4>
-	</div>
-		<div class="col-md-4 col-sm-4 col-12 text-right">
-			<h4 class="text-right"><a href="../privacy-policy.html">Privacy Policy</a> | <a href="../sitemap.html">Sitemap</a></h4>
-			<h4 text-right><small class="">&copy; 2017 STAR Collaborative. All rights reserved.</small></h4>
-	</div>
-			</div>
-		</div>
 		
 	</footer>
 	<!-- end of content -->
@@ -167,6 +130,8 @@
 <script src="js/handlebars-v4.0.10.js" type="text/javascript"></script>
 
 <script>$('#referrals').load('./assets/referrals.html');</script>
+<script>$('header').load('./assets/header.html');</script>
+<script>$('footer').load('./assets/footer.html');</script>
 
 <script src="js/render.js" type="text/javascript"></script>
 

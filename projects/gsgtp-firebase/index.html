@@ -1,59 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>GSGTP Site Management</title>
-
+<title>GSGTP</title>
 <script src="https://www.gstatic.com/firebasejs/4.1.5/firebase.js"></script>
-<script>
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyCK3lJyrQ5qzYcqQorRlPkcoCGh38wdMW8",
-    authDomain: "gsgtp-b4448.firebaseapp.com",
-    databaseURL: "https://gsgtp-b4448.firebaseio.com",
-    projectId: "gsgtp-b4448",
-    storageBucket: "gsgtp-b4448.appspot.com",
-    messagingSenderId: "553297979168"
-  };
-  firebase.initializeApp(config);
-
-  // Get a reference to the database service
-var database = firebase.database();
-
-var puller = document.getElementById("puller").value;
-var vehicle = document.getElementById("vehicle").value;
-var scheduledEvent = document.getElementById("scheduledEvent").value;
-var vehicleClass = document.getElementById("vehicleClass").value;
-var distance = document.getElementById("distance").value;
-var points = document.getElementById("points").value;
-var dq = document.getElementById("dq").value;
-var dqreason = document.getElementById("dqreason").value;
-
-function writePull(puller, vehicle, vehicleClass, scheduledEvent, distance, points) {
-  firebase.database().ref('pulls/' + scheduledEvent + '/' + vehicleClass + '/' + puller).put({
-    puller: puller,
-    vehicle: vehicle,
-    vehicleClass : vehicleClass,
-    scheduledEvent: scheduledEvent,
-    distance: distance,
-    points: points
-  });
-  console.log(writePull);
-}
-
-</script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+<script src="render.js"></script>
 </head>
 <body>
 
-<form id="pullFor6m">
-  <input type="text" name="puller" placeholder="Name of Puller" id="puller"><br>
-  <input type="text" name="vehicle"  placeholder="Name of Vehicle" id="vehicle"><br>
-  <input type="date" name="scheduledEvent" id="scheduledEvent"><br>
-  <input type="text" name="vehicleClass"  placeholder="Class competiting in" id="vehicleClass"><br>
-  <input type="number" name="distance"  placeholder="Enter distance" id="distance"><br>
-  <input type="number" name="points"  placeholder="Enter points" id="points"><br>
-  <input type="checkbox" name="disqualified"  id="dq"><br>
-  <input type="text" name="disqaulifiedReason"  id="dqreason"><br>
-  <button onclick="writePull" id="submit">Submit</button>
+<form id="pullForm">
+  <label>Puller</label><input type="text" name="puller" placeholder="Name of Puller" id="puller"><br>
+  <label>Vehicle</label><input type="text" name="vehicle"  placeholder="Name of Vehicle" id="vehicle"><br>
+  <label>Scheduled Event</label><input type="date" name="scheduledEvent" id="scheduledEvent"><br>
+  <label>Class</label><input type="text" name="vehicleClass"  placeholder="Class competiting in" id="vehicleClass"><br>
+  <label>Distance</label><input type="number" name="distance"  placeholder="Enter distance" id="distance"><br>
+  <label>Points</label><input type="number" name="points"  placeholder="Enter points" id="points"><br>
+  <label>DQ</label><input type="checkbox" name="disqualified"  id="dq"><br>
+  <label>DQ Reason</label><input type="text" name="disqaulifiedReason"  id="dqreason"><br>
+  <button id="submit">Submit</button>
 </form>
 
 
