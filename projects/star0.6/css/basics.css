@@ -67,6 +67,13 @@ section .alt-overlap {margin-top:-45px; border-radius: 75%; height:100px; width:
 
 #why {padding-top:55px; padding-bottom:50px;}
 #why img {width:4em;}
+#why marketing-img:before {
+    position: absolute;
+    margin-top: -50%;
+    width: 4em;
+    content: "<i class='fa fa-plus-circle'></i>";
+}
+
 #why .marketing-teaser {max-height: 4em; position: relative; text-align: right;}
 #why .marketing-teaser .iO {position:absolute; bottom:0; right:0;}
 
@@ -81,6 +88,7 @@ section .alt-overlap {margin-top:-45px; border-radius: 75%; height:100px; width:
 
 #team {background-color:#F1F1F1;}
 
+#wearestar {overflow: hidden;}
 #wearestar ul {padding-left:6px;}
 #wearestar li {
   list-style: none;
@@ -197,8 +205,7 @@ footer h1, footer h2 {color:#828C92;}
 
 /* Media Queries */
   @media only screen and (max-width: 575px) {
-        h1 {font-size: 2.5em;}
-	  body {color:black; font-family: "Oswald", sans-serif; font-size: 1em; font-weight: 200;}
+  body {color:black; font-family: "Oswald", sans-serif; font-size: 1em; font-weight: 200;}
 	h1 {font-size: 3em;}
 	h2 {font-size:1.6em;}
 	h3 {font-size: 1.3em;}
