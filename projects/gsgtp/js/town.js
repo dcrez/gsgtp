@@ -1,6 +1,6 @@
 var towns = {
     town: [
-      {
+    {
         "townName": "6/24 - Henderson, MN",
 		 img: "./assets/images/henderson.jpg",
         "vehicleClass": [
@@ -107,7 +107,7 @@ var towns = {
           },
         ]
       },
-      {
+    {
         "townName": "7/1 - Knapp, WI",
 		 img: "./assets/images/henderson.jpg",
         "vehicleClass": [
@@ -237,8 +237,7 @@ var towns = {
             ]
           },
         ]
-      },
-		
+      },	
 	{
         "townName": "7/9 - New Richland, MN",
 		 img: "./assets/images/henderson.jpg",
@@ -370,7 +369,7 @@ var towns = {
           },
           ]
 	},
-	      {
+	{
         "townName": "7/15 - Spring Valley, MN",
 		 img: "./assets/images/henderson.jpg",
         "vehicleClass": [
@@ -497,7 +496,264 @@ var towns = {
           },
         ]
       },
-
+	 {
+        "townName": "7/22 - West Concord, MN",
+        "vehicleClass": [
+          {
+            name: "Mini rod - 1900A",
+            "vehicles": [
+{"place": "1","puller": "Andrew Peterson","vehicle": "Mayhem","distance": "282.15"},
+{"place": "---","puller": "Dan Ebenhoh","vehicle": "Money shot","distance": "DQ:Non-Tech"},
+{"place": "2","puller": "Richard Thron","vehicle": "Rat Patrol","distance": "261.24"},
+{"place": "3","puller": "Ryan Hodgman","vehicle": "A Whole Lot Mower","distance": "231.65"},
+{"place": "4","puller": "Brett Kitchner","vehicle": "OUTTA CONTROL","distance": "215.35"},
+{"place": "5","puller": "Jeff Thron","vehicle": "ANGY INCH","distance": "215.21"},
+           ]
+          },
+          {
+            name: "Mini rod - 1900B",
+            "vehicles": [
+{"place": "1","puller": "Andrew Peterson","vehicle": "Mayhem","distance": "278.08"},
+{"place": "2","puller": "Richard Thron","vehicle": "Rat Patrol","distance": "275.48"},
+{"place": "3","puller": "Ryan Hodgman","vehicle": "A Whole Lot Mower","distance": "257.85"},
+{"place": "4","puller": "Dan Ebenhoh","vehicle": "Money shot","distance": "222.44"},
+{"place": "5","puller": "Jeff Thron","vehicle": "ANGY INCH","distance": "205.88"},
+{"place": "---","puller": "Brett Kitchner","vehicle": "OUTTA CONTROL","distance": "DQ:Non-Tech"},
+]
+          },
+          {
+            name: "Pro Stock - 1050",
+            "vehicles": [
+{"place": "1","puller": "Brett Kitchner","vehicle": "DISFUNCTIONAL","distance": "247.91"},
+{"place": "2","puller": "Pat Schmitt","vehicle": "JD X500","distance": "241.2"},
+{"place": "3","puller": "Pat Schmitt","vehicle": "JD140","distance": "199.39"},
+]
+          },
+          {
+            name: "Sport Stock - 1000",
+            "vehicles": [
+{"place": "1","puller": "Matt Creswick","vehicle": "Kamikaze","distance": "264.91"},
+{"place": "2","puller": "Chris Morgan","vehicle": "Awsome","distance": "243.3"},
+            ]
+          },
+          {
+            name: "Sport Stock - 1050",
+            "vehicles": [
+{"place": "1","puller": "Matt Creswick","vehicle": "Kamikaze","distance": "231.14"},
+{"place": "2","puller": "Chris Morgan","vehicle": "Awsome","distance": "209.08"},
+            ]
+          },
+          {
+            name: "Stock - 1050",
+            "vehicles": [
+{"place": "1","puller": "Kaylyn Westerberg","vehicle": "Midnight Dreams","distance": "162.18"},
+{"place": "2","puller": "Warren Fox","vehicle": "Red Dog","distance": "162.1"},
+{"place": "3","puller": "Chris Morgan","vehicle": "122","distance": "151.08"},
+{"place": "4","puller": "Natalie Matejcek","vehicle": "Super Star","distance": "149.73"},
+{"place": "5","puller": "Abbie/Tara Larsen","vehicle": "Abracadabra","distance": "149.44"},
+{"place": "6","puller": "clayton","vehicle": "cub cadet","distance": "148.82"},
+{"place": "7","puller": "Gracelyn","vehicle": "just a tiny mower","distance": "146.86"},
+{"place": "8","puller": "anabelle","vehicle": "side winder JR","distance": "145.92"},
+{"place": "9","puller": "Justin Roper","vehicle": "Angry Beaver","distance": "143.53"},
+            ]
+          },
+          {
+            name: "Stock - 950",
+            "vehicles": [
+{"place": "---","puller": "Warren Fox","vehicle": "Red Dog","distance": "DQ:Non-Tech"},
+{"place": "1","puller": "Chris Morgan","vehicle": "122","distance": "201.88"},
+{"place": "2","puller": "Brandon Matejcek","vehicle": "Super Star","distance": "201.57"},
+{"place": "3","puller": "Abbie/Tara Larsen","vehicle": "Abracadabra","distance": "200.86"},
+{"place": "4","puller": "Kaylyn Westerberg","vehicle": "Midnight Dreams","distance": "199.78"},
+{"place": "5","puller": "anabelle","vehicle": "side winder JR","distance": "194.88"},
+{"place": "6","puller": "clayton","vehicle": "cub cadet","distance": "187.78"},
+{"place": "7","puller": "Justin Roper","vehicle": "Angry Beaver","distance": "186.82"},
+{"place": "---","puller": "Gracelyn","vehicle": "just a tiny mower","distance": "DQ:Non-Tech"},
+            ]
+          },
+          {
+            name: "Super Modified - 1100",
+            "vehicles": [
+{"place": "1","puller": "Joel Larsen","vehicle": "Always Somethin","distance": "291.16"},
+{"place": "2","puller": "Matt Larsen","vehicle": "Oliver Twist","distance": "278.55"},
+{"place": "3","puller": "Brent Dohrmann","vehicle": "just a little mower","distance": "272.9"},
+{"place": "4","puller": "Andrew Peterson","vehicle": "Gambler","distance": "49.48"},
+{"place": "5","puller": "Cory Loidolt","vehicle": "Wicked Steel","distance": "4.73"},
+            ]
+          },
+          {
+            name: "Super Modified - 1150",
+            "vehicles": [
+{"place": "1","puller": "Matt Larsen","vehicle": "Oliver Twist","distance": "310.35"},
+{"place": "2","puller": "Doug Ulrick","vehicle": "Hillbilly Fab","distance": "303.36"},
+{"place": "3","puller": "Andrew Peterson","vehicle": "Maxed out","distance": "292.97"},
+{"place": "4","puller": "Joel Larsen","vehicle": "Always Somethin","distance": "292.59"},
+{"place": "5","puller": "Brent Dohrmann","vehicle": "just a little mower","distance": "276.44"},
+            ]
+          },
+          {
+            name: "Super Modified - 1250",
+            "vehicles": [
+{"place": "1","puller": "Ray Matejcek","vehicle": "Slayer","distance": "278.98"},
+{"place": "2","puller": "Kasey Matejcek","vehicle": "Fire Fly","distance": "264.03"},
+{"place": "3","puller": "Doug Ulrick","vehicle": "Hillbilly Fab","distance": "247.65"},
+{"place": "4","puller": "Lina Matejcek","vehicle": "Silver Star","distance": "222.42"},
+{"place": "5","puller": "Andrew Peterson","vehicle": "Maxed out","distance": "216.84"},
+            ]
+          },
+          {
+            name: "Super Modified - 1400",
+            "vehicles": [
+{"place": "1","puller": "Ray Matejcek","vehicle": "Slayer","distance": "281.31"},
+{"place": "2","puller": "Kasey Matejcek","vehicle": "Fire Fly","distance": "269.45"},
+{"place": "3","puller": "Andrew Peterson","vehicle": "Maxed out","distance": "239.94"},
+{"place": "4","puller": "Doug Ulrick","vehicle": "Hillbilly Fab","distance": "232.97"},
+            ]
+          },
+          {
+            name: "Super Stock - 1050",
+            "vehicles": [
+{"place": "1","puller": "Brett Kitchner","vehicle": "DISFUNCTIONAL","distance": "248.3"},
+{"place": "2","puller": "Pat Schmitt","vehicle": "JD X500","distance": "216.75"},
+{"place": "3","puller": "Pat Schmitt","vehicle": "JD140","distance": "176.56"},
+            ]
+          },
+        ]
+      },
+	{
+        "townName": "7/23 - Kasson, MN",
+        "vehicleClass": [
+          {
+            name: "Mini rod - 1900A",
+            "vehicles": [
+{"place": "1","puller": "Andrew Peterson","vehicle": "Mayhem","distance": "242.15"},
+{"place": "2","puller": "Dan Ebenhoh","vehicle": "Money shot","distance": "227.32"},
+{"place": "3","puller": "Matt Hargruth","vehicle": "Ford Racing","distance": "227.26"},
+{"place": "4","puller": "Ryan Hodgman","vehicle": "just a little bit mower","distance": "216.35"},
+{"place": "5","puller": "Brett Kitchner","vehicle": "OUTTA CONTROL","distance": "204.63"},
+           ]
+          },
+          {
+            name: "Mini rod - 1900B",
+            "vehicles": [
+{"place": "1","puller": "Andrew Peterson","vehicle": "Mayhem","distance": "228.95"},
+{"place": "2","puller": "Matt Hargruth","vehicle": "Ford Racing","distance": "225.68"},
+{"place": "3","puller": "Ryan Hodgman","vehicle": "just a little bit mower","distance": "222.94"},
+{"place": "4","puller": "Dan Ebenhoh","vehicle": "Money shot","distance": "127.17"},
+]
+          },
+          {
+            name: "Pro Stock - 1050",
+            "vehicles": [
+{"place": "1","puller": "Brett Kitchner","vehicle": "DISFUNCTIONAL","distance": "293.39"},
+{"place": "2","puller": "Pat Schmitt","vehicle": "JD X500","distance": "258.37"},
+{"place": "3","puller": "Pat Schmitt","vehicle": "JD140","distance": "217.63"},
+]
+          },
+          {
+            name: "Sport Stock - 1000",
+            "vehicles": [
+{"place": "---","puller": "Chris Morgan","vehicle": "Awsome","distance": "EXH - 0"},
+            ]
+          },
+          {
+            name: "Sport Stock - 1050",
+            "vehicles": [
+{"place": "---","puller": "Chris Morgan","vehicle": "Awsome","distance": "EXH - 242.22"},
+            ]
+          },
+          {
+            name: "Stock - 1050",
+            "vehicles": [
+{"place": "1","puller": "Jerry","vehicle": "Red Dog","distance": "217.33"},
+{"place": "2","puller": "Kaylyn Westerberg","vehicle": "Midnight Dreams","distance": "212.05"},
+{"place": "3","puller": "Natalie Matejcek","vehicle": "Super Star","distance": "208.38"},
+{"place": "4","puller": "Abbie/Tara Larsen","vehicle": "Abracadabra","distance": "203.7"},
+{"place": "5","puller": "Chris Morgan","vehicle": "122","distance": "201.85"},
+{"place": "6","puller": "Justin Roper","vehicle": "Angry Beaver","distance": "199.85"},
+{"place": "7","puller": "Annabelle Jensen","vehicle": "side winder JR","distance": "184.25"},
+{"place": "8","puller": "Matt Cordes","vehicle": "Used Parts","distance": "177.38"},
+{"place": "9","puller": "Tom Rohl","vehicle": "John Deere 140","distance": "176.98"},
+            ]
+          },
+          {
+            name: "Stock - 950",
+            "vehicles": [
+{"place": "1","puller": "Jerry","vehicle": "Red Dog","distance": "202.85"},
+{"place": "2","puller": "Kaylyn Westerberg","vehicle": "Midnight Dreams","distance": "197.57"},
+{"place": "3","puller": "Natalie Matejcek","vehicle": "Super Star","distance": "195.73"},
+{"place": "4","puller": "Abbie/Tara Larsen","vehicle": "Abracadabra","distance": "194.32"},
+{"place": "5","puller": "Chris Morgan","vehicle": "122","distance": "193.23"},
+{"place": "6","puller": "Annabelle Jensen","vehicle": "side winder JR","distance": "191.96"},
+{"place": "7","puller": "Justin Roper","vehicle": "Angry Beaver","distance": "185.83"},
+{"place": "8","puller": "Tom Rohl","vehicle": "John Deere 140","distance": "168.72"},
+{"place": "9","puller": "Matt Cordes","vehicle": "Used Parts","distance": "131.68"},
+            ]
+          },
+		 {
+            name: "Stock Altered - 1050",
+            "vehicles": [
+{"place": "---","puller": "Tony Katula","vehicle": "Showdown","distance": "EXH - 213.82"},
+            ]
+          },
+          {
+            name: "Stock Altered - 950",
+            "vehicles": [
+{"place": "1","puller": "Tony Katula","vehicle": "Showdown","distance": "0"},
+            ]
+          },
+          {
+            name: "Super Modified - 1100",
+            "vehicles": [
+{"place": "1","puller": "Cory Loidolt","vehicle": "Wicked Steel","distance": "326.74"},
+{"place": "2","puller": "Matt Larsen","vehicle": "Always Somethin","distance": "321.89"},
+{"place": "3","puller": "Joel Larsen","vehicle": "Oliver Twist","distance": "307.82"},
+{"place": "4","puller": "Doug Ulrick","vehicle": "Hillbilly Fab","distance": "304.66"},
+{"place": "5","puller": "Brent Dohrmann","vehicle": "just a little mower","distance": "289.1"},
+            ]
+          },
+          {
+            name: "Super Modified - 1150",
+            "vehicles": [
+{"place": "1","puller": "Cory Loidolt","vehicle": "Wicked Steel","distance": "315.97"},
+{"place": "2","puller": "Joel Larsen","vehicle": "Oliver Twist","distance": "309.71"},
+{"place": "3","puller": "Andrew Peterson","vehicle": "Maxed out","distance": "309.49"},
+{"place": "4","puller": "Matt Larsen","vehicle": "Always Somethin","distance": "303.41"},
+{"place": "5","puller": "Doug Ulrick","vehicle": "Hillbilly Fab","distance": "297.86"},
+{"place": "6","puller": "Brent Dohrmann","vehicle": "just a little mower","distance": "243.15"},
+            ]
+          },
+          {
+            name: "Super Modified - 1250",
+            "vehicles": [
+{"place": "1","puller": "Lina Matejcek","vehicle": "Silver Star","distance": "268.89"},
+{"place": "2","puller": "Cory Loidolt","vehicle": "Wicked Steel","distance": "268.34"},
+{"place": "3","puller": "Kasey Matejcek","vehicle": "Fire Fly","distance": "267.74"},
+{"place": "4","puller": "Ray Matejcek","vehicle": "Slayer","distance": "266.77"},
+{"place": "5","puller": "Andrew Peterson","vehicle": "Maxed out","distance": "258.01"},
+{"place": "6","puller": "Ryan H","vehicle": "just a little mower","distance": "190.07"},
+            ]
+          },
+          {
+            name: "Super Modified - 1400",
+            "vehicles": [
+{"place": "1","puller": "Ray Matejcek","vehicle": "Slayer","distance": "276.7"},
+{"place": "2","puller": "Andrew Peterson","vehicle": "Maxed out","distance": "271.12"},
+{"place": "3","puller": "Kasey Matejcek","vehicle": "Fire Fly","distance": "269.54"},
+{"place": "4","puller": "Doug Ulrick","vehicle": "Hillbilly Fab","distance": "244.05"},
+            ]
+          },
+          {
+            name: "Super Stock - 1050",
+            "vehicles": [
+{"place": "1","puller": "Brett Kitchner","vehicle": "DISFUNCTIONAL","distance": "260.9"},
+{"place": "2","puller": "Pat Schmitt","vehicle": "JD X500","distance": "243.81"},
+{"place": "3","puller": "Pat Schmitt","vehicle": "JD140","distance": "217.25"},
+            ]
+          },
+        ]
+      }
+	
 	]
   };
 

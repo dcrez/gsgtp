@@ -89,10 +89,6 @@
 				<p class="text-muted text-uppercase" style="margin-top:-5px; font-size:0.7em;"><span class="star-red">Location: </span>{{AVTRRT__Job_City__c}}, {{AVTRRT__State__c}} &nbsp;</p>
 				<p class="text-muted text-uppercase" style="margin-top:-15px; font-size:0.7em;">
 				<span class="star-red">Type: </span>{{Job_Type__c}}</p>
-				
-			</div>{{!--/End Name and Brief Details--}}
-			<div class="col-md-9" style="font-size:0.9em;">
-				<p class="hidden-sm-down">{{AVTRRT__Job_Summary__c}}</p>
 				<strong><p style="margin-top:-5px; font-size:0.7em;" class="text-uppercase"><a data-toggle="collapse" data-parent="#accordion" href="#{{Id}}" aria-expanded="true" aria-controls="{{Name}}" class="m-0">
 				Details
 				</a> 
@@ -101,6 +97,11 @@
 				Apply
 				</a>
 				</p></strong>
+				
+			</div>{{!--/End Name and Brief Details--}}
+			<div class="col-md-9" style="font-size:0.9em;">
+				<p class="hidden-sm-down">{{AVTRRT__Job_Summary__c}}</p>
+				
 				
 				<div id="{{Id}}" class="collapse" role="tabpanel">
 		
