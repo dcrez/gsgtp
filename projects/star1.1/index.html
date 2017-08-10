@@ -22,7 +22,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <link href="css/iframe.css" rel="stylesheet">
     <link href="css/animations.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Oswald:400,300,200" rel="stylesheet">
-    
+
     </head>
 
 <body data-spy="scroll" data-target=".navbar" data-offset="50">
@@ -67,7 +67,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 	<!--<section id="inthenews"></section> -->
 	<section id="wearestar"></section>
-	
+
 	<section id="team"></section>
 	<section id="opportunities"></section>
 	<section id="referrals"></section>
@@ -94,7 +94,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 	<script async>$('#donuts-detail').load('./assets/don-detail.html')</script>
 	<script async>$('#rabbit-detail').load('./assets/rabbit-detail.html')</script>
 	<script async>$('#shoes-detail').load('./assets/don-shoes.html')</script>
-	
+
     <script type="application/ld+json">
 {
 "@context": "http://schema.org/",
@@ -128,6 +128,7 @@ function showMailingPopUp() {
     document.cookie = "MCEvilPopupClosed=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
 };
 
+document.getElementByID("header-subscribe-popup") = function() {showMailingPopUp()};
 document.getElementByID("subscribe-popup").onclick = function() {showMailingPopUp()};
 document.getElementByID("mini-subscribe-popup").onclick = function() {showMailingPopUp()};
 </script>
