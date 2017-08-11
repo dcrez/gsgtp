@@ -7,29 +7,43 @@
 </head>
 <body>
 <div class="container">
-<div class="row">
+	 <p>Use this form to add events to the schedule on GSGTP's landing page.</p>
+<form id="eventForm" class="form-inline">
+	  <label>Town Name</label><input type="text" name="townName" id="townName" class="form-control"><br>
+      <label>Date</label><input type="date" name="schdDate" id="schdDate" class="form-control"><br>
+      <label>Time</label><input type="time" name="schdTime" id="schdTime"  class="form-control"><br>
+      <label>Address</label><input type="text" name="address"  id="address"  class="form-control"><br>
+      <label>City</label><input type="text" name="city"  id="city"  class="form-control"><br>
+      <label>State</label><input type="text" name="state"  id="state"  class="form-control"><br>
+      <label>Track</label><input type="text" name="track"  id="track"  class="form-control"><br>
+      <label>Description</label><input type="text" name="description"  id="description"  class="form-control"><br>
+      <label>Evaluation</label><input type="checkbox" name="evaluation"  id="evaluation"  class="form-control"><br>
+      <button id="submitevent" class="btn btn-default">submit</button>
+    </form>
+<div class="row mt-4">
 <div class="card">
 <div class="card-block">
 <form id="pullForm" class="form-inline">
   <label>Puller</label><input type="text" name="puller" placeholder="Name of Puller" id="puller" class="form-control"><br>
   <label>Vehicle</label><input type="text" name="vehicle"  placeholder="Name of Vehicle" id="vehicle"  class="form-control"><br>
-  <label>Scheduled Event</label><input type="date" name="scheduledEvent" id="scheduledEvent"  class="form-control"><br>
+  <label>Town Name</label><input type="text" name="scheduledEvent" id="scheduledEvent"  class="form-control"><br>
+  
   <label>Class</label>
   <select name="vehicleClass"  placeholder="Class competiting in" id="vehicleClass"  class="form-control classes_list">
 	  <option class="disabled">Select a class</option>
-  <option>Mini-rod 1900A</option> 
-  <option>Mini-rod 1900B</option>  
+  <option>Mini-rod 1900A</option>
+  <option>Mini-rod 1900B</option>
   <option>Pro Stock - 1050</option>
   <option>Sport Stock -1000</option>
   <option>Sport Stock - 1050</option>
-  <option>Stock - 1050</option> 
-  <option>Stock - 950</option> 
-  <option>Stock Altered - 1050</option> 
+  <option>Stock - 1050</option>
+  <option>Stock - 950</option>
+  <option>Stock Altered - 1050</option>
   <option>Stock Altered - 950</option>
-  <option>Super Modified - 1100</option> 
-  <option>Super Modified - 1150</option> 
-  <option>Super Modified - 1250</option> 
-  <option>Super Modified - 1400</option> 
+  <option>Super Modified - 1100</option>
+  <option>Super Modified - 1150</option>
+  <option>Super Modified - 1250</option>
+  <option>Super Modified - 1400</option>
   <option>Super Stock - 1050</option>
   </select><br>
   <label>Distance</label><input type="number" name="distance"  placeholder="Enter distance" id="distance"  class="form-control"><br>
@@ -39,24 +53,9 @@
 	<button id="submitbtn" class="btn btn-default">submit</button></form>
 	</div>
 	</div>
-  <div class="card">
-  <div class="card-block">
-    <form id="eventForm" class="form-inline">
-      <label>Name</label><input type="text" name="eventName" id="eventName" class="form-control"><br>
-      <label>Date</label><input type="date" name="eventDate" id="eventDate" class="form-control"><br>
-      <label>Time</label><input type="time" name="eventTime" id="eventTime"  class="form-control"><br>
-      <label>Address</label><input type="text" name="address"  id="address"  class="form-control"><br>
-      <label>City</label><input type="text" name="city"  id="city"  class="form-control"><br>
-      <label>State</label><input type="text" name="state"  id="state"  class="form-control"><br>
-      <label>Track</label><input type="text" name="track"  id="track"  class="form-control"><br>
-      <label>Description</label><input type="text" name="description"  id="description"  class="form-control"><br>
-      <label>Points</label><input type="checkbox" name="points"  id="list_points"  class="form-control"><br>
-      <button id="submitevent" class="btn btn-default">submit</button>
-    </form>
-  </div>
+  
 	</div>
-	</div>
-  <div class="row">
+  <div class="row mt-4">
     <div class="card col-12">
      <div class="card-block">
       <div class="pulls_container">
@@ -68,27 +67,10 @@
 
 
   <script id="pulls_template" type="text/x-handlebars-template">
- <h2>Pulls</h2>
- <table class="table col-12">
- <thead>
- 	<td>Event</td>
-	<td>Vehicle</td>
-	<td>Puller</td>
-	<td>Class</td>
-	<td>Distance</td>
-	<td>Pull Order</td>
- </thead>
- {{#each pulls}}
- <tr>
- 	<td>{{name}}</td>
- 	<td>{{vehicle}}</td>
-	<td>{{puller}}</td>
-	<td>{{vehicleClass}}</td>
-	<td>{{distance}}</td>
-	<td>{{pullOrder}}</td>
- </tr>
- {{/each}}
-	  </table>
+    {{#each town}}
+           <a href="#" class="list-group-item town-item" data-id="{{@index}}"> {{townName}} </a><br>
+		   {{address}}<br>
+           {{/each}}
 </script>
 
 	<script id="class_formentry_template" type="text/x-handlebars-template">
@@ -96,6 +78,24 @@
 	<option value="hi!">"Hi!"</option>
 	{{/each}}
 	</script>
+	
+	
+	<div class="modal fade" id="frm_modal_schedule">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Add a Pull to the Calendar</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+	 
+		</div>
+    </div>
+  </div>
+	</div>
+
 
 <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
 <script src="https://www.gstatic.com/firebasejs/4.1.5/firebase-app.js"></script>

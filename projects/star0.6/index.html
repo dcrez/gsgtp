@@ -8,6 +8,13 @@
 <meta name="description" content="STAR Collaborative is a professional services staffing and search firm that provides high quality talent for a wide range of professions and industries.">
 <meta name="keywords" content="STAR Collaborative, staffing, recruiting, management consulting, project management consulting, business analysis consulting, quality assurance consulting, software development consulting, RUBY on rails developers, jobs in the Twin Cities, jobs in Minneapolis, jobs in St Paul, jobs in Minnesota, staffing firms in Minneapolis, recruiting agencies mn">
 <title>STAR Collaborative</title>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TVH9K25');</script>
+<!-- End Google Tag Manager -->
 <link href="https://fonts.googleapis.com/css?family=Oswald:300,400" rel="stylesheet">
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <link rel="stylesheet" href="css/basics.css">
@@ -93,16 +100,45 @@
 	<script type="text/javascript" async>$('.iO').click(function() {$("i", this).toggleClass("fa-plus-circle fa-minus-circle");});</script>
 	
 	
+    <script type="application/ld+json">
+{
+"@context": "http://schema.org/",
+"@type": "Organization",
+"name": "STAR Collaborative",
+"sameAs" : "http://www.starcollaborative.com",
+"address": {
+"@type": "PostalAddress",
+"addressLocality": "Minneapolis",
+"addressRegion": "MN",
+"postalCode": "55446",
+"streetAddress": "18120 46th Ave N",
+"email": "info@starcollaborative.com"},
+"founder": "Ed Lefkow",
+"numberOfEmployees": "7"
+}
+
+</script>
+
+	<script>
+	$(function () {
+  $('[data-toggle="popover"]').popover()
+})
+	</script>
+
+<script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/signup-forms/popup/embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script>
+
 <script>
 function showMailingPopUp() {
     require(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us2.list-manage.com","uuid":"e241d3caa65e31aa9384682e0","lid":"4f87f93c75"}) })
     document.cookie = "MCEvilPopupClosed=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
 };
+document.getElementByID("header-subscribe-popup") = function() {showMailingPopUp()};
 
 document.getElementByID("subscribe-popup").onclick = function() {showMailingPopUp()};
 document.getElementByID("mini-subscribe-popup").onclick = function() {showMailingPopUp()};
-document.getElementByID("nav-subscribe-popup").onclick = function() {showMailingPopUp()};
 </script>
+
+
 	
 </body>
 </html>
