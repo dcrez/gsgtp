@@ -1,4 +1,6 @@
-var starjobs; var apiurl = "https://fullsand-starcollaborativeportal.cs61.force.com/PortalLoginPage/services/apexrest/JobPortal";
+"use strict";
+
+var starjobs; var apiurl = "https://starcollaborativeportal.secure.force.com/services/apexrest/JobPortal";
 
 // Parse salesforce opportunities' text
 var xhr = new XMLHttpRequest();
