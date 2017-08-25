@@ -1,5 +1,3 @@
-"use strict";
-
 var starjobs; var apiurl = "https://starcollaborativeportal.secure.force.com/services/apexrest/JobPortal";
 
 // Parse salesforce opportunities' text
