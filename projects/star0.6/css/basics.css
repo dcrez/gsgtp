@@ -181,7 +181,7 @@ section .alt-overlap {margin-top:-45px; border-radius: 75%; height:100px; width:
 
 #opp-land {
 	background:linear-gradient(rgba(0,0,0,0.2),rgba(0, 0, 0, 0.1)),url(../img/woman-polkadot.jpg);
-	background-position: top center;
+	background-position: right top;
 	background-attachment: fixed;
 	background-size: cover;
 	text-shadow: 0 0 5px black;

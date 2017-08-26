@@ -83,7 +83,7 @@ function dosubmit() {
 	if (jt == "") {arr_jt = [];} else {result = _.intersectionObjects(starjobs,arr_jt); starjobs = result; console.log("jt:", starjobs);}
 	if (fcs == "") {arr_fcs = [];} else {result = _.intersectionObjects(starjobs,arr_fcs); starjobs = result; console.log("fcs:", starjobs);}
 	
-	if (starjobs.length < 1) {document.getElementById("form_error").innerHTML = "We can't find any opportunities that match the criteria you provided. Try <a href='#' class='fn-reset'>searching again</a> or <a href='#'>subscribe</a> to get alerts about new roles as they become available.";
+	if (starjobs.length < 1) {document.getElementById("form_error").innerHTML = 'We cannot find any opportunities that match the criteria you provided. Try <a href="#" class="fn-reset">searching again</a> or <a href="#" data-toggle="modal" data-target="#subscribeModal">subscribe</a> to get alerts about new roles as they become available.';
 }
 }
 
@@ -98,7 +98,8 @@ $("#starform").click(function() {
 });
 
 $(".fn-reset").click(function() {
-	location.reload();
+	location.reload(true);
+	document.getElementById("starform").reset();
 });
 
 //Initialize templates
