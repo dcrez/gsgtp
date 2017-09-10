@@ -1,0 +1,166 @@
+@charset "utf-8";
+/* CSS Document */
+
+html, body {overflow-x: hidden;}
+
+.navbar {font-size:1.2em; font-family: "Oswald"; text-transform: uppercase; color: white;}
+.navbar-default {background-image: none; background-repeat: no-repeat; border:none; background:
+linear-gradient(
+	 rgba(215, 218, 217, 0.25),
+	 rgba(215, 218, 217, 0.25)
+ );}
+.navbar-header img {height: 3em;}
+.navbar-header .heading-item {font-size:1.5em; font-family: "Oswald"; text-transform: uppercase;}
+.social {line-height: 2.5em;}
+.social img {height: 1.75em;}
+.navbar .nav li a {color:teal; 	text-shadow: 0px 0px -1px white;}
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active >
+ a:hover, .navbar-default .navbar-nav > .active > a:focus {color:hsla(20,81%,46%,1.00); text-shadow: 0px 0px -1px white; background-color: transparent; background-image: none; border-bottom: 10px }
+
+
+body
+{font-family: 'Dosis', sans-serif; font-size: 16px;/*
+background-image:url(../assets/shutterstock_416205871.jpg);
+background-size: cover;
+background-attachment: fixed;*/
+}
+
+h1,h2,h3,h4,h5 {font-family: 'Oswald', sans-serif;}
+h1, h2 {text-transform: uppercase; font-size: 2.5em;}
+button {text-transform: uppercase; font-size: 2em; font-family: 'Oswald', sans-serif;}
+.navbar button {font-size: .85em; border: none; color:teal;}
+.btn-primary {text-transform: uppercase; font-size: 1.5em; font-family: 'Oswald', sans-serif; border:none;}
+
+
+.oswald {font-family: Oswald, sans-serif;}
+.dosis {font-family: Dosis, sans-serif;}
+.focus-large {font-size:2.75em; text-transform: uppercase;}
+.focus {font-size:1.65em;}
+.transparent-font {color:transparent;}
+
+.text-wrapper {
+	font-size: 2em;
+	display: flex;
+	text-shadow: 0px 0px 5px gray;
+	color:ghostwhite;
+}
+
+/* Mobile and Default Styles*/
+
+.brand-image {
+	margin: 5px 0 -20px 10px; /* play with these to position the image */
+	position:absolute;
+	z-index:100;}
+section {z-index: 2; position: relative;}
+
+#landing {
+	padding: 50px;
+	width: 100%;
+	height:100vh;
+	background:
+	linear-gradient(
+		 rgba(215, 218, 217,0.75),
+		 rgba(248, 130, 11, 0.55)
+	 ),
+	 /* bottom, image 
+	 url(../assets/shutterstock_416205871.jpg);
+	background-size:cover;
+	background-attachment: fixed; */
+	display: flex;
+	flex:auto;
+	flex-direction: column;
+	justify-content: center;
+}
+
+#marketing {
+	width: 100%;
+	min-height: 300px;
+	background-color: white;
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+
+.marketing-text {max-width: 400px;}
+.marketing-img {height: 10em;}
+.marketing-arrow {height:2em;}
+
+#subscribe-mini {
+	width:100%;
+	min-height: 250px;
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffd65e+0,febf04+100;Yellow+3D+%232 */
+background: rgb(255,214,94); /* Old browsers */
+background: -moz-linear-gradient(top,  rgba(255,214,94,1) 0%, rgba(254,191,4,1) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  rgba(255,214,94,1) 0%,rgba(254,191,4,1) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  rgba(255,214,94,1) 0%,rgba(254,191,4,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffd65e', endColorstr='#febf04',GradientType=0 ); /* IE6-9 */
+	position: relative;
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+
+.height-check {height: 100%; position: relative;}
+
+#who {
+	width:100%;
+	background-color: #fff;
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+
+#who .team-member {
+	padding-top: 10px;
+	min-height: 250px;
+}
+
+#who img {
+	height: 10em;
+	width: auto;
+	border-radius:20%;
+	border-color: black;
+	border-width: 10px;
+}
+
+#who .role-description {
+
+}
+
+#who h3 {
+	text-transform: uppercase;
+	margin-bottom: 0;
+}
+
+#who .circleborder {
+border: 2px solid teal;
+padding: 2px;
+border-radius: 20%;
+display: inline-block;
+background-color: rgba(0,153,153,.75);}
+
+#opportunities {
+background: linear-gradient(to bottom,  rgba(0,153,153,1) 0%,rgba(0,204,204,1) 100%);	padding-top: 50px;
+	padding-bottom: 50px;
+	color: black;
+}
+
+
+#subscribe {
+	padding-top:20px;
+	padding-bottom: 50px;
+	background-color:hsla(250,14%,27%,0.91);
+	color:white;
+	width:100%;
+}
+
+/* Tablet Specific Styles */
+@media only screen and (min-width: 600px) {
+.focus-large {font-size:3.4em; text-transform: uppercase;}
+.text-wrapper {font-size: 2.1em;}
+
+}
+
+/* Desktop Specific Styles*/
+@media only screen and (min-width: 768px) {
+
+.focus-large {font-size:7em; text-transform: uppercase;}
+.text-wrapper {font-size: 4em;}
+}

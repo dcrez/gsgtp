@@ -1,14 +1,44 @@
-var starjobs; var apiurl = "https://starcollaborativeportal.secure.force.com/services/apexrest/JobPortal";
+"use strict";
+var starjobs; // container for Salesforce array returned by HTTP request 
+var apiurl = "https://starcollaborativeportal.secure.force.com/services/apexrest/JobPortal"; // URL of Salesforce service endpoint
 
 // Parse salesforce opportunities' text
 var xhr = new XMLHttpRequest();
+console.log('UNSENT', xhr.readyState);
+
+xhr.open('GET', apiurl + "?t=" + Math.random());
+console.log('OPENED', xhr.readyState);
+
+xhr.onprogress = function() {console.log('LOADING', xhr.readyState);};
+xhr.onload = function() {console.log('DONE', xhr.readyState);
+						starjobs = JSON.parse(this.responseText);
+						console.log(starjobs); 
+						};
+
+
+xhr.send();
+
+/*
 xhr.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-        starjobs = JSON.parse(this.responseText);}};
+if (this.readyState < 4) {
+	document.getElementById('hideLoading').classList.add('visible');
+	document.getElementById('opp-land').classList.add('invisible');
+	document.getElementsById('starform').classList.add('invisible');
+	document.getElementById('referrals').classList.add('invisible');
+}
+else if (this.readyState == 4 && this.status == 200) {
+	starjobs = JSON.parse(this.responseText);}
+	document.getElementById('hideLoading').classList.remove('visible');
+	document.getElementById('hideLoading').classList.add('invisible');
+	document.getElementById('opp-land').classList.remove('invisible');
+	document.getElementsById('starform').classList.remove('invisible');
+	document.getElementById('referrals').classList.remove('invisible');
+}; */
+
 
 // Request info from Salesforce
-xhr.open("GET", apiurl, false);
-xhr.send();
+//xhr.open("GET", apiurl, false);
+//xhr.send();
 
 //Create variables for dropdowns
 // Define unique values for job type filter
@@ -89,17 +119,19 @@ function dosubmit() {
 
 // Call search function on submit
 $("#starform").click(function() {
+	console.log("clicked submit!");
 	var data = $(this).serialize();
 	xhr.open("GET", apiurl + "/?" + data, false);
 	xhr.send();
 	dosubmit();
 	$(".fn-opportunities").click();
 	event.preventDefault();
+	console.log("completed submit!");
 });
 
-$(".fn-reset").click(function() {
-	location.reload(true);
-	document.getElementById("starform").reset();
+$(".fn_reset").click(function() {
+	console.log("clicked reset!");
+	window.location.href = window.location.href;
 });
 
 //Initialize templates
@@ -123,5 +155,7 @@ $(".fn-opportunities").click(function() {
 $(".fn-opportunities").click();
 
 });
+
+
 
 

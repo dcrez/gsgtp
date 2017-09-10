@@ -1,0 +1,10 @@
+RewriteEngine on
+rewritecond %{http_host} ^starcollaborative.com [nc]
+rewriterule ^(.*)$ http://www.starcollaborative.com/$1 [r=301,nc]
+
+
+# Redirects and Rewrites
+Redirect 302 /faq /documents/Applicant-FAQ.pdf
+Redirect 302 /invoices/ https://docs.google.com/a/macros/starcollaborative.com/exec?service=AKfycbyYqlGtMg6f2sCL7xcAGUlh4AjoMbX3BhhbJpGf
+Redirect 302 /resume /documents/Tip-How-to-prepare-your-resume.pdf
+Redirect 302 /subscribe/ http://starcollaborative.us2.list-manage.com/subscribe?u=e241d3caa65e31aa9384682e0&id=4f87f93c75
