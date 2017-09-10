@@ -184,7 +184,7 @@ section .alt-overlap {margin-top:-45px; border-radius: 75%; height:100px; width:
 	background-position: right top;
 	background-attachment: fixed;
 	background-size: cover;
-	text-shadow: 0 0 5px black;
+	text-shadow: 1px 1px 10px black;
 	color:white;
 	padding-top:80px;
 	padding-bottom: 20px;

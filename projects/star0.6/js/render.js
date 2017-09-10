@@ -1,14 +1,27 @@
-var starjobs; var apiurl = "https://starcollaborativeportal.secure.force.com/services/apexrest/JobPortal";
+//"use strict";
+var starjobs; // container for Salesforce array returned by HTTP request 
+var apiurl = "https://starcollaborativeportal.secure.force.com/services/apexrest/JobPortal"; // URL of Salesforce service endpoint
 
 // Parse salesforce opportunities' text
 var xhr = new XMLHttpRequest();
+xhr.open('GET', apiurl + "?t=" + Math.random(),false);
+xhr.send();
+
+
 xhr.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-        starjobs = JSON.parse(this.responseText);}};
+if (this.readyState != 4) {
+	document.getElementById("#hideLoading").show();
+	document.getElementById("opp-land").hide();
+}
+else if (this.readyState == 4 && this.status == 200) {
+starjobs = JSON.parse(this.responseText);}
+document.getElementById("#hideLoading").hide();
+};
+
 
 // Request info from Salesforce
-xhr.open("GET", apiurl, false);
-xhr.send();
+//xhr.open("GET", apiurl, false);
+//xhr.send();
 
 //Create variables for dropdowns
 // Define unique values for job type filter
@@ -89,17 +102,19 @@ function dosubmit() {
 
 // Call search function on submit
 $("#starform").click(function() {
+	console.log("clicked submit!");
 	var data = $(this).serialize();
 	xhr.open("GET", apiurl + "/?" + data, false);
 	xhr.send();
 	dosubmit();
 	$(".fn-opportunities").click();
 	event.preventDefault();
+	console.log("completed submit!");
 });
 
-$(".fn-reset").click(function() {
-	location.reload(true);
-	document.getElementById("starform").reset();
+$(".fn_reset").click(function() {
+	console.log("clicked reset!");
+	window.location.href = window.location.href;
 });
 
 //Initialize templates
@@ -123,5 +138,7 @@ $(".fn-opportunities").click(function() {
 $(".fn-opportunities").click();
 
 });
+
+
 
 
