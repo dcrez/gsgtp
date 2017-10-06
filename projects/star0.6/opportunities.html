@@ -1,177 +1,214 @@
 <!doctype html>
 <html>
+
 <head>
 
-<meta charset="utf-8">
-<meta http-equiv="Cache-control" content="public,max-age=30000,s-maxage=90000">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="">
-<meta name="keywords" content="STAR Collaborative, staffing, recruiting, management consulting, project management consulting, business analysis consulting, quality assurance consulting, software development consulting, RUBY on rails developers, jobs in the Twin Cities, jobs in Minneapolis, jobs in St Paul, jobs in Minnesota, staffing firms in Minneapolis, recruiting agencies mn">
-    <title>STAR Collaborative - Jobs</title>
-        <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-TVH9K25');</script>
-<!-- End Google Tag Manager -->
+    <meta charset="utf-8">
+    <meta http-equiv="Cache-control" content="public,max-age=30000,s-maxage=90000">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Current opportunities available with STAR Collaborative partners throughout the Twin Cities metro area, as well as greater Minnesota and Wisconsin.">
+    <meta name="keywords" content="STAR Collaborative, staffing, recruiting, management consulting, project management consulting, business analysis consulting, quality assurance consulting, software development consulting, RUBY on rails developers, jobs in the Twin Cities, jobs in Minneapolis, jobs in St Paul, jobs in Minnesota, staffing firms in Minneapolis, recruiting agencies mn">
+    <title>Opportunities with STAR Collaborative</title>
+    <!-- Google Tag Manager -->
+    <script>
+        (function(w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start': new Date().getTime(),
+                event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-TVH9K25');
+    </script>
+    <!-- End Google Tag Manager -->
 
-   <link href="https://fonts.googleapis.com/css?family=Oswald:300,400" rel="stylesheet">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Oswald:300,400" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
     <link rel="stylesheet" href="css/basics.css">
-	<style>
-	.spinner {
-  width: 40px;
-  height: 40px;
-  margin: 100px auto;
-  background-color: #333;
-
-  border-radius: 100%;  
-  -webkit-animation: sk-scaleout 1.0s infinite ease-in-out;
-  animation: sk-scaleout 1.0s infinite ease-in-out;
-}
-
-@-webkit-keyframes sk-scaleout {
-  0% { -webkit-transform: scale(0) }
-  100% {
-    -webkit-transform: scale(1.0);
-    opacity: 0;
-  }
-}
-
-@keyframes sk-scaleout {
-  0% { 
-    -webkit-transform: scale(0);
-    transform: scale(0);
-  } 100% {
-    -webkit-transform: scale(1.0);
-    transform: scale(1.0);
-    opacity: 0;
-  }
-}</style>
-	</head>
+    <style>
+        #loadingScreen {
+            display: none;
+            z-index: 1000;
+            background-color: #f2f2f2;
+        }
+        
+        .spinner {
+            width: 40px;
+            height: 40px;
+            margin: 100px auto;
+            background-color: #333;
+            border-radius: 100%;
+            -webkit-animation: sk-scaleout 1.0s infinite ease-in-out;
+            animation: sk-scaleout 1.0s infinite ease-in-out;
+        }
+        
+        @-webkit-keyframes sk-scaleout {
+            0% {
+                -webkit-transform: scale(0)
+            }
+            100% {
+                -webkit-transform: scale(1.0);
+                opacity: 0;
+            }
+        }
+        
+        @keyframes sk-scaleout {
+            0% {
+                -webkit-transform: scale(0);
+                transform: scale(0);
+            }
+            100% {
+                -webkit-transform: scale(1.0);
+                transform: scale(1.0);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
 
 <body data-spy="scroll" data-target="star-nav" data-offset="50" style="margin-top:20px;" class="fn-opportunities">
-	<header></header>
-	<div class="container d-flex h-100" id="hideLoading">
+    <header></header>
+    <!--<div class="container-fluid d-flex mh-25" id="loadingScreen">
 	<div class="col-12 mt-auto mb-auto">
 	<div class="spinner"></div>
 	<h3 class="text-center star-grey">Loading. Please wait.</h3>
 	
 		</div>
-	</div>
-	<div id="opp-land" class="container-fluid">
-	<div class="col-12 col-md-10 offset-md-1">
-		<h2 class="text-center">Opportunities</h2>
-		<p class="text-center">If you are interested in applying for an opportunity with STAR Collaborative, please review our applicant <a href="https://www.starcollaborative.com/documents/Applicant-FAQ.pdf" class="star-grey">FAQ</a> before submitting your application (we only submit fully vetted and qualified candidates to our clients, so consider this the first step to helping us get to know you).</p>
-		</div>
-	</div>
-	
-	<div id="navnav"  class="container-fluid">
-		
-<div id="seeForm">
-	
-<form class="form" id="starform">
-<p class="mt-3">Use this form to search and filter the opportunities listed below.</p>
-		<div class="row form-group">
-	
- 	<label class="col-sm-1 col-2">Search</label>
-  	<div class="col-sm-11 col-10">
-  	<input type="search" class="form-control" placeholder="Keyword search" name="srch" id="srch" tabindex="1">
-  	</div>
-	</div>
-<div class="form-group row">
-			<label class="col-sm-1 col-2">Focus</label>	
-			<div class="col-sm-11 col-10">
-				<select class="form-control" id="focus_areas" type="text" name="fltrFocus" tabindex="2">
+	</div>-->
+    <div id="everythingElse">
+        <div id="opp-land" class="container-fluid">
+            <div class="col-12 col-md-10 offset-md-1">
+                <h2 class="text-center">Opportunities</h2>
+                <p class="text-center">If you are interested in applying for an opportunity with STAR Collaborative, please review our applicant <a href="https://www.starcollaborative.com/documents/Applicant-FAQ.pdf" class="star-grey">FAQ</a> before submitting your application
+                    (we only submit fully vetted and qualified candidates to our clients, so consider this the first step to helping us get to know you).</p>
+            </div>
+        </div>
+
+        <div id="navnav" class="container-fluid">
+
+            <div id="seeForm">
+
+                <form class="form" id="starform">
+                    <p class="mt-3">Use this form to search and filter the opportunities listed below.</p>
+                    <div class="row form-group">
+
+                        <label class="col-sm-1 col-2">Search</label>
+                        <div class="col-sm-11 col-10">
+                            <input type="search" class="form-control" placeholder="Keyword search" name="srch" id="srch" tabindex="1">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-1 col-2">Focus</label>
+                        <div class="col-sm-11 col-10">
+                            <select class="form-control" id="focus_areas" type="text" name="fltrFocus" tabindex="2">
 					<option value="" selected>Show all</option>
 				</select>
-			</div>
-		</div> <!--/ End Discipline -->
-	<div class="form-group row">
-			<label class="col-1">State</label>		
-				<div class="col-5">
-				<select class="form-control" name="fltrState" id="locations" tabindex="3">
+                        </div>
+                    </div>
+                    <!--/ End Discipline -->
+                    <div class="form-group row">
+                        <label class="col-1">State</label>
+                        <div class="col-5">
+                            <select class="form-control" name="fltrState" id="locations" tabindex="3">
 					<option value="" selected>Show all</option>
 				</select>
-			</div>
-			<label class="col-1">Type</label>	
-			<div class="col-5">
-				<select class="form-control" name="fltrType" id="job_types" tabindex="4">
+                        </div>
+                        <label class="col-1">Type</label>
+                        <div class="col-5">
+                            <select class="form-control" name="fltrType" id="job_types" tabindex="4">
 					<option value="" selected>Show all</option>
 				</select>
-			</div>
-		</div>
-	<div class="row"><div class="col-12 col-sm-10 offset-sm-1"><p id="form_error" class="star-grey"></p></div></div>
-	<div class="row mb-4">
-		<div class="col-sm-6"><button type="submit" class="btn btn-default btn-block" tabindex="5">Submit</button></div>
-		<div class="col-sm-6"><button type="reset" class="btn btn-block fn_reset" tabindex="6" style="background-color: #791027; color:white;">Reset Filters</button></div>
-	</div><!--/End buttons-->
-		</form>
-		</div>
-		
-	<div id="content" class="container-fluid">
-	</div>
-	</div>
-	<div id="referrals"></div>
-	<footer>
-		
-	</footer>
-	<!-- end of content -->
-  <!--start templates -->
-	<script id="jobs_template" type="text/x-handlebars-template">
-<div class="mb-3" role="tablist" id="accordion">
-		{{#each this}}
-			<div class="card border-0">
-			<div class="row mt-2 mb-2" style="border-left: dotted gray 2px;">
-			<div class="col-11 col-md-3">
-				<h5>{{Job_Name__c}}</h5>
-				<p class="text-muted text-uppercase" style="margin-top:-5px; font-size:0.7em;"><span class="star-red">Location: </span>{{AVTRRT__Job_City__c}}, {{AVTRRT__State__c}} &nbsp;</p>
-				<p class="text-muted text-uppercase" style="margin-top:-15px; font-size:0.7em;">
-				<span class="star-red">Type: </span>{{Job_Type__c}}</p>
-				<strong><p style="margin-top:-5px; font-size:0.7em;" class="text-uppercase"><a data-toggle="collapse" data-parent="#accordion" href="#{{Id}}" aria-expanded="true" aria-controls="{{Name}}" class="m-0">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 col-sm-10 offset-sm-1">
+                            <p id="form_error" class="star-grey"></p>
+                        </div>
+                    </div>
+                    <div class="row mb-4">
+                        <div class="col-sm-12"><button type="submit" id="submitbtn" class="btn btn-default btn-block" tabindex="5">Submit</button></div>
+                        <!--<div class="col-sm-6"><button type="reset" class="btn btn-block fn_reset" tabindex="6" style="background-color: #791027; color:white;">Reset Filters</button></div>-->
+                    </div>
+                    <!--/End buttons-->
+                </form>
+            </div>
+
+            <div id="content" class="container-fluid">
+            </div>
+        </div>
+    </div>
+    <div id="referrals"></div>
+    <footer>
+
+    </footer>
+    <!-- end of content -->
+    <!--start templates -->
+    <script id="jobs_template" type="text/x-handlebars-template">
+        <div class="mb-3" role="tablist" id="accordion">
+            {{#each this}}
+            <div class="card border-top-0 border-left-0 border-right-0">
+                <div class="row mt-2 mb-2" style="border-left: dotted gray 2px;">
+                    <div class="col-11 col-md-3">
+                        <h5>{{Job_Name__c}}</h5>
+                        <p class="text-muted text-uppercase" style="margin-top:-5px; font-size:0.7em;"><span class="star-red">Location: </span>{{AVTRRT__Job_City__c}}, {{AVTRRT__State__c}} &nbsp;</p>
+                        <p class="text-muted text-uppercase" style="margin-top:-15px; font-size:0.7em;">
+                            <span class="star-red">Type: </span>{{Job_Type__c}}</p>
+                        <strong><p style="margin-top:-5px; font-size:0.7em;" class="text-uppercase"><a data-toggle="collapse" href="#" data-parent="#accordion" data-target="#{{Id}}" aria-expanded="true" aria-controls="{{Name}}" class="m-0">
 				Details
 				</a> 
 				&nbsp;|&nbsp; 
-				<a href="#{{Id}}" class="m-0">
+				<a href="{{Job_Application_URL_New__c}}" class="m-0">
 				Apply
 				</a>
 				</p></strong>
-				
-			</div>{{!--/End Name and Brief Details--}}
-			<div class="col-md-9" style="font-size:0.9em;">
-				<p class="hidden-sm-down">{{AVTRRT__Job_Summary__c}}</p>
-				
-				
-				<div id="{{Id}}" class="collapse" role="tabpanel">
-		
-				{{{AVTRRT__Job_Description_Rich__c}}}<br>
-				<p><a href="{{Job_Application_URL_New__c}}" class="btn btn-block mt-2" style="background-color: #791027; color:white;">Apply</a></p>
-			</div>
-			</div>{{!--/End Summary--}}
-			</div>{{!-- /End Card Block--}}
-			</div>{{!-- /End Card--}}
-		{{/each}}
-		</div>
-		
-	</script>
-	
-	
-  <!-- end templates -->
 
-	<!-- start scripts -->
-	
-<script src="https://use.fontawesome.com/b676143643.js" ></script>
-<script src="js/jquery-3.2.1.min.js" type="text/javascript"></script><script src="js/underscore-min.js"></script>
-<script src="js/tether.min.js" type="text/javascript"></script>
-<script src="js/bootstrap.min.js" type="text/javascript"></script>
-<script src="js/handlebars-v4.0.10.js" type="text/javascript"></script>
-<script src="js/render.js" type="text/javascript"></script>
-<script>$("#referrals").load('./assets/referrals.html');</script>
-<script>$("header").load("./assets/header.html");</script>
-<script>$("footer").load("./assets/footer.html");</script>
+                    </div>{{!--/End Name and Brief Details--}}
+                    <div class="col-md-9" style="font-size:0.9em;">
+                        <p class="hidden-sm-down">{{AVTRRT__Job_Summary__c}}</p>
+
+
+                        <div id="{{Id}}" class="collapse" role="tabpanel">
+
+                            {{{Job_Description_Rich_Job_Board__c}}}<br>
+                            <p><a href="{{Job_Application_URL_New__c}}" class="btn btn-block mt-2" style="background-color: #791027; color:white;">Apply</a></p>
+                        </div>
+                    </div>{{!--/End Summary--}}
+                </div>{{!-- /End Card Block--}}
+            </div>{{!-- /End Card--}} {{/each}}
+        </div>
+
+    </script>
+
+
+    <!-- end templates -->
+
+    <!-- start scripts -->
+
+    <script src="https://use.fontawesome.com/b676143643.js"></script>
+    <script src="js/jquery-3.2.1.min.js" type="text/javascript"></script>
+    <script src="js/underscore-min.js"></script>
+    <script src="js/tether.min.js" type="text/javascript"></script>
+    <script src="js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="js/handlebars-v4.0.10.js" type="text/javascript"></script>
+    <script src="js/render.js" type="text/javascript"></script>
+    <script>
+        $("#referrals").load('./assets/referrals.html');
+    </script>
+    <script>
+        $("header").load("./assets/header.html");
+    </script>
+    <script>
+        $("footer").load("./assets/footer.html");
+    </script>
 
 
 
 </body>
+
 </html>
