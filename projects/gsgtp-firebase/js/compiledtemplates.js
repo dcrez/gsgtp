@@ -14,7 +14,7 @@ $(document).ready(function() {
     //Unfathomable variable
     var $pullList = $(".pulls_container");
 
-    var dbref = firebase.database().ref('results/vehicleClass');
+    var dbref = firebase.database().ref('events');
     if ($("body").hasClass("vehicle_details")) {} else {
         dbref.on('value', function(snap) {
             $pullList.html(compiledPullsTemplate(snap.val()));

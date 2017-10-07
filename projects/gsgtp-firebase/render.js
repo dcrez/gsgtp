@@ -15,14 +15,16 @@ function randomNumber(len) {
 //window.alert("page is loading!");
 console.log("page loaded");
 
-function writeSignUp(puller, vehicle, vehicleClass, scheduledEvent, pullOrder) {
+function writeSignUp(puller, vehicle, vehicleClass, scheduledEvent, pullOrder, distance, place, points) {
 
     // Define variables
     puller = document.getElementById("puller").value;
     vehicle = document.getElementById("vehicle").value;
     scheduledEvent = document.getElementById("scheduledEvent").value;
     vehicleClass = document.getElementById("vehicleClass").value;
-    //distance = document.getElementById("distance").value;
+    distance = document.getElementById("distance").value;
+    place = document.getElementById("place").value;
+    points = document.getElementById("points").value;
     //pullOrder = document.getElementById("points").value;
     //townName = document.getElementById("townName").value;
     pullOrder = randomNumber(2);
@@ -36,16 +38,18 @@ function writeSignUp(puller, vehicle, vehicleClass, scheduledEvent, pullOrder) {
         pullOrder: pullOrder,
         puller: puller,
         vehicle: vehicle,
-        vehicleClass: vehicleClass
-            //distance: distance
+        vehicleClass: vehicleClass,
+        distance: distance,
+        place: place,
+        points: points
             //timestamp: timestamp
     };
 
     //var pullRef = (refVehicles).push(pullsRef);
-    var newPullKey = firebase.database().ref().child('results').push().key;
-    var updates = {};   
-    updates['/results/' + 'vehicleClass/' + vehicleClass + '/' + newPullKey] = pullsRef;
-    //updates['/events/' + scheduledEvent] = pullsRef;
+    var newPullKey = firebase.database().ref().child('pulls').push().key;
+    var updates = {};
+    updates['/events/' + scheduledEvent + '/vehicleClass/' + vehicleClass + '/' + newPullKey] = pullsRef;
+    updates['/pulls/'] = pullsRef;
     //updates['/vehicles/' + vehicle + '/puller/' + puller] = pullsRef;
     updates['/vehicleClass/' + vehicleClass + '/' + newPullKey] = pullsRef;
     //event.preventDefault();
