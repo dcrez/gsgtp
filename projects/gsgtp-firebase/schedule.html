@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>GSGTP - schedule</title>
+    <script src="https://www.gstatic.com/firebasejs/4.1.5/firebase.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <h2>Log Event</h2>
+        <form class="row">
+            <input type="text" id="eventName" placeholder="Enter event name" class="form-control" tabindex="1">
+            <input type="date" id="schdDate" placeholder="MM/DD/YYYY" class="form-control" tabindex="2">
+            <input type="time" id="schdTime" placeholder="hh:mm:ss" class="form-control" tabindex="3">
+            <input type="text" id="address" placeholder="street address" class="form-control" tabindex="4">
+            <input type="text" id="city" placeholder="city" class="form-control" tabindex="5">
+            <select class="form-control" id="state" name="state" tabindex="6">
+                        <option value="" class="readonly">Select a state.</option>
+                        <option value="MN">Minnesota</option>
+                        <option value="WI">Wisconsin</option>
+                    </select>
+            <input type="text" id="zip" placeholder="zip" class="form-control" tabindex="7">
+            <select id="track" name="track" class="form-control" tabindex="8" placeholder="Select a track type.">
+                        <option value="Dirt">Dirt</option>
+                        <option value="Asphalt">Asphalt</option>
+                        <option value="N/A">N/A</option>
+                    </select>
+            <input class="form-control" placeholder="Describe the event here" id="description">
+            <label class="form-check-label">
+                    <input type="checkbox" class="form-check-input" id="isPoints" value=""> Can points be earned by members at this event?
+                    </label>
+            <button class="btn btn-default" id="submitevent">Submit</button>
+        </form>
+    </div>
+
+    <div class="container">
+        <div class="row mt-4">
+            <div class="schedule_container">
+            </div>
+        </div>
+    </div>
+
+    <script id="schedule_template" type="text/x-handlebars-template">
+        {{#each this}}
+        <a href="https://www.google.com/maps/place/{{address}},+{{city}},+{{state}}+{{zip}}" target="_blank">
+            <h4>{{eventName}}, {{schdDate}} {{schdTime}}</h4>
+        </a>
+        <p>{{address}}, {{city}}, {{state}} {{zip}}</p>
+        <p>{{description}}</p>
+        {{#if isPoints}} Points will be awarded to members with valid pulls at this event. {{/if}} {{/each}}
+
+    </script>
+
+
+    <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.1.5/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.1.5/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.1.5/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.1.5/firebase-messaging.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyCK3lJyrQ5qzYcqQorRlPkcoCGh38wdMW8",
+            authDomain: "gsgtp-b4448.firebaseapp.com",
+            databaseURL: "https://gsgtp-b4448.firebaseio.com",
+            projectId: "gsgtp-b4448",
+            storageBucket: "gsgtp-b4448.appspot.com",
+            messagingSenderId: "553297979168"
+        };
+        firebase.initializeApp(config);
+
+        // Get a reference to the database service
+        var database = firebase.database();
+    </script>
+    <script src="js/jquery-3.1.0.min.js"></script>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.min.js"></script>
+
+    <script src="render.js"></script>
+    <script src="js/compiledtemplates.js"></script>
+
+
+</body>
+
+</html>
