@@ -1,115 +1,31 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 
 <head>
-    <title>GSGTP</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Get involved with tractor pulling in Minnesota and Wisconsin.">
+    <meta name="author" content="GSGTP">
+    <title>Gopher State Garden Tractor Pullers</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://www.gstatic.com/firebasejs/4.1.5/firebase.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
     <script src="https://use.fontawesome.com/133072fcaa.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Oswald|Open+Sans" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="css/google-fonts.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/media.css">
+
+
 </head>
+<header></header>
 
 <body>
-
-    <div class="container">
-        <h2>Event Sign-up</h2>
-        <form class="row">
-            <div class="col-md-6">
-                <div class="form-group">
-                    <label>Event</label>
-                    <select id="scheduledEvent" class="form-control">
-                        <option value="">Select an option</option>
-                        <option value="An example event">An example event</option>
-                    </select>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="form-group">
-                    <label>Vehicle Class</label>
-                    <select type="text" id="vehicleClass" class="form-control">
-                        <option value="">Select a class.</option>
-                        <option value="an example class">An example class</option>
-                    </select>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="form-group">
-                    <label>Vehicle </label>
-                    <input type="text" id="vehicle" class="form-control">
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="form-group">
-                    <label>Puller </label>
-                    <input type="text" id="puller" class="form-control">
-                </div>
-            </div>
-            <div class="hidden" id="pullOrder"></div>
-            <!--<div class="col-md-4">
-                <div class="form-group">
-                    <label>Distance </label>
-                    <input type="text" id="distance" class="form-control">
-                </div>
-            </div>-->
-            <button class="btn btn-block" id="submitbtn">Submit</button>
+    <div id="addPull"></div>
 
 
-        </form>
-    </div>
-
-    <div class="container-fluid">
-        <div class="row mt-4">
-            <div class="pulls_container col-md-12">
-            </div>
-        </div>
-    </div>
-
-    <div id="modal_editPull" class="modal fade">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Edit Pull</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-                <div class="modal-body editPull_container">
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <script id="pulls_template" type="text/x-handlebars-template">
-        {{!-- {{#each vehicleClass}} --}}
-        <h5 class="text-uppercase">{{key}}</h5>
-        <table class="table table-striped table-sm">
-            <thead>
-                <tr class="table-info">
-                    <th>Pull order</th>
-                    <th>Vehicle</th>
-                    <th>Puller</th>
-                    <th>Distance</th>
-                    <th>Place</th>
-                    <th>Edit</th>
-                </tr>
-            </thead>
-            {{#each this}}
-            <tr>
-                <td>{{pullOrder}}</td>
-                <td>{{vehicle}}</td>
-                <td>{{puller}}</td>
-                <td>{{distance}}</td>
-                <td>{{place}}</td>
-                <td class="text-center"><a href="#" data-toggle="modal" data-target="#modal_editPull"><i class="fa fa-edit" data-id="{{@index}}"></i></a></td>
-            </tr>
-            {{/each}}
-        </table>
-        {{!--{{/each}}--}}
-    </script>
-
-    <script id="editPulls_template" type="text/x-handlebars-template">
-        <p>Some text goes here...</p>
-    </script>
-
+    <footer class="footer"></footer>
     <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
     <script src="https://www.gstatic.com/firebasejs/4.1.5/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/4.1.5/firebase-auth.js"></script>
@@ -138,8 +54,15 @@
 
     <script src="render.js"></script>
     <script src="js/compiledtemplates.js"></script>
-
-
+    <script>
+        $('header').load('assets/header.html');
+    </script>
+    <script>
+        $('#addPull').load('assets/addPull.html')
+    </script>
+    <script>
+        $('footer').load('assets/footer.html');
+    </script>
 </body>
 
 </html>

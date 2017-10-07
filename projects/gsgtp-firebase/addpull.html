@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>GSGTP - Add a Pull</title>
+    <script src="https://www.gstatic.com/firebasejs/4.1.5/firebase.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <script src="https://use.fontawesome.com/133072fcaa.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Oswald|Open+Sans" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="css/google-fonts.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/media.css">
+</head>
+
+<body>
+    <header></header>
+    <div class="container-fluid">
+        <h2>Add a Pull</h2>
+        <form class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label>Event</label>
+                    <select id="scheduledEvent" class="form-control">
+                        <option value="">Select an option</option>
+                        <option value="10-7-17 Benefit Pull">10-7-17 Benefit Pull</option>
+                        <option value="12-25-17 Christmas Example">12-25-17 Christmas Example</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label>Vehicle Class</label>
+                    <select type="text" id="vehicleClass" class="form-control">
+                        <option value="">Select a class.</option>
+                        <option value="Mini rod - 1900A">Mini rod - 1900A</option>
+                        <option value="Mini rod - 1900B">Mini rod - 1900B</option>
+                        <option value="Pro Stock - 1050">Pro Stock - 1050</option>
+                        <option value="Sport Stock - 1000">Sport Stock - 1000</option>
+                        <option value="Sport Stock - 1050">Sport Stock - 1050</option>
+                        <option value="Stock - 1050">Stock - 1050</option>
+                        <option value="Stock - 950">Stock - 950</option>
+                        <option value="Stock Altered - 1050">Stock Altered - 1050</option>
+                        <option value="Stock Altered - 950">Stock Altered - 950</option>
+                        <option value="Super Modified - 1100">Super Modified - 1100</option>
+                        <option value="Super Modified - 1150">Super Modified - 1150</option>
+                        <option value="Super Modified - 1250">Super Modified - 1250</option>
+                        <option value="Super Modified - 1400">Super Modified - 1400</option>
+                        <option value="Super Stock - 1050">Super Stock - 1050</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label>Vehicle </label>
+                    <input type="text" id="vehicle" class="form-control" placeholder="Vehicle Name">
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label>Puller </label>
+                    <input type="text" id="puller" class="form-control" placeholder="Puller Name">
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label>Distance</label>
+                    <input type="text" id="distance" class="form-control" placeholder="Distance">
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label>Points</label>
+                    <input type="text" id="points" class="form-control" placeholder="Points">
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label>Place</label>
+                    <input type="place" id="place" class="form-control" placeholder="Place">
+                </div>
+            </div>
+            <div class="hidden" id="pullOrder"></div>
+            <button class="btn btn-block" id="submitbtn">Submit</button>
+
+
+        </form>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row mt-4">
+            <div class="pulls_container col-md-12">
+            </div>
+        </div>
+    </div>
+    <footer></footer>
+    <div id="modal_editPull" class="modal fade">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Edit Pull</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body editPull_container">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script id="pulls_template" type="text/x-handlebars-template">
+        {{#each this}}
+        <h4 class="text-uppercase">Event: {{@key}}</h5>
+            {{#each vehicleClass}}
+            <h5 class="">Vehicle Class: {{@key}}</h5>
+            <table class="table table-striped table-sm">
+                <thead>
+                    <tr>
+                        <th>Pull order</th>
+                        <th>Vehicle</th>
+                        <th>Puller</th>
+                        <th>Distance</th>
+                        <th>Place</th>
+
+                    </tr>
+                </thead>
+                {{#each this}}
+                <tr>
+                    <td>{{pullOrder}}</td>
+                    <td>{{vehicle}}</td>
+                    <td>{{puller}}</td>
+                    <td>{{distance}}</td>
+                    <td>{{place}}</td>
+
+                </tr>
+                {{/each}}
+            </table>
+            {{/each}} {{/each}}
+    </script>
+
+    <script id="editPulls_template" type="text/x-handlebars-template">
+        <p>Some text goes here...</p>
+    </script>
+
+    <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.1.5/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.1.5/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.1.5/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.1.5/firebase-messaging.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyCK3lJyrQ5qzYcqQorRlPkcoCGh38wdMW8",
+            authDomain: "gsgtp-b4448.firebaseapp.com",
+            databaseURL: "https://gsgtp-b4448.firebaseio.com",
+            projectId: "gsgtp-b4448",
+            storageBucket: "gsgtp-b4448.appspot.com",
+            messagingSenderId: "553297979168"
+        };
+        firebase.initializeApp(config);
+
+        // Get a reference to the database service
+        var database = firebase.database();
+    </script>
+    <script src="js/jquery-3.1.0.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.min.js"></script>
+
+    <script src="render.js"></script>
+    <script src="js/compiledtemplates.js"></script>
+    <script>
+        $('header').load('assets/header.html');
+    </script>
+
+    <script>
+        $('footer').load('assets/footer.html');
+    </script>
+
+</body>
+
+</html>
