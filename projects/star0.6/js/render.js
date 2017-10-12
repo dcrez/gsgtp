@@ -2,21 +2,26 @@ var starjobs = []; // container for Salesforce array returned by HTTP request
 var apiurl = "https://starcollaborativeportal.secure.force.com/services/apexrest/JobPortal"; // URL of Salesforce service endpoint
 var jobs_template;
 
-// Parse salesforce opportunities' text
-var xhr = new XMLHttpRequest(),
-    method = "GET",
-    url = apiurl;
-//console.log('UNSENT', xhr.readyState);
+function reqListener() {
+    console.log(this.responseText);
+}
 
-xhr.open('GET', apiurl + "?t=" + Math.random(), false);
+// Parse salesforce opportunities' text
+var xhr = new XMLHttpRequest();
+xhr.addEventListener("load", reqListener);
+xhr.open('GET', apiurl + "?t=" + Math.random());
 console.log('OPENED', xhr.readyState);
 
 xhr.onreadystatechange = function() {
     if (xhr.readyState === 3) {
         console.log('LOADING', this.readyState);
+        alert("Loading jobs!")
     } else if (this.readyState === 4 && this.status === 200) {
         starjobs = JSON.parse(xhr.responseText);
         console.log("DONE!");
+    } else {
+        console.log(xhr.responseText);
+        console.log(xhr.readyState);
     }
 };
 
@@ -116,7 +121,7 @@ function dosubmit() {
     // Create filtered array for focus groups (business analysis, project management, etc.)
     for (var m = 0; m < starjobs.length; m++) {
         if (starjobs[m].MC_IntersetGroup__c.indexOf(fcs) >= 0) { arr_fcs.push(starjobs[m]); }
-    } //if the focus group filter is selected, add all jobs that match the selected focus group to the focus array
+    } // if the focus group filter is selected, add all jobs that match the selected focus group to the focus array
 
     /*if (loc != "" && jt != "" && fcs != "") {
         result = _.intersectionObjects(starjobs, arr_loc, arr_jt, arr_fcs);
@@ -141,15 +146,21 @@ function dosubmit() {
     else { console.log('not handled!'); }*/
 
 
-    if (loc == "") { arr_loc = []; } else { result = _.intersectionObjects(starjobs, arr_loc);
+    if (loc == "") { arr_loc = []; } else {
+        result = _.intersectionObjects(starjobs, arr_loc);
         starjobs = result;
-        console.log("loc:", starjobs); }
-    if (jt == "") { arr_jt = []; } else { result = _.intersectionObjects(starjobs, arr_jt);
+        console.log("loc:", starjobs);
+    }
+    if (jt == "") { arr_jt = []; } else {
+        result = _.intersectionObjects(starjobs, arr_jt);
         starjobs = result;
-        console.log("jt:", starjobs); }
-    if (fcs == "") { arr_fcs = []; } else { result = _.intersectionObjects(starjobs, arr_fcs);
+        console.log("jt:", starjobs);
+    }
+    if (fcs == "") { arr_fcs = []; } else {
+        result = _.intersectionObjects(starjobs, arr_fcs);
         starjobs = result;
-        console.log("fcs:", starjobs); }
+        console.log("fcs:", starjobs);
+    }
 
 
     if (starjobs.length < 1) {
