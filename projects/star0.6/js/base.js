@@ -1,11 +1,53 @@
 "use strict";
 // container for Salesforce array returned by HTTP request 
+var starjobs = []; 
+
+// URL of Salesforce service endpoint
+var apiurl = "https://starcollaborativeportal.secure.force.com/services/apexrest/JobPortal"; 
+
+// Request data from Salesforce 
+var xhr = new XMLHttpRequest(); //console.log('UNSENT', xhr.readyState);
+
+xhr.open('GET', apiurl + "?t=" + Math.random(), false);
+console.log('OPENED', xhr.readyState);
+
+xhr.onreadystatechange = function() {
+    if (xhr.readyState === 3) {
+        console.log('LOADING', this.readyState);
+    } else if (this.readyState === 4 && this.status === 200) {
+        starjobs = JSON.parse(xhr.responseText);
+        console.log("DONE!");
+    }
+	else {console.log("unhandled condition!");}
+};
+
+xhr.send();
+
+sessionStorage.setItem('starjobs', JSON.stringify(starjobs));
+
+
+// Populate list of jobs prior to user filtering list
+    //Define template to view jobs
+    var jobsTemplate = $("#jobs_template").html();
+
+    //Compile template
+    var compiledJobs = Handlebars.compile(jobsTemplate);
+
+    //Define variable to display template
+    var $jobs = $("#content");
+
+    if ($("body").hasClass("job_details")) {} else {
+            $jobs.html(compiledJobs(starjobs));
+            console.log(starjobs);
+        }
+
+
 var sessionJobs = sessionStorage.getItem('starjobs');
 
 
 // Build arrays for dropdowns
 	//Define unique job types
-	const arr_jobtypes = [...new Set(sessionJobs.map(item => item.Job_Type__c))];
+	const arr_jobtypes = [...new Set(starjobs.map(item => item.Job_Type__c))];
 	var frm_jobtypes = document.getElementById("job_types");
 		for (var i = 0; i < arr_jobtypes.length; i++) {
 			var jt = arr_jobtypes[i];
