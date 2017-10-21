@@ -15,8 +15,7 @@ xhr.onreadystatechange = function() {
     } else if (this.readyState === 4 && this.status === 200) {
         starjobs = JSON.parse(xhr.responseText);
         console.log("DONE!");
-    }
-	else {console.log("unhandled condition!");}
+    } else { console.log("unhandled condition!"); }
 };
 
 xhr.send();
@@ -37,10 +36,10 @@ const arr_focus_areas = [...new Set(starjobs.map(item => item.MC_IntersetGroup__
 var split_focus = [];
 for (var i = 0; i < arr_focus_areas.length; i++) {
     for (var i = 0; i < arr_focus_areas.length; i++) {
-    var splitItem = arr_focus_areas[i].split(";"); // just split once
-    split_focus.push(splitItem[0]); // before the dot
-    split_focus.push(splitItem[1]); // after the dot
-}
+        var splitItem = arr_focus_areas[i].split(";"); // just split once
+        split_focus.push(splitItem[0]); // before the dot
+        split_focus.push(splitItem[1]); // after the dot
+    }
 }
 
 // Make sure the focus areas can be read
@@ -81,9 +80,6 @@ for (var i = 0; i < split_focus.length; i++) {
 var loc;
 var jt;
 var fcs; //form values
-var arr_loc = [];
-var arr_jt = [];
-var arr_fcs = [];
 var result = []; //filter variables
 
 // Check intersection of arrays
@@ -105,52 +101,22 @@ function dosubmit() {
     loc = document.getElementById("locations").value;
     jt = document.getElementById("job_types").value;
     fcs = document.getElementById("focus_areas").value;
+    result = [];
 
     // Create filtered array for locations
     for (var i = 0; i < starjobs.length; i++) {
-        if (starjobs[i].AVTRRT__State__c === loc) { arr_loc.push(starjobs[i]); }
+        if (starjobs[i].AVTRRT__State__c === loc) { result.push(starjobs[i]); }
     } //if the location filter is selected, add all jobs that match to the location array
     // Create filtered array for job types (contract, direct hire, etc.)
     for (var j = 0; j < starjobs.length; j++) {
-        if (starjobs[j].Job_Type__c === jt) { arr_jt.push(starjobs[j]); }
+        if (starjobs[j].Job_Type__c === jt) { result.push(starjobs[j]); }
     } //if the job type filter is selected, add all jobs that match to the job type array
     // Create filtered array for focus groups (business analysis, project management, etc.)
     for (var m = 0; m < starjobs.length; m++) {
-        if (starjobs[m].MC_IntersetGroup__c.indexOf(fcs) >= 0) { arr_fcs.push(starjobs[m]); }
+        if (starjobs[m].MC_IntersetGroup__c.indexOf(fcs) >= 0) { result.push(starjobs[m]); }
     } //if the focus group filter is selected, add all jobs that match the selected focus group to the focus array
 
-    /*if (loc != "" && jt != "" && fcs != "") {
-        result = _.intersectionObjects(starjobs, arr_loc, arr_jt, arr_fcs);
-        console.log(loc, fcs, jt, result);
-        starjobs = result;
-        console.log(starjobs);
-    }
 
-    else if (loc === "" && jt !== "" && fcs !== "") {
-        result = _.intersectionObjects(arr_jt, arr_fcs);
-        console.log(result);
-        starjobs = result;
-    } else if (loc !== "" && jt === "" && fcs !== "") {
-        result = _.intersectionObjects(arr_loc, arr_fcs);
-        console.log(result);
-        starjobs = result;
-    } else if (loc !== "" && jt !== "" && fcs === "") {
-        result = _.intersectionObjects(arr_loc, arr_jt);
-        console.log(result);
-        starjobs = result;
-	} 
-    else { console.log('not handled!'); }*/
-
-
-    if (loc == "") { arr_loc = []; } else { result = _.intersectionObjects(starjobs, arr_loc);
-        starjobs = result;
-        console.log("loc:", starjobs); }
-    if (jt == "") { arr_jt = []; } else { result = _.intersectionObjects(starjobs, arr_jt);
-        starjobs = result;
-        console.log("jt:", starjobs); }
-    if (fcs == "") { arr_fcs = []; } else { result = _.intersectionObjects(starjobs, arr_fcs);
-        starjobs = result;
-        console.log("fcs:", starjobs); }
 
 
     if (starjobs.length < 1) {

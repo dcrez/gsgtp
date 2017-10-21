@@ -108,7 +108,7 @@ var loc;
 var jt;
 var fcs; //form values
 var result = []; //filter variables
-var filtered_results = [];
+var arr_loc = []; var arr_fcs = []; var arr_jt=[];
 
 
 function dosubmit() {
@@ -116,58 +116,61 @@ function dosubmit() {
     loc = document.getElementById("locations").value;
     jt = document.getElementById("job_types").value;
     fcs = document.getElementById("focus_areas").value;
-    var loc_result = [];
-    var jt_result = [];
-    var fcs_result = [];
-    var combined_jobs = [];
+	
+	arr_loc = [];
+    arr_fcs = [];
+    arr_jt = [];
 
-    // Create filtered array for locations
+
+    // Create filtered array for job types
     for (var i = 0; i < starjobs.length; i++) {
-        if (loc !== null && starjobs[i].AVTRRT__State__c === loc) {
-            loc_result.push(starjobs[i]);
-            console.log("loc:" + loc_result);
-            combined_jobs = _.intersection(starjobs, loc_result);
-            starjobs = combined_jobs;
-        }
-    } //if the location filter is selected, add all jobs that match to the location array
-    // Create filtered array for job types (contract, direct hire, etc.)
-    for (var j = 0; j < starjobs.length; j++) {
-        if (jt !== null && starjobs[j].Job_Type__c === jt) {
-            jt_result.push(starjobs[j]);
-            console.log("jt:" + jt_result);
-            combined_jobs = _.intersection(starjobs, jt_result);
-            starjobs = combined_jobs;
-        }
-    } //if the job type filter is selected, add all jobs that match to the job type array
-    // Create filtered array for focus groups (business analysis, project management, etc.)
-    for (var m = 0; m < starjobs.length; m++) {
-        if (fcs !== null) {
-            fcs_result = _.where(starjobs[m], "MC_IntersetGroup__c:" & fcs);
-            console.log("fcs:" + fcs_result);
-            combined_jobs = _.intersection(starjobs, fcs_result);
-            starjobs = combined_jobs;
+        if (starjobs[i].AVTRRT__State__c === loc) {
+            arr_loc.push(starjobs[i]);
         }
     }
 
-    combined_jobs = _.uniq(starjobs);
+    // Create filtered array for locations
+    for (var j = 0; j < starjobs.length; j++) {
+        if (starjobs[j].Job_Type__c === jt) {
+            arr_jt.push(starjobs[j]);
+        }
+    }
 
-    if (combined_jobs.length < 1) {
+    //arr_fcs = starjobs.filter(function(focus){return focus.MC_IntersetGroup__c.match(fcs);});
+
+    for (var m = 0; m < starjobs.length; m++) {
+        if (starjobs[m].MC_IntersetGroup__c.indexOf(fcs) >= 0) { arr_fcs.push(starjobs[m]); }
+    }
+
+    if (loc == "") { arr_loc = []; } else {
+        result = _.intersectionObjects(starjobs, arr_loc);
+        starjobs = result;
+        console.log("loc:", starjobs);
+    }
+    if (jt == "") { arr_jt = []; } else {
+        result = _.intersectionObjects(starjobs, arr_jt);
+        starjobs = result;
+        console.log("jt:", starjobs);
+    }
+    if (fcs == "") { arr_fcs = []; } else {
+        result = _.intersectionObjects(starjobs, arr_fcs);
+        starjobs = result;
+        console.log("fcs:", starjobs);
+    }
+
+    if (starjobs.length < 1) {
         document.getElementById("form_error").innerHTML = 'We cannot find any opportunities that match the criteria you provided. Try <a href="#" class="fn-reset">searching again</a> or <a href="#" data-toggle="modal" data-target="#subscribeModal">subscribe</a> to get alerts about new roles as they become available.';
-    } else {
-        document.getElementById("form_error").innerHTML = "";
     }
 }
 
+// Call search function on submit
 $("#starform").click(function() {
     console.log("clicked submit!");
-    var data = $('#starform').serialize();
-    xhr.open("GET", apiurl + "/?" + data, false);
+    var data = $(this).serialize();
+        xhr.open("GET", apiurl + "/?" + data, false);
     xhr.send();
     dosubmit();
-    if ($("body").hasClass("job_details")) {} else {
-        $jobs.html(compiledJobs(starjobs));
-        console.log(starjobs);
-    }
+    $(".fn-opportunities").click();
     event.preventDefault();
     console.log("completed submit!");
 });

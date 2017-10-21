@@ -19,12 +19,12 @@ xhr.onprogress = function() { console.log('LOADING', xhr.readyState); };
 };
 */
 xhr.onreadystatechange = function() {
-if (this.readyState < 4) {
-	console.log(readyState);
-}
-else if (this.readyState == 4 && this.status == 200) {
-	starjobs = JSON.parse(this.responseText);}
-}; 
+    if (this.readyState < 4) {
+        console.log(readyState);
+    } else if (this.readyState == 4 && this.status == 200) {
+        starjobs = JSON.parse(this.responseText);
+    }
+};
 
 
 xhr.send();
