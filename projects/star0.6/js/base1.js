@@ -36,13 +36,21 @@ var compiledJobs = Handlebars.compile(jobsTemplate);
 //Define variable to display template
 var $jobs = $("#content");
 
-if ($("body").hasClass("job_details")) {} else {
-    $jobs.html(compiledJobs(starjobs));
-    console.log(starjobs);
+//var source = $("#jobs_template").html();
+//var jobs_template = Handlebars.compile(source);
+
+
+function showTemplate(template, data) {
+    var html = template(data);
+    $jobs.html(html);
 }
 
 
-var sessionJobs = sessionStorage.getItem('starjobs');
+if ($("body").hasClass("job_details")) {} else {
+    showTemplate(compiledJobs, starjobs);
+}
+
+
 
 
 // Build arrays for dropdowns
@@ -91,9 +99,9 @@ for (var i = 0; i < arr_focus_areas.length; i++) {
 }
 
 // Remove undefined items from focus areas
-var clean_fcs_areas = split_focus.filter(function(n) { return n !== undefined });
-var ordered_fcs_areas = _.sortBy(clean_fcs_areas)
-const arr_fcs_clean = [...new Set(clean_fcs_areas)];
+var clean_fcs_areas = split_focus.filter(function(n) { return n !== undefined; });
+var ordered_fcs_areas = _.sortBy(clean_fcs_areas);
+var arr_fcs_clean = [...new Set(ordered_fcs_areas)];
 
 var frm_focus = document.getElementById("focus_areas");
 for (var i = 0; i < arr_fcs_clean.length; i++) {
@@ -108,7 +116,9 @@ var loc;
 var jt;
 var fcs; //form values
 var result = []; //filter variables
-var arr_loc = []; var arr_fcs = []; var arr_jt=[];
+var arr_loc = [];
+var arr_fcs = [];
+var arr_jt = [];
 
 
 function dosubmit() {
@@ -116,61 +126,74 @@ function dosubmit() {
     loc = document.getElementById("locations").value;
     jt = document.getElementById("job_types").value;
     fcs = document.getElementById("focus_areas").value;
-	
-	arr_loc = [];
+
+    arr_loc = [];
     arr_fcs = [];
     arr_jt = [];
-
 
     // Create filtered array for job types
     for (var i = 0; i < starjobs.length; i++) {
         if (starjobs[i].AVTRRT__State__c === loc) {
             arr_loc.push(starjobs[i]);
         }
-    }
-
-    // Create filtered array for locations
-    for (var j = 0; j < starjobs.length; j++) {
-        if (starjobs[j].Job_Type__c === jt) {
-            arr_jt.push(starjobs[j]);
+        if (starjobs[i].Job_Type__c === jt) {
+            arr_jt.push(starjobs[i]);
+        }
+        if (starjobs[i].MC_IntersetGroup__c.indexOf(fcs) > 0) {
+            arr_fcs.push(starjobs[i]);
         }
     }
 
-    //arr_fcs = starjobs.filter(function(focus){return focus.MC_IntersetGroup__c.match(fcs);});
 
-    for (var m = 0; m < starjobs.length; m++) {
-        if (starjobs[m].MC_IntersetGroup__c.indexOf(fcs) >= 0) { arr_fcs.push(starjobs[m]); }
-    }
+    var sessionJobs = sessionStorage.setItem('starjobs', JSON.parse(starjobs));
 
-    if (loc == "") { arr_loc = []; } else {
-        result = _.intersectionObjects(starjobs, arr_loc);
-        starjobs = result;
-        console.log("loc:", starjobs);
-    }
-    if (jt == "") { arr_jt = []; } else {
-        result = _.intersectionObjects(starjobs, arr_jt);
-        starjobs = result;
-        console.log("jt:", starjobs);
-    }
+    // Create filtered array for locations
+    // for (var j = 0; j < starjobs.length; j++) {
+
+    //}
+
+    // Create filtered array for focus areas
+    //  for (var m = 0; m < starjobs.length; m++) {
+
+
     if (fcs == "") { arr_fcs = []; } else {
-        result = _.intersectionObjects(starjobs, arr_fcs);
+        result = _.intersection(starjobs, arr_fcs);
         starjobs = result;
         console.log("fcs:", starjobs);
     }
 
+    if (loc == "") { arr_loc = []; } else {
+        result = _.intersection(starjobs, arr_loc);
+        starjobs = result;
+        console.log("loc:", starjobs);
+    }
+
+    if (jt == "") { arr_jt = []; } else {
+        result = _.intersection(starjobs, arr_jt);
+        starjobs = result;
+        console.log("jt:", starjobs);
+    }
+
+
     if (starjobs.length < 1) {
         document.getElementById("form_error").innerHTML = 'We cannot find any opportunities that match the criteria you provided. Try <a href="#" class="fn-reset">searching again</a> or <a href="#" data-toggle="modal" data-target="#subscribeModal">subscribe</a> to get alerts about new roles as they become available.';
+    } else {
+        document.getElementById("form_error").innerHTML = "";
     }
+
 }
+
+
+
 
 // Call search function on submit
 $("#starform").click(function() {
     console.log("clicked submit!");
     var data = $(this).serialize();
-        xhr.open("GET", apiurl + "/?" + data, false);
+    xhr.open("GET", apiurl + "/?" + data, false);
     xhr.send();
     dosubmit();
-    $(".fn-opportunities").click();
+    showTemplate(compiledJobs, starjobs);
     event.preventDefault();
     console.log("completed submit!");
 });
