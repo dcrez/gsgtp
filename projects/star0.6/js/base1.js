@@ -1,5 +1,11 @@
-"use strict";
+//"use strict";
 // container for Salesforce array returned by HTTP request 
+function showTemplate(template, data) {
+    var html = template(data);
+    $("#content").html(html);
+}
+
+
 var starjobs = [];
 var split_focus = [];
 
@@ -23,10 +29,6 @@ xhr.onreadystatechange = function() {
 
 xhr.send();
 
-sessionStorage.setItem('starjobs', JSON.stringify(starjobs));
-
-
-// Populate list of jobs prior to user filtering list
 //Define template to view jobs
 var jobsTemplate = $("#jobs_template").html();
 
@@ -40,10 +42,6 @@ var $jobs = $("#content");
 //var jobs_template = Handlebars.compile(source);
 
 
-function showTemplate(template, data) {
-    var html = template(data);
-    $jobs.html(html);
-}
 
 
 if ($("body").hasClass("job_details")) {} else {
@@ -51,6 +49,7 @@ if ($("body").hasClass("job_details")) {} else {
 }
 
 
+//var sessionJobs = sessionStorage.getItem('starjobs');
 
 
 // Build arrays for dropdowns
@@ -136,25 +135,21 @@ function dosubmit() {
         if (starjobs[i].AVTRRT__State__c === loc) {
             arr_loc.push(starjobs[i]);
         }
-        if (starjobs[i].Job_Type__c === jt) {
-            arr_jt.push(starjobs[i]);
-        }
-        if (starjobs[i].MC_IntersetGroup__c.indexOf(fcs) > 0) {
-            arr_fcs.push(starjobs[i]);
+    }
+
+    // Create filtered array for locations
+    for (var j = 0; j < starjobs.length; j++) {
+        if (starjobs[j].Job_Type__c === jt) {
+            arr_jt.push(starjobs[j]);
         }
     }
 
-
-    var sessionJobs = sessionStorage.setItem('starjobs', JSON.parse(starjobs));
-
-    // Create filtered array for locations
-    // for (var j = 0; j < starjobs.length; j++) {
-
-    //}
-
     // Create filtered array for focus areas
-    //  for (var m = 0; m < starjobs.length; m++) {
-
+    for (var m = 0; m < starjobs.length; m++) {
+        var item = starjobs[m].MC_IntersetGroup__c;
+        console.log(item);
+        if (starjobs[m].MC_IntersetGroup__c.indexOf(fcs) >= 0) { result.push(starjobs[m]); }
+    }
 
     if (fcs == "") { arr_fcs = []; } else {
         result = _.intersection(starjobs, arr_fcs);
@@ -165,13 +160,13 @@ function dosubmit() {
     if (loc == "") { arr_loc = []; } else {
         result = _.intersection(starjobs, arr_loc);
         starjobs = result;
-        console.log("loc:", starjobs);
+        //console.log("loc:", starjobs);
     }
 
     if (jt == "") { arr_jt = []; } else {
         result = _.intersection(starjobs, arr_jt);
         starjobs = result;
-        console.log("jt:", starjobs);
+        //console.log("jt:", starjobs);
     }
 
 
@@ -187,9 +182,9 @@ function dosubmit() {
 
 
 // Call search function on submit
-$("#starform").click(function() {
+$("#submitbtn").click(function() {
     console.log("clicked submit!");
-    var data = $(this).serialize();
+    var data = $("#srch").serialize();
     xhr.open("GET", apiurl + "/?" + data, false);
     xhr.send();
     dosubmit();
