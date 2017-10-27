@@ -174,7 +174,7 @@ function dosubmit() {
 
 
     if (starjobs.length < 1) {
-        document.getElementById("form_error").innerHTML = 'We cannot find any opportunities that match the criteria you provided. Try <a href="#" class="fn-reset">searching again</a> or <a href="#" data-toggle="modal" data-target="#subscribeModal">subscribe</a> to get alerts about new roles as they become available.';
+        document.getElementById("form_error").innerHTML = 'We cannot find any opportunities that match the criteria you provided. Try <a href="#" onclick="resetForm">searching again</a> or <a href="#" data-toggle="modal" data-target="#subscribeModal">subscribe</a> to get alerts about new roles as they become available.';
     } else {
         document.getElementById("form_error").innerHTML = "";
     }
@@ -197,6 +197,6 @@ $("#submitbtn").click(function() {
 });
 
 // Reset the Form
-$(".fn-reset").click(function() {
+function resetForm {
     document.getElementById("starform").reset();
 });
