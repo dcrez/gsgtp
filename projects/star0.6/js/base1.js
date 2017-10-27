@@ -148,7 +148,10 @@ function dosubmit() {
     for (var m = 0; m < starjobs.length; m++) {
         var item = starjobs[m].MC_IntersetGroup__c;
         console.log(item);
-        if (starjobs[m].MC_IntersetGroup__c.indexOf(fcs) >= 0) { result.push(starjobs[m]); }
+        if (item.indexOf(fcs) >= 0) {
+            arr_fcs.push(starjobs[m]);
+            console.log('fcs:', arr_fcs);
+        }
     }
 
     if (fcs == "") { arr_fcs = []; } else {
@@ -191,4 +194,9 @@ $("#submitbtn").click(function() {
     showTemplate(compiledJobs, starjobs);
     event.preventDefault();
     console.log("completed submit!");
+});
+
+// Reset the Form
+$(".fn-reset").click(function() {
+    document.getElementById("starform").reset();
 });
