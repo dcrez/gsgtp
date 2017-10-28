@@ -1,3 +1,4 @@
+@charset "utf-8";
 /* General Styles */
 html, body {height: 100%;}
 body {color:black; font-family: "Oswald", sans-serif; font-size: 1.17em; font-weight: 200;}
@@ -180,15 +181,14 @@ section .alt-overlap {margin-top:-45px; border-radius: 75%; height:100px; width:
 }
 
 #opp-land {
-	background:linear-gradient(rgba(0,0,0,0.2),rgba(0, 0, 0, 0.4)),url(../img/iStock-588266018.jpg);
-	background-position: top center;
-	background-attachment: fixed;
+	background:linear-gradient(rgba(240,250,250,0.4),rgba(250, 250, 250, 0.6)),url(../img/woman-info.jpg);
 	background-size: cover;
-	text-shadow: 1px 1px 10px black;
-	color:white;
+	background-position: 50% 40%;
 	padding-top:80px;
 	padding-bottom: 20px;
 	}
+
+#opp-land p {background-color:hsla(0,2%,91%,0.60);}
 
 #sitemap {margin-top:20px;}
 

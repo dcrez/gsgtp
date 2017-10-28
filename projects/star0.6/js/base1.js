@@ -147,17 +147,16 @@ function dosubmit() {
     // Create filtered array for focus areas
     for (var m = 0; m < starjobs.length; m++) {
         var item = starjobs[m].MC_IntersetGroup__c;
-        console.log(item);
         if (item.indexOf(fcs) >= 0) {
             arr_fcs.push(starjobs[m]);
-            console.log('fcs:', arr_fcs);
+            //console.log('fcs:', arr_fcs);
         }
     }
 
     if (fcs == "") { arr_fcs = []; } else {
         result = _.intersection(starjobs, arr_fcs);
         starjobs = result;
-        console.log("fcs:", starjobs);
+        //console.log("fcs:", starjobs);
     }
 
     if (loc == "") { arr_loc = []; } else {
@@ -174,7 +173,7 @@ function dosubmit() {
 
 
     if (starjobs.length < 1) {
-        document.getElementById("form_error").innerHTML = 'We cannot find any opportunities that match the criteria you provided. Try <a href="#" class="fn-reset">searching again</a> or <a href="#" data-toggle="modal" data-target="#subscribeModal">subscribe</a> to get alerts about new roles as they become available.';
+        document.getElementById("form_error").innerHTML = 'We cannot find any opportunities that match the criteria you provided. Try <input type="button" onclick="resetForm()" value="searching again" class="btn btn-link star-red mx-0 px-0 my-0 py-0"> or <a href="#" data-toggle="modal" data-target="#subscribeModal">subscribe</a> to get alerts about new roles as they become available.';
     } else {
         document.getElementById("form_error").innerHTML = "";
     }
@@ -197,6 +196,6 @@ $("#submitbtn").click(function() {
 });
 
 // Reset the Form
-$(".fn-reset").click(function() {
+function resetForm() {
     document.getElementById("starform").reset();
-});
+}
