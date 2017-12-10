@@ -29,9 +29,21 @@
     <!-- End Google Tag Manager -->
 
     <link href="https://fonts.googleapis.com/css?family=Oswald:300,400" rel="stylesheet">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
     <link rel="stylesheet" href="css/basics.css">
     <style>
+        #opp-land {
+            background: linear-gradient(rgba(240, 250, 250, 0.4), rgba(250, 250, 250, 0.6)), url(img/woman-info.jpg);
+            background-size: cover;
+            background-position: 50% 40%;
+            padding-top: 80px;
+            padding-bottom: 20px;
+        }
+        
+        #opp-land p {
+            background-color: hsla(0, 2%, 91%, 0.60);
+        }
+        
         #loadingScreen {
             display: none;
             z-index: 1000;
@@ -85,8 +97,8 @@
         <div id="opp-land" class="container-fluid">
             <div class="col-12 col-md-10 offset-md-1">
                 <h2 class="text-center">Opportunities</h2>
-                <p class="text-center">If you are interested in applying for an opportunity with STAR Collaborative, please review our <a href="documents/ApplicantGuide.pdf" class="star-grey">Applicant Guide</a> before submitting your application (we only submit fully vetted
-                    and qualified candidates to our clients, so consider this the first step to helping us get to know you).</p>
+                <p class="text-center">If you are interested in applying for an opportunity with STAR Collaborative, please review our <a href="documents/ApplicantGuide.pdf" class="star-grey" target="_blank" type="application/pdf">Applicant Guide</a> before submitting your
+                    application (we only submit fully vetted and qualified candidates to our clients, so consider this the first step to helping us get to know you).</p>
             </div>
         </div>
 
@@ -132,8 +144,8 @@
                         </div>
                     </div>
                     <div class="row mb-4">
-                        <div class="col-sm-12"><button type="submit" id="submitbtn" class="btn btn-default btn-block" tabindex="5">Submit</button></div>
-                        <!--<div class="col-sm-6"><button type="reset" class="btn btn-block fn_reset" tabindex="6" style="background-color: #791027; color:white;">Reset Filters</button></div>-->
+                        <div class="col-sm-6"><button type="submit" id="submitbtn" class="btn btn-primary btn-block" style="background-color: #791027; color:white;" tabindex="5">Submit</button></div>
+                        <div class="col-sm-6"><button class="btn btn-block btn-primary" tabindex="6" onclick="fn_reset">Show all</button></div>
                     </div>
                     <!--/End buttons-->
                 </form>
@@ -170,12 +182,12 @@
 
                     </div>{{!--/End Name and Brief Details--}}
                     <div class="col-md-9" style="font-size:0.9em;">
-                        <p class="hidden-sm-down">{{AVTRRT__Job_Summary__c}}</p>
+                        <p class="hidden-sm-down">{{{AVTRRT__Job_Summary__c}}}</p>
 
 
                         <div id="{{Id}}" class="collapse" role="tabpanel">
 
-                            {{{Job_Description_Rich_Job_Board__c}}}<br>
+                            {{{Job_Job_Description_Rich_Job_Board__c}}}<br>
                             <p><a href="{{Job_Application_URL_New__c}}" class="btn btn-block mt-2" style="background-color: #791027; color:white;" target="_blank">Apply</a></p>
                         </div>
                     </div>{{!--/End Summary--}}
@@ -191,11 +203,19 @@
     <!-- start scripts -->
 
     <script src="https://use.fontawesome.com/b676143643.js"></script>
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+	<script src="js/jquery-3.2.1.min.js"></script>
+	<script src="js/underscore-min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        $(document).on('click', '.navbar-collapse.in', function(e) {
 
-    <script src="js/underscore-min.js"></script>
-    <script src="js/tether.min.js" type="text/javascript"></script>
-    <script src="js/bootstrap.min.js" type="text/javascript"></script>
+            if ($(e.target).is('a') && ($(e.target).attr('class') != 'dropdown-toggle')) {
+                $(this).collapse('hide');
+            }
+
+        });
+    </script>
     <script src="js/handlebars-v4.0.10.js" type="text/javascript"></script>
     <script type="text/javascript">
     </script>
