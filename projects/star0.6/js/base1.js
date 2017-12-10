@@ -2,7 +2,7 @@
 // container for Salesforce array returned by HTTP request 
 function showTemplate(template, data) {
     var html = template(data);
-    $("#content").html(html);
+    $("#content").html(html); // Your code here
 }
 
 
@@ -14,6 +14,9 @@ var apiurl = "https://starcollaborativeportal.secure.force.com/services/apexrest
 
 // Request data from Salesforce 
 var xhr = new XMLHttpRequest(); //console.log('UNSENT', xhr.readyState);
+
+//xhr.addEventListener("load", transferComplete);
+
 
 xhr.open('GET', apiurl + "?t=" + Math.random(), false);
 console.log('OPENED', xhr.readyState);
@@ -42,11 +45,11 @@ var $jobs = $("#content");
 //var jobs_template = Handlebars.compile(source);
 
 
+//xhr.onloadend = function() {
+//  showTemplate(compiledJobs, starjobs);
+//}
 
-
-if ($("body").hasClass("job_details")) {} else {
-    showTemplate(compiledJobs, starjobs);
-}
+if ($("body").hasClass("job_details")) {} else { showTemplate(compiledJobs, starjobs); }
 
 
 //var sessionJobs = sessionStorage.getItem('starjobs');
@@ -198,4 +201,10 @@ $("#submitbtn").click(function() {
 // Reset the Form
 function resetForm() {
     document.getElementById("starform").reset();
+}
+
+function fn_reset() {
+	xhr.open("GET", apiurl + "/?" + data, false);
+    xhr.send();
+	showTemplate(compiledJobs,starjobs);
 }
