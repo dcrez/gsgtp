@@ -335,6 +335,10 @@ footer h2 {
     color: #838C92;
 }
 
+b {
+	font-weight:bolder;
+}
+
 
 /* Media Queries */
 

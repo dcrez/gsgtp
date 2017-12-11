@@ -29,7 +29,7 @@
     <!-- End Google Tag Manager -->
 
     <link href="https://fonts.googleapis.com/css?family=Oswald:300,400" rel="stylesheet">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/bootstrap.min.css" crossorigin="anonymous">
     <link rel="stylesheet" href="css/basics.css">
     <style>
         #opp-land {
@@ -97,8 +97,7 @@
         <div id="opp-land" class="container-fluid">
             <div class="col-12 col-md-10 offset-md-1">
                 <h2 class="text-center">Opportunities</h2>
-                <p class="text-center">If you are interested in applying for an opportunity with STAR Collaborative, please review our <a href="documents/ApplicantGuide.pdf" class="star-grey" target="_blank" type="application/pdf">Applicant Guide</a> before submitting your
-                    application (we only submit fully vetted and qualified candidates to our clients, so consider this the first step to helping us get to know you).</p>
+                <p class="text-center">If you are interested in applying for an opportunity with STAR Collaborative, please review our <a class="btn-link" target="_blank" data-toggle="modal" data-target="#guide-modal">Applicant Guide</a> before submitting your application (we only submit fully vetted and qualified candidates to our clients, so consider this the first step to helping us get to know you).</p>
             </div>
         </div>
 
@@ -144,8 +143,8 @@
                         </div>
                     </div>
                     <div class="row mb-4">
-                        <div class="col-sm-6"><button type="submit" id="submitbtn" class="btn btn-primary btn-block" style="background-color: #791027; color:white;" tabindex="5">Submit</button></div>
-                        <div class="col-sm-6"><button class="btn btn-block btn-primary" tabindex="6" onclick="fn_reset">Show all</button></div>
+                        <div class="col-sm-6 mt-1"><button type="submit" id="submitbtn" class="btn btn-primary btn-block" style="background-color: #791027; color:white;" tabindex="5">Submit</button></div>
+                        <div class="col-sm-6 mt-1"><button class="btn btn-block btn-primary" tabindex="6" onclick="fn_reset">Show all</button></div>
                     </div>
                     <!--/End buttons-->
                 </form>
@@ -160,6 +159,65 @@
 
     </footer>
     <!-- end of content -->
+	
+	<!-- Guide modal -->
+	<div class="modal fade" id="guide-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Application Steps</h4>
+		  
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+		  <p>Our clients
+		  move quickly, so we need you to help us package your candidacy as accurately and quickly as possible.</p>
+	  <ul class="list-unstyled">
+  <li class="media">
+	  <i class="mr-3 fa fa-star-o align-middle"></i>    
+	  <div class="media-body">
+      <h5 class="mt-0 mb-1">Apply</h5>
+      Apply to an opportunity</strong> by clicking the "apply" button on any of the opportunities listed here.
+    </div>
+  </li>
+  <li class="media mt-2">
+	  <i class="mr-3 fa fa-file-text-o"></i>    
+	  <div class="media-body">
+      <h5 class="mt-0 mb-1">Prepare your resume</h5>
+      Get your resume ready using our <a href="documents/STARResumeGuide.pdf">STAR Resume Guide</a>. Focus on a crisp first page, tailored to the opportunity to which you are applying.
+    </div>
+  </li>
+	<li class="media mt-2">
+	  <i class="mr-3 fa fa-envelope-o"></i>    
+	  <div class="media-body">
+      <h5 class="mt-0 mb-1">Check your email</h5>
+      Once we've received your application and resume, we'll reach out to you for additional information (rate, contact details, key selling points regarding the req, etc.).
+    </div>
+  </li>
+	<li class="media mt-2">
+	  <i class="mr-3 fa fa-clock-o"></i>    
+	  <div class="media-body">
+      <h5 class="mt-0 mb-1">Stay tuned</h5>
+      Once we've received your information, we'll quickly connect to let you know the status of your application and set expectations for timing.
+    </div>
+  </li>
+</ul>
+		  
+      </div>
+      <div class="modal-footer">
+		  <small class="float-left">To learn more about the application process, read the full Applicant Guide <a href="documents/ApplicantGuide.pdf">here</a>.</small>
+      </div>
+    </div>
+  </div>
+</div>
+      
+   
+
+	
+	<!-- End of guide modal -->
+	
     <!--start templates -->
     <script id="jobs_template" type="text/x-handlebars-template">
         <div class="mb-3" role="tablist" id="accordion">
@@ -182,12 +240,12 @@
 
                     </div>{{!--/End Name and Brief Details--}}
                     <div class="col-md-9" style="font-size:0.9em;">
-                        <p class="hidden-sm-down">{{{AVTRRT__Job_Summary__c}}}</p>
+                        <p class="hidden-sm-down">{{{Job_Summary_Rich__c}}}</p>
 
 
                         <div id="{{Id}}" class="collapse" role="tabpanel">
 
-                            {{{Job_Job_Description_Rich_Job_Board__c}}}<br>
+                            {{{Job_Description_Rich_Job_Board__c}}}<br>
                             <p><a href="{{Job_Application_URL_New__c}}" class="btn btn-block mt-2" style="background-color: #791027; color:white;" target="_blank">Apply</a></p>
                         </div>
                     </div>{{!--/End Summary--}}
@@ -228,6 +286,9 @@
     </script>
     <script>
         $("footer").load("./assets/footer.html");
+    </script>
+	<script>
+        $("#guide").load("./assets/guide.html");
     </script>
 
 
