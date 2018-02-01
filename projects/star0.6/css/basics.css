@@ -46,6 +46,8 @@ p {
 
 a {
     color: #790025;
+	cursor: pointer;
+	font-weight: bolder;
 }
 
 a:hover {
@@ -68,6 +70,12 @@ a:active {
 
 .focus {
     color: #790025;
+}
+
+a .enhanced {
+	font-weight:700;
+	font-size:1.1em;
+	cursor: pointer;
 }
 
 .text-info {
