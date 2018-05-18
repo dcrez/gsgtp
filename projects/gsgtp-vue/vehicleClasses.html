@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>GSGTP</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+</head>
+
+<body>
+    <div id="root" class="container">
+        <!-- start container -->
+
+        <div class="row">
+                <div class="card mt-5 col-12">
+    
+                    <div class="card-body">
+                        <h5 class="card-title">Add puller/vehicle</h5>
+                        <p class="card-subtitle text-muted">Use this sign-in for an event. Points and event order will be updated as the contest progresses.</p>
+                        <form class="form mt-2" v-on:submit.prevent="addPuller">
+                        <div class="form-group">
+                            <label>Select event</label>
+                        <select class="form-control" name="date" v-model="newPuller.date">
+                            <option selected disabled hidden>Select an event</option>
+                            <option v-for="schedule in futureEvents" v-bind:value="schedule.date">{{schedule.date}} {{schedule.description}}</option>
+                        </select>
+                    </div>    
+                        <label>Enter the name of the puller.</label>
+                        <input type="text" class="form-control" class="mb-4" v-model="newPuller.puller" placeholder="Name of puller">
+                        <br>
+                        <label>Enter the name of the vehicle.</label>
+                        <input type="text" class="form-control" class="mb-4" v-model="newPuller.vehicle">
+                        <br>
+                        <label>Select the classes in which the puller and vehicle will be competing.</label> 
+                        <select multiple class="form-control" v-model="newPuller.vehicleClass">
+                            <option selected hidden disabled>Select one or more classes.</option>
+                            <option v-for="classes in classList">{{classes['.value']}}</option>  
+                        </select>
+                        <input type="submit" value="Add Puller" class="btn btn-primary">
+                        </form>
+                    </div>
+                </div>
+                <!-- end of add event form -->
+            </div>   <!-- end row for event form -->
+        
+        <h3 class="col-12 mt-5">Manage pulls</h3>
+    <div class="card mt-2"><!--begin event list-->
+            <table class="table">
+                <thead>
+                <tr>
+                    <th scope="col">Class</th>
+                    <th scope="col">Vehicle</th>
+                    <th scope="col">Puller</th>
+                    <th scope="col">Pull Order</th>
+                    <th scope="col">Place</th>
+                    <th scope="col">Points</th>
+                    <th scope="col">DQ?</th>
+                    <th scope="col">DQ Reason</th>
+                    <th scope="col">Manage</th>
+                </tr>
+            </thead>
+                <tr v-for="pull in pulls">
+                    <td>{{pull.vehicleClass}}</td>
+                    <td>{{pull.vehicle}}</td>
+                    <td>{{pull.puller}}</td>
+                    <td> {{pull.pullOrder}}</td>
+                    <td>{{pull.place}}</td>
+                    <td>{{pull.pointsAwarded}}</td>
+                    <td></td>
+                    <td><input type="text" v-model="updatePuller.dqReason"></td>
+                    <td><button class="btn btn-default">Edit</button>  <button class="btn btn-alert" @click="deletePuller">Delete</button></td>
+                    
+                </tr>
+            </table>
+        
+    </div>
+
+    </div>
+        
+
+
+    <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyCK3lJyrQ5qzYcqQorRlPkcoCGh38wdMW8",
+            authDomain: "gsgtp-b4448.firebaseapp.com",
+            databaseURL: "https://gsgtp-b4448.firebaseio.com",
+            projectId: "gsgtp-b4448",
+            storageBucket: "gsgtp-b4448.appspot.com",
+            messagingSenderId: "553297979168"
+        };
+        firebase.initializeApp(config);
+
+
+    </script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.1/moment.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <script src="https://unpkg.com/vuefire/dist/vuefire.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
