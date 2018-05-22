@@ -208,8 +208,10 @@ function resetForm() {
 }
 
 function fn_reset() {
+    NProgress.start();
 	xhr.open("GET", apiurl + "/?" + data, false);
     xhr.send();
     showTemplate(compiledJobs,starjobs);
     document.getElementById("countStar").innerHTML = starjobs.length;
+    NProgress.done();
 }
