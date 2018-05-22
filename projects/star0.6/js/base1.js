@@ -196,6 +196,7 @@ $("#submitbtn").click(function() {
     xhr.send();
     dosubmit();
     showTemplate(compiledJobs, starjobs);
+    document.getElementById("countStar").innerHTML = starjobs.length;
     event.preventDefault();
     console.log("completed submit!");
 });
@@ -209,5 +210,6 @@ function resetForm() {
 function fn_reset() {
 	xhr.open("GET", apiurl + "/?" + data, false);
     xhr.send();
-	showTemplate(compiledJobs,starjobs);
+    showTemplate(compiledJobs,starjobs);
+    document.getElementById("countStar").innerHTML = starjobs.length;
 }
