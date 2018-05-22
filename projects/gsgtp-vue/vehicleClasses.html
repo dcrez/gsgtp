@@ -10,34 +10,49 @@
 </head>
 
 <body>
+        <nav class="nav navbar-nav navbar-light navbar-expand-lg bg-light p-2">
+                <a class="navbar-brand h1" href="#">Gopher State Test Site</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                      </button>
+                <div class="collapse navbar-collapse" id="navbar">
+                        <ul class="navbar-nav mr-auto my-2 my-lg-0">
+                                <li class="nav-item">
+                                  <a class="nav-link" href="index.html">Schedule <span class="sr-only">(current)</span></a>
+                                </li>
+                                <li class="nav-item ">
+                                        <a class="nav-link active" href="vehicleClasses.html">Pulls </a>
+                                      </li>
+                                      <li class="nav-item">
+                                            <a class="nav-link" href="members.html">Members</a>
+                                          </li> 
+                </div>
+        </nav>
     <div id="root" class="container">
         <!-- start container -->
-
+        
         <div class="row">
                 <div class="card mt-5 col-12">
     
                     <div class="card-body">
                         <h5 class="card-title">Add puller/vehicle</h5>
                         <p class="card-subtitle text-muted">Use this sign-in for an event. Points and event order will be updated as the contest progresses.</p>
-                        <form class="form mt-2" v-on:submit.prevent="addPuller">
+                        <form class="form mt-2" v-on:submit.prevent="storePuller">
                         <div class="form-group">
                             <label>Select event</label>
-                        <select class="form-control" name="date" v-model="newPuller.date">
+                        <select class="form-control" name="date" v-model="newPull.date">
                             <option selected disabled hidden>Select an event</option>
-                            <option v-for="schedule in futureEvents" v-bind:value="schedule.date">{{schedule.date}} {{schedule.description}}</option>
+                            <option v-for="schedule in schedules" v-bind:value="schedule.date">{{schedule.date}} {{schedule.description}}</option>
                         </select>
                     </div>    
                         <label>Enter the name of the puller.</label>
-                        <input type="text" class="form-control" class="mb-4" v-model="newPuller.puller" placeholder="Name of puller">
+                        <input type="text" class="form-control" class="mb-4" v-model="newPull.puller" placeholder="Name of puller">
                         <br>
                         <label>Enter the name of the vehicle.</label>
-                        <input type="text" class="form-control" class="mb-4" v-model="newPuller.vehicle">
+                        <input type="text" class="form-control" class="mb-4" v-model="newPull.vehicle">
                         <br>
                         <label>Select the classes in which the puller and vehicle will be competing.</label> 
-                        <select multiple class="form-control" v-model="newPuller.vehicleClass">
-                            <option selected hidden disabled>Select one or more classes.</option>
-                            <option v-for="classes in classList">{{classes['.value']}}</option>  
-                        </select>
+                        
                         <input type="submit" value="Add Puller" class="btn btn-primary">
                         </form>
                     </div>
@@ -45,46 +60,37 @@
                 <!-- end of add event form -->
             </div>   <!-- end row for event form -->
         
-        <h3 class="col-12 mt-5">Manage pulls</h3>
-    <div class="card mt-2"><!--begin event list-->
-            <table class="table">
-                <thead>
-                <tr>
-                    <th scope="col">Class</th>
-                    <th scope="col">Vehicle</th>
-                    <th scope="col">Puller</th>
-                    <th scope="col">Pull Order</th>
-                    <th scope="col">Place</th>
-                    <th scope="col">Points</th>
-                    <th scope="col">DQ?</th>
-                    <th scope="col">DQ Reason</th>
-                    <th scope="col">Manage</th>
-                </tr>
-            </thead>
-                <tr v-for="pull in pulls">
-                    <td>{{pull.vehicleClass}}</td>
-                    <td>{{pull.vehicle}}</td>
-                    <td>{{pull.puller}}</td>
-                    <td> {{pull.pullOrder}}</td>
-                    <td>{{pull.place}}</td>
-                    <td>{{pull.pointsAwarded}}</td>
-                    <td></td>
-                    <td><input type="text" v-model="updatePuller.dqReason"></td>
-                    <td><button class="btn btn-default">Edit</button>  <button class="btn btn-alert" @click="deletePuller">Delete</button></td>
+        <h3 class=" mt-5">Manage pulls</h3>
+    <div class="card mt-2 mb-1" v-for="pull in pulls" class="row"><!--begin pull list-->
+        <div class="card-body">           
+            <a href="#" @click.prevent="deletePull" class="card-link float-right">delete</a>
+            <div class="col-md-3">{{date}}</div>        
+            <div class="col-md-3">{{vehicle}}</div>
+                    <div class="col-md-3">{{pull.puller}}</div>
+                    <div class="col-md-3"> {{pull.pullOrder}}</div>
+                    <div class="col-md-3">{{pull.place}}</div>
+                    <div class="col-md-3">{{pull.pointsAwarded}}</div>
+                    <div class="col-md-3">{{pull.dqReason}}</div>
                     
-                </tr>
-            </table>
-        
+                </div>    
+                </div>    
     </div>
 
-    </div>
-        
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+   <script src="https://unpkg.com/vuefire/dist/vuefire.js"></script>
+   <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.1/moment.js"></script>
 
-
-    <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
-    <script>
-        // Initialize Firebase
-        var config = {
+    
+    <script type="text/javascript">
+     // Initialize Firebase
+     var config = {
             apiKey: "AIzaSyCK3lJyrQ5qzYcqQorRlPkcoCGh38wdMW8",
             authDomain: "gsgtp-b4448.firebaseapp.com",
             databaseURL: "https://gsgtp-b4448.firebaseio.com",
@@ -93,19 +99,53 @@
             messagingSenderId: "553297979168"
         };
         firebase.initializeApp(config);
+      
+    // Set database variables
+	const database = firebase.database()
+	const pullsRef = database.ref('pulls')
+	const schedules = database.ref('schedule')
+	const classList = database.ref('vehicleClass')
+    
+    // Create Vue instance
+    new Vue({
+        el:'#root',
 
-
+        // Define common data elements
+		data: {
+            //Pulls data
+            pulls:[],
+            newPull: {
+			date:'',
+			puller:'',
+			vehicle:'',
+			vehicleClass:'',
+			editingPull:''	
+            },
+            //Vehicles data
+            classes:[],
+            //Schedules data
+            schedules:[],
+            //Members data
+            members:[]			
+		},
+		methods: {
+			storePull() {
+				pullsRef.push({newPull})
+        		this.newPull.date='',
+				this.newPull.puller='',
+				this.newPull.vehicle='',
+			vehicleClass='',
+			editingPull=''	
+			}
+		},
+		created: {
+            // value = snapshot.val() | key = snapshot.key
+			pullsRef.on('child_added', snapshot => {this.pulls.push({...snapshot.val(), id: snapshot.key})})
+		}
+    })
+    
+    
     </script>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.1/moment.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
-    <script src="https://unpkg.com/vuefire/dist/vuefire.js"></script>
-    <script src="app.js"></script>
 </body>
 
 </html>

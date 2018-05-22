@@ -27,7 +27,9 @@ xhr.onreadystatechange = function() {
     } else if (this.readyState === 4 && this.status === 200) {
         starjobs = JSON.parse(xhr.responseText);
         console.log("DONE!");
-    } else { console.log("unhandled condition!"); }
+    } else { console.log("unhandled condition!");
+            console.log(this.readyState);
+            console.log(xhr.responseText) }
 };
 
 xhr.send();
@@ -204,6 +206,7 @@ function resetForm() {
 }
 
 function fn_reset() {
+	$("#btn-clear").fadeOut();
 	xhr.open("GET", apiurl + "/?" + data, false);
     xhr.send();
 	showTemplate(compiledJobs,starjobs);

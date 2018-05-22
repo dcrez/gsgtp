@@ -17,10 +17,10 @@
                     classList:classListRef,
                     pulls:pullsRef             
                 },  
-            data: {
+            data: {             
                 todaysDate: new Date(),
                 newEvent: 
-                    {
+                     {
                         name:'',
                         date:'',
                         time:'',
@@ -34,11 +34,11 @@
                         created: new Date()
                     },
                 editingEvent: null,
-                schedule: scheduleRef,
+                schedules: [],
                 member: memberRef,
                 classList: classListRef,
                 vehicleClass: vehicleClassRef,
-                pulls:pullsRef,
+                pulls:[],
                 newMember: {
                     firstName: '',
                     lastName: '',
@@ -86,10 +86,9 @@
                     this.newEvent.city='',
                     this.newEvent.state='',
                     this.newEvent.points='',
-                    this.newEvent.track='',
-                    this.newEvent.time=''                    
+                    this.newEvent.track=''
                 },
-                deleteEvent: function() {
+                deleteEvent: function(schedule) {
                     scheduleRef.child(schedule['.key']).remove()
                 },
                 
@@ -102,7 +101,11 @@
                 },
 
                 /* Pullers */
-            addPuller: function() {
+            storePuller() {
+                firebase.database().ref('pulls').push().set({
+                    date: this.date, puller:this.puller,vehicle:this.vehicle, vehicleClass:this.vehicleClass})         
+                },
+            /*addPuller: function() {
                 pullsRef.push(this.newPuller),
                this.newPuller.distance='',
                this.newPuller.pointsAwarded='',
@@ -113,21 +116,20 @@
                this.newPuller.vehicleClass=[],
                this.newPuller.dq='',
                this.newPuller.dqReason=''
-            },
+            },*/
             updatePuller: function() {
                 pullsRef.update(this.updatePuller);
             },
-            deletePuller: function (puller) {
-                pullsRef.puller.child(puller['.key']).remove()
+            deletePull: function (pull) {
+                pull.child(pull['.key']).remove()
               },
             },
+            created () {
+                firebase.database().ref('pulls').on('child_added', snapshot => this.pulls.push({...snapshot.val(), id:snapshot.key}))
+                //firebase.database().ref('schedules').on('value', snapshot => this.schedule .push({...snapshot.val(), id:snapshot.key}))
+            },
             computed: {
-                futureEvents() {
-                    return this.schedules.filter(schedule => moment().isSameOrAfter(scheduleRef.key.date) )
-                },
-                pastEvents() {
-                    return this.schedules.filter(schedule => moment().isBefore(scheduleRef.key.date) )
-                }
+                
             }
         })
         
