@@ -149,7 +149,7 @@
                     <!--/End buttons-->
                 </form>
             </div>
-
+Showing <span id="countStar" class="enhanced btn-link" style="color:#000;"></span> opportunities.<br>
             <div id="content" class="container-fluid">
             </div>
         </div>
@@ -234,6 +234,9 @@
 	<script>
         $("#guide").load("./assets/guide.html");
     </script>
+	<script>
+		document.getElementById("countStar").innerHTML = starjobs.length;
+	</script>
 
 </body>
 

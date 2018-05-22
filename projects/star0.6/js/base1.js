@@ -202,11 +202,11 @@ $("#submitbtn").click(function() {
 
 // Reset the Form
 function resetForm() {
+    $("#btn-clear").fadeOut();
     document.getElementById("starform").reset();
 }
 
 function fn_reset() {
-	$("#btn-clear").fadeOut();
 	xhr.open("GET", apiurl + "/?" + data, false);
     xhr.send();
 	showTemplate(compiledJobs,starjobs);
