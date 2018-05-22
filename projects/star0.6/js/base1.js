@@ -190,6 +190,7 @@ function dosubmit() {
 
 // Call search function on submit
 $("#submitbtn").click(function() {
+    NProgress.start();
     console.log("clicked submit!");
     var data = $("#srch").serialize();
     xhr.open("GET", apiurl + "/?" + data, false);
@@ -199,6 +200,7 @@ $("#submitbtn").click(function() {
     document.getElementById("countStar").innerHTML = starjobs.length;
     event.preventDefault();
     console.log("completed submit!");
+    NProgress.done();
 });
 
 // Reset the Form
