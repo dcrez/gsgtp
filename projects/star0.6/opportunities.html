@@ -240,6 +240,26 @@ Showing <span id="countStar" class="enhanced btn-link" style="color:#000;"></spa
 		document.getElementById("countStar").innerHTML = starjobs.length;
 	</script>
 
+<script>
+
+    // Show the progress bar 
+    NProgress.start();
+
+    // Increase randomly
+    var interval = setInterval(function() { NProgress.inc(); }, 1000);        
+
+    // Trigger finish when page fully loaded
+    jQuery(window).load(function () {
+        clearInterval(interval);
+        NProgress.done();
+    });
+
+    // Trigger bar when exiting the page
+    jQuery(window).unload(function () {
+        NProgress.start();
+    });
+
+</script>
 </body>
 
 </html>
