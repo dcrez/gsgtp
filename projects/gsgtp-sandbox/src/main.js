@@ -3,7 +3,8 @@ import Vue from 'vue'
 import VueFire from 'vuefire'
 import VueRouter from 'vue-router'
 import App from './App.vue'
-import NProgress from 'nprogress';
+import NProgress from 'nprogress'
+//import moment from 'moment'
 
 
 // Components
@@ -16,6 +17,7 @@ import listEvents from './components/listEvents.vue'
 import editEvent from './components/editEvent.vue'
 
 import '../node_modules/nprogress/nprogress.css'
+//import '../node_modules/moment/moment.js'
 
 
 Vue.use(VueFire)

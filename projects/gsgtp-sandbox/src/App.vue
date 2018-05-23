@@ -8,18 +8,14 @@
           <li class="nav-item">
               <router-link :to="{name: 'addPull'}" class="nav-link">Add Pull</router-link>
           </li>
-          <li class="nav-item">
-              <router-link :to="{name: 'editPull'}" class="nav-link">Edit Pull</router-link>
-          </li>
+          
           <li>
               <router-link :to="{name: 'listPulls'}" class="nav-link">List Pulls</router-link>
           </li>
           <li>
            <router-link :to="{name: 'scheduleEvent'}" class="nav-link">Schedule Event</router-link>
             </li>
-            <li>
-              <router-link :to="{name: 'editEvent'}" class="nav-link">Edit Event</router-link>
-              </li>
+            
               <li>
                 <router-link :to="{name: 'listEvents'}" class="nav-link">List Events</router-link>
                 </li>            
