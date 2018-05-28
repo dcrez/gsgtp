@@ -5,17 +5,18 @@
     <h1>Schedule of Events</h1>
     
     <div>
-       <div class="row mt-2" v-for="event of events" :key="event['.key']">
-        <div class="col-2">
+        
+       <div class="row mt-4" v-for="event of events" :key="event['.key']">
+        <div class="col-md-2 col-4">
             {{event.date}} {{event.time}}
         </div>
-        <div class="col-3">
+        <div class="col-md-3 col-8">
             {{event.description}}
         </div>
-        <div class="col-1" v-if="event.pointsAwarded">
+        <div class="col-md-1 col" v-if="event.pointsAwarded">
             Points
         </div>
-        <div class="col-1" v-else>
+        <div class="col-md-1 col" v-else>
             No Points
         </div>
         <div class="col">{{event.address}}<br>{{event.city}}, {{event.state}}</div>

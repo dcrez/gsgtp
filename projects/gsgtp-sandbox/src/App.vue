@@ -1,7 +1,10 @@
 <template>
   <div id="app" class="container-fluid">
-    <nav class="navbar navbar-expand-sm bg-light fixed-top">
-      <ul class="nav nav-pills nav-fill">
+    <nav class="navbar navbar-expand-sm navbar-light bg-light fixed-top">
+      <a class="navbar-brand" href="#">GSGTP</a>
+
+
+      <!--<ul class="nav nav-pills nav-fill">
           <li class="nav-item">
             <router-link :to="{name: 'home'}" class="navbar-brand">Home</router-link>
           </li>
@@ -19,7 +22,7 @@
               <li>
                 <router-link :to="{name: 'listEvents'}" class="nav-link">List Events</router-link>
                 </li>            
-        </ul> 
+        </ul> -->
     </nav>
     <router-view></router-view>
     </div>
