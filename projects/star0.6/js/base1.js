@@ -147,6 +147,7 @@ function dosubmit() {
         if (starjobs[j].Job_Type__c === jt) {
          arr_jt.push(starjobs[j]);
         }
+    }
             
 
     // Create filtered array for focus areas
