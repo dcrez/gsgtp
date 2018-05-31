@@ -2,9 +2,19 @@
   <div id="app" class="container-fluid">
     <nav class="navbar navbar-expand-sm navbar-light bg-light fixed-top">
       <a class="navbar-brand" href="#">GSGTP</a>
+      <ul class="nav navbar-nav mr-auto">
+        <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="mn-about" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          About us
+        </a>
+                    <div class="dropdown-menu" aria-labelledby="mn-about">
+                        <a class="dropdown-item" href="http://www.starcollaborative.com/index.html#wearestar">Our Values</a>
+                        <a class="dropdown-item" href="http://www.starcollaborative.com/index.html#team">Our Team</a>
+                    </div>
+                </li>
+      </ul>
 
-
-      <!--<ul class="nav nav-pills nav-fill">
+      <ul class="nav nav-pills nav-fill">
           <li class="nav-item">
             <router-link :to="{name: 'home'}" class="navbar-brand">Home</router-link>
           </li>
@@ -22,7 +32,7 @@
               <li>
                 <router-link :to="{name: 'listEvents'}" class="nav-link">List Events</router-link>
                 </li>            
-        </ul> -->
+        </ul> 
     </nav>
     <router-view></router-view>
     </div>

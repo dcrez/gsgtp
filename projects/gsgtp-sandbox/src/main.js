@@ -4,6 +4,8 @@ import VueFire from 'vuefire'
 import VueRouter from 'vue-router'
 import App from './App.vue'
 import NProgress from 'nprogress'
+//import jquery from 'jquery/dist/jquery.slim'
+//import Popper from 'popper.js'
 //import moment from 'moment'
 
 
@@ -22,6 +24,7 @@ import '../node_modules/nprogress/nprogress.css'
 
 Vue.use(VueFire)
 Vue.use(VueRouter)
+//Vue.use(Popper)
 Vue.config.productionTip = false
 
 const routes = [

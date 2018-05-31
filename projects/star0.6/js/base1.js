@@ -147,6 +147,9 @@ function dosubmit() {
         if (starjobs[j].Job_Type__c === jt) {
             arr_jt.push(starjobs[j]);
         }
+        else if (starjobs[j].Job_Type__c === undefined) {
+            console.log("missing fcs")
+        } 
     }
 
     // Create filtered array for focus areas
@@ -154,7 +157,7 @@ function dosubmit() {
         var item = starjobs[m].MC_IntersetGroup__c;
         if (item.indexOf(fcs) >= 0) {
             arr_fcs.push(starjobs[m]);
-            //console.log('fcs:', arr_fcs);
+            console.log('fcs:', arr_fcs);
         }
     }
 
