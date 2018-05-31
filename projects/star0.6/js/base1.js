@@ -144,10 +144,7 @@ function dosubmit() {
 
     // Create filtered array for locations
     for (var j = 0; j < starjobs.length; j++) {
-        if  (starjobs[j].Job_Type__c === false) {
-            console.log("missing job")
-        } 
-        else if (starjobs[j].Job_Type__c === jt) {
+        if (starjobs[j].Job_Type__c === jt) {
          arr_jt.push(starjobs[j]);
         }
             
@@ -155,7 +152,7 @@ function dosubmit() {
     // Create filtered array for focus areas
     for (var m = 0; m < starjobs.length; m++) {
         var item = starjobs[m].MC_IntersetGroup__c;
-        if (item === null) {
+        if (item === undefined) {
             console.log("missing focus area")
         }
         else if (item.indexOf(fcs) >= 0) {
