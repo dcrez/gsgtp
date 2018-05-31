@@ -144,18 +144,21 @@ function dosubmit() {
 
     // Create filtered array for locations
     for (var j = 0; j < starjobs.length; j++) {
-        if (starjobs[j].Job_Type__c === jt) {
-            arr_jt.push(starjobs[j]);
-        }
-        else if (starjobs[j].Job_Type__c === undefined) {
-            console.log("missing fcs")
+        if  (starjobs[j].Job_Type__c === false) {
+            console.log("missing job")
         } 
-    }
+        else if (starjobs[j].Job_Type__c === jt) {
+         arr_jt.push(starjobs[j]);
+        }
+            
 
     // Create filtered array for focus areas
     for (var m = 0; m < starjobs.length; m++) {
         var item = starjobs[m].MC_IntersetGroup__c;
-        if (item.indexOf(fcs) >= 0) {
+        if (item === null) {
+            console.log("missing focus area")
+        }
+        else if (item.indexOf(fcs) >= 0) {
             arr_fcs.push(starjobs[m]);
             console.log('fcs:', arr_fcs);
         }
