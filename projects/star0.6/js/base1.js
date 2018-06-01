@@ -1,9 +1,5 @@
 //"use strict";
 
-/* Disable minification (remove `.min` from URL path) for more info */
-
-(function(undefined) {}).call('object' === typeof window && window || 'object' === typeof self && self || 'object' === typeof global && global || {});
-
 // container for Salesforce array returned by HTTP request 
 function showTemplate(template, data) {
     var html = template(data);
@@ -35,7 +31,8 @@ xhr.onreadystatechange = function() {
     } else { console.log("unhandled condition!");
             console.log(this.readyState);
             console.log(xhr.responseText) }
-};
+            document.getElementById("countStar").innerHTML = starjobs.length;
+        };
 
 xhr.send();
 
@@ -48,18 +45,7 @@ var compiledJobs = Handlebars.compile(jobsTemplate);
 //Define variable to display template
 var $jobs = $("#content");
 
-//var source = $("#jobs_template").html();
-//var jobs_template = Handlebars.compile(source);
-
-
-//xhr.onloadend = function() {
-//  showTemplate(compiledJobs, starjobs);
-//}
-
 if ($("body").hasClass("job_details")) {} else { showTemplate(compiledJobs, starjobs); }
-
-
-//var sessionJobs = sessionStorage.getItem('starjobs');
 
 
 // Build arrays for dropdowns
