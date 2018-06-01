@@ -1,3 +1,5 @@
+require('core-js');
+
 //"use strict";
 // container for Salesforce array returned by HTTP request 
 function showTemplate(template, data) {
