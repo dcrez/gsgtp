@@ -1,6 +1,9 @@
-require('core-js');
-
 //"use strict";
+
+/* Disable minification (remove `.min` from URL path) for more info */
+
+(function(undefined) {}).call('object' === typeof window && window || 'object' === typeof self && self || 'object' === typeof global && global || {});
+
 // container for Salesforce array returned by HTTP request 
 function showTemplate(template, data) {
     var html = template(data);
