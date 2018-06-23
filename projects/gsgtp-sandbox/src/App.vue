@@ -1,40 +1,19 @@
 <template>
-  <div id="app" class="container-fluid">
-    <nav class="navbar navbar-expand-sm navbar-light bg-light fixed-top">
-      <a class="navbar-brand" href="#">GSGTP</a>
-      <ul class="nav navbar-nav mr-auto">
-        <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="mn-about" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          About us
-        </a>
-                    <div class="dropdown-menu" aria-labelledby="mn-about">
-                        <a class="dropdown-item" href="http://www.starcollaborative.com/index.html#wearestar">Our Values</a>
-                        <a class="dropdown-item" href="http://www.starcollaborative.com/index.html#team">Our Team</a>
-                    </div>
-                </li>
-      </ul>
+  <div id="app" class="container-fluid mt-3">
+    <!--<div class="float-right mr-3 w-300" onclick="openNav()">
+    <span ><i class="fas fa-bars h3"></i></span>
+    <img src="./assets/gsgtp-logo.png" style="height: 6em;">
+    </div>
+    <nav id="gsgtpsidenav" class="sidenav" role="navigation"> 
+       <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <router-link :to="{name: 'home'}" class="nav-link">Home</router-link>
+   
+    </nav>-->
 
-      <ul class="nav nav-pills nav-fill">
-          <li class="nav-item">
-            <router-link :to="{name: 'home'}" class="navbar-brand">Home</router-link>
-          </li>
-          <li class="nav-item">
-              <router-link :to="{name: 'addPull'}" class="nav-link">Add Pull</router-link>
-          </li>
-          
-          <li>
-              <router-link :to="{name: 'listPulls'}" class="nav-link">List Pulls</router-link>
-          </li>
-          <li>
-           <router-link :to="{name: 'scheduleEvent'}" class="nav-link">Schedule Event</router-link>
-            </li>
-            
-              <li>
-                <router-link :to="{name: 'listEvents'}" class="nav-link">List Events</router-link>
-                </li>            
-        </ul> 
-    </nav>
+   
+  <div class="main">
     <router-view></router-view>
+  </div>
     </div>
 </template>
 
@@ -53,11 +32,30 @@ h1,h2,h3,h4 {
   text-transform: uppercase;
 }
 .navbar-brand {color:black;}
-.nav-link {color:#f30;}
+.nav-link{color:#f30;}
+.scheduleLink {color:#f30;}
 .nav-link:hover {color:black;}
+
 </style>
 
 <style lang="css">
   @import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
   @import url('https://fonts.googleapis.com/css?family=Oswald:300,400');
+  @import url('https://use.fontawesome.com/releases/v5.0.13/css/all.css')
 </style>
+
+<script>
+export default {
+  methods: {
+    openNav() {
+        document.getElementById("gsgtpsidenav").style.width = "300px";
+    },
+    closeNav() {
+        document.getElementById("gsgtpsidenav").style.width = "0";
+    }  
+  }
+}
+  
+
+</script>
+

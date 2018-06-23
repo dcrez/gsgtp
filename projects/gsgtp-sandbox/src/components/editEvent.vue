@@ -58,7 +58,9 @@
                     </div>
                     </div>
         <div class="form-row">
-            <input type="submit" class="btn btn-primary" value="Edit Event">
+            <input type="submit" class="btn btn-warn" value="Save Changes">
+                 
+              <router-link :to="{name: 'listEvents'}" class="btn btn-light">Cancel</router-link>
                     </div>
     </form>
     </div>

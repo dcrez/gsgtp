@@ -4,9 +4,7 @@ import VueFire from 'vuefire'
 import VueRouter from 'vue-router'
 import App from './App.vue'
 import NProgress from 'nprogress'
-//import jquery from 'jquery/dist/jquery.slim'
-//import Popper from 'popper.js'
-//import moment from 'moment'
+//import Bulma from 'bulma'
 
 
 // Components
@@ -17,17 +15,30 @@ import home from './components/home.vue'
 import scheduleEvent from './components/scheduleEvent.vue'
 import listEvents from './components/listEvents.vue'
 import editEvent from './components/editEvent.vue'
+import viewEvent from './components/viewEvent.vue'
+//import login from './components/login.vue'
+//import signup from './components/signup.vue'
 
 import '../node_modules/nprogress/nprogress.css'
-//import '../node_modules/moment/moment.js'
-
+import '../node_modules/moment/moment'
+//import '../node_modules/node-sass'
 
 Vue.use(VueFire)
 Vue.use(VueRouter)
-//Vue.use(Popper)
+//Vue.use(Bulma)
 Vue.config.productionTip = false
 
 const routes = [
+  /*{
+    name:'login',
+    path:'/account',
+    component:login
+  },
+  {
+    name:'signup',
+    path:'/signup',
+    component:signup
+  },*/
   {
     name:'home',
     path:'/',
@@ -57,6 +68,11 @@ const routes = [
     name:'editEvent',
     path: '/schedule/edit/:id',
     component: editEvent
+  },
+  {
+    name:'viewEvent',
+    path:'/schedule/view/:id',
+    component:viewEvent
   },
   {
     name: 'listEvents',
