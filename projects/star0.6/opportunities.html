@@ -42,6 +42,7 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="style" href="https://unpkg.com/nprogress@0.2.0/nprogress.css">
     <link rel="stylesheet" href="css/basics.css">
+    <link rel="stylesheet" href="css/iframe.css">
     <style>
         #opp-land {
             background: linear-gradient(rgba(240, 250, 250, 0.4), rgba(250, 250, 250, 0.6)), url(img/woman-info.jpg);
@@ -62,17 +63,24 @@
         }
         
     </style>
+    <script type="text/javascript"> //<![CDATA[ 
+        var tlJsHost = ((window.location.protocol == "https:") ? "https://secure.trust-provider.com/" : "http://www.trustlogo.com/");
+        document.write(unescape("%3Cscript src='" + tlJsHost + "trustlogo/javascript/trustlogo.js' type='text/javascript'%3E%3C/script%3E"));
+        //]]>
+        </script>
 </head>
 
-<body data-spy="scroll" data-target="star-nav" data-offset="50" style="margin-top:20px;" class="fn-opportunities">
+<body data-spy="scroll" data-target="star-nav" data-offset="50" style="margin-top:40px;" class="fn-opportunities">
     <header></header>
-    <!--<div class="container-fluid d-flex mh-25" id="loadingScreen">
+    <!--
+    <div class="container-fluid d-flex mh-25" id="loadingScreen">
 	<div class="col-12 mt-auto mb-auto">
 	<div class="spinner"></div>
 	<h3 class="text-center star-grey">Loading. Please wait.</h3>
 	
 		</div>
-	</div>-->
+    </div>-->
+    
     <div id="everythingElse">
         <div id="opp-land" class="container-fluid">
             <div class="col-12 col-md-10 offset-md-1">
@@ -101,8 +109,9 @@
 					<option value="" selected>Show all</option>
 				</select>
                         </div>
-                    </div>
-                    <!--/ End Discipline -->
+                    </div> 
+                    
+                    
                     <div class="form-group row">
                         <label class="col-1">State</label>
                         <div class="col-5">
@@ -126,7 +135,7 @@
                         <div class="col-sm-6 mt-1"><button type="submit" id="submitbtn" class="btn btn-primary btn-block" tabindex="5"><i class="fa fa-search"></i> Filter</button></div>
                         <div class="col-sm-6 mt-1"><button class="btn btn-block btn-primary" tabindex="6" onclick="fn_reset" id="btn-clear"><i class="fa fa-times-circle"></i> Clear Filters</button></div>
                     </div>
-                    <!--/End buttons-->
+                    
                 </form>
             </div>
 <div class="mb-3">Showing <span id="countStar" class="enhanced btn-link" style="color:#000;"></span> opportunities.<br></div>
@@ -134,6 +143,7 @@
             </div>
         </div>
     </div>
+
     <div id="referrals"></div>
     <footer>
 
@@ -242,6 +252,11 @@
     });
 
 </script>
+<script language="JavaScript" type="text/javascript">
+    TrustLogo("https://www.starcollaborative.com/img/sectigo_trust_seal_sm_82x32.png", "CL1", "none");
+    </script>
+    <a  href="https://ssl.comodo.com/free-ssl-certificate.php" id="comodoTL">Free SSL</a>
+
 </body>
 
 </html>
