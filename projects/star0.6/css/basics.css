@@ -333,7 +333,8 @@ section .alt-overlap {
 footer {
     padding-top: 20px;
     padding-bottom: 20px;
-    background: white;
+    border-top: rgba(161, 165, 167, 0.74) solid 1px;
+    /*background: white;*/
     font-size: 80%;
     min-height: 10vh !important;
 }
