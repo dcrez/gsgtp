@@ -159,7 +159,7 @@ section .alt-overlap {
 #landing {
     color: whitesmoke;
     background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2)), url(../img/1-minneapolis.jpg);
-    background-position: center center;
+    background-position: top;
     background-attachment: fixed;
     background-size: cover;
     font-weight: 400;
@@ -311,7 +311,7 @@ section .alt-overlap {
 
 #subscribe {
     background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3)), url(../img/1-minneapolis.jpg);
-    background-position: center center;
+    background-position: top;
     background-attachment: fixed;
     background-size: cover;
     text-shadow: 0 0 5px black;
