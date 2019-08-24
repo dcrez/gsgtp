@@ -109,8 +109,8 @@ a .enhanced {
 
 section {
     background-color: white;
-    padding-top: 55px;
-    padding-bottom: 50px;
+    padding-top: 70px;
+    padding-bottom: 70px;
     min-height: 45vh;
     width: 100%;
     overflow-x: hidden;
@@ -184,8 +184,8 @@ section .alt-overlap {
 }
 
 #why {
-    padding-top: 55px;
-    padding-bottom: 50px;
+    /*padding-top: 55px;
+    padding-bottom: 50px;*/
 }
 
 #why img {
@@ -217,6 +217,10 @@ section .alt-overlap {
     background-position: top center;
     background-attachment: fixed;
     text-shadow: 0 0 2px white;
+}
+
+#subscribe-mini .btn-primary {
+    background-color: rgba(255, 255, 255, 0.521) !important;
 }
 
 #team {
@@ -299,8 +303,8 @@ section .alt-overlap {
     background: linear-gradient(rgba(250, 250, 250, 0.9), rgba(250, 250, 250, 0.85)), url(../img/money.jpg);
     background-size: cover;
     background-position: top center;
-    padding-top: 50px;
-    padding-bottom: 50px;
+    padding-top: 70px;
+    padding-bottom: 70px;
     background-attachment: fixed;
 }
 
@@ -318,12 +322,16 @@ section .alt-overlap {
     color: white;
 }
 
-#subscribe .btn-primary,
 #opportunities .btn-primary {
     color: white;
     border: white solid;
-    text-shadow: 0 0 3px black;
-    box-shadow: 0 0 5px 0 black;
+    background-color: rgba(255, 255, 255, 0.25) !important;
+}
+
+#subscribe .btn-primary {
+    border: black solid 2px !important;
+    background-color: rgba(130, 140, 146, 0.74) !important;
+    color: white;
 }
 
 #sitemap {
