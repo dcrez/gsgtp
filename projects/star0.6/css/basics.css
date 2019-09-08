@@ -330,7 +330,7 @@ section .alt-overlap {
 
 #subscribe .btn-primary {
     border: black solid 2px !important;
-    background-color: rgba(130, 140, 146, 0.74) !important;
+    background-color: rgba(130, 140, 146, 0.54) !important;
     color: white;
 }
 
