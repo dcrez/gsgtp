@@ -1,0 +1,167 @@
+{
+  "indexes": [
+    {
+      "collectionGroup": "dues",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "member",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "effectiveStart",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "dues",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "memberId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "effectiveStart",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "hooks",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "pointsYear",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "vehicleClass",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "hooks",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "pullId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "vehicleClass",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "hooks",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "pullId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "vehicleClass",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "distance",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "hooks",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "pullId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "vehicleClass",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "pullOrder",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "hooks",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "vehicleId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "pull",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "pulls",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "date",
+          "order": "DESCENDING"
+        },
+        {
+          "fieldPath": "year",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "pulls",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "year",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "date",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "pulls",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "year",
+          "order": "DESCENDING"
+        },
+        {
+          "fieldPath": "date",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "vehicleClasses",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "active",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "name",
+          "order": "ASCENDING"
+        }
+      ]
+    }
+  ],
+  "fieldOverrides": []
+}

@@ -1,0 +1,36 @@
+{
+  "name": "gsgtp-offline",
+  "version": "1.0.0",
+  "description": "Gopher State Garden Tractor Pullers Club Site",
+  "main": "index.html",
+  "dependencies": {
+    "core-js": "^3.9.1",
+    "firebase": "^7.24.0",
+    "jspdf": "^1.5.3",
+    "lodash": "^4.17.21",
+    "moment-timezone": "^0.5.33",
+    "node-sass": "^4.14.1",
+    "register-service-worker": "^1.7.2",
+    "sass": "^1.32.8",
+    "sass-loader": "^8.0.2",
+    "vue-cli-plugin-vuetify": "^2.3.1",
+    "vue": "^2.6.12",
+    "vue-analytics": "^5.22.1",
+    "vue-moment": "^4.1.0",
+    "vue-router": "^3.5.1",
+    "vue-the-mask": "^0.11.1",
+    "vuefire": "^2.2.5",
+    "vue-template-compiler": "^2.6.12",
+    "vuetify-loader": "^1.7.2",
+    "vuelidate": "^0.7.6",
+    "vuetify": "^2.4.8",
+    "vuex": "^3.6.2",
+    "vuexfire": "^3.2.5"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Danielle Creswick",
+  "license": "ISC"
+}

@@ -1,0 +1,15 @@
+{
+  "name": "gsgtp-offline",
+  "version": "2.0.0",
+  "description": "Gopher State Club Site",
+  "main": "index.html",
+  "dependencies": {
+    "vue": "^2.6.14"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Danielle Creswick",
+  "license": "ISC"
+}
