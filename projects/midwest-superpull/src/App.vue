@@ -1,23 +1,27 @@
 <template>
   <v-app>
+    <v-app-bar
+      app
+      dark
+      flat
+      collapse-on-scroll
+    >
+      Midwest Super Pull
+    </v-app-bar>
+
     <v-main>
-      <HelloWorld/>
+      <router-view/>
     </v-main>
   </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 
 export default {
   name: 'App',
 
-  components: {
-    HelloWorld,
-  },
-
   data: () => ({
     //
   }),
-}
+};
 </script>

@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import { vuexfireMutations, firestoreAction } from 'vuexfire'
-import Vuex from 'vuex'
+import Vuex, { Store } from 'vuex'
 const fb = require('../../firebaseconfig.js')
 import {db} from '../../firebaseconfig'
 import router from '../router'
@@ -30,11 +30,16 @@ export default new Vuex.Store({
   }
 },
   actions: {
-    bindPulls: firestoreAction(({bindFirestoreRef}) => {
-      var filteredPulls = fb.collection('pulls').orderBy("date", "desc").where('year', '==', currentYear)
-      console.log(filteredPulls)
-      return bindFirestoreRef('pulls', filteredPulls )
+    // get and sync schedule
+    bindSchedule: firestoreAction(({bindFirestoreRef}) => {
+      return bindFirestoreRef('pulls', db.collection('pulls'))
     }),
+
+    // add pull data to observer
+    addPull: firestoreAction((context,payload) => {
+      return db.collection('pull').add(payload)
+    }),
+  
     // sign in
     login({ dispatch}, form) {
       const {user} = fb.auth.signInWithEmailAndPassword(form.email, form.password)
@@ -42,6 +47,9 @@ export default new Vuex.Store({
     // fetch profile
     dispatch('fetchUserProfile', user)
     },
+
+    // fetch pulls
+    
 
     fetchUserProfile({commit}, user) {
       users = db.collection('users')
@@ -60,6 +68,7 @@ export default new Vuex.Store({
             console.log(err)
         })
     },
+    
     clearData({ commit }) {
       commit('setCurrentUser', {})
       commit('setUserProfile', {})
@@ -69,3 +78,4 @@ export default new Vuex.Store({
   modules: {
   }
 })
+

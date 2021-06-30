@@ -126,6 +126,8 @@
 <script>
 import {db} from '../../firebaseconfig.js'
 import { mapState } from 'vuex'
+
+
 export default {
   name: 'addHooks',
   props: ['dateRef', 'memberId'],
@@ -227,7 +229,7 @@ export default {
       let hD = new Date(this.hookForm.pullDate)
       let hookYear = hD.getFullYear()
       let duesYear
-      let dis
+      
       if (this.duesPaid) { 
         let dd = new Date(this.duesPaid)
         duesYear = dd.getFullYear()
@@ -250,46 +252,55 @@ export default {
         this.hookForm.errorMessage = ''
         this.performingRequest = true
         console.log(this.selectedPull.id)
-        let form = document.getElementById("addHookForm")
+        //let form = document.getElementById("addHookForm")
         let vn = this.hookForm.member.vehicle.name
         let hf = this.hookForm
+        let sm = hf.member.selectedMember
         let dS = this.duesStatus
         let pullYear = this.selectedPull.date.substring(0,4)
         console.log('dS:'+ dS)
+        let cDS
+
+        if (sm.hasOwnProperty('currentDues')) {
+          cDS = sm.currentDues
+        }
         
         // Begin class eval (create multiple hooks)
         let eachClass = this.hookForm.vehicleClass
           for(let i=0, len=eachClass.length; i<len; i++) {  
             let thisClass = eachClass[i].name
-
+            let classId = _.filter(this.vehicleClasses, {'name': thisClass})
             db.collection('hooks').add({
-                vehicle: this.hookForm.member.vehicle.name,
-                vehicleId: this.hookForm.member.vehicle.id,
-                pull: this.selectedPull,
-                pullRef: this.selectedPull.cityRef,
-                pullId: this.selectedPull.id,
-                pullerName: this.hookForm.pullerName,
+              vehicle: vn,
+              vehicleRef: '/vehicles/'+hf.member.vehicle.id,
+              vehicleClass: thisClass,
+              classId: classId,
+              pullOrder: (Math.random() * 100).toFixed(2),
+              pullId: this.selectedPull.id,
+              pull: {
+                date: this.selectedPull.date,
                 track: this.selectedPull.track,
-                isMember: this.hookMember,
-                member: this.hookForm.member.selectedMember,
-                duesPaid: dS,
-                dq: this.hookForm.dq,
-                vehicleClass: thisClass,
-                pullOrder: (Math.random() * 100),
-                pointsYear: pullYear,
-                created: new Date(),
-                createdBy: this.currentUser.uid
+                year:  pullYear
+              },
+              person: {
+                createdBy: this.currentUser.uid,
+                memberId: this.hookForm.member.selectedMember.id,
+                memberName: this.hookForm.member.selectedMember.fullName,
+                pullerName: this.hookForm.pullerName,
+                dues: cDS
+              },
+              fee: 15,
+              paid: false
             }).then(function(docRef) {
                 console.log("Hook written with ID: ", docRef.id)
                 hf.successMessage = "Hook(s) added successfully!"
                 hf.pullerName = '',
-                hf.isMember = true,
+                hf.isMember = false,
                 hf.vehicleClass = ''
                 hf.member.vehicle = '',
                 hf.nonMember.vehicle = ''
                 hf.member.selectedMember = '',
                 hf.hookFees = false  
-                
             }).catch(err => {
               this.hookForm.errorMessage = err.message
               
@@ -314,7 +325,7 @@ export default {
 
             db.collection('hooks').add({
                 vehicle: this.hookForm.nonMember.vehicle,
-                pull: this.selectedPull.date,
+                pull: this.selectedPull,
                 pullRef: this.selectedPull.cityRef,
                 pullId: this.selectedPull.id,
                 pullerName: this.hookForm.pullerName,

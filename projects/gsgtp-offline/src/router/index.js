@@ -11,6 +11,7 @@ import cities from '../views/host.vue'
 import cityDetail from '../views/cityDetail.vue'
 import admin from '../views/admin.vue'
 import pullDetails from '../views/pullDetails.vue'
+import pullDetailsV2 from '../views/pullDetailsV2.vue'
 import members from '../views/members.vue'
 import printSchedule from '../views/printSchedule.vue'
 import rules from '../views/rules.vue'
@@ -19,6 +20,8 @@ import addMember from '../views/addMember.vue'
 import classes from '../views/classes.vue'
 import vehicleDetails from '../views/vehicleDetails.vue'
 import memberDetails from '../views/memberDetails.vue'
+import classDetails from '../views/classDetails.vue'
+
 
 Vue.use(VueRouter)
 
@@ -57,6 +60,11 @@ const routes = [
     component: classes
   },
   {
+    path: '/class/:id',
+    name: 'classDetails',
+    component: classDetails
+  },
+  {
     path: '/member/add',
     name: 'addMember',
     component: addMember
@@ -73,6 +81,11 @@ const routes = [
     path: '/pull/:date/:id',
     name: 'pullDetails',
     component: pullDetails
+  },
+  {
+    path: '/pull/v2/:date/:id',
+    name: 'pullDetailsV2',
+    component: pullDetailsV2
   },
   {
     path: '/addEvent',

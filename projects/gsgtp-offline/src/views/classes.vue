@@ -6,8 +6,8 @@
     </v-btn>
     </div>
    <v-row>
-   <v-col v-for="c in activeClasses" :key="c.id" cols="12" sm="12" md="4">
-        <v-btn outlined block>
+   <v-col v-for="c in activeClasses" :key="c.id" cols="12" sm="6" md="4">
+        <v-btn outlined block @click="classDetails(c)">
         {{c.name}}
         </v-btn>
     </v-col>
@@ -37,7 +37,11 @@ export default {
     methods: {
         goBack() {
         this.$router.go(-1)
-      }
+      },
+      classDetails(cv) {
+        this.$router.push({
+          path: `/class/${cv.id}`
+        })}
     },
     components: {
       

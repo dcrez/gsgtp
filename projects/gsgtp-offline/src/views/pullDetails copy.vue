@@ -140,16 +140,65 @@
           </v-col>
         </v-row>
       </v-container>
-      <v-card class="mt-5">
-        <v-toolbar>
-          <v-toolbar-title>Registration</v-toolbar-title>
-          <template v-slot:extension>
-            <v-tabs align-with-title v-model="tab">
-              <v-tabs-slider color="orange"></v-tabs-slider>
-            </v-tabs>
+      <v-container fluid>
+        <v-data-iterator :items="hooks" item-key="id" :single-expand="singleExpand" hide-default-footer>
+          <template v-slot:default="{ items, isExpanded, expand }">
+            <v-row>
+              <v-col v-for="item in items" :key="item.name" cols="12">
+                <v-card>
+                  <v-card-title>{{item.vehicleClass}}</v-card-title>
+                  <v-data-table :headers="headers" :items="hooks" :single-expand="singleExpand"
+                    :expanded.sync="expanded" item-key="name" show-expand class="mt-5 d-print-block">
+                    <template v-slot:item.distance="props">
+                      <v-edit-dialog :return-value.sync="props.item.distance" large persistent @save="save"
+                        @cancel="cancel" @open="open" @close="close">
+                        <div>{{ props.item.distance }}</div>
+                        <template v-slot:input>
+                          <div class="mt-4 text-h6">
+                            Update Distance
+                          </div>
+                          <v-text-field v-model="props.item.distance" label="Edit" single-line autofocus
+                            :disabled="!admin"></v-text-field>
+                        </template>
+                      </v-edit-dialog>
+                    </template>
+                    <template v-slot:item.points="props">
+                      <v-edit-dialog :return-value.sync="props.item.points" large persistent @save="save"
+                        @cancel="cancel" @open="open" @close="close">
+                        <div>{{ props.item.points }}</div>
+                        <template v-slot:input>
+                          <div class="mt-4 text-h6">
+                            Update Points
+                          </div>
+                          <v-text-field v-model="props.item.points" label="Edit" single-line autofocus
+                            :disabled="!admin"></v-text-field>
+                        </template>
+                      </v-edit-dialog>
+                    </template>
+
+                    <template v-slot:item.pullOrder="{item}">
+                      <span>{{Math.floor(item.pullOrder)}}</span>
+                    </template>
+                    <template v-slot:expanded-item="{ headers, item }">
+                      <td :colspan="headers.length">
+                        <v-row class="mt-5">
+                          <div v-if="item.isMember">Member:{{item.member.fullName}}</div>
+                          <div v-if="item.pullerName !=''">Puller: {{item.pullerName}}</div>
+                        </v-row>
+                        <v-row>
+                          <v-col>Hook Fees: {{item.fees}}</v-col>
+                          <v-col>DQ?: {{item.dq}}</v-col>
+                        </v-row>
+                      </td>
+                    </template>
+
+                  </v-data-table>
+                </v-card>
+              </v-col>
+            </v-row>
           </template>
-        </v-toolbar>
-      </v-card>
+        </v-data-iterator>
+      </v-container>
         <!--<v-slide-group multiple show-arrows>
         <v-slide-item v-for="n in classes" :key="n['.index']">
           <v-btn class="mx-2 mt-5" active-class="primary white--text" depressed :to="classHash(n)">{{n}}</v-btn>
@@ -284,8 +333,7 @@
           }
         ],
         singleExpand: true,
-        expanded: [],
-        tab: null
+        expanded: []
       }
     },
     components: {
@@ -330,7 +378,7 @@
         return missingFees
       },
       filterByClass(){
-
+        
       },
       admin: function () {
         let admin
