@@ -9,8 +9,7 @@
         <font-awesome-icon icon="print">Print</font-awesome-icon>
       </v-btn>
       <!-- Negative days are for days in the future, positive days are for days in the past //&& daysFromNow >= -4  && daysFromNow <= 1-->
-      <v-btn text color="green" v-if="pull.track != 'N/A' && daysFromNow >= -4  && daysFromNow <= 1"
-        @click.stop="addHookDialog = true">Register</v-btn>
+    
       <v-btn class="mb-3 float-right" text color="red darken-3" @click="goBack">
         <v-icon class="mr-4">fad fa-arrow-circle-left</v-icon> Go back
       </v-btn>
@@ -32,12 +31,8 @@
         <v-banner v-if="editHookErrMessage">{{editHookErrMessage}}</v-banner>
         <v-card-text>
           <v-text-field v-model="editedItem.distance" label="Distance" color="red darken-3"></v-text-field>
-          <v-text-field v-model="editedItem.place" label="Place" color="red darken-3"></v-text-field>
-          <v-text-field v-model="editedItem.points" label="Points" color="red darken-3" type="number"
-            v-if="editedItem.isMember"></v-text-field>
-          <v-checkbox v-model="editedItem.dq" label="DQ?" color="red darken-3"></v-checkbox>
-          <v-checkbox v-model="editedItem.isMember" label="Member?" color="green darken-3" disabled></v-checkbox>
-        </v-card-text>
+           <v-checkbox v-model="editedItem.dq" label="DQ?" color="red darken-3"></v-checkbox>
+          </v-card-text>
         <v-card-actions>
           <v-spacer></v-spacer>
           <v-btn text @click.stop="close">Cancel</v-btn>
@@ -52,19 +47,11 @@
       <div class="display-1" style="text-transform: uppercase;">{{pull.title}}</div>
       <div class="overline">{{pull.date}} {{pull.time}} </div>
       <div class="overline">{{pull.city}} {{pull.state}} </div>
+      
     </div>
 
+    <v-card class="no-print" flat>
 
-    <v-card class="mx-auto no-print">
-      <!--
-      <iframe
-  width="100%"
-  height="200px"
-  style="border:0"
-  loading="lazy"
-  allowfullscreen
-  :src="map">
-</iframe>-->
       <v-row>
         <v-col cols="12">
           <!--<iframe style="width:100% border:none;" :src="displayMap(pull)" allowfullscreen></iframe>-->
@@ -73,8 +60,11 @@
               <font-awesome-icon icon="highlighter"></font-awesome-icon>
             </v-btn>
           </v-card-title>
-          <v-card-subtitle>{{pull.date | moment("dddd, MMMM Do YYYY")}} {{pull.time}}</v-card-subtitle>
-
+          <v-card-subtitle>
+            {{pull.description}}<br />
+            {{pull.date | moment("dddd, MMMM Do YYYY")}} {{pull.time}}<br />
+            <span v-if="pull.address != ''">{{pull.address}}, </span> {{pull.city}}, {{pull.state}}<br />
+            <v-btn text :href="directions" class="float-right">Directions</v-btn></v-card-subtitle>
         </v-col>
       </v-row>
 
@@ -140,57 +130,78 @@
           </v-col>
         </v-row>
       </v-container>
-      <v-card class="mt-5">
-        <v-toolbar>
-          <v-toolbar-title>Registration</v-toolbar-title>
+      <v-card class="mt-5 no-print">
+        <v-toolbar color="grey lighten-4" flat>
+          <v-toolbar-title>Registration 
+          </v-toolbar-title>
+          <v-spacer></v-spacer>
+          <div v-if="preRegAvailable">Pre-Registration Open </div>
+          <div v-else>Pre-Registration Closed</div>
+          <v-spacer v-if="preRegAvailable"></v-spacer>
+          <v-toolbar-items>
+            <v-btn text v-if="preRegAvailable"><router-link :to="{ name: 'register', params: { id: pull.id, date: pull.date }}">Register</router-link></v-btn>
+          </v-toolbar-items>
           <template v-slot:extension>
-            <v-tabs align-with-title v-model="tab">
+            <v-tabs align-with-title v-model="tab" fixed-tabs show-arrows>
               <v-tabs-slider color="orange"></v-tabs-slider>
+              <v-tab href="#finalPullOrder">
+                Pull Order
+              </v-tab>
+              <v-tab href="#winners">
+                Winners
+              </v-tab>
+              <v-tab href="#fees">
+                Hook Fees
+              </v-tab>
             </v-tabs>
           </template>
         </v-toolbar>
       </v-card>
-        <!--<v-slide-group multiple show-arrows>
-        <v-slide-item v-for="n in classes" :key="n['.index']">
-          <v-btn class="mx-2 mt-5" active-class="primary white--text" depressed :to="classHash(n)">{{n}}</v-btn>
-        </v-slide-item>
-      </v-slide-group>-->
-        <div v-for="c in classes" :key="c['.index']" class="pgBreak">
-
-          <v-toolbar class="mt-5 font-weight-black" elevation="0" style="text-transform: uppercase;">
-            <v-toolbar-title v-bind:id="classId(c)">{{c}}</v-toolbar-title>
-
-          </v-toolbar>
-          <v-simple-table v-if="hooks.vehicleClass = c" dark>
+   
+      <v-tabs-items :value="tab">
+      <v-tab-item value="finalPullOrder">
+        <v-container>
+          <v-row v-if="byVehicleClass.length == 0">
+            <v-col cols="12">
+            <v-alert type="info" text outlined color="gray lighten-4">No registrations yet.</v-alert>
+            </v-col>
+          </v-row>
+       <v-row v-for="c in byVehicleClass" :key="c.id" class="pgBreak mt-3">
+         <v-col cols="12" >
+        <div>
+          <div class="font-weight-black" style="font-size: 1.3em;">{{c.vehicleClass}}</div>
+          <v-simple-table>
 
             <thead>
               <tr>
+                <th class="text-left">Order</th>
                 <th class="text-left">Vehicle</th>
                 <th class="text-left">Puller</th>
                 <th class="text-left">Distance</th>
-                <th class="text-left">Points</th>
-                <th class="text-left" v-if="admin == true">Update</th>
-                <th class="text-left" v-if="admin == true">Delete</th>
+                <th class="text-left no-print" v-if="admin == true">Update</th>
+                <th class="text-left no-print" v-if="admin == true">Delete</th>
               </tr>
             </thead>
-            <tbody v-for="(hook) in hooks" :key="hook['.key']">
-              <tr v-if="hook.vehicleClass == c">
-                <span hidden>{{hook.id}}</span>
-                <td>
-                  Pull order: {{Math.floor(hook.pullOrder)}}
-                  {{hook.vehicle}} </td>
-                <td v-if="hook.pullerName != ''">{{hook.pullerName}}</td>
-                <td v-else>{{hook.member.fullName}}</td>
-                <td>{{hook.distance}}</td>
-                <td v-if="hook.isMember && hook.duesPaid && hook.hookFees">{{hook.points}}</td>
+            <tbody >
+              <tr v-for="hook in c.hooks" :key="hook['.key']">
+                
+                <td>{{Math.floor(hook.pullOrder)}}</td>
+                <td>{{hook.vehicle}} </td>
+                <td v-if="hook.person.pullerName != ''">{{hook.person.pullerName}}</td>
+                <td v-else>{{hook.person.memberName}} </td>
+                <td v-if="hook.paid">
+                  <span v-if="hook.dq">DQ</span>
+                  <span v-else>{{hook.distance}}</span>
+                  </td>
                 <td v-else>
                   <font-awesome-icon icon="lock"></font-awesome-icon>
                 </td>
-                <td v-if="admin == true">
-                  <font-awesome-icon @click="editItem(hook)" icon="pencil-alt" color="white"></font-awesome-icon>
+            
+                <td v-if="admin == true" class="no-print">
+                  <font-awesome-icon @click="editItem(hook)" icon="pencil-alt"></font-awesome-icon>
                 </td>
-                <td v-if="admin == true">
-                  <font-awesome-icon @click="deleteItem(hook)" class="ml-3" color="white" icon="trash-alt">
+                <td v-if="admin == true" class="no-print">
+                  <font-awesome-icon @click="deleteItem(hook)" class="ml-3" icon="trash-alt">
                   </font-awesome-icon>
 
                 </td>
@@ -201,6 +212,96 @@
 
 
         </div>
+         </v-col>
+       </v-row>
+        </v-container>
+      </v-tab-item>
+      <v-tab-item value="winners" class="no-print">
+        <v-alert type="info" text outlined v-if="winners.length == 0" class="mt-2" color="gray lighten-4">No winners yet!</v-alert>
+        <v-row v-for="c in winners" :key="c.id" class="pgBreak mt-3">
+         <v-col cols="12" >
+           <v-btn @click="pointsCalc">Points</v-btn>
+        <div class="mt-2">
+          <div class="font-weight-black" style="font-size: 1.3em;">{{c.vehicleClass}}</div>
+          <v-simple-table>
+
+            <thead>
+              <tr>
+                <th class="text-left">Place</th>
+                <th class="text-left">Vehicle</th>
+                <th class="text-left">Puller</th>
+                <th class="text-left">Distance</th>
+                <th class="text-left">Points</th>
+
+     </tr>
+            </thead>
+            <tbody >
+              <tr v-for="hook in c.hooks" :key="hook['.key']">
+                
+                <td>{{c.hooks.indexOf(hook)+1}}</td>
+                <td>{{hook.vehicle}} </td>
+                <td v-if="hook.person.pullerName != ''">{{hook.person.pullerName}}</td>
+                <td v-else>{{hook.person.memberName}} </td>
+                <td v-if="hook.paid">
+                  <span v-if="hook.dq">DQ</span>
+                  <span v-else>{{hook.distance}}</span>
+                  </td>
+                <td v-else>
+                  <font-awesome-icon icon="lock"></font-awesome-icon>
+                </td>
+            <td v-if="hook.paid">
+                  <span v-if="c.hooks.indexOf(hook)>(pointsmax+1)">{{hookpoints}}</span>
+                  <span v-else>{{(pointsmax-(c.hooks.indexOf(hook)))+hookpoints}}</span>
+                  </td>
+                <td v-else>
+                  <font-awesome-icon icon="lock"></font-awesome-icon>
+                </td>
+               
+              </tr>
+            </tbody>
+
+          </v-simple-table>
+
+
+        </div>
+         </v-col>
+       </v-row>
+      </v-tab-item>
+      <v-tab-item value="fees" class="no-print">
+        <v-container>
+        <v-alert type="info" text outlined color="gray lighten-4">If fees are not received as of the Driver's Circle, your pull order is not guaranteed.</v-alert>
+        <v-row>
+        <v-expansion-panels cols=12>
+          <v-expansion-panel v-for="p in byPerson" :key="p.id">
+            
+              <v-expansion-panel-header>
+                <v-col cols="1" v-if="feesDue(p.hooks)>0"><font-awesome-icon icon="dollar-sign" color="red"></font-awesome-icon></v-col>
+                <v-col cols="1" v-if="feesDue(p.hooks)==0"><font-awesome-icon icon="lock-open" color="gray"></font-awesome-icon></v-col>
+                <v-col>
+                <v-list-item-title>{{p.person}}</v-list-item-title>
+                </v-col>
+                <v-col>Hooks: {{countHooks(p.hooks)}}  
+                </v-col>
+                <v-col>
+                  Due: ${{feesDue(p.hooks)}}
+                </v-col>
+                <v-col v-if="admin">
+                  <v-btn @click="payFees(p.hooks)">Pay</v-btn>
+                </v-col>
+              </v-expansion-panel-header>
+          <v-expansion-panel-content>
+            <v-list-item v-for="h in p.hooks" :key="h.id">
+              <v-list-item-content>
+              {{h.vehicleClass}}
+              </v-list-item-content>
+            </v-list-item>
+          </v-expansion-panel-content>
+          </v-expansion-panel>
+        </v-expansion-panels>
+        </v-row>
+        </v-container>
+      </v-tab-item>
+      </v-tabs-items>
     </div>
     <v-dialog v-model="addHookDialog">
       <addHook style="background-color:white !important;" :dateRef='pull.date'></addHook>
@@ -226,7 +327,10 @@
     data() {
       return {
         pull: {},
+        pointsmax:10,
+        hookpoints:10,
         hooks: {},
+        now: new Date(),
         addHookDialog: false,
         editPull: true,
         editedPull: {
@@ -235,17 +339,15 @@
           time: '',
           description: '',
           address: '',
-          img: ''
+          preRegOpen: null,
+          preRegClose: null,
         },
-        searchClass: '',
         sponsor: {
           name: '',
           logo: '',
         },
         sponsors: {},
         editHookErrMessage: '',
-        graphLabels: [],
-        graphValues: [],
         filterHooks: '',
         dialog: false,
         revealEdit: false,
@@ -259,33 +361,7 @@
           pull: {},
           dq: false
         },
-        headers: [{
-            text: 'Vehicle',
-            align: 'start',
-            sortable: false,
-            value: 'vehicle'
-          },
-          {
-            text: 'Distance',
-            value: 'distance'
-          },
-          {
-            text: 'Points',
-            value: 'points'
-          },
-          {
-            text: 'Pull Order',
-            value: 'pullOrder'
-          },
-          {
-            text: '',
-            value: 'data-table-expand',
-            sortable: false
-          }
-        ],
-        singleExpand: true,
-        expanded: [],
-        tab: null
+        tab: null   
       }
     },
     components: {
@@ -302,7 +378,7 @@
     },
     computed: {
       ...mapState(['currentUser', 'userProfile']),
-      map() {
+      directions() {
         let API_KEY = 'AIzaSyAW4Mil1SDOZ5r4CwtZbfsuYqpenEZo7VU'
         let place
         let formattedaddress
@@ -313,68 +389,100 @@
           formattedaddress = address.toLowerCase();
           formattedaddress = formattedaddress.replace(/ /g, "+") + ","
         }
-        return "https://www.google.com/maps/embed/v1/place?key=" + API_KEY + "&q=" + formattedaddress + city + "+" +
+        return "https://www.google.com/maps/place/"+ formattedaddress + city + "+" +
           state
       },
       byVehicleClass() {
-        return _.chain(this.hooks).groupBy("vehicleClass")
+        let vc =  _.chain(this.hooks).groupBy("vehicleClass").map((value, key) => ({vehicleClass:key, hooks:value})).value()
+        return vc
       },
-      hooksByVehicle() {
-        let missingFees
-        let f = _.filter(this.hooks, function (hf) {
-          return !hf.fees
-        })
-        missingFees = _.groupBy(f, function (h) {
-          return h.vehicleId
-        })
-        return missingFees
+      byPerson() {
+        let vc =  _.chain(this.hooks).groupBy("person.memberName").map((value, key) => ({person:key, hooks:value})).value()
+        return vc
       },
-      filterByClass(){
-
+      preRegAvailable(){
+        let o
+        let c
+        if (this.pull.preRegOpen) {
+          o = this.pull.preRegOpen
+        }
+        if (this.pull.pregRegClose) {
+          c = this.pull.preRegClose
+        }
+        let d = new Date()
+        if ((o <= d) && (c > d)){
+          return true
+        } else { return false}
       },
-      admin: function () {
+      admin() {
         let admin
         if (this.$store.state.userProfile.role == 'admin') {
-          return admin = true
+          admin = true
         } else {
-          return admin = false
+          admin = false
         }
         return admin
       },
-      distances() {
-        let distance = this.hooks.map(hook => hook.distance)
-        console.log(distance)
-        let hookNumbers = distance.map(function (x) {
-          return parseInt(x, 10)
-        })
-        console.log(hookNumbers)
-        return hookNumbers
-      },
-      classes() {
-        const unique = [...new Set(this.hooks.map(hook => hook.vehicleClass))]
-
-        return unique
-      },
-      daysFromNow() {
-        var now = new Date();
-        var pullDate = new Date(this.pull.date);
-        var differenceInTime = now.getTime() - pullDate.getTime()
-        var differenceInDays = differenceInTime / (1000 * 3600 * 24)
-        return differenceInDays
-      },
-      admin: function () {
-        let admin
-        if (this.$store.state.userProfile.role == 'admin') {
-          return admin = true
-        } else {
-          return admin = false
-        }
-        return admin
+      winners() {
+        let ol = _.orderBy(this.hooks, ['distance'],['asc'])
+        console.log("ordered list")
+        console.log(ol)
+        let vc =  _.chain(ol).filter(function(h) {return h.distance > 0 && !h.dq}).groupBy("vehicleClass").map((value, key) => ({vehicleClass:key, hooks:value})).value()
+        console.log("winners chain")
+        console.log(vc)
+        return vc
       }
     },
     methods: {
       goBack() {
         this.$router.go(-1)
+      },
+      countHooks(h){
+        let hv = h.length
+        return hv
+      },
+      feesDue(h){
+        let hv = 0
+        let j = _.map(h, function(i){
+          if (i.paid == true) {
+            hv = hv + 0
+          } else {hv = hv + i.fee}
+        })
+        return hv
+      },
+      pointsCalc() {
+        let pointsmax =20
+        let m = _.chain(this.hooks).filter(
+          function(h) {
+            let d
+            let y
+            let n = (new Date).getFullYear()
+            
+            
+            if (h.person.dues.effectiveStart) {
+              d = new Date(h.person.dues.effectiveStart)
+              y = d.getFullYear()
+            
+            }
+            return y == n &&  !h.dq && h.distance 
+          }
+        )
+        .groupBy("vehicleClass")
+        .map(function(o){
+          o.indexOf()
+        })
+        .value()
+        
+
+        
+      },
+      payFees(p) {
+        _.map(p, function(f){
+          let hid = f.id
+          let hp = f.paid 
+          console.log(hid,hp)
+          db.collection("hooks").doc(hid).update({paid:true})
+        })
       },
       displayMap(pull) {
         let mm = "place"
@@ -407,7 +515,6 @@
           time: this.editedPull.time,
           title: this.editedPull.title,
           track: this.editedPull.track,
-          img: this.editedPull.img
         }
 
         pullRef.update(pullData)
@@ -429,28 +536,20 @@
       saveItem() {
         // Declare variables in order to pass Ids to Firestore
         let hookUpdate = this.editedItem.id
-        let hookClass = this.editedItem.vehicleClass
-        let hookVehicle = this.editedItem.vehicleName
-        let hookYear = this.editedItem.pointsYear
-        let hookDate = this.editedItem.pull
+        let dq = this.editedItem.dq
         let isMember
         if (this.editedItem.isMember) {
           isMember = this.editedItem.isMember
         } else {
           isMember = false
         }
-
         // Shorten reference paths for Firestore
         let hooksRef = db.collection('hooks').doc(hookUpdate)
 
         // What gets updated with a hook
         var hooksData = {
-          date: this.editedItem.pull,
           distance: this.editedItem.distance,
-          place: this.editedItem.place,
-          points: parseInt(this.editedItem.points),
-          dq: this.editedItem.dq,
-          isMember: isMember,
+          dq: dq,
           updatedBy: this.currentUser.uid,
           updated: new Date()
         }

@@ -54,7 +54,7 @@
                >
                </v-autocomplete>
                 <div v-if="hookForm.member.selectedMember != {}">
-                  123S
+                  
                <v-autocomplete v-model="hookForm.member.vehicle"
                 label="Find vehicle"
                 :items="onlineMember"

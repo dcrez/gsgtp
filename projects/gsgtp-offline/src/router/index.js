@@ -21,6 +21,8 @@ import classes from '../views/classes.vue'
 import vehicleDetails from '../views/vehicleDetails.vue'
 import memberDetails from '../views/memberDetails.vue'
 import classDetails from '../views/classDetails.vue'
+import register from '../views/preregister.vue'
+
 
 
 Vue.use(VueRouter)
@@ -81,6 +83,11 @@ const routes = [
     path: '/pull/:date/:id',
     name: 'pullDetails',
     component: pullDetails
+  },
+  {
+    path: '/pull/:date/:id/register',
+    name: 'register',
+    component: register
   },
   {
     path: '/pull/v2/:date/:id',
