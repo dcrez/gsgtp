@@ -58,25 +58,36 @@
               <v-list-item-icon><v-icon small>fad fa-car-building</v-icon></v-list-item-icon>
               <v-list-item-content>Host Cities</v-list-item-content>
             </v-list-item>
-          </v-list-item-group>        </v-list>
+          </v-list-item-group>  
+<v-divider></v-divider>
+            <v-list-item v-if="admin">
+              <v-list-item-title class="overline">Admin</v-list-item-title>
+            </v-list-item>
+          <v-list-item-group v-if="admin == true">
+            <v-list-item><v-list-item-avatar><font-awesome-icon icon="calendar-alt" color="pink"></font-awesome-icon></v-list-item-avatar>Add Event</v-list-item>
+            <v-list-item><v-list-item-avatar></v-list-item-avatar>members</v-list-item>
+          </v-list-item-group>
+                </v-list>
       </v-navigation-drawer>
       <v-app-bar
         app
         flat
         class="no-print"
+        height="75"
+        color="transparent"
         >
   
-        <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
-        <!--<v-img
-          height="100"
+        <v-app-bar-nav-icon @click.stop="drawer = !drawer" ></v-app-bar-nav-icon>
+        <v-img
+          height="75"
           src="@/assets/logo.png"
           alt="Gopher State Garden Tractor Pullers logo"
-          class="mx-2"
+          class="mx"
           contain
-         />-->
+          @click.stop="goHome()"
+         />
 
-         <span class="title mt-2">Gopher State <span class="font-weight-light">Garden Tractor Pullers</span></span>
-        <!--<v-toolbar-title>Gopher State Garden Tractor Pullers</v-toolbar-title>-->
+         
   
         
         
@@ -88,6 +99,7 @@
         </v-container>
      
       </v-main>
+      <!--
     <v-container v-if="admin == true">
     <v-speed-dial v-model="adminSpeedy" fixed bottom right>
       <template v-slot:activator>
@@ -97,7 +109,7 @@
       
         </v-btn>
       </template>
-      <v-btn fab dark small color="pink" to="/addEvent"><font-awesome-icon icon="calendar-alt" color="white"></font-awesome-icon>
+      <v-btn fab dark small color="pink" to="/addEvent"></font-awesome-icon>
 </v-btn>
       <v-btn fab dark small color="indigo" to="/member/add"><font-awesome-icon icon="user" color="white"></font-awesome-icon></v-btn>
       <v-btn fab dark small color="blue" @click.stop="addVehicleDialog = true"><font-awesome-icon icon="tractor" color="white"></font-awesome-icon></v-btn>
@@ -105,7 +117,7 @@
       <v-btn fab dark small color="deep-orange" to="/members"><font-awesome-icon icon="dollar-sign" color="white"></font-awesome-icon></v-btn>
       </v-speed-dial>
     </v-container>
-
+-->
      
       <v-dialog v-model="addVehicleDialog">
         <addVehicle style="background-color:white;"></addVehicle>
@@ -149,6 +161,7 @@ export default {
     adminSpeedy: false,
     group: null,
     currentYear: '2021',
+    navcolor:'',
     items : [
       
       {icon: '', text: 'About Us', link: '/about'},
@@ -164,6 +177,9 @@ export default {
     }
   },
   methods: {
+    goHome() {
+      this.$router.push('/')
+    },
     logout() {
       auth.signOut().then(() => {
         location.reload()

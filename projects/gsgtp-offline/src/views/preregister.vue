@@ -171,9 +171,6 @@ export default {
         let vn = this.hookForm.member.vehicle.name
         let hf = this.hookForm
         let sm = hf.member.selectedMember
-        let dS = this.duesStatus
-        let pullYear = this.pull.date.substring(0,4)
-        console.log('dS:'+ dS)
         let cDS
 
         if (sm.hasOwnProperty('currentDues')) {
@@ -217,41 +214,48 @@ export default {
         },
         addGuestHook: function() {
         this.hookForm.errorMessage = ''
-        this.performingRequest = true
-        console.log(this.hookForm.pullerName)
-        let form = document.getElementById("addHookForm")
-        let vn = this.vehicleName
         let hf = this.hookForm
-        let pR = this.performingRequest
-        let pullYear = this.pull.year
         
         // Begin class eval (create multiple hooks)
-        let eachClass = this.hookForm.vehicleClass
+       let eachClass = this.hookForm.vehicleClass
           for(let i=0, len=eachClass.length; i<len; i++) {  
             let thisClass = eachClass[i].name
+            let classId = _.filter(this.vehicleClasses, {'name': thisClass})
+            let fees 
+            if (thisClass == "Off the Lawn") {
+              fees = 15
+            } else {fees = 20}
 
             db.collection('hooks').add({
                 vehicle: this.hookForm.nonMember.vehicle,
-                pull: this.pull,
-                pullRef: this.pull.cityRef,
-                pullId: this.pull.id,
-                pullerName: this.hookForm.pullerName,
-                track: this.pull.track,
-                dq: this.hookForm.dq,
                 vehicleClass: thisClass,
-                pullOrder: (Math.random() * 100),
+                classId: classId,
+                pullOrder: (Math.random() * 100).toFixed(2),
+                pullId: this.pull.id,
+                pull: {
+                  date: this.pull.date,
+                  track: this.pull.track,
+                  year: this.pull.year
+                },
+                person: {
+                  createdBy: this.currentUser.uid,
+                  pullerName: this.hookForm.pullerName
+                },
+                fee: fees,
+                paid: false,
+                
                 created: new Date()
             }).then(function(docRef) {
                 console.log("Hook written with ID: ", docRef.id)
                 hf.successMessage = "Hook(s) added successfully!"
-                this.pullDetails()
+                
             }).catch(err => {
               console.log(hf.errorMessage)
               hf.errorMessage = err.message
             }); 
             }
 
-            this.performingRequest = false
+            
         },
       addHook: function() {
             // start transition/loading view

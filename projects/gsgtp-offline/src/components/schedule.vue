@@ -30,9 +30,11 @@
         
       </v-app-bar>
   
+  
 
     <v-card id="currentSchedule">
       <v-card-text>
+
         <v-list two-line>
           <v-list-item-group active-class="red--text">
             <v-list-item :key="pull.id" v-for="pull in futureEvents" @click="pullDetails(pull)">

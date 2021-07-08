@@ -2,10 +2,10 @@
   <div>
     <div class="display-1 mt-5 mb-5 font-weight-light no-print">
       Pull Details
-      <v-btn fab text color="error" v-if="admin == true" @click="deletePull(pull)">
+      <v-btn text color="error" v-if="admin == true" @click="deletePull(pull)">
         <font-awesome-icon icon="trash-alt"></font-awesome-icon>
       </v-btn>
-      <v-btn fab text color="success" v-if="admin == true" @click="printPullOrder()">
+      <v-btn text color="success" v-if="admin == true" @click="printPullOrder()">
         <font-awesome-icon icon="print">Print</font-awesome-icon>
       </v-btn>
       <!-- Negative days are for days in the future, positive days are for days in the past //&& daysFromNow >= -4  && daysFromNow <= 1-->
@@ -14,7 +14,7 @@
         <v-icon class="mr-4">fad fa-arrow-circle-left</v-icon> Go back
       </v-btn>
     </div>
-
+    <v-lazy>
     <v-dialog v-model="dialog" max-width="400px">
       <v-card>
 
@@ -31,7 +31,7 @@
         <v-banner v-if="editHookErrMessage">{{editHookErrMessage}}</v-banner>
         <v-card-text>
           <v-text-field v-model="editedItem.distance" label="Distance" color="red darken-3"></v-text-field>
-           <v-checkbox v-model="editedItem.dq" label="DQ?" color="red darken-3"></v-checkbox>
+           <v-switch v-model="editedItem.dq" label="DQ?" color="red darken-3"></v-switch>
           </v-card-text>
         <v-card-actions>
           <v-spacer></v-spacer>
@@ -40,20 +40,15 @@
         </v-card-actions>
       </v-card>
     </v-dialog>
-
-
+    </v-lazy>
 
     <div class="pullDetails d-none d-print-block">
       <div class="display-1" style="text-transform: uppercase;">{{pull.title}}</div>
       <div class="overline">{{pull.date}} {{pull.time}} </div>
-      <div class="overline">{{pull.city}} {{pull.state}} </div>
-      
+      <div class="overline">{{pull.city}} {{pull.state}} </div>      
     </div>
 
-    <v-card class="no-print" flat>
-
-      <v-row>
-        <v-col cols="12">
+    <v-card class="no-print mb-2" flat color="transparent">
           <!--<iframe style="width:100% border:none;" :src="displayMap(pull)" allowfullscreen></iframe>-->
           <v-card-title>{{pull.title}}
             <v-btn text color="success" v-if="admin == true" @click="updatePull(pull)">
@@ -62,11 +57,11 @@
           </v-card-title>
           <v-card-subtitle>
             {{pull.description}}<br />
-            {{pull.date | moment("dddd, MMMM Do YYYY")}} {{pull.time}}<br />
+            {{(pull.date) | moment("dddd, MMMM Do YYYY")}} {{pull.time}}<br />
             <span v-if="pull.address != ''">{{pull.address}}, </span> {{pull.city}}, {{pull.state}}<br />
             <v-btn text :href="directions" class="float-right">Directions</v-btn></v-card-subtitle>
-        </v-col>
-      </v-row>
+     
+  
 
       <!--<v-sparkline :value="distances" type="trend" auto-line-width="true" show-labels="true"></v-sparkline>-->
       <v-expand-transition>
@@ -135,8 +130,8 @@
           <v-toolbar-title>Registration 
           </v-toolbar-title>
           <v-spacer></v-spacer>
-          <div v-if="preRegAvailable">Pre-Registration Open </div>
-          <div v-else>Pre-Registration Closed</div>
+          <div v-if="preRegAvailable">Open </div>
+          <div v-else> Closed</div>
           <v-spacer v-if="preRegAvailable"></v-spacer>
           <v-toolbar-items>
             <v-btn text v-if="preRegAvailable"><router-link :to="{ name: 'register', params: { id: pull.id, date: pull.date }}">Register</router-link></v-btn>
@@ -218,9 +213,10 @@
       </v-tab-item>
       <v-tab-item value="winners" class="no-print">
         <v-alert type="info" text outlined v-if="winners.length == 0" class="mt-2" color="gray lighten-4">No winners yet!</v-alert>
+        <v-btn @click="pointsCalc">Points</v-btn>
         <v-row v-for="c in winners" :key="c.id" class="pgBreak mt-3">
          <v-col cols="12" >
-           <v-btn @click="pointsCalc">Points</v-btn>
+           
         <div class="mt-2">
           <div class="font-weight-black" style="font-size: 1.3em;">{{c.vehicleClass}}</div>
           <v-simple-table>
@@ -280,8 +276,7 @@
                 <v-col>
                 <v-list-item-title>{{p.person}}</v-list-item-title>
                 </v-col>
-                <v-col>Hooks: {{countHooks(p.hooks)}}  
-                </v-col>
+                
                 <v-col>
                   Due: ${{feesDue(p.hooks)}}
                 </v-col>
@@ -397,19 +392,20 @@
         return vc
       },
       byPerson() {
-        let vc =  _.chain(this.hooks).groupBy("person.memberName").map((value, key) => ({person:key, hooks:value})).value()
-        return vc
+        
+        let vm =  _.chain(this.hooks).groupBy("person.memberName").map((value, key) => ({person:key, hooks:value})).value()
+        let vg =  _.chain(this.hooks).filter(function(nom){return nom.person.pullerName != ""}).groupBy("person.pullerName").map((value, key) => ({person:key, hooks:value})).value()
+        
+        Array.prototype.push.apply(vm,vg); 
+        return vm
       },
       preRegAvailable(){
         let o
         let c
-        if (this.pull.preRegOpen) {
-          o = this.pull.preRegOpen
-        }
-        if (this.pull.pregRegClose) {
-          c = this.pull.preRegClose
-        }
+        if (this.pull.preRegOpen) {o = (this.pull.preRegOpen).toDate()}
+        if (this.pull.preRegClose) {c = (this.pull.preRegClose).toDate()}
         let d = new Date()
+      
         if ((o <= d) && (c > d)){
           return true
         } else { return false}
@@ -424,14 +420,42 @@
         return admin
       },
       winners() {
-        let ol = _.orderBy(this.hooks, ['distance'],['asc'])
-        console.log("ordered list")
-        console.log(ol)
+        let ol = _.orderBy(this.hooks, ['distance'],['desc'])
         let vc =  _.chain(ol).filter(function(h) {return h.distance > 0 && !h.dq}).groupBy("vehicleClass").map((value, key) => ({vehicleClass:key, hooks:value})).value()
-        console.log("winners chain")
-        console.log(vc)
+        
         return vc
-      }
+      },
+        pointsCalc() {
+        let p = this.pointsmax
+        let hk = this.hookPoints
+        let ol = this.hooks
+        
+        let m = _.chain(ol).filter(
+          function(h) {
+            let d
+            let y
+            let vh = h.classId.name
+            let pointsclass
+            if (vh == "Off the lawn"){
+              pointsclass = false
+            } else {pointsclass = true}
+            let n = (new Date).getFullYear()
+            if (h.person.hasOwnProperty('dues')) {
+              d = new Date(h.person.dues.effectiveStart)
+              y = d.getFullYear()
+            }
+            return y == n &&  !h.dq && h.distance && pointsclass
+          }
+        )
+        .groupBy("vehicleClass")
+        .map((value, key) => ({vehicleClass:key, hooks:value})).value()
+      
+        
+        let pv2 = _.forEach(m.hooks,function(h, index) {
+          console.log (h, index)
+        })
+        return pv2
+      },
     },
     methods: {
       goBack() {
@@ -450,38 +474,15 @@
         })
         return hv
       },
-      pointsCalc() {
-        let pointsmax =20
-        let m = _.chain(this.hooks).filter(
-          function(h) {
-            let d
-            let y
-            let n = (new Date).getFullYear()
-            
-            
-            if (h.person.dues.effectiveStart) {
-              d = new Date(h.person.dues.effectiveStart)
-              y = d.getFullYear()
-            
-            }
-            return y == n &&  !h.dq && h.distance 
-          }
-        )
-        .groupBy("vehicleClass")
-        .map(function(o){
-          o.indexOf()
-        })
-        .value()
-        
 
-        
-      },
       payFees(p) {
+        let hk = this.hookpoints
+        let pf = null
         _.map(p, function(f){
           let hid = f.id
           let hp = f.paid 
           console.log(hid,hp)
-          db.collection("hooks").doc(hid).update({paid:true})
+          db.collection("hooks").doc(hid).update({paid:true, hookPoints: hk, performancePoints: pf})
         })
       },
       displayMap(pull) {
@@ -560,16 +561,13 @@
       },
       close() {
         this.dialog = false
+        vm.$forceUpdate();
         setTimeout(() => {
           this.editedItem = Object.assign({}, this.defaultItem)
         }, 300)
       },
       deleteItem(hook) {
         db.collection('hooks').doc(hook.id).delete();
-      },
-      sortBy(value) {
-        let hooks = _.sortBy(this.hooks, [value, 'desc'])
-        return hooks
       },
       classId(item) {
         return item.toLowerCase().split(" ").join("-")
@@ -591,9 +589,7 @@
           console.log("Sponsor written with ID: ", docRef)
         })
       },
-      editPullRecord() {
-
-      },
+ 
       printPullOrder() {
         window.print()
       },

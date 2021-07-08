@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div id="hero">
            <v-carousel
                v-model="model"
                show-arrows
@@ -60,3 +60,14 @@ export default {
     }
 }
 </script>
+
+<style>
+#hero {
+    /*background-image: url('./assets/smoking.jpg');
+    height: 100vh;
+    background-position:center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position:relative;*/
+}
+</style>
